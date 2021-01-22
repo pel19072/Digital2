@@ -1,0 +1,84 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F887 ]
+[d frameptr 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"60 E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
+[v _main main `(v  1 e 1 0 ]
+"127
+[v _Setup Setup `(v  1 e 1 0 ]
+"147
+[v _Lights Lights `(v  1 e 1 0 ]
+"167 C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"229
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+[s S26 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"246
+[u S35 . 1 `S26 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES35  1 e 1 @6 ]
+"291
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"353
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+"415
+[v _PORTE PORTE `VEuc  1 e 1 @9 ]
+"1347
+[v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
+"1417
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"1479
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1541
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1603
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"1665
+[v _TRISE TRISE `VEuc  1 e 1 @137 ]
+"2347
+[v _WPUB WPUB `VEuc  1 e 1 @149 ]
+"3388
+[v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
+"3450
+[v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
+"45 E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
+[v _FLAG FLAG `uc  1 e 1 0 ]
+"46
+[v _FLAG1 FLAG1 `uc  1 e 1 0 ]
+"47
+[v _FLAG2 FLAG2 `uc  1 e 1 0 ]
+"49
+[v _START START `uc  1 e 1 0 ]
+"60
+[v _main main `(v  1 e 1 0 ]
+{
+"121
+} 0
+"127
+[v _Setup Setup `(v  1 e 1 0 ]
+{
+"145
+} 0
+"147
+[v _Lights Lights `(v  1 e 1 0 ]
+{
+"153
+[v Lights@i i `i  1 a 2 2 ]
+"158
+} 0
