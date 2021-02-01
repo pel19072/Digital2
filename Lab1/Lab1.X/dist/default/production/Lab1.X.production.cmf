@@ -19,7 +19,7 @@ maintext CODE 0 783 783 75 2
 cstackCOMMON COMMON 1 70 70 5 1
 bssCOMMON COMMON 1 75 75 4 1
 config CONFIG 4 2007 2007 2 2
-$C:\Users\Ricardo\AppData\Local\Temp\sr40.o
+$C:\Users\Ricardo\AppData\Local\Temp\saec.o
 end_init CODE 0 0 0 3 2
 config CONFIG 4 2007 2007 2 2
 # %UNUSED Section
@@ -68,79 +68,79 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Lab1.X.production.o
-7F8 cinit CODE >459:C:\Users\Ricardo\AppData\Local\Temp\sr40.s
-7F8 cinit CODE >462:C:\Users\Ricardo\AppData\Local\Temp\sr40.s
-7F8 cinit CODE >482:C:\Users\Ricardo\AppData\Local\Temp\sr40.s
-7F9 cinit CODE >483:C:\Users\Ricardo\AppData\Local\Temp\sr40.s
-7FA cinit CODE >484:C:\Users\Ricardo\AppData\Local\Temp\sr40.s
-7FB cinit CODE >485:C:\Users\Ricardo\AppData\Local\Temp\sr40.s
-7FC cinit CODE >491:C:\Users\Ricardo\AppData\Local\Temp\sr40.s
-7FC cinit CODE >493:C:\Users\Ricardo\AppData\Local\Temp\sr40.s
-7FD cinit CODE >494:C:\Users\Ricardo\AppData\Local\Temp\sr40.s
-754 text2 CODE >147:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-754 text2 CODE >148:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-757 text2 CODE >149:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-758 text2 CODE >150:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-759 text2 CODE >151:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-75A text2 CODE >152:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-75C text2 CODE >153:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-75E text2 CODE >154:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-767 text2 CODE >155:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-76D text2 CODE >156:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-780 text2 CODE >157:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-782 text2 CODE >158:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-73C text1 CODE >127:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-73C text1 CODE >128:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-73F text1 CODE >129:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-740 text1 CODE >130:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-741 text1 CODE >131:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-742 text1 CODE >132:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-743 text1 CODE >134:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-746 text1 CODE >135:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-747 text1 CODE >137:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-74A text1 CODE >138:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-74C text1 CODE >139:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-74D text1 CODE >140:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-74E text1 CODE >141:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-74F text1 CODE >143:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-751 text1 CODE >144:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-753 text1 CODE >145:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-783 maintext CODE >60:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-783 maintext CODE >61:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-788 maintext CODE >64:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-78E maintext CODE >65:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-790 maintext CODE >66:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-791 maintext CODE >68:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-796 maintext CODE >69:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-797 maintext CODE >70:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-79C maintext CODE >75:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-7A7 maintext CODE >76:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-7A9 maintext CODE >77:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-7AA maintext CODE >79:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-7AF maintext CODE >80:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-7B0 maintext CODE >81:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-7B5 maintext CODE >83:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-7B7 maintext CODE >84:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-7B8 maintext CODE >85:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-7BE maintext CODE >87:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-7C2 maintext CODE >89:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-7C3 maintext CODE >91:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-7C4 maintext CODE >92:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-7C5 maintext CODE >94:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-7C9 maintext CODE >100:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-7D2 maintext CODE >101:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-7D4 maintext CODE >102:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-7D5 maintext CODE >104:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-7DA maintext CODE >105:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-7DB maintext CODE >106:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-7E0 maintext CODE >107:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-7E2 maintext CODE >108:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-7E3 maintext CODE >109:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-7E9 maintext CODE >110:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-7ED maintext CODE >111:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-7EE maintext CODE >112:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-7EF maintext CODE >113:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
-7F0 maintext CODE >115:E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
+7F8 cinit CODE >459:C:\Users\Ricardo\AppData\Local\Temp\saec.s
+7F8 cinit CODE >462:C:\Users\Ricardo\AppData\Local\Temp\saec.s
+7F8 cinit CODE >482:C:\Users\Ricardo\AppData\Local\Temp\saec.s
+7F9 cinit CODE >483:C:\Users\Ricardo\AppData\Local\Temp\saec.s
+7FA cinit CODE >484:C:\Users\Ricardo\AppData\Local\Temp\saec.s
+7FB cinit CODE >485:C:\Users\Ricardo\AppData\Local\Temp\saec.s
+7FC cinit CODE >491:C:\Users\Ricardo\AppData\Local\Temp\saec.s
+7FC cinit CODE >493:C:\Users\Ricardo\AppData\Local\Temp\saec.s
+7FD cinit CODE >494:C:\Users\Ricardo\AppData\Local\Temp\saec.s
+754 text2 CODE >151:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+754 text2 CODE >153:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+757 text2 CODE >154:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+758 text2 CODE >156:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+759 text2 CODE >157:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+75A text2 CODE >159:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+75C text2 CODE >161:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+75E text2 CODE >162:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+767 text2 CODE >163:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+76D text2 CODE >164:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+780 text2 CODE >166:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+782 text2 CODE >167:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+73C text1 CODE >127:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+73C text1 CODE >128:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+73F text1 CODE >129:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+740 text1 CODE >130:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+741 text1 CODE >131:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+742 text1 CODE >132:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+743 text1 CODE >134:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+746 text1 CODE >135:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+747 text1 CODE >137:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+74A text1 CODE >138:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+74C text1 CODE >139:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+74D text1 CODE >140:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+74E text1 CODE >141:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+74F text1 CODE >143:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+751 text1 CODE >144:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+753 text1 CODE >145:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+783 maintext CODE >60:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+783 maintext CODE >61:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+788 maintext CODE >64:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+78E maintext CODE >65:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+790 maintext CODE >66:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+791 maintext CODE >68:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+796 maintext CODE >69:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+797 maintext CODE >70:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+79C maintext CODE >75:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+7A7 maintext CODE >76:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+7A9 maintext CODE >77:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+7AA maintext CODE >79:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+7AF maintext CODE >80:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+7B0 maintext CODE >81:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+7B5 maintext CODE >83:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+7B7 maintext CODE >84:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+7B8 maintext CODE >85:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+7BE maintext CODE >87:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+7C2 maintext CODE >89:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+7C3 maintext CODE >91:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+7C4 maintext CODE >92:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+7C5 maintext CODE >94:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+7C9 maintext CODE >100:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+7D2 maintext CODE >101:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+7D4 maintext CODE >102:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+7D5 maintext CODE >104:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+7DA maintext CODE >105:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+7DB maintext CODE >106:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+7E0 maintext CODE >107:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+7E2 maintext CODE >108:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+7E3 maintext CODE >109:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+7E9 maintext CODE >110:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+7ED maintext CODE >111:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+7EE maintext CODE >112:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+7EF maintext CODE >113:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
+7F0 maintext CODE >115:E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -164,19 +164,19 @@ __end_of_Lights F06 0 CODE 0 text2 dist/default/production\Lab1.X.production.o
 __Hstrings 0 0 ABS 0 strings -
 _FLAG 78 0 COMMON 1 bssCOMMON dist/default/production\Lab1.X.production.o
 _WPUB 95 0 ABS 0 - dist/default/production\Lab1.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\Ricardo\AppData\Local\Temp\sr40.o
+___sp 0 0 STACK 2 stack C:\Users\Ricardo\AppData\Local\Temp\saec.o
 _main F06 0 CODE 0 maintext dist/default/production\Lab1.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Lab1.X.production.o
-start 0 0 CODE 0 init C:\Users\Ricardo\AppData\Local\Temp\sr40.o
+start 0 0 CODE 0 init C:\Users\Ricardo\AppData\Local\Temp\saec.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Lab1.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\sr40.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\sr40.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\sr40.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\sr40.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\sr40.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\sr40.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\saec.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\saec.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\saec.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\saec.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\saec.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\saec.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\Lab1.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
@@ -185,12 +185,12 @@ __Hclrtext 0 0 ABS 0 clrtext -
 _ANSELH 189 0 ABS 0 - dist/default/production\Lab1.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 _OPTION_REG 81 0 ABS 0 - dist/default/production\Lab1.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\Ricardo\AppData\Local\Temp\sr40.o
-___stacklo 0 0 ABS 0 - C:\Users\Ricardo\AppData\Local\Temp\sr40.o
+___stackhi 0 0 ABS 0 - C:\Users\Ricardo\AppData\Local\Temp\saec.o
+___stacklo 0 0 ABS 0 - C:\Users\Ricardo\AppData\Local\Temp\saec.o
 __size_of_Setup 0 0 ABS 0 - dist/default/production\Lab1.X.production.o
 _Lights EA8 0 CODE 0 text2 dist/default/production\Lab1.X.production.o
 start_initialization FF0 0 CODE 0 cinit dist/default/production\Lab1.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Ricardo\AppData\Local\Temp\sr40.o
+___int_sp 0 0 STACK 2 stack C:\Users\Ricardo\AppData\Local\Temp\saec.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -230,7 +230,7 @@ __S1 79 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Ricardo\AppData\Local\Temp\sr40.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Ricardo\AppData\Local\Temp\saec.o
 __pmaintext F06 0 CODE 0 maintext dist/default/production\Lab1.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -

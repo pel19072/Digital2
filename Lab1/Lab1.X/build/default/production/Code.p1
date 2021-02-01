@@ -596,29 +596,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Code.c: 145: }
 [e :UE 159 ]
 }
-"147
-[; ;Code.c: 147: void Lights(void){
+"151
+[; ;Code.c: 151: void Lights(void){
 [v _Lights `(v ~T0 @X0 1 ef ]
 {
 [e :U _Lights ]
 [f ]
-"148
-[; ;Code.c: 148:     PORTC = 0;
-[e = _PORTC -> -> 0 `i `uc ]
-"149
-[; ;Code.c: 149:     PORTD = 0;
-[e = _PORTD -> -> 0 `i `uc ]
-"150
-[; ;Code.c: 150:     PORTBbits.RB3 = 0;
-[e = . . _PORTBbits 0 3 -> -> 0 `i `uc ]
-"151
-[; ;Code.c: 151:     PORTBbits.RB4 = 0;
-[e = . . _PORTBbits 0 4 -> -> 0 `i `uc ]
-"152
-[; ;Code.c: 152:     PORTE = 1;
-[e = _PORTE -> -> 1 `i `uc ]
 "153
-[; ;Code.c: 153:     for(int i = 0; i < 3; i++){
+[; ;Code.c: 153:     PORTC = 0;
+[e = _PORTC -> -> 0 `i `uc ]
+"154
+[; ;Code.c: 154:     PORTD = 0;
+[e = _PORTD -> -> 0 `i `uc ]
+"156
+[; ;Code.c: 156:     PORTBbits.RB3 = 0;
+[e = . . _PORTBbits 0 3 -> -> 0 `i `uc ]
+"157
+[; ;Code.c: 157:     PORTBbits.RB4 = 0;
+[e = . . _PORTBbits 0 4 -> -> 0 `i `uc ]
+"159
+[; ;Code.c: 159:     PORTE = 1;
+[e = _PORTE -> -> 1 `i `uc ]
+"161
+[; ;Code.c: 161:     for(int i = 0; i < 3; i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
@@ -626,23 +626,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $U 162  ]
 [e :U 161 ]
 {
-"154
-[; ;Code.c: 154:         _delay((unsigned long)((50)*(8000000/4000.0)));
+"162
+[; ;Code.c: 162:         _delay((unsigned long)((50)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"155
-[; ;Code.c: 155:         PORTE = PORTE<<1;
+"163
+[; ;Code.c: 163:         PORTE = PORTE<<1;
 [e = _PORTE -> << -> _PORTE `i -> 1 `i `uc ]
-"156
-[; ;Code.c: 156:     }
+"164
+[; ;Code.c: 164:     }
 }
 [e ++ _i -> 1 `i ]
 [e $ < _i -> 3 `i 161  ]
 [e :U 162 ]
 }
-"157
-[; ;Code.c: 157:     START = 1;
+"166
+[; ;Code.c: 166:     START = 1;
 [e = _START -> -> 1 `i `uc ]
-"158
-[; ;Code.c: 158: }
+"167
+[; ;Code.c: 167: }
 [e :UE 160 ]
 }

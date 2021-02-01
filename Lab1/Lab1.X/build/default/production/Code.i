@@ -2755,15 +2755,24 @@ void Setup(void) {
     OPTION_REG = 0b01010111;
 }
 
+
+
+
+
 void Lights(void){
+
     PORTC = 0;
     PORTD = 0;
+
     PORTBbits.RB3 = 0;
     PORTBbits.RB4 = 0;
+
     PORTE = 1;
+
     for(int i = 0; i < 3; i++){
         _delay((unsigned long)((50)*(8000000/4000.0)));
         PORTE = PORTE<<1;
     }
+
     START = 1;
 }

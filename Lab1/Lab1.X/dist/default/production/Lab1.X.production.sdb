@@ -11,11 +11,11 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"60 E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
+"60 E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
 [v _main main `(v  1 e 1 0 ]
 "127
 [v _Setup Setup `(v  1 e 1 0 ]
-"147
+"151
 [v _Lights Lights `(v  1 e 1 0 ]
 "167 C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
@@ -57,7 +57,7 @@
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3450
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
-"45 E:\UVG\Semestre 5\Digital2\Lab1.X\Code.c
+"45 E:\UVG\Semestre 5\Digital2\Lab1\Lab1.X\Code.c
 [v _FLAG FLAG `uc  1 e 1 0 ]
 "46
 [v _FLAG1 FLAG1 `uc  1 e 1 0 ]
@@ -75,10 +75,10 @@
 {
 "145
 } 0
-"147
+"151
 [v _Lights Lights `(v  1 e 1 0 ]
 {
-"153
+"161
 [v Lights@i i `i  1 a 2 2 ]
-"158
+"167
 } 0

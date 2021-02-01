@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Thu Jan 21 21:03:59 2021
+                                                                                               Thu Jan 28 17:33:33 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	16F887
@@ -658,7 +658,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    644  0754                     __ptext2:	
    645 ;; *************** function _Lights *****************
    646 ;; Defined at:
-   647 ;;		line 147 in file "Code.c"
+   647 ;;		line 151 in file "Code.c"
    648 ;; Parameters:    Size  Location     Type
    649 ;;		None
    650 ;; Auto vars:     Size  Location     Type
@@ -693,34 +693,34 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    679                           ; Regs used in _Lights: [wreg+status,2+status,0+btemp+1]
    680                           
    681                           
-   682                           ;Code.c: 148:     PORTC = 0;
+   682                           ;Code.c: 153:     PORTC = 0;
    683  0754  1283               	bcf	3,5	;RP0=0, select bank0
    684  0755  1303               	bcf	3,6	;RP1=0, select bank0
    685  0756  0187               	clrf	7	;volatile
    686                           
-   687                           ;Code.c: 149:     PORTD = 0;
+   687                           ;Code.c: 154:     PORTD = 0;
    688  0757  0188               	clrf	8	;volatile
    689  0758                     l681:
    690                           
-   691                           ;Code.c: 150:     PORTBbits.RB3 = 0;
+   691                           ;Code.c: 156:     PORTBbits.RB3 = 0;
    692  0758  1186               	bcf	6,3	;volatile
    693  0759                     l683:
    694                           
-   695                           ;Code.c: 151:     PORTBbits.RB4 = 0;
+   695                           ;Code.c: 157:     PORTBbits.RB4 = 0;
    696  0759  1206               	bcf	6,4	;volatile
    697  075A                     l685:
    698                           
-   699                           ;Code.c: 152:     PORTE = 1;
+   699                           ;Code.c: 159:     PORTE = 1;
    700  075A  3001               	movlw	1
    701  075B  0089               	movwf	9	;volatile
    702  075C                     l687:
    703                           
-   704                           ;Code.c: 153:     for(int i = 0; i < 3; i++){
+   704                           ;Code.c: 161:     for(int i = 0; i < 3; i++){
    705  075C  01F2               	clrf	Lights@i
    706  075D  01F3               	clrf	Lights@i+1
    707  075E                     l693:
    708                           
-   709                           ;Code.c: 154:         _delay((unsigned long)((50)*(8000000/4000.0)));
+   709                           ;Code.c: 162:         _delay((unsigned long)((50)*(8000000/4000.0)));
    710  075E  3082               	movlw	130
    711  075F  00F1               	movwf	??_Lights+1
    712  0760  30DD               	movlw	221
@@ -733,7 +733,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    719  0766  2F67               	nop2
    720  0767                     l695:
    721                           
-   722                           ;Code.c: 155:         PORTE = PORTE<<1;
+   722                           ;Code.c: 163:         PORTE = PORTE<<1;
    723  0767  1283               	bcf	3,5	;RP0=0, select bank0
    724  0768  1303               	bcf	3,6	;RP1=0, select bank0
    725  0769  0809               	movf	9,w	;volatile
@@ -742,7 +742,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    728  076C  0089               	movwf	9	;volatile
    729  076D                     l697:
    730                           
-   731                           ;Code.c: 156:     }
+   731                           ;Code.c: 164:     }
    732  076D  3001               	movlw	1
    733  076E  07F2               	addwf	Lights@i,f
    734  076F  1803               	skipnc
@@ -768,7 +768,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    754  0780                     u10:
    755  0780                     l76:
    756                           
-   757                           ;Code.c: 157:     START = 1;
+   757                           ;Code.c: 166:     START = 1;
    758  0780  01F5               	clrf	_START
    759  0781  0AF5               	incf	_START,f
    760  0782                     l77:
@@ -907,7 +907,7 @@ DATA                 0      0       9      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Thu Jan 21 21:03:59 2021
+Symbol Table                                                                                   Thu Jan 28 17:33:33 2021
 
                      l72 0753                       l76 0780                       l77 0782  
                      u10 0780                       u11 077F                       u20 078E  
