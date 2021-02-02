@@ -49,7 +49,7 @@ uint8_t DISPLAY_LOW = 0;
 uint8_t FLAGD = 0;
 uint8_t FLAGI = 0;
 uint8_t TOGGLE = 0;
-uint8_t contador = 0;
+uint8_t CONTADOR = 0;
 
 //******************************************************************************
 //INSTANCIACION DE FUNCIONES
@@ -62,7 +62,8 @@ void alarma(void);
 //ISR
 //******************************************************************************
 void __interrupt() isr(void) { 
-    di();
+    di();   //DESACTIVA LAS INTERRUPCIONES
+    //INTERRUPT ON CHANGE
     if(INTCONbits.RBIF == 1){
         if(PORTBbits.RB0 == 0){
             FLAGI = 1;
@@ -81,22 +82,22 @@ void __interrupt() isr(void) {
                 FLAGD = 0;
                 PORTD--;
             }
-        }
-        
+        }        
         INTCONbits.RBIF = 0;
-    }    
+    }  
+    //INTERUPCION DEL ADC
     if(PIR1bits.ADIF == 1){
         VAR_ADC = ADRESH;
         PIR1bits.ADIF = 0;
-        //ADCON0bits.GO_nDONE = 1;
     }
+    //INTERUPCION DEL TIMER0
     if(INTCONbits.T0IF == 1){
         TMR0 = 236; //248 PARA 2ms | 236 PARA 5ms
         TOGGLE = ~TOGGLE;
-        contador++;
+        CONTADOR++; //CONTADOR PARA HABILITAR LA LECTURA DEL ADC
         INTCONbits.T0IF = 0;
     }
-    ei();
+    ei(); //VUELVE A HABILITAR LAS INTERRUPCIONES
 }
 
 //******************************************************************************
@@ -105,9 +106,10 @@ void __interrupt() isr(void) {
 void main(void) {
     Setup();    
     while(1){ 
-        if(contador>10){
-            ADCON0bits.GO_nDONE = 1;
-            contador = 0;
+        //SIRVE PARA DARLE UN TIEMPO A LA LECTURA DEL ADC
+        if(CONTADOR>10){
+            ADCON0bits.GO_nDONE = 1;    //HABILITA LECTURA NUEVAMENTE
+            CONTADOR = 0;               //SE REINICIA EL CONTADOR
         }
         mux();
         alarma();
@@ -163,23 +165,24 @@ void Setup(void) {
 //******************************************************************************
 //SUBRUTINAS
 //******************************************************************************
-
+//MULTIPLEXA LOS DISPLAYS
 void mux(void){
-    PORTEbits.RE0 = 0;
-    PORTEbits.RE1 = 0;
+    //AQUI SE ENCUENTRAN LOS TRANSISTORES
+    PORTEbits.RE0 = 0;  //TRANSISTOR DISPLAY 1
+    PORTEbits.RE1 = 0;  //TRANSISTOR DISPLAY 2
     if(TOGGLE == 0){
         DISPLAY_LOW = VAR_ADC & 0b00001111;
         display_anodo(DISPLAY_LOW);
         PORTEbits.RE0 = 1;
     }
     else{
-        DISPLAY_HIGH = VAR_ADC & 0b11110000;
-        DISPLAY_HIGH = DISPLAY_HIGH>>4;
+        DISPLAY_HIGH = VAR_ADC & 0b11110000;    //ESTAS DOS LINEAS SON PARA UN 
+        DISPLAY_HIGH = DISPLAY_HIGH>>4;         //SWAPP Y UN MASK
         display_anodo(DISPLAY_HIGH);
         PORTEbits.RE1 = 1;
     }
 }
-
+//VERIFICA SI EL ADC ES MAYOR AL CONTADOR
 void alarma(void){
     if(VAR_ADC >= PORTD){
         PORTEbits.RE2 = 1;
