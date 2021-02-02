@@ -4,7 +4,8 @@
  INICIALIZACION DE DISPLAY
  */
 void display_anodo(uint8_t VAR){
-    
+    //TABLA PARA DISPLAY DE ANODO COMUN
+    //HECHA PARA UN FACIL CABLEADO UTILIZANDO EL PUERTO C O D
     switch(VAR){
         case 0: //0
             PORTC = 0b10001000;

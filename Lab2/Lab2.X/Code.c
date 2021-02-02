@@ -10,10 +10,10 @@
 //******************************************************************************
 
 #include <xc.h>
-#include <stdint.h>
-#include "Oscilador.h"
-#include "ADC.h"
-#include "DISPLAY.h"
+#include <stdint.h> //LIBRERIA CON INTS DE 8 BITS ENTRE OTRAS COSAS
+#include "Oscilador.h"  //CONFIGURACION DEL OSCILADOR
+#include "ADC.h"    //CONFIGURACION DEL ADC
+#include "DISPLAY.h"    //CONFIGURACION DE LA TABLA PARA DISPLAYS DE ANODO COMUN
 //******************************************************************************
 //CONFIGURACION
 //******************************************************************************
