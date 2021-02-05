@@ -2674,8 +2674,13 @@ void initOsc(uint8_t IRCF);
 # 16 "code.c" 2
 
 # 1 "./USART.h" 1
-# 16 "./USART.h"
+# 14 "./USART.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
+# 14 "./USART.h" 2
+
+
 void initUART(void);
+uint8_t ASCII(uint8_t valor);
 # 17 "code.c" 2
 
 
@@ -2705,12 +2710,14 @@ uint8_t CONTADOR = 0;
 uint8_t TOGGLE = 0;
 uint8_t RECEPCION = 0;
 uint8_t FLAGADC = 0;
+uint8_t FLAGTX = 0;
 
 
 
 
 void Setup(void);
 void Prueba(void);
+uint8_t Envio(void);
 void Conversiones(uint8_t sensor);
 
 
@@ -2728,13 +2735,11 @@ void __attribute__((picinterrupt(("")))) isr(void) {
     if(PIR1bits.ADIF == 1){
         if(FLAGADC == 0){
             VAR_ADC1 = ADRESH;
-            PORTB = ADRESH;
             initADC(2,5);
             FLAGADC = 1;
         }
         else{
             VAR_ADC2 = ADRESH;
-            PORTB = ADRESH;
             initADC(2,6);
             FLAGADC = 0;
         }
@@ -2744,6 +2749,11 @@ void __attribute__((picinterrupt(("")))) isr(void) {
 
     if(PIR1bits.RCIF == 1){
         RECEPCION = RCREG;
+    }
+
+    if(PIR1bits.TXIF == 1){
+        TXREG = Envio();
+        PIE1bits.TXIE = 0;
     }
     (INTCONbits.GIE = 1);
 }
@@ -2758,6 +2768,7 @@ void main(void) {
 
         if(CONTADOR>10){
             ADCON0bits.GO_nDONE = 1;
+            PIE1bits.TXIE = 1;
             CONTADOR = 0;
         }
     }
@@ -2792,6 +2803,7 @@ void Setup(void) {
     INTCONbits.T0IF = 0;
     PIE1bits.ADIE = 1;
     PIE1bits.RCIE = 1;
+    PIE1bits.TXIE = 1;
 
 
     initOsc(6);
@@ -2808,6 +2820,40 @@ void Setup(void) {
 
 
 
+
+uint8_t Envio(void){
+    uint8_t temporal;
+    switch(FLAGTX){
+        case 0:
+            temporal = VAR_ADC1 & 0x0F;
+            FLAGTX++;
+            return ASCII(temporal);
+            break;
+        case 1:
+            temporal = (VAR_ADC1 & 0xF0)>>4;
+            FLAGTX++;
+            return ASCII(temporal);
+            break;
+        case 2:
+            FLAGTX++;
+            return 0x2C;
+            break;
+        case 3:
+            temporal = VAR_ADC2 & 0x0F;
+            FLAGTX++;
+            return ASCII(temporal);
+            break;
+        case 4:
+            FLAGTX++;
+            temporal = (VAR_ADC2 & 0xF0)>>4;
+            return ASCII(temporal);
+            break;
+        case 5:
+            FLAGTX = 0;
+            return 0x0A;
+            break;
+    }
+}
 
 void Conversiones(uint8_t sensor){
     uint16_t temporal;
@@ -2837,7 +2883,7 @@ void Conversiones(uint8_t sensor){
 }
 
 void Prueba(void){
-# 214 "code.c"
+# 255 "code.c"
     Lcd_Clear();
     Lcd_Set_Cursor(1,1);
     Lcd_Write_Char('e');

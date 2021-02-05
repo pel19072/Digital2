@@ -50,12 +50,14 @@ uint8_t CONTADOR = 0;
 uint8_t TOGGLE = 0;
 uint8_t RECEPCION = 0;
 uint8_t FLAGADC = 0;
+uint8_t FLAGTX = 0;
 
 //******************************************************************************
 //INSTANCIACION DE FUNCIONES
 //******************************************************************************
 void Setup(void);
 void Prueba(void);
+uint8_t Envio(void);
 void Conversiones(uint8_t sensor);
 
 //******************************************************************************
@@ -73,13 +75,11 @@ void __interrupt() isr(void) {
     if(PIR1bits.ADIF == 1){
         if(FLAGADC == 0){
             VAR_ADC1 = ADRESH;
-            PORTB = ADRESH;
             initADC(2,5);
             FLAGADC = 1;
         }
         else{
             VAR_ADC2 = ADRESH;
-            PORTB = ADRESH;
             initADC(2,6);
             FLAGADC = 0;
         }        
@@ -89,6 +89,11 @@ void __interrupt() isr(void) {
     //INTERUPCION DEL RX
     if(PIR1bits.RCIF == 1){
         RECEPCION = RCREG;
+    }
+    //INTERUPCION DEL TX
+    if(PIR1bits.TXIF == 1){
+        TXREG = Envio();
+        PIE1bits.TXIE = 0;
     }
     ei(); //VUELVE A HABILITAR LAS INTERRUPCIONES
 }
@@ -103,6 +108,7 @@ void main(void) {
         //SIRVE PARA DARLE UN TIEMPO A LA LECTURA DEL ADC
         if(CONTADOR>10){
             ADCON0bits.GO_nDONE = 1;    //HABILITA LECTURA NUEVAMENTE
+            PIE1bits.TXIE = 1;          //HABILITA EL ENVIO NUEVAMENTE
             CONTADOR = 0;               //SE REINICIA EL CONTADOR
         }
     }
@@ -137,6 +143,7 @@ void Setup(void) {
     INTCONbits.T0IF = 0;
     PIE1bits.ADIE = 1;
     PIE1bits.RCIE = 1; 
+    PIE1bits.TXIE = 1; 
     
     //OSCILADOR
     initOsc(6);    
@@ -154,6 +161,40 @@ void Setup(void) {
 //******************************************************************************
 //SUBRUTINAS
 //******************************************************************************
+uint8_t Envio(void){
+    uint8_t temporal;
+    switch(FLAGTX){
+        case 0:
+            temporal = VAR_ADC1 & 0x0F;
+            FLAGTX++;
+            return ASCII(temporal);
+            break;
+        case 1:
+            temporal = (VAR_ADC1 & 0xF0)>>4;
+            FLAGTX++;
+            return ASCII(temporal);
+            break;
+        case 2:            
+            FLAGTX++;
+            return 0x2C;
+            break;
+        case 3:
+            temporal = VAR_ADC2 & 0x0F;
+            FLAGTX++;
+            return ASCII(temporal);
+            break;
+        case 4:
+            FLAGTX++;
+            temporal = (VAR_ADC2 & 0xF0)>>4;
+            return ASCII(temporal);
+            break;
+        case 5:
+            FLAGTX = 0;
+            return 0x0A;
+            break;
+    }    
+}
+
 void Conversiones(uint8_t sensor){
     uint16_t temporal;
     uint8_t unidades;

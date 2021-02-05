@@ -332,3 +332,201 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 20: }
 [e :UE 138 ]
 }
+"22
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 22: uint8_t ASCII(uint8_t valor){
+[v _ASCII `(uc ~T0 @X0 1 ef1`uc ]
+{
+[e :U _ASCII ]
+[v _valor `uc ~T0 @X0 1 r1 ]
+[f ]
+"23
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 23:     switch(valor){
+[e $U 141  ]
+{
+"24
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 24:         case 0:
+[e :U 142 ]
+"25
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 25:             return 0x30;
+[e ) -> -> 48 `i `uc ]
+[e $UE 139  ]
+"26
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 26:             break;
+[e $U 140  ]
+"27
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 27:         case 1:
+[e :U 143 ]
+"28
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 28:             return 0x31;
+[e ) -> -> 49 `i `uc ]
+[e $UE 139  ]
+"29
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 29:             break;
+[e $U 140  ]
+"30
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 30:         case 2:
+[e :U 144 ]
+"31
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 31:             return 0x32;
+[e ) -> -> 50 `i `uc ]
+[e $UE 139  ]
+"32
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 32:             break;
+[e $U 140  ]
+"33
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 33:         case 3:
+[e :U 145 ]
+"34
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 34:             return 0x33;
+[e ) -> -> 51 `i `uc ]
+[e $UE 139  ]
+"35
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 35:             break;
+[e $U 140  ]
+"36
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 36:         case 4:
+[e :U 146 ]
+"37
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 37:             return 0x34;
+[e ) -> -> 52 `i `uc ]
+[e $UE 139  ]
+"38
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 38:             break;
+[e $U 140  ]
+"39
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 39:         case 5:
+[e :U 147 ]
+"40
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 40:             return 0x35;
+[e ) -> -> 53 `i `uc ]
+[e $UE 139  ]
+"41
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 41:             break;
+[e $U 140  ]
+"42
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 42:         case 6:
+[e :U 148 ]
+"43
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 43:             return 0x36;
+[e ) -> -> 54 `i `uc ]
+[e $UE 139  ]
+"44
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 44:             break;
+[e $U 140  ]
+"45
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 45:         case 7:
+[e :U 149 ]
+"46
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 46:             return 0x37;
+[e ) -> -> 55 `i `uc ]
+[e $UE 139  ]
+"47
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 47:             break;
+[e $U 140  ]
+"48
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 48:         case 8:
+[e :U 150 ]
+"49
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 49:             return 0x38;
+[e ) -> -> 56 `i `uc ]
+[e $UE 139  ]
+"50
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 50:             break;
+[e $U 140  ]
+"51
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 51:         case 9:
+[e :U 151 ]
+"52
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 52:             return 0x39;
+[e ) -> -> 57 `i `uc ]
+[e $UE 139  ]
+"53
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 53:             break;
+[e $U 140  ]
+"54
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 54:         case 10:
+[e :U 152 ]
+"55
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 55:             return 0x41;
+[e ) -> -> 65 `i `uc ]
+[e $UE 139  ]
+"56
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 56:             break;
+[e $U 140  ]
+"57
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 57:         case 11:
+[e :U 153 ]
+"58
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 58:             return 0x42;
+[e ) -> -> 66 `i `uc ]
+[e $UE 139  ]
+"59
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 59:             break;
+[e $U 140  ]
+"60
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 60:         case 12:
+[e :U 154 ]
+"61
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 61:             return 0x43;
+[e ) -> -> 67 `i `uc ]
+[e $UE 139  ]
+"62
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 62:             break;
+[e $U 140  ]
+"63
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 63:         case 13:
+[e :U 155 ]
+"64
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 64:             return 0x44;
+[e ) -> -> 68 `i `uc ]
+[e $UE 139  ]
+"65
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 65:             break;
+[e $U 140  ]
+"66
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 66:         case 14:
+[e :U 156 ]
+"67
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 67:             return 0x45;
+[e ) -> -> 69 `i `uc ]
+[e $UE 139  ]
+"68
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 68:             break;
+[e $U 140  ]
+"69
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 69:         case 15:
+[e :U 157 ]
+"70
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 70:             return 0x46;
+[e ) -> -> 70 `i `uc ]
+[e $UE 139  ]
+"71
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 71:             break;
+[e $U 140  ]
+"72
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 72:     }
+}
+[e $U 140  ]
+[e :U 141 ]
+[e [\ -> _valor `i , $ -> 0 `i 142
+ , $ -> 1 `i 143
+ , $ -> 2 `i 144
+ , $ -> 3 `i 145
+ , $ -> 4 `i 146
+ , $ -> 5 `i 147
+ , $ -> 6 `i 148
+ , $ -> 7 `i 149
+ , $ -> 8 `i 150
+ , $ -> 9 `i 151
+ , $ -> 10 `i 152
+ , $ -> 11 `i 153
+ , $ -> 12 `i 154
+ , $ -> 13 `i 155
+ , $ -> 14 `i 156
+ , $ -> 15 `i 157
+ 140 ]
+[e :U 140 ]
+"73
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c: 73: }
+[e :UE 139 ]
+}
