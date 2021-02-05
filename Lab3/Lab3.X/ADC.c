@@ -139,5 +139,5 @@ void initADC(uint8_t ADCS, uint8_t CHS){
     //JUSTIFICACION A LA IZQUIERDA Y VOLTAJES DE REFERENCIA
     ADCON1 = 0b00000000;
     //DELAY PARA QUE PASE EL TIEMPO DE ADQUISICION 11 Tads
-    __delay_ms(100); 
+    __delay_ms(10); 
 }

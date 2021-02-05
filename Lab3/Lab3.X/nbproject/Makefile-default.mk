@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED="E:/UVG/Semestre 5/Digital2/Librerias/Libraries.X/USART.c" code.c "E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/ADC.c" "E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c" "E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/Oscilador.c"
+SOURCEFILES_QUOTED_IF_SPACED=code.c "E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/ADC.c" "E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c" "E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/Oscilador.c" "E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c"
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/339985097/USART.p1 ${OBJECTDIR}/code.p1 ${OBJECTDIR}/_ext/1035708749/ADC.p1 ${OBJECTDIR}/_ext/1035708749/LCD.p1 ${OBJECTDIR}/_ext/1035708749/Oscilador.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/339985097/USART.p1.d ${OBJECTDIR}/code.p1.d ${OBJECTDIR}/_ext/1035708749/ADC.p1.d ${OBJECTDIR}/_ext/1035708749/LCD.p1.d ${OBJECTDIR}/_ext/1035708749/Oscilador.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/code.p1 ${OBJECTDIR}/_ext/1035708749/ADC.p1 ${OBJECTDIR}/_ext/1035708749/LCD.p1 ${OBJECTDIR}/_ext/1035708749/Oscilador.p1 ${OBJECTDIR}/_ext/1035708749/USART.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/code.p1.d ${OBJECTDIR}/_ext/1035708749/ADC.p1.d ${OBJECTDIR}/_ext/1035708749/LCD.p1.d ${OBJECTDIR}/_ext/1035708749/Oscilador.p1.d ${OBJECTDIR}/_ext/1035708749/USART.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/339985097/USART.p1 ${OBJECTDIR}/code.p1 ${OBJECTDIR}/_ext/1035708749/ADC.p1 ${OBJECTDIR}/_ext/1035708749/LCD.p1 ${OBJECTDIR}/_ext/1035708749/Oscilador.p1
+OBJECTFILES=${OBJECTDIR}/code.p1 ${OBJECTDIR}/_ext/1035708749/ADC.p1 ${OBJECTDIR}/_ext/1035708749/LCD.p1 ${OBJECTDIR}/_ext/1035708749/Oscilador.p1 ${OBJECTDIR}/_ext/1035708749/USART.p1
 
 # Source Files
-SOURCEFILES=E:/UVG/Semestre 5/Digital2/Librerias/Libraries.X/USART.c code.c E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/ADC.c E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/Oscilador.c
+SOURCEFILES=code.c E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/ADC.c E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/Oscilador.c E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c
 
 
 CFLAGS=
@@ -93,13 +93,6 @@ MP_PROCESSOR_OPTION=16F887
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/_ext/339985097/USART.p1: E:/UVG/Semestre\ 5/Digital2/Librerias/Libraries.X/USART.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/339985097" 
-	@${RM} ${OBJECTDIR}/_ext/339985097/USART.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/339985097/USART.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/_ext/339985097/USART.p1 "E:/UVG/Semestre 5/Digital2/Librerias/Libraries.X/USART.c" 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/339985097/USART.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/code.p1: code.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/code.p1.d 
@@ -128,14 +121,14 @@ ${OBJECTDIR}/_ext/1035708749/Oscilador.p1: E:/UVG/Semestre\ 5/Digital2/Lab3/Lab3
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/_ext/1035708749/Oscilador.p1 "E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/Oscilador.c" 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/1035708749/Oscilador.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-else
-${OBJECTDIR}/_ext/339985097/USART.p1: E:/UVG/Semestre\ 5/Digital2/Librerias/Libraries.X/USART.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/339985097" 
-	@${RM} ${OBJECTDIR}/_ext/339985097/USART.p1.d 
-	@${RM} ${OBJECTDIR}/_ext/339985097/USART.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/_ext/339985097/USART.p1 "E:/UVG/Semestre 5/Digital2/Librerias/Libraries.X/USART.c" 
-	@${FIXDEPS} ${OBJECTDIR}/_ext/339985097/USART.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/_ext/1035708749/USART.p1: E:/UVG/Semestre\ 5/Digital2/Lab3/Lab3.X/USART.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1035708749" 
+	@${RM} ${OBJECTDIR}/_ext/1035708749/USART.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1035708749/USART.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/_ext/1035708749/USART.p1 "E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c" 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1035708749/USART.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+else
 ${OBJECTDIR}/code.p1: code.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/code.p1.d 
@@ -163,6 +156,13 @@ ${OBJECTDIR}/_ext/1035708749/Oscilador.p1: E:/UVG/Semestre\ 5/Digital2/Lab3/Lab3
 	@${RM} ${OBJECTDIR}/_ext/1035708749/Oscilador.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/_ext/1035708749/Oscilador.p1 "E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/Oscilador.c" 
 	@${FIXDEPS} ${OBJECTDIR}/_ext/1035708749/Oscilador.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1035708749/USART.p1: E:/UVG/Semestre\ 5/Digital2/Lab3/Lab3.X/USART.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1035708749" 
+	@${RM} ${OBJECTDIR}/_ext/1035708749/USART.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1035708749/USART.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/_ext/1035708749/USART.p1 "E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c" 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1035708749/USART.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

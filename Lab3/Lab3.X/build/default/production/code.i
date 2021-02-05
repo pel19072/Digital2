@@ -2699,9 +2699,12 @@ void initUART(void);
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
 # 47 "code.c"
-uint8_t VAR_ADC = 0;
+uint8_t VAR_ADC1 = 0;
+uint8_t VAR_ADC2 = 0;
 uint8_t CONTADOR = 0;
 uint8_t TOGGLE = 0;
+uint8_t RECEPCION = 0;
+uint8_t FLAGADC = 0;
 
 
 
@@ -2723,11 +2726,24 @@ void __attribute__((picinterrupt(("")))) isr(void) {
     }
 
     if(PIR1bits.ADIF == 1){
-        VAR_ADC = ADRESH;
+        if(FLAGADC == 0){
+            VAR_ADC1 = ADRESH;
+            PORTB = ADRESH;
+            initADC(2,5);
+            FLAGADC = 1;
+        }
+        else{
+            VAR_ADC2 = ADRESH;
+            PORTB = ADRESH;
+            initADC(2,6);
+            FLAGADC = 0;
+        }
         TOGGLE = 1;
-
-
         PIR1bits.ADIF = 0;
+    }
+
+    if(PIR1bits.RCIF == 1){
+        RECEPCION = RCREG;
     }
     (INTCONbits.GIE = 1);
 }
@@ -2744,11 +2760,6 @@ void main(void) {
             ADCON0bits.GO_nDONE = 1;
             CONTADOR = 0;
         }
-        if(TOGGLE == 1){
-
-            TOGGLE = 0;
-        }
-        Prueba();
     }
 }
 
@@ -2774,7 +2785,13 @@ void Setup(void) {
     TRISD = 0;
     TRISE = 3;
 
-    OPTION_REG = 0b01010111;
+
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    INTCONbits.T0IE = 1;
+    INTCONbits.T0IF = 0;
+    PIE1bits.ADIE = 1;
+    PIE1bits.RCIE = 1;
 
 
     initOsc(6);
@@ -2786,15 +2803,7 @@ void Setup(void) {
     Lcd_Init();
 
     WDTCON = 0;
-    OPTION_REG = 0b01010111;
-
-
-    INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
-    INTCONbits.T0IE = 1;
-    INTCONbits.T0IF = 0;
-    PIE1bits.ADIE = 1;
-    PIE1bits.RCIE = 1;
+    OPTION_REG = 0b11010111;
 }
 
 
@@ -2828,7 +2837,7 @@ void Conversiones(uint8_t sensor){
 }
 
 void Prueba(void){
-# 205 "code.c"
+# 214 "code.c"
     Lcd_Clear();
     Lcd_Set_Cursor(1,1);
     Lcd_Write_Char('e');

@@ -16,11 +16,11 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>E:/UVG/Semestre 5/Digital2/Librerias/Libraries.X/USART.c</itemPath>
       <itemPath>code.c</itemPath>
       <itemPath>E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/ADC.c</itemPath>
       <itemPath>E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c</itemPath>
       <itemPath>E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/Oscilador.c</itemPath>
+      <itemPath>E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

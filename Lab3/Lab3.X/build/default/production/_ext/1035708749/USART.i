@@ -1,4 +1,4 @@
-# 1 "E:/UVG/Semestre 5/Digital2/Librerias/Libraries.X/USART.c"
+# 1 "E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,9 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "E:/UVG/Semestre 5/Digital2/Librerias/Libraries.X/USART.c" 2
-# 1 "E:/UVG/Semestre 5/Digital2/Librerias/Libraries.X/USART.h" 1
-# 13 "E:/UVG/Semestre 5/Digital2/Librerias/Libraries.X/USART.h"
+# 1 "E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c" 2
+# 1 "E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.h" 1
+# 13 "E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2631,12 +2631,12 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\xc.h" 2 3
-# 13 "E:/UVG/Semestre 5/Digital2/Librerias/Libraries.X/USART.h" 2
+# 13 "E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.h" 2
 
 
 
 void initUART(void);
-# 1 "E:/UVG/Semestre 5/Digital2/Librerias/Libraries.X/USART.c" 2
+# 1 "E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c" 2
 
 
 

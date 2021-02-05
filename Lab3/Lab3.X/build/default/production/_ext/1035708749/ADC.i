@@ -2782,5 +2782,5 @@ void initADC(uint8_t ADCS, uint8_t CHS){
 
     ADCON1 = 0b00000000;
 
-    _delay((unsigned long)((100)*(4000000/4000.0)));
+    _delay((unsigned long)((10)*(4000000/4000.0)));
 }

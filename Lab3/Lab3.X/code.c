@@ -44,9 +44,12 @@
 //VARIABLES
 //******************************************************************************
 #define  _XTAL_FREQ 4000000 //Necesario para la función de Delay
-uint8_t VAR_ADC = 0;
+uint8_t VAR_ADC1 = 0;
+uint8_t VAR_ADC2 = 0;
 uint8_t CONTADOR = 0;
 uint8_t TOGGLE = 0;
+uint8_t RECEPCION = 0;
+uint8_t FLAGADC = 0;
 
 //******************************************************************************
 //INSTANCIACION DE FUNCIONES
@@ -68,11 +71,24 @@ void __interrupt() isr(void) {
     }
     //INTERUPCION DEL ADC
     if(PIR1bits.ADIF == 1){
-        VAR_ADC = ADRESH;
+        if(FLAGADC == 0){
+            VAR_ADC1 = ADRESH;
+            PORTB = ADRESH;
+            initADC(2,5);
+            FLAGADC = 1;
+        }
+        else{
+            VAR_ADC2 = ADRESH;
+            PORTB = ADRESH;
+            initADC(2,6);
+            FLAGADC = 0;
+        }        
         TOGGLE = 1;
-        //PORTB = VAR_ADC;
-        //Conversiones(VAR_ADC);
         PIR1bits.ADIF = 0;
+    }
+    //INTERUPCION DEL RX
+    if(PIR1bits.RCIF == 1){
+        RECEPCION = RCREG;
     }
     ei(); //VUELVE A HABILITAR LAS INTERRUPCIONES
 }
@@ -89,11 +105,6 @@ void main(void) {
             ADCON0bits.GO_nDONE = 1;    //HABILITA LECTURA NUEVAMENTE
             CONTADOR = 0;               //SE REINICIA EL CONTADOR
         }
-        if(TOGGLE == 1){
-            //Conversiones(VAR_ADC);
-            TOGGLE = 0;
-        }
-        Prueba();
     }
 }
 
@@ -119,7 +130,13 @@ void Setup(void) {
     TRISD = 0;  //TODOS OUTPUTS --> EN, RS Y RW
     TRISE = 3;  //2 INPUTS --> POTENCIOMETROS
     
-    OPTION_REG = 0b01010111;
+    //INTERRUPCIONES
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    INTCONbits.T0IE = 1;
+    INTCONbits.T0IF = 0;
+    PIE1bits.ADIE = 1;
+    PIE1bits.RCIE = 1; 
     
     //OSCILADOR
     initOsc(6);    
@@ -131,15 +148,7 @@ void Setup(void) {
     Lcd_Init();
     //TIMER0
     WDTCON = 0;
-    OPTION_REG = 0b01010111;
-    
-    //INTERRUPCIONES
-    INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
-    INTCONbits.T0IE = 1;
-    INTCONbits.T0IF = 0;
-    PIE1bits.ADIE = 1;
-    PIE1bits.RCIE = 1;    
+    OPTION_REG = 0b11010111;
 }
 
 //******************************************************************************
