@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=Oscilador.c ADC.c
+SOURCEFILES_QUOTED_IF_SPACED=Oscilador.c ADC.c "E:/UVG/Semestre 5/Digital2/Librerias/Libraries.X/USART.c" "E:/UVG/Semestre 5/Digital2/Librerias/Libraries.X/LCD.c" Display7Seg.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Oscilador.p1 ${OBJECTDIR}/ADC.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/Oscilador.p1.d ${OBJECTDIR}/ADC.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/Oscilador.p1 ${OBJECTDIR}/ADC.p1 ${OBJECTDIR}/_ext/339985097/USART.p1 ${OBJECTDIR}/_ext/339985097/LCD.p1 ${OBJECTDIR}/Display7Seg.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/Oscilador.p1.d ${OBJECTDIR}/ADC.p1.d ${OBJECTDIR}/_ext/339985097/USART.p1.d ${OBJECTDIR}/_ext/339985097/LCD.p1.d ${OBJECTDIR}/Display7Seg.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/Oscilador.p1 ${OBJECTDIR}/ADC.p1
+OBJECTFILES=${OBJECTDIR}/Oscilador.p1 ${OBJECTDIR}/ADC.p1 ${OBJECTDIR}/_ext/339985097/USART.p1 ${OBJECTDIR}/_ext/339985097/LCD.p1 ${OBJECTDIR}/Display7Seg.p1
 
 # Source Files
-SOURCEFILES=Oscilador.c ADC.c
+SOURCEFILES=Oscilador.c ADC.c E:/UVG/Semestre 5/Digital2/Librerias/Libraries.X/USART.c E:/UVG/Semestre 5/Digital2/Librerias/Libraries.X/LCD.c Display7Seg.c
 
 
 CFLAGS=
@@ -107,6 +107,27 @@ ${OBJECTDIR}/ADC.p1: ADC.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/ADC.p1 ADC.c 
 	@${FIXDEPS} ${OBJECTDIR}/ADC.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/_ext/339985097/USART.p1: E:/UVG/Semestre\ 5/Digital2/Librerias/Libraries.X/USART.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/339985097" 
+	@${RM} ${OBJECTDIR}/_ext/339985097/USART.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/339985097/USART.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/_ext/339985097/USART.p1 "E:/UVG/Semestre 5/Digital2/Librerias/Libraries.X/USART.c" 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/339985097/USART.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/339985097/LCD.p1: E:/UVG/Semestre\ 5/Digital2/Librerias/Libraries.X/LCD.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/339985097" 
+	@${RM} ${OBJECTDIR}/_ext/339985097/LCD.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/339985097/LCD.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/_ext/339985097/LCD.p1 "E:/UVG/Semestre 5/Digital2/Librerias/Libraries.X/LCD.c" 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/339985097/LCD.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Display7Seg.p1: Display7Seg.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Display7Seg.p1.d 
+	@${RM} ${OBJECTDIR}/Display7Seg.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/Display7Seg.p1 Display7Seg.c 
+	@${FIXDEPS} ${OBJECTDIR}/Display7Seg.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/Oscilador.p1: Oscilador.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -121,6 +142,27 @@ ${OBJECTDIR}/ADC.p1: ADC.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/ADC.p1 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/ADC.p1 ADC.c 
 	@${FIXDEPS} ${OBJECTDIR}/ADC.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/339985097/USART.p1: E:/UVG/Semestre\ 5/Digital2/Librerias/Libraries.X/USART.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/339985097" 
+	@${RM} ${OBJECTDIR}/_ext/339985097/USART.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/339985097/USART.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/_ext/339985097/USART.p1 "E:/UVG/Semestre 5/Digital2/Librerias/Libraries.X/USART.c" 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/339985097/USART.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/339985097/LCD.p1: E:/UVG/Semestre\ 5/Digital2/Librerias/Libraries.X/LCD.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/339985097" 
+	@${RM} ${OBJECTDIR}/_ext/339985097/LCD.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/339985097/LCD.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/_ext/339985097/LCD.p1 "E:/UVG/Semestre 5/Digital2/Librerias/Libraries.X/LCD.c" 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/339985097/LCD.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/Display7Seg.p1: Display7Seg.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Display7Seg.p1.d 
+	@${RM} ${OBJECTDIR}/Display7Seg.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/Display7Seg.p1 Display7Seg.c 
+	@${FIXDEPS} ${OBJECTDIR}/Display7Seg.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

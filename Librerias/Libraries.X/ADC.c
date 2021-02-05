@@ -4,7 +4,7 @@
  INICIALIZACION DE ADC: PARAMETROS: PAG 104
  */
 void initADC(uint8_t ADCS, uint8_t CHS){
-    
+    //CANAL DE LECTURA
     switch(CHS){
         case 0: //AN0
             ADCON0bits.CHS3 = 0;
@@ -109,7 +109,7 @@ void initADC(uint8_t ADCS, uint8_t CHS){
             ADCON0bits.CHS0 = 0;
             break;
     }
-    
+    //VELOCIDAD DE LECTURA
     switch(ADCS){
         case 0: //FOSC/2
             ADCON0bits.ADCS0 = 0;
@@ -132,9 +132,12 @@ void initADC(uint8_t ADCS, uint8_t CHS){
             ADCON0bits.ADCS0 = 0;
             break;
     }
-    
+    //ACTIVACION DEL ADC
     ADCON0bits.ADON = 1;
-    ADCON0bits.GO = 1;
-    ADCON1 = 0;
-    
+    //DA EL AVISO PARA COMENZAR A LEER
+    ADCON0bits.GO_nDONE = 1;
+    //JUSTIFICACION A LA IZQUIERDA Y VOLTAJES DE REFERENCIA
+    ADCON1 = 0b00000000;
+    //DELAY PARA QUE PASE EL TIEMPO DE ADQUISICION 11 Tads
+    __delay_ms(11); 
 }

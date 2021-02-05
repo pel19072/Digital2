@@ -6,6 +6,9 @@
                    projectFiles="true">
       <itemPath>Oscilador.h</itemPath>
       <itemPath>ADC.h</itemPath>
+      <itemPath>E:/UVG/Semestre 5/Digital2/Librerias/Libraries.X/LCD.h</itemPath>
+      <itemPath>Display7Seg.h</itemPath>
+      <itemPath>USART.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -16,6 +19,9 @@
                    projectFiles="true">
       <itemPath>Oscilador.c</itemPath>
       <itemPath>ADC.c</itemPath>
+      <itemPath>E:/UVG/Semestre 5/Digital2/Librerias/Libraries.X/USART.c</itemPath>
+      <itemPath>E:/UVG/Semestre 5/Digital2/Librerias/Libraries.X/LCD.c</itemPath>
+      <itemPath>Display7Seg.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -23,6 +29,9 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="default" type="2">
