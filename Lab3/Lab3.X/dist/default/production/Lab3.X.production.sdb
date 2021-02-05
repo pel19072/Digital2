@@ -19,11 +19,11 @@
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "66 E:\UVG\Semestre 5\Digital2\Lab3\Lab3.X\code.c
 [v _isr isr `II(v  1 e 1 0 ]
-"104
+"110
 [v _main main `(v  1 e 1 0 ]
-"120
+"126
 [v _Setup Setup `(v  1 e 1 0 ]
-"164
+"170
 [v _Envio Envio `(uc  1 e 1 0 ]
 "6 E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/ADC.c
 [v _initADC initADC `(v  1 e 1 0 ]
@@ -56,7 +56,7 @@
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
 "353
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
-[s S332 . 1 `uc 1 RD0 1 0 :1:0 
+[s S329 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -66,8 +66,8 @@
 `uc 1 RD7 1 0 :1:7 
 ]
 "370
-[u S341 . 1 `S332 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES341  1 e 1 @8 ]
+[u S338 . 1 `S329 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES338  1 e 1 @8 ]
 "415
 [v _PORTE PORTE `VEuc  1 e 1 @9 ]
 [s S22 . 1 `uc 1 RBIF 1 0 :1:0 
@@ -98,7 +98,7 @@
 "554
 [u S63 . 1 `S55 1 . 1 0 ]
 [v _PIR1bits PIR1bits `VES63  1 e 1 @12 ]
-[s S479 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S476 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -108,31 +108,31 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "1069
-[s S488 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S485 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S492 . 1 `uc 1 . 1 0 :6:0 
+[s S489 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nRC8 1 0 :1:6 
 ]
-[s S495 . 1 `uc 1 . 1 0 :6:0 
+[s S492 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[u S498 . 1 `S479 1 . 1 0 `S488 1 . 1 0 `S492 1 . 1 0 `S495 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES498  1 e 1 @24 ]
+[u S495 . 1 `S476 1 . 1 0 `S485 1 . 1 0 `S489 1 . 1 0 `S492 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES495  1 e 1 @24 ]
 "1134
 [v _TXREG TXREG `VEuc  1 e 1 @25 ]
 "1141
 [v _RCREG RCREG `VEuc  1 e 1 @26 ]
 "1239
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
-[s S110 . 1 `uc 1 ADON 1 0 :1:0 
+[s S111 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 `uc 1 ADCS 1 0 :2:6 
 ]
 "1277
-[s S115 . 1 `uc 1 . 1 0 :1:0 
+[s S116 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -141,14 +141,14 @@
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S124 . 1 `uc 1 . 1 0 :1:0 
+[s S125 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S127 . 1 `uc 1 . 1 0 :1:0 
+[s S128 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[u S130 . 1 `S110 1 . 1 0 `S115 1 . 1 0 `S124 1 . 1 0 `S127 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES130  1 e 1 @31 ]
+[u S131 . 1 `S111 1 . 1 0 `S116 1 . 1 0 `S125 1 . 1 0 `S128 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES131  1 e 1 @31 ]
 "1347
 [v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
 "1417
@@ -161,7 +161,7 @@
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1665
 [v _TRISE TRISE `VEuc  1 e 1 @137 ]
-[s S87 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S88 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -170,23 +170,23 @@
 `uc 1 ADIE 1 0 :1:6 
 ]
 "1719
-[u S95 . 1 `S87 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES95  1 e 1 @140 ]
-[s S382 . 1 `uc 1 SCS 1 0 :1:0 
+[u S96 . 1 `S88 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES96  1 e 1 @140 ]
+[s S379 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1883
-[s S388 . 1 `uc 1 . 1 0 :4:0 
+[s S385 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S393 . 1 `S382 1 . 1 0 `S388 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES393  1 e 1 @143 ]
-[s S419 . 1 `uc 1 TX9D 1 0 :1:0 
+[u S390 . 1 `S379 1 . 1 0 `S385 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES390  1 e 1 @143 ]
+[s S416 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -196,15 +196,15 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "2583
-[s S428 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S425 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S432 . 1 `uc 1 . 1 0 :6:0 
+[s S429 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[u S435 . 1 `S419 1 . 1 0 `S428 1 . 1 0 `S432 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES435  1 e 1 @152 ]
+[u S432 . 1 `S416 1 . 1 0 `S425 1 . 1 0 `S429 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES432  1 e 1 @152 ]
 "2643
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
 "2705
@@ -213,7 +213,7 @@
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @159 ]
 "3012
 [v _WDTCON WDTCON `VEuc  1 e 1 @261 ]
-[s S456 . 1 `uc 1 ABDEN 1 0 :1:0 
+[s S453 . 1 `uc 1 ABDEN 1 0 :1:0 
 `uc 1 WUE 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG16 1 0 :1:3 
@@ -223,8 +223,8 @@
 `uc 1 ABDOVF 1 0 :1:7 
 ]
 "3353
-[u S465 . 1 `S456 1 . 1 0 ]
-[v _BAUDCTLbits BAUDCTLbits `VES465  1 e 1 @391 ]
+[u S462 . 1 `S453 1 . 1 0 ]
+[v _BAUDCTLbits BAUDCTLbits `VES462  1 e 1 @391 ]
 "3388
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 [s S162 . 1 `uc 1 ANS0 1 0 :1:0 
@@ -255,15 +255,15 @@
 [v _FLAGADC FLAGADC `uc  1 e 1 0 ]
 "53
 [v _FLAGTX FLAGTX `uc  1 e 1 0 ]
-"104
+"110
 [v _main main `(v  1 e 1 0 ]
 {
-"115
+"121
 } 0
-"120
+"126
 [v _Setup Setup `(v  1 e 1 0 ]
 {
-"159
+"165
 } 0
 "6 E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c
 [v _initUART initUART `(v  1 e 1 0 ]
@@ -311,7 +311,7 @@
 "66 E:\UVG\Semestre 5\Digital2\Lab3\Lab3.X\code.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"99
+"105
 } 0
 "6 E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/ADC.c
 [v i1_initADC initADC `(v  1 e 1 0 ]
@@ -322,12 +322,12 @@
 [v i1initADC@ADCS ADCS `uc  1 a 1 3 ]
 "143
 } 0
-"164 E:\UVG\Semestre 5\Digital2\Lab3\Lab3.X\code.c
+"170 E:\UVG\Semestre 5\Digital2\Lab3\Lab3.X\code.c
 [v _Envio Envio `(uc  1 e 1 0 ]
 {
-"165
+"171
 [v Envio@temporal temporal `uc  1 a 1 5 ]
-"196
+"206
 } 0
 "22 E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/USART.c
 [v _ASCII ASCII `(uc  1 e 1 0 ]

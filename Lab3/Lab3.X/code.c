@@ -89,6 +89,12 @@ void __interrupt() isr(void) {
     //INTERUPCION DEL RX
     if(PIR1bits.RCIF == 1){
         RECEPCION = RCREG;
+        if(RECEPCION == 0x2B){
+            PORTB++;
+        }
+        else if(RECEPCION == 0x2D){
+            PORTB--;
+        }
     }
     //INTERUPCION DEL TX
     if(PIR1bits.TXIF == 1){
@@ -132,7 +138,7 @@ void Setup(void) {
     
     TRISA = 0;  //TODOS OUTPUTS --> LCD
     TRISB = 0; //TODOS OUTPUTS --> SIN USAR
-    TRISC = 0;  //TODOS OUTPUTS --> TX Y RX
+    TRISC = 0b10000000;  //TODOS OUTPUTS --> TX Y RX
     TRISD = 0;  //TODOS OUTPUTS --> EN, RS Y RW
     TRISE = 3;  //2 INPUTS --> POTENCIOMETROS
     
@@ -165,32 +171,36 @@ uint8_t Envio(void){
     uint8_t temporal;
     switch(FLAGTX){
         case 0:
+            FLAGTX++;
+            return 0x28;
+            break;
+        case 1:
             temporal = VAR_ADC1 & 0x0F;
             FLAGTX++;
             return ASCII(temporal);
             break;
-        case 1:
+        case 2:
             temporal = (VAR_ADC1 & 0xF0)>>4;
             FLAGTX++;
             return ASCII(temporal);
             break;
-        case 2:            
+        case 3:            
             FLAGTX++;
             return 0x2C;
             break;
-        case 3:
+        case 4:
             temporal = VAR_ADC2 & 0x0F;
             FLAGTX++;
             return ASCII(temporal);
             break;
-        case 4:
+        case 5:
             FLAGTX++;
             temporal = (VAR_ADC2 & 0xF0)>>4;
             return ASCII(temporal);
             break;
-        case 5:
+        case 6:
             FLAGTX = 0;
-            return 0x0A;
+            return 0x29;
             break;
     }    
 }
@@ -220,41 +230,4 @@ void Conversiones(uint8_t sensor){
     Lcd_Write_Char(centimas);    
     */
     
-}
-
-void Prueba(void){
-    /*
-    Lcd_Clear();
-    Lcd_Set_Cursor(1,1);
-    Lcd_Write_String("LCD Library for");
-    Lcd_Set_Cursor(2,1);
-    Lcd_Write_String("MPLAB XC8");
-    __delay_ms(2000);
-    Lcd_Clear();
-    Lcd_Set_Cursor(1,1);
-    Lcd_Write_String("Developed By");
-    Lcd_Set_Cursor(2,1);
-    Lcd_Write_String("electroSome");
-    __delay_ms(2000);
-    Lcd_Clear();
-    Lcd_Set_Cursor(1,1);
-    Lcd_Write_String("www.electroSome.com");
-
-    for(int a=0;a<15;a++)
-    {
-        __delay_ms(300);
-        Lcd_Shift_Left();
-    }
-
-    for(int a=0;a<15;a++)
-    {
-        __delay_ms(300);
-        Lcd_Shift_Right();
-    }
-     */
-    Lcd_Clear();
-    Lcd_Set_Cursor(1,1);
-    Lcd_Write_Char('e');
-    Lcd_Write_Char('S');
-    __delay_ms(2000);
 }
