@@ -52,6 +52,8 @@ uint8_t TOGGLE = 0;
 uint8_t RECEPCION = 0;
 uint8_t FLAGADC = 0;
 uint8_t FLAGTX = 0;
+uint8_t FLAGD = 0;
+uint8_t FLAGI = 0;
 
 //******************************************************************************
 //INSTANCIACION DE FUNCIONES
@@ -92,10 +94,22 @@ void __interrupt() isr(void) {
     if(PIR1bits.RCIF == 1){
         RECEPCION = RCREG;
         if(RECEPCION == 0x2B){
+            FLAGI = 1;//PORTB++;
+        }
+        else if(FLAGI == 1 & RECEPCION == 0x0D){
+            FLAGI = 0;
             PORTB++;
         }
         else if(RECEPCION == 0x2D){
+            FLAGD = 1;//PORTB++;
+        }
+        else if(FLAGD == 1 & RECEPCION == 0x0D){
+            FLAGD = 0;
             PORTB--;
+        }
+        else if(RECEPCION != 0x0D & RECEPCION != 0x2B & RECEPCION != 0x2D){
+            FLAGD = 0;
+            FLAGI = 0;
         }
     }
     //INTERUPCION DEL TX
