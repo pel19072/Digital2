@@ -2635,6 +2635,105 @@ extern __bank0 __bit __timeout;
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "code.c" 2
 
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 1 3
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\__size_t.h" 1 3
+
+
+
+typedef unsigned size_t;
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 2 3
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\__null.h" 1 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 2 3
+
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdarg.h" 1 3
+
+
+
+
+
+
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+# 11 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 2 3
+# 43 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 3
+struct __prbuf
+{
+ char * ptr;
+ void (* func)(char);
+};
+# 85 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\conio.h" 1 3
+
+
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\errno.h" 1 3
+# 29 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\errno.h" 3
+extern int errno;
+# 8 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\conio.h" 2 3
+
+
+
+
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+
+
+extern char * cgets(char *);
+extern void cputs(const char *);
+# 85 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 2 3
+
+
+
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+# 180 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdio.h" 3
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+# 14 "code.c" 2
+
 # 1 "./ADC.h" 1
 # 14 "./ADC.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
@@ -2644,7 +2743,7 @@ extern __bank0 __bit __timeout;
 
 
 void initADC(uint8_t ADCS,uint8_t CHS);
-# 14 "code.c" 2
+# 15 "code.c" 2
 
 # 1 "./LCD.h" 1
 # 14 "./LCD.h"
@@ -2662,7 +2761,8 @@ void Lcd_Write_Char(char a);
 void Lcd_Write_String(char *a);
 void Lcd_Shift_Right(void);
 void Lcd_Shift_Left(void);
-# 15 "code.c" 2
+const char* Cambio(uint8_t numero);
+# 16 "code.c" 2
 
 # 1 "./Oscilador.h" 1
 # 14 "./Oscilador.h"
@@ -2671,7 +2771,7 @@ void Lcd_Shift_Left(void);
 
 
 void initOsc(uint8_t IRCF);
-# 16 "code.c" 2
+# 17 "code.c" 2
 
 # 1 "./USART.h" 1
 # 14 "./USART.h"
@@ -2681,7 +2781,7 @@ void initOsc(uint8_t IRCF);
 
 void initUART(void);
 uint8_t ASCII(uint8_t valor);
-# 17 "code.c" 2
+# 18 "code.c" 2
 
 
 
@@ -2703,7 +2803,7 @@ uint8_t ASCII(uint8_t valor);
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-# 47 "code.c"
+# 48 "code.c"
 uint8_t VAR_ADC1 = 0;
 uint8_t VAR_ADC2 = 0;
 uint8_t CONTADOR = 0;
@@ -2718,7 +2818,8 @@ uint8_t FLAGTX = 0;
 void Setup(void);
 void Prueba(void);
 uint8_t Envio(void);
-void Conversiones(uint8_t sensor);
+void Conversiones();
+void Envio_Contador(void);
 
 
 
@@ -2769,7 +2870,11 @@ void __attribute__((picinterrupt(("")))) isr(void) {
 
 void main(void) {
     Setup();
-
+    Lcd_Write_String("Sen 1");
+    Lcd_Set_Cursor(1, 7);
+    Lcd_Write_String("Sen 2");
+    Lcd_Set_Cursor(1, 13);
+    Lcd_Write_String("Cont");
     while(1){
 
         if(CONTADOR>10){
@@ -2777,6 +2882,8 @@ void main(void) {
             PIE1bits.TXIE = 1;
             CONTADOR = 0;
         }
+        Conversiones();
+        Envio_Contador();
     }
 }
 
@@ -2835,12 +2942,12 @@ uint8_t Envio(void){
             return 0x28;
             break;
         case 1:
-            temporal = VAR_ADC1 & 0x0F;
+            temporal = (VAR_ADC1 & 0xF0)>>4;
             FLAGTX++;
             return ASCII(temporal);
             break;
         case 2:
-            temporal = (VAR_ADC1 & 0xF0)>>4;
+            temporal = VAR_ADC1 & 0x0F;
             FLAGTX++;
             return ASCII(temporal);
             break;
@@ -2849,29 +2956,82 @@ uint8_t Envio(void){
             return 0x2C;
             break;
         case 4:
-            temporal = VAR_ADC2 & 0x0F;
+            temporal = (VAR_ADC2 & 0xF0)>>4;
             FLAGTX++;
             return ASCII(temporal);
             break;
         case 5:
             FLAGTX++;
-            temporal = (VAR_ADC2 & 0xF0)>>4;
+            temporal = VAR_ADC2 & 0x0F;
             return ASCII(temporal);
             break;
         case 6:
-            FLAGTX = 0;
+            FLAGTX++;
             return 0x29;
+            break;
+        case 7:
+            FLAGTX = 0;
+            return 0x0D;
             break;
     }
 }
 
-void Conversiones(uint8_t sensor){
+void Conversiones(){
     uint16_t temporal;
     uint8_t unidades;
     uint8_t decimas;
     uint8_t centimas;
+    if(FLAGADC == 0){
 
-    temporal = (sensor/51)*100;
+        temporal = (VAR_ADC1*100)/51;
+
+        unidades = temporal/100;
+        temporal = temporal - 100*unidades;
+
+        decimas = temporal/10;
+        temporal = temporal - 10*decimas;
+
+        centimas = temporal;
+
+        Lcd_Set_Cursor(2,1);
+        Lcd_Write_String(Cambio(unidades));
+        Lcd_Set_Cursor(2,2);
+        Lcd_Write_String(".");
+        Lcd_Set_Cursor(2,3);
+        Lcd_Write_String(Cambio(decimas));
+        Lcd_Set_Cursor(2,4);
+        Lcd_Write_String(Cambio(centimas));
+        Lcd_Set_Cursor(2,5);
+    }
+    else{
+
+        temporal = (VAR_ADC2*100)/51;
+
+        unidades = temporal/100;
+        temporal = temporal - 100*unidades;
+
+        decimas = temporal/10;
+        temporal = temporal - 10*decimas;
+
+        centimas = temporal;
+        Lcd_Set_Cursor(2,7);
+        Lcd_Write_String(Cambio(unidades));
+        Lcd_Set_Cursor(2,8);
+        Lcd_Write_String(".");
+        Lcd_Set_Cursor(2,9);
+        Lcd_Write_String(Cambio(decimas));
+        Lcd_Set_Cursor(2,10);
+        Lcd_Write_String(Cambio(centimas));
+        Lcd_Set_Cursor(2,11);
+    }
+}
+
+void Envio_Contador(void){
+    uint8_t temporal;
+    uint8_t unidades;
+    uint8_t decimas;
+    uint8_t centimas;
+    temporal = PORTB;
 
     unidades = temporal/100;
     temporal = temporal - 100*unidades;
@@ -2881,13 +3041,11 @@ void Conversiones(uint8_t sensor){
 
     centimas = temporal;
 
-    Lcd_Clear();
-    Lcd_Set_Cursor(1,1);
-    Lcd_Write_Char(unidades);
-
-
-
-
-
-
+    Lcd_Set_Cursor(2,13);
+    Lcd_Write_String(Cambio(unidades));
+    Lcd_Set_Cursor(2,14);
+    Lcd_Write_String(Cambio(decimas));
+    Lcd_Set_Cursor(2,15);
+    Lcd_Write_String(Cambio(centimas));
+    Lcd_Set_Cursor(2,16);
 }

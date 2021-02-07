@@ -282,8 +282,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 20:  PORTDbits.RD0 = 1;
 [e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
 "21
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 21:     _delay((unsigned long)((4)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 4 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 21:     _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "22
 [; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 22:     PORTDbits.RD0 = 0;
 [e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
@@ -298,191 +298,318 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _Lcd_Clear ]
 [f ]
 "26
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 26:  Lcd_Cmd(0);
-[e ( _Lcd_Cmd (1 -> -> 0 `i `uc ]
-"27
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 27:  Lcd_Cmd(1);
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 26:  Lcd_Cmd(0x01);
 [e ( _Lcd_Cmd (1 -> -> 1 `i `uc ]
-"28
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 28: }
+"27
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 27: }
 [e :UE 140 ]
 }
-"30
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 30: void Lcd_Set_Cursor(char a, char b){
+"29
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 29: void Lcd_Set_Cursor(char a, char b){
 [v _Lcd_Set_Cursor `(v ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _Lcd_Set_Cursor ]
 [v _a `uc ~T0 @X0 1 r1 ]
 [v _b `uc ~T0 @X0 1 r2 ]
 [f ]
-"31
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 31:  char temp;
-[v _temp `uc ~T0 @X0 1 a ]
-"32
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 32:  if(a == 1){
+"30
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 30:  if(a == 1){
 [e $ ! == -> _a `i -> 1 `i 142  ]
 {
-"33
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 33:         temp = 0x80 + b - 1;
-[e = _temp -> - + -> 128 `i -> _b `i -> 1 `i `uc ]
-"34
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 34:         Lcd_Cmd(temp);
-[e ( _Lcd_Cmd (1 _temp ]
-"35
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 35:  }
+"31
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 31:         Lcd_Cmd(0x80 + b - 1);
+[e ( _Lcd_Cmd (1 -> - + -> 128 `i -> _b `i -> 1 `i `uc ]
+"32
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 32:  }
 }
 [e $U 143  ]
-"36
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 36:  else if(a == 2){
+"33
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 33:  else if(a == 2){
 [e :U 142 ]
 [e $ ! == -> _a `i -> 2 `i 144  ]
 {
-"37
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 37:   temp = 0xC0 + b - 1;
-[e = _temp -> - + -> 192 `i -> _b `i -> 1 `i `uc ]
-"38
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 38:   Lcd_Cmd(temp);
-[e ( _Lcd_Cmd (1 _temp ]
-"39
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 39:  }
+"34
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 34:   Lcd_Cmd(0xC0 + b - 1);
+[e ( _Lcd_Cmd (1 -> - + -> 192 `i -> _b `i -> 1 `i `uc ]
+"35
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 35:  }
 }
 [e :U 144 ]
 [e :U 143 ]
-"40
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 40: }
+"36
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 36: }
 [e :UE 141 ]
 }
-"42
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 42: void Lcd_Init(void){
+"38
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 38: void Lcd_Init(void){
 [v _Lcd_Init `(v ~T0 @X0 1 ef ]
 {
 [e :U _Lcd_Init ]
 [f ]
-"43
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 43:     Lcd_Port(0x00);
+"39
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 39:     _delay((unsigned long)((15)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 15 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"40
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 40:     Lcd_Port(0x00);
 [e ( _Lcd_Port (1 -> -> 0 `i `uc ]
-"44
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 44:      _delay((unsigned long)((10)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"45
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 45:     Lcd_Cmd(0x30);
+"41
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 41:     _delay((unsigned long)((20)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 20 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"42
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 42:     Lcd_Cmd(0x30);
 [e ( _Lcd_Cmd (1 -> -> 48 `i `uc ]
+"43
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 43:     _delay((unsigned long)((5)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"44
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 44:     Lcd_Cmd(0x30);
+[e ( _Lcd_Cmd (1 -> -> 48 `i `uc ]
+"45
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 45:     _delay((unsigned long)((160)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 160 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
 "46
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 46:       _delay((unsigned long)((4)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 4 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"47
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 47:     Lcd_Cmd(0x30);
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 46:     Lcd_Cmd(0x30);
 [e ( _Lcd_Cmd (1 -> -> 48 `i `uc ]
 "48
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 48:       _delay((unsigned long)((90)*(4000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 90 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
-"49
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 49:     Lcd_Cmd(0x30);
-[e ( _Lcd_Cmd (1 -> -> 48 `i `uc ]
-"51
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 51:     Lcd_Cmd(0x38);
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 48:     Lcd_Cmd(0x38);
 [e ( _Lcd_Cmd (1 -> -> 56 `i `uc ]
-"52
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 52:     Lcd_Cmd(0x08);
-[e ( _Lcd_Cmd (1 -> -> 8 `i `uc ]
-"53
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 53:     Lcd_Cmd(0x01);
+"49
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 49:     Lcd_Cmd(0x10);
+[e ( _Lcd_Cmd (1 -> -> 16 `i `uc ]
+"50
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 50:     Lcd_Cmd(0x01);
 [e ( _Lcd_Cmd (1 -> -> 1 `i `uc ]
-"54
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 54:     Lcd_Cmd(0x06);
+"51
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 51:     Lcd_Cmd(0x06);
 [e ( _Lcd_Cmd (1 -> -> 6 `i `uc ]
-"55
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 55: }
+"53
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 53:     Lcd_Cmd(0x0C);
+[e ( _Lcd_Cmd (1 -> -> 12 `i `uc ]
+"54
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 54: }
 [e :UE 145 ]
 }
-"57
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 57: void Lcd_Write_Char(char a){
+"56
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 56: void Lcd_Write_Char(char a){
 [v _Lcd_Write_Char `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _Lcd_Write_Char ]
 [v _a `uc ~T0 @X0 1 r1 ]
 [f ]
-"58
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 58:     PORTDbits.RD2 = 1;
+"57
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 57:     PORTDbits.RD2 = 1;
 [e = . . _PORTDbits 0 2 -> -> 1 `i `uc ]
-"59
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 59:     Lcd_Port(a);
+"58
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 58:     Lcd_Port(a);
 [e ( _Lcd_Port (1 _a ]
-"60
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 60:     PORTDbits.RD0 = 1;
+"59
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 59:     PORTDbits.RD0 = 1;
 [e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
-"61
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 61:     _delay((unsigned long)((40)*(4000000/4000000.0)));
+"60
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 60:     _delay((unsigned long)((40)*(4000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 40 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
-"62
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 62:     PORTDbits.RD0 = 0;
+"61
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 61:     PORTDbits.RD0 = 0;
 [e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
-"63
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 63:     PORTDbits.RD2 = 0;
-[e = . . _PORTDbits 0 2 -> -> 0 `i `uc ]
-"64
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 64: }
+"62
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 62: }
 [e :UE 146 ]
 }
-"66
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 66: void Lcd_Write_String(char *a){
+"64
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 64: void Lcd_Write_String(char *a){
 [v _Lcd_Write_String `(v ~T0 @X0 1 ef1`*uc ]
 {
 [e :U _Lcd_Write_String ]
 [v _a `*uc ~T0 @X0 1 r1 ]
 [f ]
-"67
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 67:  for(int i=0;a[i]!='\0';i++){
+"65
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 65:  for(int i=0;a[i]!='\0';i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
 [e $U 151  ]
 [e :U 148 ]
 {
-"68
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 68:         Lcd_Write_Char(a[i]);
+"66
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 66:         Lcd_Write_Char(a[i]);
 [e ( _Lcd_Write_Char (1 *U + _a * -> _i `x -> -> # *U _a `i `x ]
-"69
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 69:     }
+"67
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 67:     }
 }
 [e ++ _i -> 1 `i ]
 [e :U 151 ]
 [e $ != -> *U + _a * -> _i `x -> -> # *U _a `i `x `ui -> 0 `ui 148  ]
 [e :U 149 ]
 }
-"70
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 70: }
+"68
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 68: }
 [e :UE 147 ]
 }
-"72
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 72: void Lcd_Shift_Right(void){
+"70
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 70: void Lcd_Shift_Right(void){
 [v _Lcd_Shift_Right `(v ~T0 @X0 1 ef ]
 {
 [e :U _Lcd_Shift_Right ]
 [f ]
-"73
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 73:  Lcd_Cmd(0x01);
-[e ( _Lcd_Cmd (1 -> -> 1 `i `uc ]
-"74
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 74:  Lcd_Cmd(0x0C);
-[e ( _Lcd_Cmd (1 -> -> 12 `i `uc ]
-"75
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 75: }
+"71
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 71:  Lcd_Cmd(0x1C);
+[e ( _Lcd_Cmd (1 -> -> 28 `i `uc ]
+"72
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 72: }
 [e :UE 152 ]
 }
-"77
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 77: void Lcd_Shift_Left(void){
+"74
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 74: void Lcd_Shift_Left(void){
 [v _Lcd_Shift_Left `(v ~T0 @X0 1 ef ]
 {
 [e :U _Lcd_Shift_Left ]
 [f ]
-"78
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 78:  Lcd_Cmd(0x01);
-[e ( _Lcd_Cmd (1 -> -> 1 `i `uc ]
-"79
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 79:  Lcd_Cmd(0x08);
-[e ( _Lcd_Cmd (1 -> -> 8 `i `uc ]
-"80
-[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 80: }
+"75
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 75:  Lcd_Cmd(0x18);
+[e ( _Lcd_Cmd (1 -> -> 24 `i `uc ]
+"76
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 76: }
 [e :UE 153 ]
 }
+"78
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 78: const char* Cambio(uint8_t numero){
+[v _Cambio `(*Cuc ~T0 @X0 1 ef1`uc ]
+{
+[e :U _Cambio ]
+[v _numero `uc ~T0 @X0 1 r1 ]
+[f ]
+"79
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 79:     switch(numero){
+[e $U 156  ]
+{
+"80
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 80:         case 0:
+[e :U 157 ]
+"81
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 81:             return "0";
+[e ) :s 1C ]
+[e $UE 154  ]
+"82
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 82:             break;
+[e $U 155  ]
+"83
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 83:         case 1:
+[e :U 158 ]
+"84
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 84:             return "1";
+[e ) :s 2C ]
+[e $UE 154  ]
+"85
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 85:             break;
+[e $U 155  ]
+"86
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 86:         case 2:
+[e :U 159 ]
+"87
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 87:             return "2";
+[e ) :s 3C ]
+[e $UE 154  ]
+"88
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 88:             break;
+[e $U 155  ]
+"89
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 89:         case 3:
+[e :U 160 ]
+"90
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 90:             return "3";
+[e ) :s 4C ]
+[e $UE 154  ]
+"91
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 91:             break;
+[e $U 155  ]
+"92
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 92:         case 4:
+[e :U 161 ]
+"93
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 93:             return "4";
+[e ) :s 5C ]
+[e $UE 154  ]
+"94
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 94:             break;
+[e $U 155  ]
+"95
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 95:         case 5:
+[e :U 162 ]
+"96
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 96:             return "5";
+[e ) :s 6C ]
+[e $UE 154  ]
+"97
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 97:             break;
+[e $U 155  ]
+"98
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 98:         case 6:
+[e :U 163 ]
+"99
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 99:             return "6";
+[e ) :s 7C ]
+[e $UE 154  ]
+"100
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 100:             break;
+[e $U 155  ]
+"101
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 101:         case 7:
+[e :U 164 ]
+"102
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 102:             return "7";
+[e ) :s 8C ]
+[e $UE 154  ]
+"103
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 103:             break;
+[e $U 155  ]
+"104
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 104:         case 8:
+[e :U 165 ]
+"105
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 105:             return "8";
+[e ) :s 9C ]
+[e $UE 154  ]
+"106
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 106:             break;
+[e $U 155  ]
+"107
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 107:         case 9:
+[e :U 166 ]
+"108
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 108:             return "9";
+[e ) :s 10C ]
+[e $UE 154  ]
+"109
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 109:             break;
+[e $U 155  ]
+"110
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 110:     }
+}
+[e $U 155  ]
+[e :U 156 ]
+[e [\ -> _numero `i , $ -> 0 `i 157
+ , $ -> 1 `i 158
+ , $ -> 2 `i 159
+ , $ -> 3 `i 160
+ , $ -> 4 `i 161
+ , $ -> 5 `i 162
+ , $ -> 6 `i 163
+ , $ -> 7 `i 164
+ , $ -> 8 `i 165
+ , $ -> 9 `i 166
+ 155 ]
+[e :U 155 ]
+"111
+[; ;E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c: 111: }
+[e :UE 154 ]
+}
+[a 10C 57 0 ]
+[a 9C 56 0 ]
+[a 8C 55 0 ]
+[a 7C 54 0 ]
+[a 6C 53 0 ]
+[a 5C 52 0 ]
+[a 4C 51 0 ]
+[a 3C 50 0 ]
+[a 2C 49 0 ]
+[a 1C 48 0 ]

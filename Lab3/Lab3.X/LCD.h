@@ -23,5 +23,6 @@ void Lcd_Write_Char(char a);
 void Lcd_Write_String(char *a);
 void Lcd_Shift_Right(void);
 void Lcd_Shift_Left(void);
+const char* Cambio(uint8_t numero);
 
 #endif	/* LCD_H */

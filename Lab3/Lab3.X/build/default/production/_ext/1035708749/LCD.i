@@ -2654,6 +2654,7 @@ void Lcd_Write_Char(char a);
 void Lcd_Write_String(char *a);
 void Lcd_Shift_Right(void);
 void Lcd_Shift_Left(void);
+const char* Cambio(uint8_t numero);
 # 8 "E:/UVG/Semestre 5/Digital2/Lab3/Lab3.X/LCD.c" 2
 
 
@@ -2668,40 +2669,39 @@ void Lcd_Cmd(char a){
  PORTDbits.RD2 = 0;
  Lcd_Port(a);
  PORTDbits.RD0 = 1;
-    _delay((unsigned long)((4)*(4000000/4000.0)));
+    _delay((unsigned long)((10)*(4000000/4000.0)));
     PORTDbits.RD0 = 0;
 }
 
 void Lcd_Clear(void){
- Lcd_Cmd(0);
- Lcd_Cmd(1);
+ Lcd_Cmd(0x01);
 }
 
 void Lcd_Set_Cursor(char a, char b){
- char temp;
  if(a == 1){
-        temp = 0x80 + b - 1;
-        Lcd_Cmd(temp);
+        Lcd_Cmd(0x80 + b - 1);
  }
  else if(a == 2){
-  temp = 0xC0 + b - 1;
-  Lcd_Cmd(temp);
+  Lcd_Cmd(0xC0 + b - 1);
  }
 }
 
 void Lcd_Init(void){
+    _delay((unsigned long)((15)*(4000000/4000.0)));
     Lcd_Port(0x00);
-     _delay((unsigned long)((10)*(4000000/4000.0)));
+    _delay((unsigned long)((20)*(4000000/4000.0)));
     Lcd_Cmd(0x30);
-      _delay((unsigned long)((4)*(4000000/4000.0)));
+    _delay((unsigned long)((5)*(4000000/4000.0)));
     Lcd_Cmd(0x30);
-      _delay((unsigned long)((90)*(4000000/4000000.0)));
+    _delay((unsigned long)((160)*(4000000/4000000.0)));
     Lcd_Cmd(0x30);
 
     Lcd_Cmd(0x38);
-    Lcd_Cmd(0x08);
+    Lcd_Cmd(0x10);
     Lcd_Cmd(0x01);
     Lcd_Cmd(0x06);
+
+    Lcd_Cmd(0x0C);
 }
 
 void Lcd_Write_Char(char a){
@@ -2710,7 +2710,6 @@ void Lcd_Write_Char(char a){
     PORTDbits.RD0 = 1;
     _delay((unsigned long)((40)*(4000000/4000000.0)));
     PORTDbits.RD0 = 0;
-    PORTDbits.RD2 = 0;
 }
 
 void Lcd_Write_String(char *a){
@@ -2720,11 +2719,44 @@ void Lcd_Write_String(char *a){
 }
 
 void Lcd_Shift_Right(void){
- Lcd_Cmd(0x01);
- Lcd_Cmd(0x0C);
+ Lcd_Cmd(0x1C);
 }
 
 void Lcd_Shift_Left(void){
- Lcd_Cmd(0x01);
- Lcd_Cmd(0x08);
+ Lcd_Cmd(0x18);
+}
+
+const char* Cambio(uint8_t numero){
+    switch(numero){
+        case 0:
+            return "0";
+            break;
+        case 1:
+            return "1";
+            break;
+        case 2:
+            return "2";
+            break;
+        case 3:
+            return "3";
+            break;
+        case 4:
+            return "4";
+            break;
+        case 5:
+            return "5";
+            break;
+        case 6:
+            return "6";
+            break;
+        case 7:
+            return "7";
+            break;
+        case 8:
+            return "8";
+            break;
+        case 9:
+            return "9";
+            break;
+    }
 }

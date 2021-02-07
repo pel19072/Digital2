@@ -11,6 +11,7 @@
 
 #include <xc.h>
 #include <stdint.h> //LIBRERIA CON INTS DE 8 BITS ENTRE OTRAS COSAS
+#include <stdio.h>
 #include "ADC.h"
 #include "LCD.h"
 #include "Oscilador.h"
@@ -58,7 +59,8 @@ uint8_t FLAGTX = 0;
 void Setup(void);
 void Prueba(void);
 uint8_t Envio(void);
-void Conversiones(uint8_t sensor);
+void Conversiones();
+void Envio_Contador(void);
 
 //******************************************************************************
 //ISR
@@ -109,7 +111,11 @@ void __interrupt() isr(void) {
 //******************************************************************************
 void main(void) {
     Setup();  
-    
+    Lcd_Write_String("Sen 1");
+    Lcd_Set_Cursor(1, 7);
+    Lcd_Write_String("Sen 2");
+    Lcd_Set_Cursor(1, 13);
+    Lcd_Write_String("Cont");
     while(1){ 
         //SIRVE PARA DARLE UN TIEMPO A LA LECTURA DEL ADC
         if(CONTADOR>10){
@@ -117,6 +123,8 @@ void main(void) {
             PIE1bits.TXIE = 1;          //HABILITA EL ENVIO NUEVAMENTE
             CONTADOR = 0;               //SE REINICIA EL CONTADOR
         }
+        Conversiones();
+        Envio_Contador();
     }
 }
 
@@ -175,12 +183,12 @@ uint8_t Envio(void){
             return 0x28;
             break;
         case 1:
-            temporal = VAR_ADC1 & 0x0F;
+            temporal = (VAR_ADC1 & 0xF0)>>4;
             FLAGTX++;
             return ASCII(temporal);
             break;
-        case 2:
-            temporal = (VAR_ADC1 & 0xF0)>>4;
+        case 2:            
+            temporal = VAR_ADC1 & 0x0F;
             FLAGTX++;
             return ASCII(temporal);
             break;
@@ -189,29 +197,82 @@ uint8_t Envio(void){
             return 0x2C;
             break;
         case 4:
-            temporal = VAR_ADC2 & 0x0F;
+            temporal = (VAR_ADC2 & 0xF0)>>4;            
             FLAGTX++;
             return ASCII(temporal);
             break;
         case 5:
             FLAGTX++;
-            temporal = (VAR_ADC2 & 0xF0)>>4;
+            temporal = VAR_ADC2 & 0x0F;
             return ASCII(temporal);
             break;
         case 6:
-            FLAGTX = 0;
+            FLAGTX++;
             return 0x29;
+            break;
+        case 7:
+            FLAGTX = 0;
+            return 0x0D;
             break;
     }    
 }
 
-void Conversiones(uint8_t sensor){
+void Conversiones(){
     uint16_t temporal;
     uint8_t unidades;
     uint8_t decimas;
     uint8_t centimas;
-    //MAPPEO
-    temporal = (sensor/51)*100;
+    if(FLAGADC == 0){
+        //MAPPEO
+        temporal = (VAR_ADC1*100)/51;
+        //REDONDEO DE UNIDADES
+        unidades = temporal/100;
+        temporal = temporal - 100*unidades;
+        //REDONDEO DE DECIMAS
+        decimas = temporal/10;
+        temporal = temporal - 10*decimas;
+        //REDONDEO DE CENTIMAS
+        centimas = temporal;
+        //ENVIO
+        Lcd_Set_Cursor(2,1);
+        Lcd_Write_String(Cambio(unidades));
+        Lcd_Set_Cursor(2,2);
+        Lcd_Write_String(".");   //PUNTO DECIMAL
+        Lcd_Set_Cursor(2,3);
+        Lcd_Write_String(Cambio(decimas));
+        Lcd_Set_Cursor(2,4);
+        Lcd_Write_String(Cambio(centimas));  
+        Lcd_Set_Cursor(2,5);    
+    }
+    else{
+        //MAPPEO
+        temporal = (VAR_ADC2*100)/51;
+        //REDONDEO DE UNIDADES
+        unidades = temporal/100;
+        temporal = temporal - 100*unidades;
+        //REDONDEO DE DECIMAS
+        decimas = temporal/10;
+        temporal = temporal - 10*decimas;
+        //REDONDEO DE CENTIMAS
+        centimas = temporal;
+        Lcd_Set_Cursor(2,7);
+        Lcd_Write_String(Cambio(unidades));
+        Lcd_Set_Cursor(2,8);
+        Lcd_Write_String(".");   //PUNTO DECIMAL
+        Lcd_Set_Cursor(2,9);
+        Lcd_Write_String(Cambio(decimas));
+        Lcd_Set_Cursor(2,10);
+        Lcd_Write_String(Cambio(centimas));  
+        Lcd_Set_Cursor(2,11); 
+    }
+}
+
+void Envio_Contador(void){
+    uint8_t temporal;
+    uint8_t unidades;
+    uint8_t decimas;
+    uint8_t centimas;
+    temporal = PORTB;
     //REDONDEO DE UNIDADES
     unidades = temporal/100;
     temporal = temporal - 100*unidades;
@@ -220,14 +281,21 @@ void Conversiones(uint8_t sensor){
     temporal = temporal - 10*decimas;
     //REDONDEO DE CENTIMAS
     centimas = temporal;
-    //ENVIO
-    Lcd_Clear();
-    Lcd_Set_Cursor(1,1);
-    Lcd_Write_Char(unidades);
-    /*
-    Lcd_Write_Char(0x2E);   //PUNTO DECIMAL
-    Lcd_Write_Char(decimas);
-    Lcd_Write_Char(centimas);    
-    */
     
+    Lcd_Set_Cursor(2,13);
+    Lcd_Write_String(Cambio(unidades));
+    Lcd_Set_Cursor(2,14);
+    Lcd_Write_String(Cambio(decimas));
+    Lcd_Set_Cursor(2,15);
+    Lcd_Write_String(Cambio(centimas));  
+    Lcd_Set_Cursor(2,16);   
 }
+
+/*
+const char* string_converter(char sens1, char sens2){
+    char temporal[];
+    temporal[0] = sens1;
+    temporal[1] = sens2;
+    return temporal;
+}
+ */
