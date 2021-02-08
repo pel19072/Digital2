@@ -77,14 +77,15 @@ void __interrupt() isr(void) {
     }
     //INTERUPCION DEL ADC
     if(PIR1bits.ADIF == 1){
+        //MULTIPLEXACION
         if(FLAGADC == 0){
             VAR_ADC1 = ADRESH;
-            initADC(2,5);
+            initADC(2,5);   //CAMBIO DE CANAL
             FLAGADC = 1;
         }
         else{
             VAR_ADC2 = ADRESH;
-            initADC(2,6);
+            initADC(2,6);   //CAMBIO DE CANAL
             FLAGADC = 0;
         }        
         TOGGLE = 1;
@@ -93,20 +94,23 @@ void __interrupt() isr(void) {
     //INTERUPCION DEL RX
     if(PIR1bits.RCIF == 1){
         RECEPCION = RCREG;
+        //ANTIREBOTE INCREMENTO CON ENTER
         if(RECEPCION == 0x2B){
-            FLAGI = 1;//PORTB++;
+            FLAGI = 1;
         }
         else if(FLAGI == 1 & RECEPCION == 0x0D){
             FLAGI = 0;
             PORTB++;
         }
+        //ANTIREBOTE DECREMENTO CON ENTER
         else if(RECEPCION == 0x2D){
-            FLAGD = 1;//PORTB++;
+            FLAGD = 1;
         }
         else if(FLAGD == 1 & RECEPCION == 0x0D){
             FLAGD = 0;
             PORTB--;
         }
+        //PARA QUE SOLO FUNCIONE CUANDO SE PRESIONA + O - Y UN ENTER
         else if(RECEPCION != 0x0D & RECEPCION != 0x2B & RECEPCION != 0x2D){
             FLAGD = 0;
             FLAGI = 0;
@@ -125,6 +129,7 @@ void __interrupt() isr(void) {
 //******************************************************************************
 void main(void) {
     Setup();  
+    //VALORES FIJOS DE LA LCD
     Lcd_Write_String("Sen 1");
     Lcd_Set_Cursor(1, 7);
     Lcd_Write_String("Sen 2");
@@ -137,8 +142,8 @@ void main(void) {
             PIE1bits.TXIE = 1;          //HABILITA EL ENVIO NUEVAMENTE
             CONTADOR = 0;               //SE REINICIA EL CONTADOR
         }
-        Conversiones();
-        Envio_Contador();
+        Conversiones();     //ENVIO DE LOS VALORES DE SENSORES
+        Envio_Contador();   //ENVIO DEL CONTADOR
     }
 }
 
@@ -189,12 +194,13 @@ void Setup(void) {
 //******************************************************************************
 //SUBRUTINAS
 //******************************************************************************
+//MULTIPLEXACION PARA ENVIO DE POTENCIOMETROS
 uint8_t Envio(void){
     uint8_t temporal;
     switch(FLAGTX){
         case 0:
             FLAGTX++;
-            return 0x28;
+            return 0x28;    //PARENTESIS IZQUIERDO
             break;
         case 1:
             temporal = (VAR_ADC1 & 0xF0)>>4;
@@ -208,7 +214,7 @@ uint8_t Envio(void){
             break;
         case 3:            
             FLAGTX++;
-            return 0x2C;
+            return 0x2C;    //COMA
             break;
         case 4:
             temporal = (VAR_ADC2 & 0xF0)>>4;            
@@ -222,11 +228,11 @@ uint8_t Envio(void){
             break;
         case 6:
             FLAGTX++;
-            return 0x29;
+            return 0x29;    //PARENTESIS DERECHO
             break;
         case 7:
             FLAGTX = 0;
-            return 0x0D;
+            return 0x0D;    //ENTER
             break;
     }    
 }
@@ -236,6 +242,7 @@ void Conversiones(){
     uint8_t unidades;
     uint8_t decimas;
     uint8_t centimas;
+    //MULTIPLEXACION DE CONVERSIONES
     if(FLAGADC == 0){
         //MAPPEO
         temporal = (VAR_ADC1*100)/51;
