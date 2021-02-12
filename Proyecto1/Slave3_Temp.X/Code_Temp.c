@@ -90,6 +90,21 @@ void main(void) {
             ADCON0bits.GO_nDONE = 1;    //HABILITA LECTURA NUEVAMENTE
             CONTADOR = 0;               //SE REINICIA EL CONTADOR
         }
+        if(PORTB <= 0x20){
+            PORTDbits.RD0 = 1;
+            PORTDbits.RD1 = 0;
+            PORTDbits.RD2 = 0;
+        }
+        else if(PORTB >= 0x21 && PORTB <= 0x30){
+            PORTDbits.RD0 = 0;
+            PORTDbits.RD1 = 1;
+            PORTDbits.RD2 = 0;
+        }
+        else if(PORTB >= 0x31){
+            PORTDbits.RD0 = 0;
+            PORTDbits.RD1 = 0;
+            PORTDbits.RD2 = 1;
+        }
     }
 }
 

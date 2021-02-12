@@ -24,7 +24,7 @@ SPI_CLOCK_IDLE_LOW 0
 SPI_IDLE_2_ACTIVE 0
 SPI_ACTIVE_2_IDLE 64
 ]
-"131 E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+"146 E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
 [e E1351 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -59,7 +59,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _isr isr `II(v  1 e 1 0 ]
 "84
 [v _main main `(v  1 e 1 0 ]
-"100
+"115
 [v _Setup Setup `(v  1 e 1 0 ]
 "12 E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -79,6 +79,18 @@ SPI_ACTIVE_2_IDLE 64
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
 "353
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
+[s S341 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+"370
+[u S350 . 1 `S341 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES350  1 e 1 @8 ]
 "415
 [v _PORTE PORTE `VEuc  1 e 1 @9 ]
 [s S256 . 1 `uc 1 RBIF 1 0 :1:0 
@@ -150,7 +162,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1665
 [v _TRISE TRISE `VEuc  1 e 1 @137 ]
-[s S373 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S394 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -159,8 +171,8 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ADIE 1 0 :1:6 
 ]
 "1719
-[u S381 . 1 `S373 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES381  1 e 1 @140 ]
+[u S402 . 1 `S394 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES402  1 e 1 @140 ]
 [s S219 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
@@ -226,7 +238,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _WDTCON WDTCON `VEuc  1 e 1 @261 ]
 "3388
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
-[s S346 . 1 `uc 1 ANS0 1 0 :1:0 
+[s S367 . 1 `uc 1 ANS0 1 0 :1:0 
 `uc 1 ANS1 1 0 :1:1 
 `uc 1 ANS2 1 0 :1:2 
 `uc 1 ANS3 1 0 :1:3 
@@ -236,8 +248,8 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ANS7 1 0 :1:7 
 ]
 "3405
-[u S355 . 1 `S346 1 . 1 0 ]
-[v _ANSELbits ANSELbits `VES355  1 e 1 @392 ]
+[u S376 . 1 `S367 1 . 1 0 ]
+[v _ANSELbits ANSELbits `VES376  1 e 1 @392 ]
 "3450
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
 "4458
@@ -249,12 +261,12 @@ SPI_ACTIVE_2_IDLE 64
 "84
 [v _main main `(v  1 e 1 0 ]
 {
-"94
+"109
 } 0
-"100
+"115
 [v _Setup Setup `(v  1 e 1 0 ]
 {
-"135
+"150
 } 0
 "12 E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
 [v _spiInit spiInit `(v  1 e 1 0 ]

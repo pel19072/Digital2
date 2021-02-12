@@ -2858,6 +2858,21 @@ void main(void) {
             ADCON0bits.GO_nDONE = 1;
             CONTADOR = 0;
         }
+        if(PORTB <= 0x20){
+            PORTDbits.RD0 = 1;
+            PORTDbits.RD1 = 0;
+            PORTDbits.RD2 = 0;
+        }
+        else if(PORTB >= 0x21 && PORTB <= 0x30){
+            PORTDbits.RD0 = 0;
+            PORTDbits.RD1 = 1;
+            PORTDbits.RD2 = 0;
+        }
+        else if(PORTB >= 0x31){
+            PORTDbits.RD0 = 0;
+            PORTDbits.RD1 = 0;
+            PORTDbits.RD2 = 1;
+        }
     }
 }
 

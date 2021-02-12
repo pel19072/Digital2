@@ -14,18 +14,18 @@
 $dist/default/production\Slave3_Temp.X.production.o
 cinit CODE 0 F F 6 2
 text1 CODE 0 158 158 3F 2
-text2 CODE 0 1C3 1C3 16 2
+text2 CODE 0 1FC 1FC 16 2
 text3 CODE 0 FC FC 5C 2
 text4 CODE 0 15 15 E7 2
-text5 CODE 0 197 197 2C 2
-text6 CODE 0 1EC 1EC 6 2
-maintext CODE 0 1D9 1D9 13 2
+text5 CODE 0 1D0 1D0 2C 2
+text6 CODE 0 212 212 6 2
+maintext CODE 0 197 197 39 2
 cstackCOMMON COMMON 1 70 70 8 1
 cstackBANK0 BANK0 1 20 20 1 1
 intentry CODE 0 4 4 8 2
 bssCOMMON COMMON 1 78 78 2 1
 config CONFIG 4 2007 2007 2 2
-$C:\Users\Ricardo\AppData\Local\Temp\s7v8.o
+$C:\Users\Ricardo\AppData\Local\Temp\s2dg.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
@@ -44,13 +44,13 @@ BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST 1F2-1FFF 2
+CONST 218-1FFF 2
 ENTRY 3-3 2
-ENTRY 1F2-1FFF 2
+ENTRY 218-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
 CODE 3-3 2
-CODE 1F2-1FFF 2
+CODE 218-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
@@ -58,9 +58,9 @@ SFR3 180-18F 1
 COMMON 7A-7D 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE 1F2-1FFF 2
+STRCODE 218-1FFF 2
 STRING 3-3 2
-STRING 1F2-1FFF 2
+STRING 218-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -75,31 +75,31 @@ STRING 1F2-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Slave3_Temp.X.production.o
-F cinit CODE >958:C:\Users\Ricardo\AppData\Local\Temp\s7v8.s
-F cinit CODE >961:C:\Users\Ricardo\AppData\Local\Temp\s7v8.s
-F cinit CODE >975:C:\Users\Ricardo\AppData\Local\Temp\s7v8.s
-10 cinit CODE >976:C:\Users\Ricardo\AppData\Local\Temp\s7v8.s
-11 cinit CODE >982:C:\Users\Ricardo\AppData\Local\Temp\s7v8.s
-11 cinit CODE >984:C:\Users\Ricardo\AppData\Local\Temp\s7v8.s
-12 cinit CODE >985:C:\Users\Ricardo\AppData\Local\Temp\s7v8.s
+F cinit CODE >960:C:\Users\Ricardo\AppData\Local\Temp\s2dg.s
+F cinit CODE >963:C:\Users\Ricardo\AppData\Local\Temp\s2dg.s
+F cinit CODE >977:C:\Users\Ricardo\AppData\Local\Temp\s2dg.s
+10 cinit CODE >978:C:\Users\Ricardo\AppData\Local\Temp\s2dg.s
+11 cinit CODE >984:C:\Users\Ricardo\AppData\Local\Temp\s2dg.s
+11 cinit CODE >986:C:\Users\Ricardo\AppData\Local\Temp\s2dg.s
+12 cinit CODE >987:C:\Users\Ricardo\AppData\Local\Temp\s2dg.s
 4 intentry CODE >59:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-1EC text6 CODE >32:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
-1ED text6 CODE >33:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
-1F1 text6 CODE >34:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
-197 text5 CODE >59:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-197 text5 CODE >60:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-198 text5 CODE >62:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-19C text5 CODE >63:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-1A0 text5 CODE >64:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-1A4 text5 CODE >65:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-1A5 text5 CODE >68:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-1AB text5 CODE >69:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-1B1 text5 CODE >70:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-1B4 text5 CODE >73:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-1B8 text5 CODE >74:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-1BA text5 CODE >75:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-1BB text5 CODE >77:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-1BC text5 CODE >78:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+212 text6 CODE >32:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
+213 text6 CODE >33:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
+217 text6 CODE >34:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
+1D0 text5 CODE >59:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1D0 text5 CODE >60:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1D1 text5 CODE >62:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1D5 text5 CODE >63:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1D9 text5 CODE >64:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1DD text5 CODE >65:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1DE text5 CODE >68:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1E4 text5 CODE >69:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1EA text5 CODE >70:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1ED text5 CODE >73:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1F1 text5 CODE >74:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1F3 text5 CODE >75:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1F4 text5 CODE >77:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1F5 text5 CODE >78:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
 15 text4 CODE >6:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c
 16 text4 CODE >8:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c
 17 text4 CODE >9:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c
@@ -281,48 +281,63 @@ FE text3 CODE >10:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c
 134 text3 CODE >54:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c
 156 text3 CODE >56:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c
 157 text3 CODE >58:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c
-1C3 text2 CODE >12:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
-1C4 text2 CODE >13:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
-1C7 text2 CODE >14:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
-1CB text2 CODE >16:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
-1CD text2 CODE >17:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
-1CE text2 CODE >18:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
-1CF text2 CODE >21:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
-1D2 text2 CODE >22:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
-1D3 text2 CODE >23:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
-1D3 text2 CODE >25:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
-1D8 text2 CODE >26:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
-158 text1 CODE >100:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-158 text1 CODE >102:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-15B text1 CODE >103:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-15C text1 CODE >104:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-15D text1 CODE >105:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-15E text1 CODE >106:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-15F text1 CODE >108:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-162 text1 CODE >109:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-163 text1 CODE >110:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-164 text1 CODE >112:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-168 text1 CODE >113:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-169 text1 CODE >114:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-16B text1 CODE >115:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-16C text1 CODE >116:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-16E text1 CODE >119:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-16F text1 CODE >120:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-170 text1 CODE >121:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-171 text1 CODE >122:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-172 text1 CODE >123:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-173 text1 CODE >124:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-174 text1 CODE >127:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-17A text1 CODE >129:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-186 text1 CODE >131:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-18F text1 CODE >133:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-192 text1 CODE >134:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-196 text1 CODE >135:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-1D9 maintext CODE >84:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-1D9 maintext CODE >85:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-1DE maintext CODE >89:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-1E4 maintext CODE >90:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
-1E7 maintext CODE >91:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1FC text2 CODE >12:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
+1FD text2 CODE >13:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
+200 text2 CODE >14:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
+204 text2 CODE >16:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
+206 text2 CODE >17:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
+207 text2 CODE >18:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
+208 text2 CODE >21:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
+20B text2 CODE >22:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
+20C text2 CODE >23:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
+20C text2 CODE >25:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
+211 text2 CODE >26:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
+158 text1 CODE >115:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+158 text1 CODE >117:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+15B text1 CODE >118:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+15C text1 CODE >119:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+15D text1 CODE >120:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+15E text1 CODE >121:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+15F text1 CODE >123:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+162 text1 CODE >124:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+163 text1 CODE >125:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+164 text1 CODE >127:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+168 text1 CODE >128:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+169 text1 CODE >129:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+16B text1 CODE >130:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+16C text1 CODE >131:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+16E text1 CODE >134:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+16F text1 CODE >135:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+170 text1 CODE >136:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+171 text1 CODE >137:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+172 text1 CODE >138:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+173 text1 CODE >139:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+174 text1 CODE >142:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+17A text1 CODE >144:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+186 text1 CODE >146:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+18F text1 CODE >148:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+192 text1 CODE >149:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+196 text1 CODE >150:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+197 maintext CODE >84:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+197 maintext CODE >85:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+19C maintext CODE >89:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1A2 maintext CODE >90:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1A5 maintext CODE >91:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1A6 maintext CODE >93:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1AE maintext CODE >94:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1AF maintext CODE >95:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1B0 maintext CODE >96:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1B1 maintext CODE >97:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1B2 maintext CODE >98:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1BE maintext CODE >99:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1BF maintext CODE >100:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1C0 maintext CODE >101:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1C1 maintext CODE >102:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1C2 maintext CODE >103:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1C8 maintext CODE >104:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1C9 maintext CODE >105:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1CA maintext CODE >106:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
+1CC maintext CODE >107:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -336,7 +351,7 @@ FE text3 CODE >10:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
-__Hspace_0 1F2 0 ABS 0 - -
+__Hspace_0 218 0 ABS 0 - -
 __Hspace_1 7A 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
@@ -345,19 +360,19 @@ spiInit@sTransmitEdge 76 0 COMMON 1 cstackCOMMON dist/default/production\Slave3_
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
 _TMR0 1 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\Ricardo\AppData\Local\Temp\s7v8.o
-_main 3B2 0 CODE 0 maintext dist/default/production\Slave3_Temp.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\Ricardo\AppData\Local\Temp\s2dg.o
+_main 32E 0 CODE 0 maintext dist/default/production\Slave3_Temp.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
-start 18 0 CODE 0 init C:\Users\Ricardo\AppData\Local\Temp\s7v8.o
+start 18 0 CODE 0 init C:\Users\Ricardo\AppData\Local\Temp\s2dg.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s7v8.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s7v8.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s7v8.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s7v8.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s7v8.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s7v8.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s2dg.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s2dg.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s2dg.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s2dg.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s2dg.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s2dg.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
@@ -372,8 +387,8 @@ initADC@ADCS 77 0 COMMON 1 cstackCOMMON dist/default/production\Slave3_Temp.X.pr
 __size_of_spiInit 0 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 _OPTION_REG 81 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\Ricardo\AppData\Local\Temp\s7v8.o
-___stacklo 0 0 ABS 0 - C:\Users\Ricardo\AppData\Local\Temp\s7v8.o
+___stackhi 0 0 ABS 0 - C:\Users\Ricardo\AppData\Local\Temp\s2dg.o
+___stacklo 0 0 ABS 0 - C:\Users\Ricardo\AppData\Local\Temp\s2dg.o
 __size_of_Setup 0 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
 spiInit@sDataSample 74 0 COMMON 1 cstackCOMMON dist/default/production\Slave3_Temp.X.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\Slave3_Temp.X.production.o
@@ -386,7 +401,7 @@ initADC@CHS 74 0 COMMON 1 cstackCOMMON dist/default/production\Slave3_Temp.X.pro
 _WDTCON 105 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
 __end_of_initADC 1F8 0 CODE 0 text4 dist/default/production\Slave3_Temp.X.production.o
 __end_of_initOsc 2B0 0 CODE 0 text3 dist/default/production\Slave3_Temp.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Ricardo\AppData\Local\Temp\s7v8.o
+___int_sp 0 0 STACK 2 stack C:\Users\Ricardo\AppData\Local\Temp\s2dg.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -394,7 +409,7 @@ __Hbank3 0 0 ABS 0 bank3 -
 __Hcinit 2A 0 CODE 0 cinit -
 __Hstack 0 0 STACK 2 stack -
 __Hmaintext 0 0 ABS 0 maintext -
-__end_of_spiInit 3B2 0 CODE 0 text2 dist/default/production\Slave3_Temp.X.production.o
+__end_of_spiInit 424 0 CODE 0 text2 dist/default/production\Slave3_Temp.X.production.o
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 4012 0 CONFIG 4 config -
 __Lbank0 0 0 ABS 0 bank0 -
@@ -403,6 +418,7 @@ __Lbank2 0 0 ABS 0 bank2 -
 __Lbank3 0 0 ABS 0 bank3 -
 __Lcinit 1E 0 CODE 0 cinit -
 __Lstack 0 0 STACK 2 stack -
+_PORTDbits 8 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
 _INTCONbits B 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
@@ -422,19 +438,19 @@ __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-__S0 1F2 0 ABS 0 - -
+__S0 218 0 ABS 0 - -
 __S1 7A 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_isr 32E 0 CODE 0 text5 dist/default/production\Slave3_Temp.X.production.o
+_isr 3A0 0 CODE 0 text5 dist/default/production\Slave3_Temp.X.production.o
 _CONTADOR 78 0 COMMON 1 bssCOMMON dist/default/production\Slave3_Temp.X.production.o
 saved_w 7E 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
-__end_of_isr 386 0 CODE 0 text5 dist/default/production\Slave3_Temp.X.production.o
+__end_of_isr 3F8 0 CODE 0 text5 dist/default/production\Slave3_Temp.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Ricardo\AppData\Local\Temp\s7v8.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Ricardo\AppData\Local\Temp\s2dg.o
 initOsc@IRCF 76 0 COMMON 1 cstackCOMMON dist/default/production\Slave3_Temp.X.production.o
 _PIE1bits 8C 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
-__pmaintext 3B2 0 CODE 0 maintext dist/default/production\Slave3_Temp.X.production.o
+__pmaintext 32E 0 CODE 0 maintext dist/default/production\Slave3_Temp.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
 _ADCON0bits 1F 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
@@ -455,12 +471,12 @@ __Hreset_vec 6 0 CODE 0 reset_vec -
 _initADC 2A 0 CODE 0 text4 dist/default/production\Slave3_Temp.X.production.o
 _initOsc 1F8 0 CODE 0 text3 dist/default/production\Slave3_Temp.X.production.o
 __ptext1 2B0 0 CODE 0 text1 dist/default/production\Slave3_Temp.X.production.o
-__ptext2 386 0 CODE 0 text2 dist/default/production\Slave3_Temp.X.production.o
+__ptext2 3F8 0 CODE 0 text2 dist/default/production\Slave3_Temp.X.production.o
 __ptext3 1F8 0 CODE 0 text3 dist/default/production\Slave3_Temp.X.production.o
 __ptext4 2A 0 CODE 0 text4 dist/default/production\Slave3_Temp.X.production.o
-__ptext5 32E 0 CODE 0 text5 dist/default/production\Slave3_Temp.X.production.o
-__ptext6 3D8 0 CODE 0 text6 dist/default/production\Slave3_Temp.X.production.o
-_spiInit 386 0 CODE 0 text2 dist/default/production\Slave3_Temp.X.production.o
+__ptext5 3A0 0 CODE 0 text5 dist/default/production\Slave3_Temp.X.production.o
+__ptext6 424 0 CODE 0 text6 dist/default/production\Slave3_Temp.X.production.o
+_spiInit 3F8 0 CODE 0 text2 dist/default/production\Slave3_Temp.X.production.o
 spiWrite@dat 70 0 COMMON 1 cstackCOMMON dist/default/production\Slave3_Temp.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 spiInit@sType 77 0 COMMON 1 cstackCOMMON dist/default/production\Slave3_Temp.X.production.o
@@ -474,7 +490,7 @@ _ANSELbits 188 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\Slave3_Temp.X.production.o
 _SSPSTAT 94 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
 __Hend_init 1E 0 CODE 0 end_init -
-__end_of_main 3D8 0 CODE 0 maintext dist/default/production\Slave3_Temp.X.production.o
+__end_of_main 3A0 0 CODE 0 maintext dist/default/production\Slave3_Temp.X.production.o
 __end_of_Setup 32E 0 CODE 0 text1 dist/default/production\Slave3_Temp.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
 _PORTA 5 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
@@ -496,8 +512,8 @@ __pintentry 8 0 CODE 0 intentry dist/default/production\Slave3_Temp.X.production
 __size_of_isr 0 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
 spiInit@sClockIdle 75 0 COMMON 1 cstackCOMMON dist/default/production\Slave3_Temp.X.production.o
 __initialization 1E 0 CODE 0 cinit dist/default/production\Slave3_Temp.X.production.o
-_spiWrite 3D8 0 CODE 0 text6 dist/default/production\Slave3_Temp.X.production.o
-__end_of_spiWrite 3E4 0 CODE 0 text6 dist/default/production\Slave3_Temp.X.production.o
+_spiWrite 424 0 CODE 0 text6 dist/default/production\Slave3_Temp.X.production.o
+__end_of_spiWrite 430 0 CODE 0 text6 dist/default/production\Slave3_Temp.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -525,7 +541,7 @@ __end_of_spiWrite 3E4 0 CODE 0 text6 dist/default/production\Slave3_Temp.X.produ
 %SEGMENTS
 cstackCOMMON 1 70 70 A 1
 cstackBANK0 1 20 20 1 1
-intentry 0 4 8 1EE 2
+intentry 0 4 8 214 2
 reset_vec 0 0 0 3 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
