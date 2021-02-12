@@ -15,6 +15,7 @@
 #include "Oscilador.h"
 #include "MSSP.h"
 #include "LCD.h"
+#include "USART.h"
 
 //******************************************************************************
 //CONFIGURACION
@@ -45,12 +46,19 @@
 //******************************************************************************
 #define  _XTAL_FREQ 4000000 //Necesario para la función de Delay
 uint8_t VAR_ADC = 0;
+uint8_t CONTADOR = 0;
+uint8_t FLAGTX = 0;
+uint8_t FLAGSS = 0;
+uint8_t TEMPORAL = 0;
+uint8_t COUNTER = 0;
 
 //******************************************************************************
 //INSTANCIACION DE FUNCIONES
 //******************************************************************************
 void Setup(void);
 void Conversiones();
+uint8_t Envio(void);
+void Envio_Contador(void);
 
 //******************************************************************************
 //ISR
@@ -59,7 +67,16 @@ void Conversiones();
 void __interrupt() isr(void) {
     di(); //DESACTIVA LAS INTERRUPCIONES
     //INTERUPCION DEL TIMER0
-    
+    if(INTCONbits.T0IF == 1){
+        TMR0 = 236; //248 PARA 2ms | 236 PARA 5ms
+        CONTADOR++; //CONTADOR PARA HABILITAR LA LECTURA DEL ADC
+        INTCONbits.T0IF = 0;
+    }
+    //INTERUPCION DEL TX
+    if(PIR1bits.TXIF == 1){
+        TXREG = Envio();
+        PIE1bits.TXIE = 0;
+    }
     ei(); //VUELVE A HABILITAR LAS INTERRUPCIONES
 }
 
@@ -70,18 +87,43 @@ void __interrupt() isr(void) {
 void main(void) {
     Setup();
     //VALORES FIJOS DE LA LCD
-    Lcd_Write_String("Sen 1");
+    Lcd_Set_Cursor(1, 2);
+    Lcd_Write_String("ADC");
     Lcd_Set_Cursor(1, 7);
-    Lcd_Write_String("Sen 2");
+    Lcd_Write_String("CONT");
     Lcd_Set_Cursor(1, 13);
-    Lcd_Write_String("Cont");
+    Lcd_Write_String("TEMP");
     while (1) {
-        spiWrite(PORTB);
-        VAR_ADC = spiRead();
-        PIR1bits.SSPIF = 0;
-        __delay_ms(250);
-        PORTB++;
-        Conversiones();
+        if(CONTADOR>10){
+            switch(FLAGSS){
+                case 0: //SLAVE 1  
+                    PORTCbits.RC0 = 0;
+                    PORTCbits.RC1 = 1;
+                    PORTCbits.RC2 = 1;
+                    spiWrite(TEMPORAL);
+                    VAR_ADC = spiRead();
+                    PIR1bits.SSPIF = 0;
+                    Conversiones();
+                    FLAGSS++;
+                    break;
+                case 1: //SLAVE 2
+                    PORTCbits.RC0 = 1;
+                    PORTCbits.RC1 = 0;
+                    PORTCbits.RC2 = 1;
+                    spiWrite(TEMPORAL);
+                    COUNTER = spiRead();
+                    PORTD = COUNTER;
+                    PIR1bits.SSPIF = 0;
+                    Envio_Contador();
+                    FLAGSS++;
+                    break;
+                case 2: //SLAVE 3
+                    FLAGSS = 0;
+                    break;
+            }          
+            PIE1bits.TXIE = 1;          //HABILITA EL ENVIO NUEVAMENTE  
+            CONTADOR = 0;               //SE REINICIA EL CONTADOR
+        }
     }
 }
 
@@ -102,19 +144,27 @@ void Setup(void) {
 
     TRISA = 0; //TODOS OUTPUTS --> LCD
     TRISB = 0; //TODOS OUTPUTS --> SIN USAR
-    TRISC = 0b00010000; //TODOS OUTPUTS --> TX Y RX
+    TRISC = 0b10010000; //TODOS OUTPUTS --> TX Y RX
     TRISD = 0; //TODOS OUTPUTS --> EN, RS Y RW
     TRISE = 0; //2 INPUTS --> POTENCIOMETROS
 
     //INTERRUPCIONES
     INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    INTCONbits.T0IE = 1;
+    INTCONbits.T0IF = 0;
+    PIE1bits.TXIE = 1;
     //OSCILADOR
     initOsc(6);
     //LCD
     Lcd_Init();
+    //RX Y TX
+    initUART();
     //MSSP
     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-
+    //TIMER0
+    WDTCON = 0;
+    OPTION_REG = 0b11010111;
 }
 
 //******************************************************************************
@@ -145,4 +195,61 @@ void Conversiones(){
     Lcd_Set_Cursor(2,4);
     Lcd_Write_String(Cambio(centimas));  
     Lcd_Set_Cursor(2,5);        
+}
+
+//MULTIPLEXACION PARA ENVIO DE POTENCIOMETROS
+uint8_t Envio(void){
+    uint8_t temporal;
+    switch(FLAGTX){
+        case 0:
+            FLAGTX++;
+            return 0x28;    //PARENTESIS IZQUIERDO
+            break;
+        case 1:
+            temporal = (VAR_ADC & 0xF0)>>4;
+            FLAGTX++;
+            return ASCII(temporal);
+            break;
+        case 2:            
+            temporal = VAR_ADC & 0x0F;
+            FLAGTX++;
+            return ASCII(temporal);
+            break;
+        case 3:            
+            FLAGTX++;
+            return 0x2C;    //COMA
+            break;
+        case 4:
+            FLAGTX++;
+            return 0x29;    //PARENTESIS DERECHO
+            break;
+        case 5:
+            FLAGTX = 0;
+            return 0x0D;    //ENTER
+            break;
+    }    
+}
+
+void Envio_Contador(void){
+    uint8_t temporal;
+    uint8_t unidades;
+    uint8_t decimas;
+    uint8_t centimas;
+    temporal = PORTD;
+    //REDONDEO DE UNIDADES
+    unidades = temporal/100;
+    temporal = temporal - 100*unidades;
+    //REDONDEO DE DECIMAS
+    decimas = temporal/10;
+    temporal = temporal - 10*decimas;
+    //REDONDEO DE CENTIMAS
+    centimas = temporal;
+    
+    Lcd_Set_Cursor(2,7);
+    Lcd_Write_String(Cambio(unidades));
+    Lcd_Set_Cursor(2,8);
+    Lcd_Write_String(Cambio(decimas));
+    Lcd_Set_Cursor(2,9);
+    Lcd_Write_String(Cambio(centimas));  
+    Lcd_Set_Cursor(2,10);   
 }

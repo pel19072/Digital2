@@ -2799,6 +2799,16 @@ void Lcd_Shift_Left(void);
 const char* Cambio(uint8_t numero);
 # 17 "E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c" 2
 
+# 1 "E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/USART.h" 1
+# 14 "E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/USART.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c90\\stdint.h" 1 3
+# 14 "E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/USART.h" 2
+
+
+void initUART(void);
+uint8_t ASCII(uint8_t valor);
+# 18 "E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c" 2
+
 
 
 
@@ -2819,14 +2829,21 @@ const char* Cambio(uint8_t numero);
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-# 47 "E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c"
+# 48 "E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c"
 uint8_t VAR_ADC = 0;
+uint8_t CONTADOR = 0;
+uint8_t FLAGTX = 0;
+uint8_t FLAGSS = 0;
+uint8_t TEMPORAL = 0;
+uint8_t COUNTER = 0;
 
 
 
 
 void Setup(void);
 void Conversiones();
+uint8_t Envio(void);
+void Envio_Contador(void);
 
 
 
@@ -2835,7 +2852,16 @@ void Conversiones();
 void __attribute__((picinterrupt(("")))) isr(void) {
     (INTCONbits.GIE = 0);
 
+    if(INTCONbits.T0IF == 1){
+        TMR0 = 236;
+        CONTADOR++;
+        INTCONbits.T0IF = 0;
+    }
 
+    if(PIR1bits.TXIF == 1){
+        TXREG = Envio();
+        PIE1bits.TXIE = 0;
+    }
     (INTCONbits.GIE = 1);
 }
 
@@ -2846,18 +2872,43 @@ void __attribute__((picinterrupt(("")))) isr(void) {
 void main(void) {
     Setup();
 
-    Lcd_Write_String("Sen 1");
+    Lcd_Set_Cursor(1, 2);
+    Lcd_Write_String("ADC");
     Lcd_Set_Cursor(1, 7);
-    Lcd_Write_String("Sen 2");
+    Lcd_Write_String("CONT");
     Lcd_Set_Cursor(1, 13);
-    Lcd_Write_String("Cont");
+    Lcd_Write_String("TEMP");
     while (1) {
-        spiWrite(PORTB);
-        VAR_ADC = spiRead();
-        PIR1bits.SSPIF = 0;
-        _delay((unsigned long)((250)*(4000000/4000.0)));
-        PORTB++;
-        Conversiones();
+        if(CONTADOR>10){
+            switch(FLAGSS){
+                case 0:
+                    PORTCbits.RC0 = 0;
+                    PORTCbits.RC1 = 1;
+                    PORTCbits.RC2 = 1;
+                    spiWrite(TEMPORAL);
+                    VAR_ADC = spiRead();
+                    PIR1bits.SSPIF = 0;
+                    Conversiones();
+                    FLAGSS++;
+                    break;
+                case 1:
+                    PORTCbits.RC0 = 1;
+                    PORTCbits.RC1 = 0;
+                    PORTCbits.RC2 = 1;
+                    spiWrite(TEMPORAL);
+                    COUNTER = spiRead();
+                    PORTD = COUNTER;
+                    PIR1bits.SSPIF = 0;
+                    Envio_Contador();
+                    FLAGSS++;
+                    break;
+                case 2:
+                    FLAGSS = 0;
+                    break;
+            }
+            PIE1bits.TXIE = 1;
+            CONTADOR = 0;
+        }
     }
 }
 
@@ -2878,19 +2929,27 @@ void Setup(void) {
 
     TRISA = 0;
     TRISB = 0;
-    TRISC = 0b00010000;
+    TRISC = 0b10010000;
     TRISD = 0;
     TRISE = 0;
 
 
     INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    INTCONbits.T0IE = 1;
+    INTCONbits.T0IF = 0;
+    PIE1bits.TXIE = 1;
 
     initOsc(6);
 
     Lcd_Init();
 
+    initUART();
+
     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 
+    WDTCON = 0;
+    OPTION_REG = 0b11010111;
 }
 
 
@@ -2921,4 +2980,61 @@ void Conversiones(){
     Lcd_Set_Cursor(2,4);
     Lcd_Write_String(Cambio(centimas));
     Lcd_Set_Cursor(2,5);
+}
+
+
+uint8_t Envio(void){
+    uint8_t temporal;
+    switch(FLAGTX){
+        case 0:
+            FLAGTX++;
+            return 0x28;
+            break;
+        case 1:
+            temporal = (VAR_ADC & 0xF0)>>4;
+            FLAGTX++;
+            return ASCII(temporal);
+            break;
+        case 2:
+            temporal = VAR_ADC & 0x0F;
+            FLAGTX++;
+            return ASCII(temporal);
+            break;
+        case 3:
+            FLAGTX++;
+            return 0x2C;
+            break;
+        case 4:
+            FLAGTX++;
+            return 0x29;
+            break;
+        case 5:
+            FLAGTX = 0;
+            return 0x0D;
+            break;
+    }
+}
+
+void Envio_Contador(void){
+    uint8_t temporal;
+    uint8_t unidades;
+    uint8_t decimas;
+    uint8_t centimas;
+    temporal = PORTD;
+
+    unidades = temporal/100;
+    temporal = temporal - 100*unidades;
+
+    decimas = temporal/10;
+    temporal = temporal - 10*decimas;
+
+    centimas = temporal;
+
+    Lcd_Set_Cursor(2,7);
+    Lcd_Write_String(Cambio(unidades));
+    Lcd_Set_Cursor(2,8);
+    Lcd_Write_String(Cambio(decimas));
+    Lcd_Set_Cursor(2,9);
+    Lcd_Write_String(Cambio(centimas));
+    Lcd_Set_Cursor(2,10);
 }

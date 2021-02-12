@@ -16,26 +16,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "483
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 483: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
-[p mainexit ]
-"52 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 52: void Setup(void);
-[v _Setup `(v ~T0 @X0 0 ef ]
-"23 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/LCD.h
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/LCD.h: 23: void Lcd_Write_String(char *a);
-[v _Lcd_Write_String `(v ~T0 @X0 0 ef1`*uc ]
-"20
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/LCD.h: 20: void Lcd_Set_Cursor(char a, char b);
-[v _Lcd_Set_Cursor `(v ~T0 @X0 0 ef2`uc`uc ]
-"47 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/MSSP.h
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/MSSP.h: 47: void spiWrite(char);
-[v _spiWrite `(v ~T0 @X0 0 ef1`uc ]
-"229 C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h
-[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 229: extern volatile unsigned char PORTB __attribute__((address(0x006)));
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
-"49 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/MSSP.h
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/MSSP.h: 49: char spiRead();
-[v _spiRead `(uc ~T0 @X0 0 e? ]
-"544 C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h
+"60
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 60: extern volatile unsigned char TMR0 __attribute__((address(0x001)));
+[v _TMR0 `Vuc ~T0 @X0 0 e@1 ]
+"544
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 544:     struct {
 [s S19 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S19 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF ]
@@ -46,22 +30,68 @@ Version 4.0 HI-TECH Software Intermediate Code
 "554
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 554: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x00C)));
 [v _PIR1bits `VS18 ~T0 @X0 0 e@12 ]
-[v F36 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:\Program Files\Microchip\xc8\v2.31\pic\include\builtins.h
-[v __delay `JF36 ~T0 @X0 0 e ]
-[p i __delay ]
-"53 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 53: void Conversiones();
+"1134
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 1134: extern volatile unsigned char TXREG __attribute__((address(0x019)));
+[v _TXREG `Vuc ~T0 @X0 0 e@25 ]
+"60 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 60: uint8_t Envio(void);
+[v _Envio `(uc ~T0 @X0 0 ef ]
+"1709 C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 1709:     struct {
+[s S63 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S63 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE ]
+"1708
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 1708: typedef union {
+[u S62 `S63 1 ]
+[n S62 . . ]
+"1719
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 1719: extern volatile PIE1bits_t PIE1bits __attribute__((address(0x08C)));
+[v _PIE1bits `VS62 ~T0 @X0 0 e@140 ]
+[p mainexit ]
+"58 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 58: void Setup(void);
+[v _Setup `(v ~T0 @X0 0 ef ]
+"20 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/LCD.h
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/LCD.h: 20: void Lcd_Set_Cursor(char a, char b);
+[v _Lcd_Set_Cursor `(v ~T0 @X0 0 ef2`uc`uc ]
+"23
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/LCD.h: 23: void Lcd_Write_String(char *a);
+[v _Lcd_Write_String `(v ~T0 @X0 0 ef1`*uc ]
+"297 C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 297:     struct {
+[s S10 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S10 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"296
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 296: typedef union {
+[u S9 `S10 1 ]
+[n S9 . . ]
+"308
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 308: extern volatile PORTCbits_t PORTCbits __attribute__((address(0x007)));
+[v _PORTCbits `VS9 ~T0 @X0 0 e@7 ]
+"47 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/MSSP.h
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/MSSP.h: 47: void spiWrite(char);
+[v _spiWrite `(v ~T0 @X0 0 ef1`uc ]
+"49
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/MSSP.h: 49: char spiRead();
+[v _spiRead `(uc ~T0 @X0 0 e? ]
+"59 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 59: void Conversiones();
 [v _Conversiones `(v ~T0 @X0 0 e? ]
+"353 C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 353: extern volatile unsigned char PORTD __attribute__((address(0x008)));
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"61 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 61: void Envio_Contador(void);
+[v _Envio_Contador `(v ~T0 @X0 0 ef ]
 "167 C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 167: extern volatile unsigned char PORTA __attribute__((address(0x005)));
 [v _PORTA `Vuc ~T0 @X0 0 e@5 ]
+"229
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 229: extern volatile unsigned char PORTB __attribute__((address(0x006)));
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 "291
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 291: extern volatile unsigned char PORTC __attribute__((address(0x007)));
 [v _PORTC `Vuc ~T0 @X0 0 e@7 ]
-"353
-[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 353: extern volatile unsigned char PORTD __attribute__((address(0x008)));
-[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
 "415
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 415: extern volatile unsigned char PORTE __attribute__((address(0x009)));
 [v _PORTE `Vuc ~T0 @X0 0 e@9 ]
@@ -92,8 +122,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "21 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/LCD.h
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/LCD.h: 21: void Lcd_Init(void);
 [v _Lcd_Init `(v ~T0 @X0 0 ef ]
-"116 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 116:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+"16 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/USART.h
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/USART.h: 16: void initUART(void);
+[v _initUART `(v ~T0 @X0 0 ef ]
+"164 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 164:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 [c E1351 32 33 34 35 36 37 .. ]
 [n E1351 . SPI_MASTER_OSC_DIV4 SPI_MASTER_OSC_DIV16 SPI_MASTER_OSC_DIV64 SPI_MASTER_TMR2 SPI_SLAVE_SS_EN SPI_SLAVE_SS_DIS  ]
 [c E1359 0 128 .. ]
@@ -105,9 +138,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "46 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/MSSP.h
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/MSSP.h: 46: void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
 [v _spiInit `(v ~T0 @X0 0 ef4`E1351`E1359`E1363`E1367 ]
+"3012 C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 3012: extern volatile unsigned char WDTCON __attribute__((address(0x105)));
+[v _WDTCON `Vuc ~T0 @X0 0 e@261 ]
+"1347
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 1347: extern volatile unsigned char OPTION_REG __attribute__((address(0x081)));
+[v _OPTION_REG `Vuc ~T0 @X0 0 e@129 ]
 "26 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/LCD.h
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/LCD.h: 26: const char* Cambio(uint8_t numero);
 [v _Cambio `(*Cuc ~T0 @X0 0 ef1`uc ]
+"17 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/USART.h
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/USART.h: 17: uint8_t ASCII(uint8_t valor);
+[v _ASCII `(uc ~T0 @X0 0 ef1`uc ]
 "55 C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 55: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -342,236 +384,578 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3547
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 3547: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"24 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c
+"25 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c
 [p x FOSC  =  INTRC_NOCLKOUT ]
-"25
-[p x WDTE  =  OFF        ]
 "26
-[p x PWRTE  =  OFF       ]
+[p x WDTE  =  OFF        ]
 "27
-[p x MCLRE  =  OFF       ]
+[p x PWRTE  =  OFF       ]
 "28
-[p x CP  =  OFF          ]
+[p x MCLRE  =  OFF       ]
 "29
-[p x CPD  =  OFF         ]
+[p x CP  =  OFF          ]
 "30
-[p x BOREN  =  OFF       ]
+[p x CPD  =  OFF         ]
 "31
-[p x IESO  =  OFF        ]
+[p x BOREN  =  OFF       ]
 "32
-[p x FCMEN  =  OFF       ]
+[p x IESO  =  OFF        ]
 "33
+[p x FCMEN  =  OFF       ]
+"34
 [p x LVP  =  OFF         ]
-"36
-[p x BOR4V  =  BOR40V    ]
 "37
+[p x BOR4V  =  BOR40V    ]
+"38
 [p x WRT  =  OFF         ]
-"47
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 47: uint8_t VAR_ADC = 0;
+"48
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 48: uint8_t VAR_ADC = 0;
 [v _VAR_ADC `uc ~T0 @X0 1 e ]
 [i _VAR_ADC
 -> -> 0 `i `uc
 ]
+"49
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 49: uint8_t CONTADOR = 0;
+[v _CONTADOR `uc ~T0 @X0 1 e ]
+[i _CONTADOR
+-> -> 0 `i `uc
+]
+"50
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 50: uint8_t FLAGTX = 0;
+[v _FLAGTX `uc ~T0 @X0 1 e ]
+[i _FLAGTX
+-> -> 0 `i `uc
+]
+"51
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 51: uint8_t FLAGSS = 0;
+[v _FLAGSS `uc ~T0 @X0 1 e ]
+[i _FLAGSS
+-> -> 0 `i `uc
+]
+"52
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 52: uint8_t TEMPORAL = 0;
+[v _TEMPORAL `uc ~T0 @X0 1 e ]
+[i _TEMPORAL
+-> -> 0 `i `uc
+]
+"53
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 53: uint8_t COUNTER = 0;
+[v _COUNTER `uc ~T0 @X0 1 e ]
+[i _COUNTER
+-> -> 0 `i `uc
+]
 [v $root$_isr `(v ~T0 @X0 0 e ]
-"59
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 59: void __attribute__((picinterrupt(("")))) isr(void) {
+"67
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 67: void __attribute__((picinterrupt(("")))) isr(void) {
 [v _isr `(v ~T1 @X0 1 ef ]
 {
 [e :U _isr ]
 [f ]
-"60
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 60:     (INTCONbits.GIE = 0);
+"68
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 68:     (INTCONbits.GIE = 0);
 [e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
-"63
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 63:     (INTCONbits.GIE = 1);
+"70
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 70:     if(INTCONbits.T0IF == 1){
+[e $ ! == -> . . _INTCONbits 0 2 `i -> 1 `i 140  ]
+{
+"71
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 71:         TMR0 = 236;
+[e = _TMR0 -> -> 236 `i `uc ]
+"72
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 72:         CONTADOR++;
+[e ++ _CONTADOR -> -> 1 `i `uc ]
+"73
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 73:         INTCONbits.T0IF = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"74
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 74:     }
+}
+[e :U 140 ]
+"76
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 76:     if(PIR1bits.TXIF == 1){
+[e $ ! == -> . . _PIR1bits 0 4 `i -> 1 `i 141  ]
+{
+"77
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 77:         TXREG = Envio();
+[e = _TXREG ( _Envio ..  ]
+"78
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 78:         PIE1bits.TXIE = 0;
+[e = . . _PIE1bits 0 4 -> -> 0 `i `uc ]
+"79
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 79:     }
+}
+[e :U 141 ]
+"80
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 80:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"64
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 64: }
+"81
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 81: }
 [e :UE 139 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"70
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 70: void main(void) {
+"87
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 87: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"71
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 71:     Setup();
+"88
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 88:     Setup();
 [e ( _Setup ..  ]
-"73
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 73:     Lcd_Write_String("Sen 1");
+"90
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 90:     Lcd_Set_Cursor(1, 2);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 2 `i `uc ]
+"91
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 91:     Lcd_Write_String("ADC");
 [e ( _Lcd_Write_String (1 :s 1C ]
-"74
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 74:     Lcd_Set_Cursor(1, 7);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 7 `i `uc ]
-"75
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 75:     Lcd_Write_String("Sen 2");
-[e ( _Lcd_Write_String (1 :s 2C ]
-"76
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 76:     Lcd_Set_Cursor(1, 13);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 13 `i `uc ]
-"77
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 77:     Lcd_Write_String("Cont");
-[e ( _Lcd_Write_String (1 :s 3C ]
-"78
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 78:     while (1) {
-[e :U 142 ]
-{
-"79
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 79:         spiWrite(PORTB);
-[e ( _spiWrite (1 -> _PORTB `uc ]
-"80
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 80:         VAR_ADC = spiRead();
-[e = _VAR_ADC -> ( _spiRead ..  `uc ]
-"81
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 81:         PIR1bits.SSPIF = 0;
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"82
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 82:         _delay((unsigned long)((250)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"83
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 83:         PORTB++;
-[e ++ _PORTB -> -> 1 `i `Vuc ]
-"84
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 84:         Conversiones();
-[e ( _Conversiones ..  ]
-"85
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 85:     }
-}
-[e :U 141 ]
-[e $U 142  ]
-[e :U 143 ]
-"86
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 86: }
-[e :UE 140 ]
-}
 "92
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 92: void Setup(void) {
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 92:     Lcd_Set_Cursor(1, 7);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 7 `i `uc ]
+"93
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 93:     Lcd_Write_String("CONT");
+[e ( _Lcd_Write_String (1 :s 2C ]
+"94
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 94:     Lcd_Set_Cursor(1, 13);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 13 `i `uc ]
+"95
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 95:     Lcd_Write_String("TEMP");
+[e ( _Lcd_Write_String (1 :s 3C ]
+"96
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 96:     while (1) {
+[e :U 144 ]
+{
+"97
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 97:         if(CONTADOR>10){
+[e $ ! > -> _CONTADOR `i -> 10 `i 146  ]
+{
+"98
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 98:             switch(FLAGSS){
+[e $U 148  ]
+{
+"99
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 99:                 case 0:
+[e :U 149 ]
+"100
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 100:                     PORTCbits.RC0 = 0;
+[e = . . _PORTCbits 0 0 -> -> 0 `i `uc ]
+"101
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 101:                     PORTCbits.RC1 = 1;
+[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
+"102
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 102:                     PORTCbits.RC2 = 1;
+[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
+"103
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 103:                     spiWrite(TEMPORAL);
+[e ( _spiWrite (1 -> _TEMPORAL `uc ]
+"104
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 104:                     VAR_ADC = spiRead();
+[e = _VAR_ADC -> ( _spiRead ..  `uc ]
+"105
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 105:                     PIR1bits.SSPIF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"106
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 106:                     Conversiones();
+[e ( _Conversiones ..  ]
+"107
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 107:                     FLAGSS++;
+[e ++ _FLAGSS -> -> 1 `i `uc ]
+"108
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 108:                     break;
+[e $U 147  ]
+"109
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 109:                 case 1:
+[e :U 150 ]
+"110
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 110:                     PORTCbits.RC0 = 1;
+[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
+"111
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 111:                     PORTCbits.RC1 = 0;
+[e = . . _PORTCbits 0 1 -> -> 0 `i `uc ]
+"112
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 112:                     PORTCbits.RC2 = 1;
+[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
+"113
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 113:                     spiWrite(TEMPORAL);
+[e ( _spiWrite (1 -> _TEMPORAL `uc ]
+"114
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 114:                     COUNTER = spiRead();
+[e = _COUNTER -> ( _spiRead ..  `uc ]
+"115
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 115:                     PORTD = COUNTER;
+[e = _PORTD _COUNTER ]
+"116
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 116:                     PIR1bits.SSPIF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"117
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 117:                     Envio_Contador();
+[e ( _Envio_Contador ..  ]
+"118
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 118:                     FLAGSS++;
+[e ++ _FLAGSS -> -> 1 `i `uc ]
+"119
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 119:                     break;
+[e $U 147  ]
+"120
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 120:                 case 2:
+[e :U 151 ]
+"121
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 121:                     FLAGSS = 0;
+[e = _FLAGSS -> -> 0 `i `uc ]
+"122
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 122:                     break;
+[e $U 147  ]
+"123
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 123:             }
+}
+[e $U 147  ]
+[e :U 148 ]
+[e [\ -> _FLAGSS `i , $ -> 0 `i 149
+ , $ -> 1 `i 150
+ , $ -> 2 `i 151
+ 147 ]
+[e :U 147 ]
+"124
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 124:             PIE1bits.TXIE = 1;
+[e = . . _PIE1bits 0 4 -> -> 1 `i `uc ]
+"125
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 125:             CONTADOR = 0;
+[e = _CONTADOR -> -> 0 `i `uc ]
+"126
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 126:         }
+}
+[e :U 146 ]
+"127
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 127:     }
+}
+[e :U 143 ]
+[e $U 144  ]
+[e :U 145 ]
+"128
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 128: }
+[e :UE 142 ]
+}
+"134
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 134: void Setup(void) {
 [v _Setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _Setup ]
 [f ]
-"94
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 94:     PORTA = 0;
+"136
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 136:     PORTA = 0;
 [e = _PORTA -> -> 0 `i `uc ]
-"95
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 95:     PORTB = 0;
+"137
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 137:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
-"96
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 96:     PORTC = 0;
+"138
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 138:     PORTC = 0;
 [e = _PORTC -> -> 0 `i `uc ]
-"97
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 97:     PORTD = 0;
+"139
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 139:     PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
-"98
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 98:     PORTE = 0;
+"140
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 140:     PORTE = 0;
 [e = _PORTE -> -> 0 `i `uc ]
-"100
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 100:     ANSEL = 0;
+"142
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 142:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"101
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 101:     ANSELH = 0;
+"143
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 143:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"103
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 103:     TRISA = 0;
+"145
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 145:     TRISA = 0;
 [e = _TRISA -> -> 0 `i `uc ]
-"104
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 104:     TRISB = 0;
+"146
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 146:     TRISB = 0;
 [e = _TRISB -> -> 0 `i `uc ]
-"105
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 105:     TRISC = 0b00010000;
-[e = _TRISC -> -> 16 `i `uc ]
-"106
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 106:     TRISD = 0;
+"147
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 147:     TRISC = 0b10010000;
+[e = _TRISC -> -> 144 `i `uc ]
+"148
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 148:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"107
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 107:     TRISE = 0;
+"149
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 149:     TRISE = 0;
 [e = _TRISE -> -> 0 `i `uc ]
-"110
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 110:     INTCONbits.GIE = 1;
+"152
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 152:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"112
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 112:     initOsc(6);
+"153
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 153:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"154
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 154:     INTCONbits.T0IE = 1;
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+"155
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 155:     INTCONbits.T0IF = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"156
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 156:     PIE1bits.TXIE = 1;
+[e = . . _PIE1bits 0 4 -> -> 1 `i `uc ]
+"158
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 158:     initOsc(6);
 [e ( _initOsc (1 -> -> 6 `i `uc ]
-"114
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 114:     Lcd_Init();
+"160
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 160:     Lcd_Init();
 [e ( _Lcd_Init ..  ]
-"116
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 116:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+"162
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 162:     initUART();
+[e ( _initUART ..  ]
+"164
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 164:     spiInit(SPI_MASTER_OSC_DIV4, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 [e ( _spiInit (4 , , , . `E1351 0 . `E1359 0 . `E1363 1 . `E1367 0 ]
-"118
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 118: }
-[e :UE 144 ]
+"166
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 166:     WDTCON = 0;
+[e = _WDTCON -> -> 0 `i `uc ]
+"167
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 167:     OPTION_REG = 0b11010111;
+[e = _OPTION_REG -> -> 215 `i `uc ]
+"168
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 168: }
+[e :UE 152 ]
 }
-"123
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 123: void Conversiones(){
+"173
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 173: void Conversiones(){
 [v _Conversiones `(v ~T0 @X0 1 ef ]
 {
 [e :U _Conversiones ]
 [f ]
-"124
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 124:     uint16_t temporal;
+"174
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 174:     uint16_t temporal;
 [v _temporal `ui ~T0 @X0 1 a ]
-"125
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 125:     uint8_t unidades;
+"175
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 175:     uint8_t unidades;
 [v _unidades `uc ~T0 @X0 1 a ]
-"126
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 126:     uint8_t decimas;
+"176
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 176:     uint8_t decimas;
 [v _decimas `uc ~T0 @X0 1 a ]
-"127
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 127:     uint8_t centimas;
+"177
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 177:     uint8_t centimas;
 [v _centimas `uc ~T0 @X0 1 a ]
-"129
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 129:     temporal = (VAR_ADC*100)/51;
+"179
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 179:     temporal = (VAR_ADC*100)/51;
 [e = _temporal -> / * -> _VAR_ADC `i -> 100 `i -> 51 `i `ui ]
-"131
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 131:     unidades = temporal/100;
+"181
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 181:     unidades = temporal/100;
 [e = _unidades -> / _temporal -> -> 100 `i `ui `uc ]
-"132
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 132:     temporal = temporal - 100*unidades;
+"182
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 182:     temporal = temporal - 100*unidades;
 [e = _temporal - _temporal -> * -> 100 `i -> _unidades `i `ui ]
-"134
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 134:     decimas = temporal/10;
+"184
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 184:     decimas = temporal/10;
 [e = _decimas -> / _temporal -> -> 10 `i `ui `uc ]
-"135
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 135:     temporal = temporal - 10*decimas;
+"185
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 185:     temporal = temporal - 10*decimas;
 [e = _temporal - _temporal -> * -> 10 `i -> _decimas `i `ui ]
-"137
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 137:     centimas = temporal;
+"187
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 187:     centimas = temporal;
 [e = _centimas -> _temporal `uc ]
-"139
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 139:     Lcd_Set_Cursor(2,1);
+"189
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 189:     Lcd_Set_Cursor(2,1);
 [e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"140
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 140:     Lcd_Write_String(Cambio(unidades));
+"190
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 190:     Lcd_Write_String(Cambio(unidades));
 [e ( _Lcd_Write_String (1 -> ( _Cambio (1 _unidades `*uc ]
-"141
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 141:     Lcd_Set_Cursor(2,2);
+"191
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 191:     Lcd_Set_Cursor(2,2);
 [e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 2 `i `uc ]
-"142
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 142:     Lcd_Write_String(".");
+"192
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 192:     Lcd_Write_String(".");
 [e ( _Lcd_Write_String (1 :s 4C ]
-"143
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 143:     Lcd_Set_Cursor(2,3);
+"193
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 193:     Lcd_Set_Cursor(2,3);
 [e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 3 `i `uc ]
-"144
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 144:     Lcd_Write_String(Cambio(decimas));
+"194
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 194:     Lcd_Write_String(Cambio(decimas));
 [e ( _Lcd_Write_String (1 -> ( _Cambio (1 _decimas `*uc ]
-"145
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 145:     Lcd_Set_Cursor(2,4);
+"195
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 195:     Lcd_Set_Cursor(2,4);
 [e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 4 `i `uc ]
-"146
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 146:     Lcd_Write_String(Cambio(centimas));
+"196
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 196:     Lcd_Write_String(Cambio(centimas));
 [e ( _Lcd_Write_String (1 -> ( _Cambio (1 _centimas `*uc ]
-"147
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 147:     Lcd_Set_Cursor(2,5);
+"197
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 197:     Lcd_Set_Cursor(2,5);
 [e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 5 `i `uc ]
-"148
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 148: }
-[e :UE 145 ]
+"198
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 198: }
+[e :UE 153 ]
 }
-[a 3C 67 111 110 116 0 ]
-[a 2C 83 101 110 32 50 0 ]
-[a 1C 83 101 110 32 49 0 ]
+"201
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 201: uint8_t Envio(void){
+[v _Envio `(uc ~T0 @X0 1 ef ]
+{
+[e :U _Envio ]
+[f ]
+"202
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 202:     uint8_t temporal;
+[v _temporal `uc ~T0 @X0 1 a ]
+"203
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 203:     switch(FLAGTX){
+[e $U 156  ]
+{
+"204
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 204:         case 0:
+[e :U 157 ]
+"205
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 205:             FLAGTX++;
+[e ++ _FLAGTX -> -> 1 `i `uc ]
+"206
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 206:             return 0x28;
+[e ) -> -> 40 `i `uc ]
+[e $UE 154  ]
+"207
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 207:             break;
+[e $U 155  ]
+"208
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 208:         case 1:
+[e :U 158 ]
+"209
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 209:             temporal = (VAR_ADC & 0xF0)>>4;
+[e = _temporal -> >> & -> _VAR_ADC `i -> 240 `i -> 4 `i `uc ]
+"210
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 210:             FLAGTX++;
+[e ++ _FLAGTX -> -> 1 `i `uc ]
+"211
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 211:             return ASCII(temporal);
+[e ) ( _ASCII (1 _temporal ]
+[e $UE 154  ]
+"212
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 212:             break;
+[e $U 155  ]
+"213
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 213:         case 2:
+[e :U 159 ]
+"214
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 214:             temporal = VAR_ADC & 0x0F;
+[e = _temporal -> & -> _VAR_ADC `i -> 15 `i `uc ]
+"215
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 215:             FLAGTX++;
+[e ++ _FLAGTX -> -> 1 `i `uc ]
+"216
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 216:             return ASCII(temporal);
+[e ) ( _ASCII (1 _temporal ]
+[e $UE 154  ]
+"217
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 217:             break;
+[e $U 155  ]
+"218
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 218:         case 3:
+[e :U 160 ]
+"219
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 219:             FLAGTX++;
+[e ++ _FLAGTX -> -> 1 `i `uc ]
+"220
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 220:             return 0x2C;
+[e ) -> -> 44 `i `uc ]
+[e $UE 154  ]
+"221
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 221:             break;
+[e $U 155  ]
+"222
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 222:         case 4:
+[e :U 161 ]
+"223
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 223:             FLAGTX++;
+[e ++ _FLAGTX -> -> 1 `i `uc ]
+"224
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 224:             return 0x29;
+[e ) -> -> 41 `i `uc ]
+[e $UE 154  ]
+"225
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 225:             break;
+[e $U 155  ]
+"226
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 226:         case 5:
+[e :U 162 ]
+"227
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 227:             FLAGTX = 0;
+[e = _FLAGTX -> -> 0 `i `uc ]
+"228
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 228:             return 0x0D;
+[e ) -> -> 13 `i `uc ]
+[e $UE 154  ]
+"229
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 229:             break;
+[e $U 155  ]
+"230
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 230:     }
+}
+[e $U 155  ]
+[e :U 156 ]
+[e [\ -> _FLAGTX `i , $ -> 0 `i 157
+ , $ -> 1 `i 158
+ , $ -> 2 `i 159
+ , $ -> 3 `i 160
+ , $ -> 4 `i 161
+ , $ -> 5 `i 162
+ 155 ]
+[e :U 155 ]
+"231
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 231: }
+[e :UE 154 ]
+}
+"233
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 233: void Envio_Contador(void){
+[v _Envio_Contador `(v ~T0 @X0 1 ef ]
+{
+[e :U _Envio_Contador ]
+[f ]
+"234
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 234:     uint8_t temporal;
+[v _temporal `uc ~T0 @X0 1 a ]
+"235
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 235:     uint8_t unidades;
+[v _unidades `uc ~T0 @X0 1 a ]
+"236
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 236:     uint8_t decimas;
+[v _decimas `uc ~T0 @X0 1 a ]
+"237
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 237:     uint8_t centimas;
+[v _centimas `uc ~T0 @X0 1 a ]
+"238
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 238:     temporal = PORTD;
+[e = _temporal _PORTD ]
+"240
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 240:     unidades = temporal/100;
+[e = _unidades -> / -> _temporal `i -> 100 `i `uc ]
+"241
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 241:     temporal = temporal - 100*unidades;
+[e = _temporal -> - -> _temporal `i * -> 100 `i -> _unidades `i `uc ]
+"243
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 243:     decimas = temporal/10;
+[e = _decimas -> / -> _temporal `i -> 10 `i `uc ]
+"244
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 244:     temporal = temporal - 10*decimas;
+[e = _temporal -> - -> _temporal `i * -> 10 `i -> _decimas `i `uc ]
+"246
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 246:     centimas = temporal;
+[e = _centimas _temporal ]
+"248
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 248:     Lcd_Set_Cursor(2,7);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 7 `i `uc ]
+"249
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 249:     Lcd_Write_String(Cambio(unidades));
+[e ( _Lcd_Write_String (1 -> ( _Cambio (1 _unidades `*uc ]
+"250
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 250:     Lcd_Set_Cursor(2,8);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 8 `i `uc ]
+"251
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 251:     Lcd_Write_String(Cambio(decimas));
+[e ( _Lcd_Write_String (1 -> ( _Cambio (1 _decimas `*uc ]
+"252
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 252:     Lcd_Set_Cursor(2,9);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 9 `i `uc ]
+"253
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 253:     Lcd_Write_String(Cambio(centimas));
+[e ( _Lcd_Write_String (1 -> ( _Cambio (1 _centimas `*uc ]
+"254
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 254:     Lcd_Set_Cursor(2,10);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 10 `i `uc ]
+"255
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c: 255: }
+[e :UE 163 ]
+}
+[a 2C 67 79 78 84 0 ]
+[a 3C 84 69 77 80 0 ]
+[a 1C 65 68 67 0 ]
 [a 4C 46 0 ]

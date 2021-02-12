@@ -7,6 +7,7 @@
       <itemPath>E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/Oscilador.h</itemPath>
       <itemPath>E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/MSSP.h</itemPath>
       <itemPath>E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/LCD.h</itemPath>
+      <itemPath>E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/USART.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -19,6 +20,7 @@
       <itemPath>E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c</itemPath>
       <itemPath>E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/MSSP.c</itemPath>
       <itemPath>E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/LCD.c</itemPath>
+      <itemPath>E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/USART.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
