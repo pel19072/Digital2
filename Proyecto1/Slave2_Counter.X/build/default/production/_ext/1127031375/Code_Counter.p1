@@ -44,9 +44,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "47 E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.h
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.h: 47: void spiWrite(char);
 [v _spiWrite `(v ~T0 @X0 0 ef1`uc ]
-"49
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.h: 49: char spiRead();
-[v _spiRead `(uc ~T0 @X0 0 e? ]
 [p mainexit ]
 "54 E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 54: void Setup(void);
@@ -96,8 +93,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2417 C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 2417: extern volatile unsigned char IOCB __attribute__((address(0x096)));
 [v _IOCB `Vuc ~T0 @X0 0 e@150 ]
-"129 E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 129:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+"128 E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 128:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 [c E1294 32 33 34 35 36 37 .. ]
 [n E1294 . SPI_MASTER_OSC_DIV4 SPI_MASTER_OSC_DIV16 SPI_MASTER_OSC_DIV64 SPI_MASTER_TMR2 SPI_SLAVE_SS_EN SPI_SLAVE_SS_DIS  ]
 [c E1302 0 128 .. ]
@@ -503,119 +500,116 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 85:         spiWrite(PORTD);
 [e ( _spiWrite (1 -> _PORTD `uc ]
 "86
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 86:         ESCRITURA_REVISION = spiRead();
-[e = _ESCRITURA_REVISION -> ( _spiRead ..  `uc ]
-"87
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 87:         PIR1bits.SSPIF = 0;
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 86:         PIR1bits.SSPIF = 0;
 [e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"88
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 88:     }
+"87
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 87:     }
 }
 [e :U 146 ]
-"89
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 89:     (INTCONbits.GIE = 1);
+"88
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 88:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"90
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 90: }
+"89
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 89: }
 [e :UE 138 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"95
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 95: void main(void) {
+"94
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 94: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"96
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 96:     Setup();
+"95
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 95:     Setup();
 [e ( _Setup ..  ]
-"97
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 97:     while(1){
+"96
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 96:     while(1){
 [e :U 149 ]
 {
-"98
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 98:     }
+"97
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 97:     }
 }
 [e :U 148 ]
 [e $U 149  ]
 [e :U 150 ]
-"99
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 99: }
+"98
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 98: }
 [e :UE 147 ]
 }
-"104
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 104: void Setup(void) {
+"103
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 103: void Setup(void) {
 [v _Setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _Setup ]
 [f ]
-"106
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 106:     PORTA = 0;
+"105
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 105:     PORTA = 0;
 [e = _PORTA -> -> 0 `i `uc ]
-"107
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 107:     PORTB = 0;
+"106
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 106:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
-"108
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 108:     PORTC = 0;
+"107
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 107:     PORTC = 0;
 [e = _PORTC -> -> 0 `i `uc ]
-"109
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 109:     PORTD = 0;
+"108
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 108:     PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
-"110
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 110:     PORTE = 0;
+"109
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 109:     PORTE = 0;
 [e = _PORTE -> -> 0 `i `uc ]
-"112
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 112:     ANSEL = 0;
+"111
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 111:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"113
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 113:     ANSELH = 0;
+"112
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 112:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"115
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 115:     TRISA = 0b00100000;
+"114
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 114:     TRISA = 0b00100000;
 [e = _TRISA -> -> 32 `i `uc ]
-"116
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 116:     TRISB = 0b00000011;
+"115
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 115:     TRISB = 0b00000011;
 [e = _TRISB -> -> 3 `i `uc ]
-"117
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 117:     TRISC = 0b00011000;
+"116
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 116:     TRISC = 0b00011000;
 [e = _TRISC -> -> 24 `i `uc ]
-"118
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 118:     TRISD = 0;
+"117
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 117:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"119
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 119:     TRISE = 0;
+"118
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 118:     TRISE = 0;
 [e = _TRISE -> -> 0 `i `uc ]
-"121
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 121:     WPUB = 0b00000011;
+"120
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 120:     WPUB = 0b00000011;
 [e = _WPUB -> -> 3 `i `uc ]
-"122
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 122:     OPTION_REG = 0b01010111;
+"121
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 121:     OPTION_REG = 0b01010111;
 [e = _OPTION_REG -> -> 87 `i `uc ]
-"125
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 125:     initOsc(6);
+"124
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 124:     initOsc(6);
 [e ( _initOsc (1 -> -> 6 `i `uc ]
-"127
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 127:     IOCB = 0b00000011;
+"126
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 126:     IOCB = 0b00000011;
 [e = _IOCB -> -> 3 `i `uc ]
-"129
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 129:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+"128
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 128:     spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 [e ( _spiInit (4 , , , . `E1294 4 . `E1302 0 . `E1306 1 . `E1310 0 ]
-"132
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 132:     INTCONbits.GIE = 1;
+"131
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 131:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"133
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 133:     INTCONbits.PEIE = 1;
+"132
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 132:     INTCONbits.PEIE = 1;
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"134
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 134:     INTCONbits.RBIE = 1;
+"133
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 133:     INTCONbits.RBIE = 1;
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"135
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 135:     INTCONbits.RBIF = 0;
+"134
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 134:     INTCONbits.RBIF = 0;
 [e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
-"136
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 136:     PIE1bits.SSPIE = 1;
+"135
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 135:     PIE1bits.SSPIE = 1;
 [e = . . _PIE1bits 0 3 -> -> 1 `i `uc ]
-"137
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 137: }
+"136
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 136: }
 [e :UE 151 ]
 }

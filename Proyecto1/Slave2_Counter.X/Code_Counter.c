@@ -83,7 +83,6 @@ void __interrupt() isr(void) {
     //INTERUPCION DE SPI
     if (PIR1bits.SSPIF == 1) {
         spiWrite(PORTD);
-        ESCRITURA_REVISION = spiRead();
         PIR1bits.SSPIF = 0;
     }
     ei(); //VUELVE A HABILITAR LAS INTERRUPCIONES

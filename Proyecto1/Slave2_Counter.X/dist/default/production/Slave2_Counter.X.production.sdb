@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"129 E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c
+"128 E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c
 [e E1294 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -55,9 +55,9 @@ SPI_ACTIVE_2_IDLE 64
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "59 E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c
 [v _isr isr `II(v  1 e 1 0 ]
-"95
+"94
 [v _main main `(v  1 e 1 0 ]
-"104
+"103
 [v _Setup Setup `(v  1 e 1 0 ]
 "12 E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -65,8 +65,6 @@ SPI_ACTIVE_2_IDLE 64
 [v _spiReceiveWait spiReceiveWait `(v  1 s 1 spiReceiveWait ]
 "32
 [v _spiWrite spiWrite `(v  1 e 1 0 ]
-"43
-[v _spiRead spiRead `(uc  1 e 1 0 ]
 "6 E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c
 [v _initOsc initOsc `(v  1 e 1 0 ]
 "167 C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h
@@ -135,7 +133,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1665
 [v _TRISE TRISE `VEuc  1 e 1 @137 ]
-[s S151 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S147 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -144,25 +142,25 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ADIE 1 0 :1:6 
 ]
 "1719
-[u S159 . 1 `S151 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES159  1 e 1 @140 ]
-[s S216 . 1 `uc 1 SCS 1 0 :1:0 
+[u S155 . 1 `S147 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES155  1 e 1 @140 ]
+[s S212 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1883
-[s S222 . 1 `uc 1 . 1 0 :4:0 
+[s S218 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S227 . 1 `S216 1 . 1 0 `S222 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES227  1 e 1 @143 ]
+[u S223 . 1 `S212 1 . 1 0 `S218 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES223  1 e 1 @143 ]
 "2178
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
-[s S273 . 1 `uc 1 BF 1 0 :1:0 
+[s S269 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -172,39 +170,39 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 SMP 1 0 :1:7 
 ]
 "2232
-[s S282 . 1 `uc 1 . 1 0 :2:0 
+[s S278 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S287 . 1 `uc 1 . 1 0 :2:0 
+[s S283 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S293 . 1 `uc 1 . 1 0 :2:0 
+[s S289 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S298 . 1 `uc 1 . 1 0 :2:0 
+[s S294 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S303 . 1 `uc 1 . 1 0 :2:0 
+[s S299 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S308 . 1 `uc 1 . 1 0 :2:0 
+[s S304 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S313 . 1 `S273 1 . 1 0 `S282 1 . 1 0 `S287 1 . 1 0 `S293 1 . 1 0 `S298 1 . 1 0 `S303 1 . 1 0 `S308 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES313  1 e 1 @148 ]
+[u S309 . 1 `S269 1 . 1 0 `S278 1 . 1 0 `S283 1 . 1 0 `S289 1 . 1 0 `S294 1 . 1 0 `S299 1 . 1 0 `S304 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES309  1 e 1 @148 ]
 "2347
 [v _WPUB WPUB `VEuc  1 e 1 @149 ]
 "2417
@@ -221,17 +219,15 @@ SPI_ACTIVE_2_IDLE 64
 [v _FLAGD FLAGD `uc  1 e 1 0 ]
 "46
 [v _FLAGI FLAGI `uc  1 e 1 0 ]
-"49
-[v _ESCRITURA_REVISION ESCRITURA_REVISION `uc  1 e 1 0 ]
-"95
+"94
 [v _main main `(v  1 e 1 0 ]
 {
-"99
+"98
 } 0
-"104
+"103
 [v _Setup Setup `(v  1 e 1 0 ]
 {
-"137
+"136
 } 0
 "12 E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -255,7 +251,7 @@ SPI_ACTIVE_2_IDLE 64
 "59 E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"90
+"89
 } 0
 "32 E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c
 [v _spiWrite spiWrite `(v  1 e 1 0 ]
@@ -264,14 +260,4 @@ SPI_ACTIVE_2_IDLE 64
 [v spiWrite@dat dat `uc  1 a 1 wreg ]
 [v spiWrite@dat dat `uc  1 a 1 0 ]
 "34
-} 0
-"43
-[v _spiRead spiRead `(uc  1 e 1 0 ]
-{
-"46
-} 0
-"28
-[v _spiReceiveWait spiReceiveWait `(v  1 s 1 spiReceiveWait ]
-{
-"30
 } 0

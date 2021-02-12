@@ -2742,7 +2742,6 @@ void __attribute__((picinterrupt(("")))) isr(void) {
 
     if (PIR1bits.SSPIF == 1) {
         spiWrite(PORTD);
-        ESCRITURA_REVISION = spiRead();
         PIR1bits.SSPIF = 0;
     }
     (INTCONbits.GIE = 1);

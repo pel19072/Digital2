@@ -1,0 +1,2335 @@
+
+
+Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
+                                                                                               Fri Feb 12 01:46:22 2021
+
+Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
+     1                           	processor	16F887
+     2                           	pagewidth 120
+     3                           	opt	flic
+     4                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     5                           	psect	bssCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     6                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     7                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1,noexec
+     8                           	psect	maintext,global,class=CODE,split=1,delta=2
+     9                           	psect	text1,local,class=CODE,merge=1,delta=2
+    10                           	psect	text2,local,class=CODE,merge=1,delta=2
+    11                           	psect	text3,local,class=CODE,merge=1,delta=2
+    12                           	psect	text4,local,class=CODE,merge=1,delta=2
+    13                           	psect	text5,local,class=CODE,merge=1,delta=2
+    14                           	psect	intentry,global,class=CODE,delta=2
+    15                           	psect	text6,local,class=CODE,merge=1,delta=2
+    16                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
+    17                           	dabs	1,0x7E,2
+    18  0000                     
+    19                           ; Version 2.31
+    20                           ; Generated 13/10/2020 GMT
+    21                           ; 
+    22                           ; Copyright © 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    23                           ; All rights reserved.
+    24                           ; 
+    25                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    26                           ; 
+    27                           ; Redistribution and use in source and binary forms, with or without modification, are
+    28                           ; permitted provided that the following conditions are met:
+    29                           ; 
+    30                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    31                           ;        conditions and the following disclaimer.
+    32                           ; 
+    33                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    34                           ;        of conditions and the following disclaimer in the documentation and/or other
+    35                           ;        materials provided with the distribution. Publication is not required when
+    36                           ;        this file is used in an embedded application.
+    37                           ; 
+    38                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    39                           ;        software without specific prior written permission.
+    40                           ; 
+    41                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    42                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    43                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    44                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    45                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    46                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    47                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    48                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    49                           ; 
+    50                           ; 
+    51                           ; Code-generator required, PIC16F887 Definitions
+    52                           ; 
+    53                           ; SFR Addresses
+    54  0000                     	;# 
+    55  0001                     	;# 
+    56  0002                     	;# 
+    57  0003                     	;# 
+    58  0004                     	;# 
+    59  0005                     	;# 
+    60  0006                     	;# 
+    61  0007                     	;# 
+    62  0008                     	;# 
+    63  0009                     	;# 
+    64  000A                     	;# 
+    65  000B                     	;# 
+    66  000C                     	;# 
+    67  000D                     	;# 
+    68  000E                     	;# 
+    69  000E                     	;# 
+    70  000F                     	;# 
+    71  0010                     	;# 
+    72  0011                     	;# 
+    73  0012                     	;# 
+    74  0013                     	;# 
+    75  0014                     	;# 
+    76  0015                     	;# 
+    77  0015                     	;# 
+    78  0016                     	;# 
+    79  0017                     	;# 
+    80  0018                     	;# 
+    81  0019                     	;# 
+    82  001A                     	;# 
+    83  001B                     	;# 
+    84  001B                     	;# 
+    85  001C                     	;# 
+    86  001D                     	;# 
+    87  001E                     	;# 
+    88  001F                     	;# 
+    89  0081                     	;# 
+    90  0085                     	;# 
+    91  0086                     	;# 
+    92  0087                     	;# 
+    93  0088                     	;# 
+    94  0089                     	;# 
+    95  008C                     	;# 
+    96  008D                     	;# 
+    97  008E                     	;# 
+    98  008F                     	;# 
+    99  0090                     	;# 
+   100  0091                     	;# 
+   101  0092                     	;# 
+   102  0093                     	;# 
+   103  0093                     	;# 
+   104  0093                     	;# 
+   105  0094                     	;# 
+   106  0095                     	;# 
+   107  0096                     	;# 
+   108  0097                     	;# 
+   109  0098                     	;# 
+   110  0099                     	;# 
+   111  009A                     	;# 
+   112  009B                     	;# 
+   113  009C                     	;# 
+   114  009D                     	;# 
+   115  009E                     	;# 
+   116  009F                     	;# 
+   117  0105                     	;# 
+   118  0107                     	;# 
+   119  0108                     	;# 
+   120  0109                     	;# 
+   121  010C                     	;# 
+   122  010C                     	;# 
+   123  010D                     	;# 
+   124  010E                     	;# 
+   125  010F                     	;# 
+   126  0185                     	;# 
+   127  0187                     	;# 
+   128  0188                     	;# 
+   129  0189                     	;# 
+   130  018C                     	;# 
+   131  018D                     	;# 
+   132  0000                     	;# 
+   133  0001                     	;# 
+   134  0002                     	;# 
+   135  0003                     	;# 
+   136  0004                     	;# 
+   137  0005                     	;# 
+   138  0006                     	;# 
+   139  0007                     	;# 
+   140  0008                     	;# 
+   141  0009                     	;# 
+   142  000A                     	;# 
+   143  000B                     	;# 
+   144  000C                     	;# 
+   145  000D                     	;# 
+   146  000E                     	;# 
+   147  000E                     	;# 
+   148  000F                     	;# 
+   149  0010                     	;# 
+   150  0011                     	;# 
+   151  0012                     	;# 
+   152  0013                     	;# 
+   153  0014                     	;# 
+   154  0015                     	;# 
+   155  0015                     	;# 
+   156  0016                     	;# 
+   157  0017                     	;# 
+   158  0018                     	;# 
+   159  0019                     	;# 
+   160  001A                     	;# 
+   161  001B                     	;# 
+   162  001B                     	;# 
+   163  001C                     	;# 
+   164  001D                     	;# 
+   165  001E                     	;# 
+   166  001F                     	;# 
+   167  0081                     	;# 
+   168  0085                     	;# 
+   169  0086                     	;# 
+   170  0087                     	;# 
+   171  0088                     	;# 
+   172  0089                     	;# 
+   173  008C                     	;# 
+   174  008D                     	;# 
+   175  008E                     	;# 
+   176  008F                     	;# 
+   177  0090                     	;# 
+   178  0091                     	;# 
+   179  0092                     	;# 
+   180  0093                     	;# 
+   181  0093                     	;# 
+   182  0093                     	;# 
+   183  0094                     	;# 
+   184  0095                     	;# 
+   185  0096                     	;# 
+   186  0097                     	;# 
+   187  0098                     	;# 
+   188  0099                     	;# 
+   189  009A                     	;# 
+   190  009B                     	;# 
+   191  009C                     	;# 
+   192  009D                     	;# 
+   193  009E                     	;# 
+   194  009F                     	;# 
+   195  0105                     	;# 
+   196  0107                     	;# 
+   197  0108                     	;# 
+   198  0109                     	;# 
+   199  010C                     	;# 
+   200  010C                     	;# 
+   201  010D                     	;# 
+   202  010E                     	;# 
+   203  010F                     	;# 
+   204  0185                     	;# 
+   205  0187                     	;# 
+   206  0188                     	;# 
+   207  0189                     	;# 
+   208  018C                     	;# 
+   209  018D                     	;# 
+   210  0000                     	;# 
+   211  0001                     	;# 
+   212  0002                     	;# 
+   213  0003                     	;# 
+   214  0004                     	;# 
+   215  0005                     	;# 
+   216  0006                     	;# 
+   217  0007                     	;# 
+   218  0008                     	;# 
+   219  0009                     	;# 
+   220  000A                     	;# 
+   221  000B                     	;# 
+   222  000C                     	;# 
+   223  000D                     	;# 
+   224  000E                     	;# 
+   225  000E                     	;# 
+   226  000F                     	;# 
+   227  0010                     	;# 
+   228  0011                     	;# 
+   229  0012                     	;# 
+   230  0013                     	;# 
+   231  0014                     	;# 
+   232  0015                     	;# 
+   233  0015                     	;# 
+   234  0016                     	;# 
+   235  0017                     	;# 
+   236  0018                     	;# 
+   237  0019                     	;# 
+   238  001A                     	;# 
+   239  001B                     	;# 
+   240  001B                     	;# 
+   241  001C                     	;# 
+   242  001D                     	;# 
+   243  001E                     	;# 
+   244  001F                     	;# 
+   245  0081                     	;# 
+   246  0085                     	;# 
+   247  0086                     	;# 
+   248  0087                     	;# 
+   249  0088                     	;# 
+   250  0089                     	;# 
+   251  008C                     	;# 
+   252  008D                     	;# 
+   253  008E                     	;# 
+   254  008F                     	;# 
+   255  0090                     	;# 
+   256  0091                     	;# 
+   257  0092                     	;# 
+   258  0093                     	;# 
+   259  0093                     	;# 
+   260  0093                     	;# 
+   261  0094                     	;# 
+   262  0095                     	;# 
+   263  0096                     	;# 
+   264  0097                     	;# 
+   265  0098                     	;# 
+   266  0099                     	;# 
+   267  009A                     	;# 
+   268  009B                     	;# 
+   269  009C                     	;# 
+   270  009D                     	;# 
+   271  009E                     	;# 
+   272  009F                     	;# 
+   273  0105                     	;# 
+   274  0107                     	;# 
+   275  0108                     	;# 
+   276  0109                     	;# 
+   277  010C                     	;# 
+   278  010C                     	;# 
+   279  010D                     	;# 
+   280  010E                     	;# 
+   281  010F                     	;# 
+   282  0185                     	;# 
+   283  0187                     	;# 
+   284  0188                     	;# 
+   285  0189                     	;# 
+   286  018C                     	;# 
+   287  018D                     	;# 
+   288  0000                     	;# 
+   289  0001                     	;# 
+   290  0002                     	;# 
+   291  0003                     	;# 
+   292  0004                     	;# 
+   293  0005                     	;# 
+   294  0006                     	;# 
+   295  0007                     	;# 
+   296  0008                     	;# 
+   297  0009                     	;# 
+   298  000A                     	;# 
+   299  000B                     	;# 
+   300  000C                     	;# 
+   301  000D                     	;# 
+   302  000E                     	;# 
+   303  000E                     	;# 
+   304  000F                     	;# 
+   305  0010                     	;# 
+   306  0011                     	;# 
+   307  0012                     	;# 
+   308  0013                     	;# 
+   309  0014                     	;# 
+   310  0015                     	;# 
+   311  0015                     	;# 
+   312  0016                     	;# 
+   313  0017                     	;# 
+   314  0018                     	;# 
+   315  0019                     	;# 
+   316  001A                     	;# 
+   317  001B                     	;# 
+   318  001B                     	;# 
+   319  001C                     	;# 
+   320  001D                     	;# 
+   321  001E                     	;# 
+   322  001F                     	;# 
+   323  0081                     	;# 
+   324  0085                     	;# 
+   325  0086                     	;# 
+   326  0087                     	;# 
+   327  0088                     	;# 
+   328  0089                     	;# 
+   329  008C                     	;# 
+   330  008D                     	;# 
+   331  008E                     	;# 
+   332  008F                     	;# 
+   333  0090                     	;# 
+   334  0091                     	;# 
+   335  0092                     	;# 
+   336  0093                     	;# 
+   337  0093                     	;# 
+   338  0093                     	;# 
+   339  0094                     	;# 
+   340  0095                     	;# 
+   341  0096                     	;# 
+   342  0097                     	;# 
+   343  0098                     	;# 
+   344  0099                     	;# 
+   345  009A                     	;# 
+   346  009B                     	;# 
+   347  009C                     	;# 
+   348  009D                     	;# 
+   349  009E                     	;# 
+   350  009F                     	;# 
+   351  0105                     	;# 
+   352  0107                     	;# 
+   353  0108                     	;# 
+   354  0109                     	;# 
+   355  010C                     	;# 
+   356  010C                     	;# 
+   357  010D                     	;# 
+   358  010E                     	;# 
+   359  010F                     	;# 
+   360  0185                     	;# 
+   361  0187                     	;# 
+   362  0188                     	;# 
+   363  0189                     	;# 
+   364  018C                     	;# 
+   365  018D                     	;# 
+   366  0000                     	;# 
+   367  0001                     	;# 
+   368  0002                     	;# 
+   369  0003                     	;# 
+   370  0004                     	;# 
+   371  0005                     	;# 
+   372  0006                     	;# 
+   373  0007                     	;# 
+   374  0008                     	;# 
+   375  0009                     	;# 
+   376  000A                     	;# 
+   377  000B                     	;# 
+   378  000C                     	;# 
+   379  000D                     	;# 
+   380  000E                     	;# 
+   381  000E                     	;# 
+   382  000F                     	;# 
+   383  0010                     	;# 
+   384  0011                     	;# 
+   385  0012                     	;# 
+   386  0013                     	;# 
+   387  0014                     	;# 
+   388  0015                     	;# 
+   389  0015                     	;# 
+   390  0016                     	;# 
+   391  0017                     	;# 
+   392  0018                     	;# 
+   393  0019                     	;# 
+   394  001A                     	;# 
+   395  001B                     	;# 
+   396  001B                     	;# 
+   397  001C                     	;# 
+   398  001D                     	;# 
+   399  001E                     	;# 
+   400  001F                     	;# 
+   401  0081                     	;# 
+   402  0085                     	;# 
+   403  0086                     	;# 
+   404  0087                     	;# 
+   405  0088                     	;# 
+   406  0089                     	;# 
+   407  008C                     	;# 
+   408  008D                     	;# 
+   409  008E                     	;# 
+   410  008F                     	;# 
+   411  0090                     	;# 
+   412  0091                     	;# 
+   413  0092                     	;# 
+   414  0093                     	;# 
+   415  0093                     	;# 
+   416  0093                     	;# 
+   417  0094                     	;# 
+   418  0095                     	;# 
+   419  0096                     	;# 
+   420  0097                     	;# 
+   421  0098                     	;# 
+   422  0099                     	;# 
+   423  009A                     	;# 
+   424  009B                     	;# 
+   425  009C                     	;# 
+   426  009D                     	;# 
+   427  009E                     	;# 
+   428  009F                     	;# 
+   429  0105                     	;# 
+   430  0107                     	;# 
+   431  0108                     	;# 
+   432  0109                     	;# 
+   433  010C                     	;# 
+   434  010C                     	;# 
+   435  010D                     	;# 
+   436  010E                     	;# 
+   437  010F                     	;# 
+   438  0185                     	;# 
+   439  0187                     	;# 
+   440  0188                     	;# 
+   441  0189                     	;# 
+   442  018C                     	;# 
+   443  018D                     	;# 
+   444  0009                     _PORTE	set	9
+   445  0008                     _PORTD	set	8
+   446  0007                     _PORTC	set	7
+   447  0005                     _PORTA	set	5
+   448  001E                     _ADRESH	set	30
+   449  0006                     _PORTB	set	6
+   450  000C                     _PIR1bits	set	12
+   451  0001                     _TMR0	set	1
+   452  000B                     _INTCONbits	set	11
+   453  0013                     _SSPBUF	set	19
+   454  0014                     _SSPCON	set	20
+   455  001F                     _ADCON0bits	set	31
+   456  0081                     _OPTION_REG	set	129
+   457  008C                     _PIE1bits	set	140
+   458  0089                     _TRISE	set	137
+   459  0088                     _TRISD	set	136
+   460  0087                     _TRISC	set	135
+   461  0086                     _TRISB	set	134
+   462  0085                     _TRISA	set	133
+   463  008F                     _OSCCONbits	set	143
+   464  0094                     _SSPSTATbits	set	148
+   465  0094                     _SSPSTAT	set	148
+   466  009F                     _ADCON1	set	159
+   467  043B                     _TRISC3	set	1083
+   468  043D                     _TRISC5	set	1085
+   469  0105                     _WDTCON	set	261
+   470  0189                     _ANSELH	set	393
+   471  0188                     _ANSELbits	set	392
+   472  0188                     _ANSEL	set	392
+   473                           
+   474                           	psect	cinit
+   475  000F                     start_initialization:	
+   476                           ; #config settings
+   477                           
+   478  000F                     __initialization:
+   479                           
+   480                           ; Clear objects allocated to COMMON
+   481  000F  01F8               	clrf	__pbssCOMMON& (0+127)
+   482  0010  01F9               	clrf	(__pbssCOMMON+1)& (0+127)
+   483  0011                     end_of_initialization:	
+   484                           ;End of C runtime variable initialization code
+   485                           
+   486  0011                     __end_of__initialization:
+   487  0011  0183               	clrf	3
+   488  0012  120A  118A  29D9   	ljmp	_main	;jump to C main() function
+   489                           
+   490                           	psect	bssCOMMON
+   491  0078                     __pbssCOMMON:
+   492  0078                     _CONTADOR:
+   493  0078                     	ds	1
+   494  0079                     _VAR_ADC:
+   495  0079                     	ds	1
+   496                           
+   497                           	psect	cstackCOMMON
+   498  0070                     __pcstackCOMMON:
+   499  0070                     ?_Setup:
+   500  0070                     ?_spiWrite:	
+   501                           ; 1 bytes @ 0x0
+   502                           
+   503  0070                     ??_spiWrite:	
+   504                           ; 1 bytes @ 0x0
+   505                           
+   506  0070                     ?_initOsc:	
+   507                           ; 1 bytes @ 0x0
+   508                           
+   509  0070                     ?_isr:	
+   510                           ; 1 bytes @ 0x0
+   511                           
+   512  0070                     ?_main:	
+   513                           ; 1 bytes @ 0x0
+   514                           
+   515  0070                     spiWrite@dat:	
+   516                           ; 1 bytes @ 0x0
+   517                           
+   518                           
+   519                           ; 1 bytes @ 0x0
+   520  0070                     	ds	1
+   521  0071                     ??_isr:
+   522                           
+   523                           ; 1 bytes @ 0x1
+   524  0071                     	ds	3
+   525  0074                     ?_initADC:
+   526  0074                     ?_spiInit:	
+   527                           ; 1 bytes @ 0x4
+   528                           
+   529  0074                     ??_initOsc:	
+   530                           ; 1 bytes @ 0x4
+   531                           
+   532  0074                     initADC@CHS:	
+   533                           ; 1 bytes @ 0x4
+   534                           
+   535  0074                     spiInit@sDataSample:	
+   536                           ; 1 bytes @ 0x4
+   537                           
+   538                           
+   539                           ; 1 bytes @ 0x4
+   540  0074                     	ds	1
+   541  0075                     ??_initADC:
+   542  0075                     spiInit@sClockIdle:	
+   543                           ; 1 bytes @ 0x5
+   544                           
+   545                           
+   546                           ; 1 bytes @ 0x5
+   547  0075                     	ds	1
+   548  0076                     spiInit@sTransmitEdge:
+   549  0076                     initOsc@IRCF:	
+   550                           ; 1 bytes @ 0x6
+   551                           
+   552                           
+   553                           ; 1 bytes @ 0x6
+   554  0076                     	ds	1
+   555  0077                     ??_spiInit:
+   556  0077                     initADC@ADCS:	
+   557                           ; 1 bytes @ 0x7
+   558                           
+   559  0077                     spiInit@sType:	
+   560                           ; 1 bytes @ 0x7
+   561                           
+   562                           
+   563                           ; 1 bytes @ 0x7
+   564  0077                     	ds	1
+   565  0078                     ??_main:
+   566                           
+   567                           	psect	cstackBANK0
+   568  0020                     __pcstackBANK0:	
+   569                           ; 1 bytes @ 0x8
+   570                           
+   571  0020                     ??_Setup:
+   572                           
+   573                           ; 1 bytes @ 0x0
+   574  0020                     	ds	1
+   575                           
+   576                           	psect	maintext
+   577  01D9                     __pmaintext:	
+   578 ;;
+   579 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   580 ;;
+   581 ;; *************** function _main *****************
+   582 ;; Defined at:
+   583 ;;		line 84 in file "E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c"
+   584 ;; Parameters:    Size  Location     Type
+   585 ;;		None
+   586 ;; Auto vars:     Size  Location     Type
+   587 ;;		None
+   588 ;; Return value:  Size  Location     Type
+   589 ;;                  1    wreg      void 
+   590 ;; Registers used:
+   591 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   592 ;; Tracked objects:
+   593 ;;		On entry : B00/0
+   594 ;;		On exit  : 0/0
+   595 ;;		Unchanged: 0/0
+   596 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   597 ;;      Params:         0       0       0       0       0
+   598 ;;      Locals:         0       0       0       0       0
+   599 ;;      Temps:          0       0       0       0       0
+   600 ;;      Totals:         0       0       0       0       0
+   601 ;;Total ram usage:        0 bytes
+   602 ;; Hardware stack levels required when called:    4
+   603 ;; This function calls:
+   604 ;;		_Setup
+   605 ;; This function is called by:
+   606 ;;		Startup code after reset
+   607 ;; This function uses a non-reentrant model
+   608 ;;
+   609                           
+   610                           
+   611                           ;psect for function _main
+   612  01D9                     _main:
+   613  01D9                     l1103:	
+   614                           ;incstack = 0
+   615                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   616                           
+   617                           
+   618                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 85:     Setup();
+   619  01D9  120A  118A  2158  120A  118A  	fcall	_Setup
+   620  01DE                     l1105:
+   621                           
+   622                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 89:         if(CONTADOR
+      +                          >10){
+   623  01DE  300B               	movlw	11
+   624  01DF  0278               	subwf	_CONTADOR,w
+   625  01E0  1C03               	skipc
+   626  01E1  29E3               	goto	u91
+   627  01E2  29E4               	goto	u90
+   628  01E3                     u91:
+   629  01E3  29DE               	goto	l1105
+   630  01E4                     u90:
+   631  01E4                     l1107:
+   632                           
+   633                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 90:             ADCON0b
+      +                          its.GO_nDONE = 1;
+   634  01E4  1283               	bcf	3,5	;RP0=0, select bank0
+   635  01E5  1303               	bcf	3,6	;RP1=0, select bank0
+   636  01E6  149F               	bsf	31,1	;volatile
+   637  01E7                     l1109:
+   638                           
+   639                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 91:             CONTADO
+      +                          R = 0;
+   640  01E7  01F8               	clrf	_CONTADOR
+   641  01E8  29DE               	goto	l1105
+   642  01E9  120A  118A  280C   	ljmp	start
+   643  01EC                     __end_of_main:
+   644                           
+   645                           	psect	text1
+   646  0158                     __ptext1:	
+   647 ;; *************** function _Setup *****************
+   648 ;; Defined at:
+   649 ;;		line 100 in file "E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c"
+   650 ;; Parameters:    Size  Location     Type
+   651 ;;		None
+   652 ;; Auto vars:     Size  Location     Type
+   653 ;;		None
+   654 ;; Return value:  Size  Location     Type
+   655 ;;                  1    wreg      void 
+   656 ;; Registers used:
+   657 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   658 ;; Tracked objects:
+   659 ;;		On entry : 0/0
+   660 ;;		On exit  : 0/0
+   661 ;;		Unchanged: 0/0
+   662 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   663 ;;      Params:         0       0       0       0       0
+   664 ;;      Locals:         0       0       0       0       0
+   665 ;;      Temps:          0       1       0       0       0
+   666 ;;      Totals:         0       1       0       0       0
+   667 ;;Total ram usage:        1 bytes
+   668 ;; Hardware stack levels used:    1
+   669 ;; Hardware stack levels required when called:    3
+   670 ;; This function calls:
+   671 ;;		_initADC
+   672 ;;		_initOsc
+   673 ;;		_spiInit
+   674 ;; This function is called by:
+   675 ;;		_main
+   676 ;; This function uses a non-reentrant model
+   677 ;;
+   678                           
+   679                           
+   680                           ;psect for function _Setup
+   681  0158                     _Setup:
+   682  0158                     l1069:	
+   683                           ;incstack = 0
+   684                           ; Regs used in _Setup: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   685                           
+   686                           
+   687                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 102:     PORTA = 0;
+   688  0158  1283               	bcf	3,5	;RP0=0, select bank0
+   689  0159  1303               	bcf	3,6	;RP1=0, select bank0
+   690  015A  0185               	clrf	5	;volatile
+   691                           
+   692                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 103:     PORTB = 0;
+   693  015B  0186               	clrf	6	;volatile
+   694                           
+   695                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 104:     PORTC = 0;
+   696  015C  0187               	clrf	7	;volatile
+   697                           
+   698                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 105:     PORTD = 0;
+   699  015D  0188               	clrf	8	;volatile
+   700                           
+   701                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 106:     PORTE = 0;
+   702  015E  0189               	clrf	9	;volatile
+   703                           
+   704                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 108:     ANSEL = 0;
+   705  015F  1683               	bsf	3,5	;RP0=1, select bank3
+   706  0160  1703               	bsf	3,6	;RP1=1, select bank3
+   707  0161  0188               	clrf	8	;volatile
+   708  0162                     l1071:
+   709                           
+   710                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 109:     ANSELbits.ANS5
+      +                           = 1;
+   711  0162  1688               	bsf	8,5	;volatile
+   712                           
+   713                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 110:     ANSELH = 0;
+   714  0163  0189               	clrf	9	;volatile
+   715  0164                     l1073:
+   716                           
+   717                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 112:     TRISA = 0b0010
+      +                          0000;
+   718  0164  3020               	movlw	32
+   719  0165  1683               	bsf	3,5	;RP0=1, select bank1
+   720  0166  1303               	bcf	3,6	;RP1=0, select bank1
+   721  0167  0085               	movwf	5	;volatile
+   722  0168                     l1075:
+   723                           
+   724                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 113:     TRISB = 0;
+   725  0168  0186               	clrf	6	;volatile
+   726                           
+   727                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 114:     TRISC = 0b0001
+      +                          1000;
+   728  0169  3018               	movlw	24
+   729  016A  0087               	movwf	7	;volatile
+   730  016B                     l1077:
+   731                           
+   732                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 115:     TRISD = 0;
+   733  016B  0188               	clrf	8	;volatile
+   734  016C                     l1079:
+   735                           
+   736                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 116:     TRISE = 1;
+   737  016C  3001               	movlw	1
+   738  016D  0089               	movwf	9	;volatile
+   739  016E                     l1081:
+   740                           
+   741                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 119:     INTCONbits.GIE
+      +                           = 1;
+   742  016E  178B               	bsf	11,7	;volatile
+   743  016F                     l1083:
+   744                           
+   745                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 120:     INTCONbits.PEI
+      +                          E = 1;
+   746  016F  170B               	bsf	11,6	;volatile
+   747  0170                     l1085:
+   748                           
+   749                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 121:     PIE1bits.SSPIE
+      +                           = 1;
+   750  0170  158C               	bsf	12,3	;volatile
+   751  0171                     l1087:
+   752                           
+   753                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 122:     INTCONbits.T0I
+      +                          E = 1;
+   754  0171  168B               	bsf	11,5	;volatile
+   755  0172                     l1089:
+   756                           
+   757                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 123:     INTCONbits.T0I
+      +                          F = 0;
+   758  0172  110B               	bcf	11,2	;volatile
+   759  0173                     l1091:
+   760                           
+   761                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 124:     PIE1bits.ADIE 
+      +                          = 1;
+   762  0173  170C               	bsf	12,6	;volatile
+   763  0174                     l1093:
+   764                           
+   765                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 127:     initOsc(6);
+   766  0174  3006               	movlw	6
+   767  0175  120A  118A  20FC  120A  118A  	fcall	_initOsc
+   768  017A                     l1095:
+   769                           
+   770                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 129:     initADC(2,5);
+   771  017A  3005               	movlw	5
+   772  017B  1283               	bcf	3,5	;RP0=0, select bank0
+   773  017C  1303               	bcf	3,6	;RP1=0, select bank0
+   774  017D  00A0               	movwf	??_Setup
+   775  017E  0820               	movf	??_Setup,w
+   776  017F  00F4               	movwf	initADC@CHS
+   777  0180  3002               	movlw	2
+   778  0181  120A  118A  2015  120A  118A  	fcall	_initADC
+   779  0186                     l1097:
+   780                           
+   781                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 131:     spiInit(SPI_SL
+      +                          AVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+   782  0186  01F4               	clrf	spiInit@sDataSample
+   783  0187  01F5               	clrf	spiInit@sClockIdle
+   784  0188  01F6               	clrf	spiInit@sTransmitEdge
+   785  0189  3024               	movlw	36
+   786  018A  120A  118A  21C3  120A  118A  	fcall	_spiInit
+   787  018F                     l1099:
+   788                           
+   789                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 133:     WDTCON = 0;
+   790  018F  1283               	bcf	3,5	;RP0=0, select bank2
+   791  0190  1703               	bsf	3,6	;RP1=1, select bank2
+   792  0191  0185               	clrf	5	;volatile
+   793  0192                     l1101:
+   794                           
+   795                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 134:     OPTION_REG = 0
+      +                          b11010111;
+   796  0192  30D7               	movlw	215
+   797  0193  1683               	bsf	3,5	;RP0=1, select bank1
+   798  0194  1303               	bcf	3,6	;RP1=0, select bank1
+   799  0195  0081               	movwf	1	;volatile
+   800  0196                     l161:
+   801  0196  0008               	return
+   802  0197                     __end_of_Setup:
+   803                           
+   804                           	psect	text2
+   805  01C3                     __ptext2:	
+   806 ;; *************** function _spiInit *****************
+   807 ;; Defined at:
+   808 ;;		line 12 in file "E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c"
+   809 ;; Parameters:    Size  Location     Type
+   810 ;;  sType           1    wreg     enum E1292
+   811 ;;  sDataSample     1    4[COMMON] enum E1300
+   812 ;;  sClockIdle      1    5[COMMON] enum E1304
+   813 ;;  sTransmitEdg    1    6[COMMON] enum E1308
+   814 ;; Auto vars:     Size  Location     Type
+   815 ;;  sType           1    7[COMMON] enum E1292
+   816 ;; Return value:  Size  Location     Type
+   817 ;;                  1    wreg      void 
+   818 ;; Registers used:
+   819 ;;		wreg, status,2, status,0
+   820 ;; Tracked objects:
+   821 ;;		On entry : 0/0
+   822 ;;		On exit  : 0/0
+   823 ;;		Unchanged: 0/0
+   824 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   825 ;;      Params:         3       0       0       0       0
+   826 ;;      Locals:         1       0       0       0       0
+   827 ;;      Temps:          0       0       0       0       0
+   828 ;;      Totals:         4       0       0       0       0
+   829 ;;Total ram usage:        4 bytes
+   830 ;; Hardware stack levels used:    1
+   831 ;; Hardware stack levels required when called:    2
+   832 ;; This function calls:
+   833 ;;		Nothing
+   834 ;; This function is called by:
+   835 ;;		_Setup
+   836 ;; This function uses a non-reentrant model
+   837 ;;
+   838                           
+   839                           
+   840                           ;psect for function _spiInit
+   841  01C3                     _spiInit:
+   842                           
+   843                           ;incstack = 0
+   844                           ; Regs used in _spiInit: [wreg+status,2+status,0]
+   845                           ;spiInit@sType stored from wreg
+   846  01C3  00F7               	movwf	spiInit@sType
+   847  01C4                     l957:
+   848                           
+   849                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c: 13:     TRISC5 = 0;
+   850  01C4  1683               	bsf	3,5	;RP0=1, select bank1
+   851  01C5  1303               	bcf	3,6	;RP1=0, select bank1
+   852  01C6  1287               	bcf	7,5	;volatile
+   853                           
+   854                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c: 14:     if(sType & 0b0000010
+      +                          0)
+   855  01C7  1D77               	btfss	spiInit@sType,2
+   856  01C8  29CA               	goto	u71
+   857  01C9  29CB               	goto	u70
+   858  01CA                     u71:
+   859  01CA  29CF               	goto	l963
+   860  01CB                     u70:
+   861  01CB                     l959:
+   862                           
+   863                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c: 15:     {;E:/UVG/Semestre 5/
+      +                          Digital2/Proyecto1/Slave3_Temp.X/MSSP.c: 16:         SSPSTAT = sTransmitEdge;
+   864  01CB  0876               	movf	spiInit@sTransmitEdge,w
+   865  01CC  0094               	movwf	20	;volatile
+   866  01CD                     l961:
+   867                           
+   868                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c: 17:         TRISC3 = 1;
+   869  01CD  1587               	bsf	7,3	;volatile
+   870                           
+   871                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c: 18:     }
+   872  01CE  29D3               	goto	l51
+   873  01CF                     l963:
+   874                           
+   875                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c: 20:     {;E:/UVG/Semestre 5/
+      +                          Digital2/Proyecto1/Slave3_Temp.X/MSSP.c: 21:         SSPSTAT = sDataSample | sTransmitEd
+      +                          ge;
+   876  01CF  0874               	movf	spiInit@sDataSample,w
+   877  01D0  0476               	iorwf	spiInit@sTransmitEdge,w
+   878  01D1  0094               	movwf	20	;volatile
+   879  01D2                     l965:
+   880                           
+   881                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c: 22:         TRISC3 = 0;
+   882  01D2  1187               	bcf	7,3	;volatile
+   883  01D3                     l51:	
+   884                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c: 23:     }
+   885                           
+   886                           
+   887                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c: 25:     SSPCON = sType | sCl
+      +                          ockIdle;
+   888  01D3  0877               	movf	spiInit@sType,w
+   889  01D4  0475               	iorwf	spiInit@sClockIdle,w
+   890  01D5  1283               	bcf	3,5	;RP0=0, select bank0
+   891  01D6  1303               	bcf	3,6	;RP1=0, select bank0
+   892  01D7  0094               	movwf	20	;volatile
+   893  01D8                     l52:
+   894  01D8  0008               	return
+   895  01D9                     __end_of_spiInit:
+   896                           
+   897                           	psect	text3
+   898  00FC                     __ptext3:	
+   899 ;; *************** function _initOsc *****************
+   900 ;; Defined at:
+   901 ;;		line 6 in file "E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c"
+   902 ;; Parameters:    Size  Location     Type
+   903 ;;  IRCF            1    wreg     unsigned char 
+   904 ;; Auto vars:     Size  Location     Type
+   905 ;;  IRCF            1    6[COMMON] unsigned char 
+   906 ;; Return value:  Size  Location     Type
+   907 ;;                  1    wreg      void 
+   908 ;; Registers used:
+   909 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+   910 ;; Tracked objects:
+   911 ;;		On entry : 0/0
+   912 ;;		On exit  : 0/0
+   913 ;;		Unchanged: 0/0
+   914 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   915 ;;      Params:         0       0       0       0       0
+   916 ;;      Locals:         1       0       0       0       0
+   917 ;;      Temps:          2       0       0       0       0
+   918 ;;      Totals:         3       0       0       0       0
+   919 ;;Total ram usage:        3 bytes
+   920 ;; Hardware stack levels used:    1
+   921 ;; Hardware stack levels required when called:    2
+   922 ;; This function calls:
+   923 ;;		Nothing
+   924 ;; This function is called by:
+   925 ;;		_Setup
+   926 ;; This function uses a non-reentrant model
+   927 ;;
+   928                           
+   929                           
+   930                           ;psect for function _initOsc
+   931  00FC                     _initOsc:
+   932                           
+   933                           ;incstack = 0
+   934                           ; Regs used in _initOsc: [wreg-fsr0h+status,2+status,0]
+   935                           ;initOsc@IRCF stored from wreg
+   936  00FC  00F6               	movwf	initOsc@IRCF
+   937  00FD                     l785:
+   938                           
+   939                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 8:     switch(IRCF){
+   940  00FD  2934               	goto	l789
+   941  00FE                     l75:	
+   942                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 9:         case 0:
+   943                           
+   944                           
+   945                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 10:             OSCCONb
+      +                          its.IRCF2 = 0;
+   946  00FE  1683               	bsf	3,5	;RP0=1, select bank1
+   947  00FF  1303               	bcf	3,6	;RP1=0, select bank1
+   948  0100  130F               	bcf	15,6	;volatile
+   949                           
+   950                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 11:             OSCCONb
+      +                          its.IRCF1 = 0;
+   951  0101  128F               	bcf	15,5	;volatile
+   952                           
+   953                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 12:             OSCCONb
+      +                          its.IRCF0 = 0;
+   954  0102  120F               	bcf	15,4	;volatile
+   955                           
+   956                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 13:             break;
+   957  0103  2956               	goto	l76
+   958  0104                     l77:	
+   959                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 14:         case 1:
+   960                           
+   961                           
+   962                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 15:             OSCCONb
+      +                          its.IRCF2 = 0;
+   963  0104  1683               	bsf	3,5	;RP0=1, select bank1
+   964  0105  1303               	bcf	3,6	;RP1=0, select bank1
+   965  0106  130F               	bcf	15,6	;volatile
+   966                           
+   967                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 16:             OSCCONb
+      +                          its.IRCF1 = 0;
+   968  0107  128F               	bcf	15,5	;volatile
+   969                           
+   970                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 17:             OSCCONb
+      +                          its.IRCF0 = 1;
+   971  0108  160F               	bsf	15,4	;volatile
+   972                           
+   973                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 18:             break;
+   974  0109  2956               	goto	l76
+   975  010A                     l78:	
+   976                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 19:         case 2:
+   977                           
+   978                           
+   979                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 20:             OSCCONb
+      +                          its.IRCF2 = 0;
+   980  010A  1683               	bsf	3,5	;RP0=1, select bank1
+   981  010B  1303               	bcf	3,6	;RP1=0, select bank1
+   982  010C  130F               	bcf	15,6	;volatile
+   983                           
+   984                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 21:             OSCCONb
+      +                          its.IRCF1 = 1;
+   985  010D  168F               	bsf	15,5	;volatile
+   986                           
+   987                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 22:             OSCCONb
+      +                          its.IRCF0 = 0;
+   988  010E  120F               	bcf	15,4	;volatile
+   989                           
+   990                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 23:             break;
+   991  010F  2956               	goto	l76
+   992  0110                     l79:	
+   993                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 24:         case 3:
+   994                           
+   995                           
+   996                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 25:             OSCCONb
+      +                          its.IRCF2 = 0;
+   997  0110  1683               	bsf	3,5	;RP0=1, select bank1
+   998  0111  1303               	bcf	3,6	;RP1=0, select bank1
+   999  0112  130F               	bcf	15,6	;volatile
+  1000                           
+  1001                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 26:             OSCCONb
+      +                          its.IRCF1 = 1;
+  1002  0113  168F               	bsf	15,5	;volatile
+  1003                           
+  1004                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 27:             OSCCONb
+      +                          its.IRCF0 = 1;
+  1005  0114  160F               	bsf	15,4	;volatile
+  1006                           
+  1007                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 28:             break;
+  1008  0115  2956               	goto	l76
+  1009  0116                     l80:	
+  1010                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 29:         case 4:
+  1011                           
+  1012                           
+  1013                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 30:             OSCCONb
+      +                          its.IRCF2 = 1;
+  1014  0116  1683               	bsf	3,5	;RP0=1, select bank1
+  1015  0117  1303               	bcf	3,6	;RP1=0, select bank1
+  1016  0118  170F               	bsf	15,6	;volatile
+  1017                           
+  1018                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 31:             OSCCONb
+      +                          its.IRCF1 = 0;
+  1019  0119  128F               	bcf	15,5	;volatile
+  1020                           
+  1021                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 32:             OSCCONb
+      +                          its.IRCF0 = 0;
+  1022  011A  120F               	bcf	15,4	;volatile
+  1023                           
+  1024                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 33:             break;
+  1025  011B  2956               	goto	l76
+  1026  011C                     l81:	
+  1027                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 34:         case 5:
+  1028                           
+  1029                           
+  1030                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 35:             OSCCONb
+      +                          its.IRCF2 = 1;
+  1031  011C  1683               	bsf	3,5	;RP0=1, select bank1
+  1032  011D  1303               	bcf	3,6	;RP1=0, select bank1
+  1033  011E  170F               	bsf	15,6	;volatile
+  1034                           
+  1035                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 36:             OSCCONb
+      +                          its.IRCF1 = 0;
+  1036  011F  128F               	bcf	15,5	;volatile
+  1037                           
+  1038                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 37:             OSCCONb
+      +                          its.IRCF0 = 1;
+  1039  0120  160F               	bsf	15,4	;volatile
+  1040                           
+  1041                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 38:             break;
+  1042  0121  2956               	goto	l76
+  1043  0122                     l82:	
+  1044                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 39:         case 6:
+  1045                           
+  1046                           
+  1047                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 40:             OSCCONb
+      +                          its.IRCF2 = 1;
+  1048  0122  1683               	bsf	3,5	;RP0=1, select bank1
+  1049  0123  1303               	bcf	3,6	;RP1=0, select bank1
+  1050  0124  170F               	bsf	15,6	;volatile
+  1051                           
+  1052                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 41:             OSCCONb
+      +                          its.IRCF1 = 1;
+  1053  0125  168F               	bsf	15,5	;volatile
+  1054                           
+  1055                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 42:             OSCCONb
+      +                          its.IRCF0 = 0;
+  1056  0126  120F               	bcf	15,4	;volatile
+  1057                           
+  1058                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 43:             break;
+  1059  0127  2956               	goto	l76
+  1060  0128                     l83:	
+  1061                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 44:         case 7:
+  1062                           
+  1063                           
+  1064                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 45:             OSCCONb
+      +                          its.IRCF2 = 1;
+  1065  0128  1683               	bsf	3,5	;RP0=1, select bank1
+  1066  0129  1303               	bcf	3,6	;RP1=0, select bank1
+  1067  012A  170F               	bsf	15,6	;volatile
+  1068                           
+  1069                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 46:             OSCCONb
+      +                          its.IRCF1 = 1;
+  1070  012B  168F               	bsf	15,5	;volatile
+  1071                           
+  1072                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 47:             OSCCONb
+      +                          its.IRCF0 = 1;
+  1073  012C  160F               	bsf	15,4	;volatile
+  1074                           
+  1075                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 48:             break;
+  1076  012D  2956               	goto	l76
+  1077  012E                     l84:	
+  1078                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 49:         default:
+  1079                           
+  1080                           
+  1081                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 50:             OSCCONb
+      +                          its.IRCF2 = 1;
+  1082  012E  1683               	bsf	3,5	;RP0=1, select bank1
+  1083  012F  1303               	bcf	3,6	;RP1=0, select bank1
+  1084  0130  170F               	bsf	15,6	;volatile
+  1085                           
+  1086                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 51:             OSCCONb
+      +                          its.IRCF1 = 1;
+  1087  0131  168F               	bsf	15,5	;volatile
+  1088                           
+  1089                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 52:             OSCCONb
+      +                          its.IRCF0 = 0;
+  1090  0132  120F               	bcf	15,4	;volatile
+  1091                           
+  1092                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 53:             break;
+  1093  0133  2956               	goto	l76
+  1094  0134                     l789:
+  1095  0134  0876               	movf	initOsc@IRCF,w
+  1096  0135  00F4               	movwf	??_initOsc
+  1097  0136  01F5               	clrf	??_initOsc+1
+  1098                           
+  1099                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+      +                          itches
+  1100                           ; Switch size 1, requested type "simple"
+  1101                           ; Number of cases is 1, Range of values is 0 to 0
+  1102                           ; switch strategies available:
+  1103                           ; Name         Instructions Cycles
+  1104                           ; simple_byte            4     3 (average)
+  1105                           ; direct_byte           11     8 (fixed)
+  1106                           ; jumptable            260     6 (fixed)
+  1107                           ;	Chosen strategy is simple_byte
+  1108  0137  0875               	movf	??_initOsc+1,w
+  1109  0138  3A00               	xorlw	0	; case 0
+  1110  0139  1903               	skipnz
+  1111  013A  293C               	goto	l1171
+  1112  013B  292E               	goto	l84
+  1113  013C                     l1171:
+  1114                           
+  1115                           ; Switch size 1, requested type "simple"
+  1116                           ; Number of cases is 8, Range of values is 0 to 7
+  1117                           ; switch strategies available:
+  1118                           ; Name         Instructions Cycles
+  1119                           ; simple_byte           25    13 (average)
+  1120                           ; direct_byte           32     8 (fixed)
+  1121                           ; jumptable            260     6 (fixed)
+  1122                           ;	Chosen strategy is simple_byte
+  1123  013C  0874               	movf	??_initOsc,w
+  1124  013D  3A00               	xorlw	0	; case 0
+  1125  013E  1903               	skipnz
+  1126  013F  28FE               	goto	l75
+  1127  0140  3A01               	xorlw	1	; case 1
+  1128  0141  1903               	skipnz
+  1129  0142  2904               	goto	l77
+  1130  0143  3A03               	xorlw	3	; case 2
+  1131  0144  1903               	skipnz
+  1132  0145  290A               	goto	l78
+  1133  0146  3A01               	xorlw	1	; case 3
+  1134  0147  1903               	skipnz
+  1135  0148  2910               	goto	l79
+  1136  0149  3A07               	xorlw	7	; case 4
+  1137  014A  1903               	skipnz
+  1138  014B  2916               	goto	l80
+  1139  014C  3A01               	xorlw	1	; case 5
+  1140  014D  1903               	skipnz
+  1141  014E  291C               	goto	l81
+  1142  014F  3A03               	xorlw	3	; case 6
+  1143  0150  1903               	skipnz
+  1144  0151  2922               	goto	l82
+  1145  0152  3A01               	xorlw	1	; case 7
+  1146  0153  1903               	skipnz
+  1147  0154  2928               	goto	l83
+  1148  0155  292E               	goto	l84
+  1149  0156                     l76:
+  1150                           
+  1151                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 56:     OSCCONbits.SCS 
+      +                          = 1;
+  1152  0156  140F               	bsf	15,0	;volatile
+  1153  0157                     l85:
+  1154  0157  0008               	return
+  1155  0158                     __end_of_initOsc:
+  1156                           
+  1157                           	psect	text4
+  1158  0015                     __ptext4:	
+  1159 ;; *************** function _initADC *****************
+  1160 ;; Defined at:
+  1161 ;;		line 6 in file "E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c"
+  1162 ;; Parameters:    Size  Location     Type
+  1163 ;;  ADCS            1    wreg     unsigned char 
+  1164 ;;  CHS             1    4[COMMON] unsigned char 
+  1165 ;; Auto vars:     Size  Location     Type
+  1166 ;;  ADCS            1    7[COMMON] unsigned char 
+  1167 ;; Return value:  Size  Location     Type
+  1168 ;;                  1    wreg      void 
+  1169 ;; Registers used:
+  1170 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+  1171 ;; Tracked objects:
+  1172 ;;		On entry : 0/0
+  1173 ;;		On exit  : 0/0
+  1174 ;;		Unchanged: 0/0
+  1175 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1176 ;;      Params:         1       0       0       0       0
+  1177 ;;      Locals:         1       0       0       0       0
+  1178 ;;      Temps:          2       0       0       0       0
+  1179 ;;      Totals:         4       0       0       0       0
+  1180 ;;Total ram usage:        4 bytes
+  1181 ;; Hardware stack levels used:    1
+  1182 ;; Hardware stack levels required when called:    2
+  1183 ;; This function calls:
+  1184 ;;		Nothing
+  1185 ;; This function is called by:
+  1186 ;;		_Setup
+  1187 ;; This function uses a non-reentrant model
+  1188 ;;
+  1189                           
+  1190                           
+  1191                           ;psect for function _initADC
+  1192  0015                     _initADC:
+  1193                           
+  1194                           ;incstack = 0
+  1195                           ; Regs used in _initADC: [wreg-fsr0h+status,2+status,0]
+  1196                           ;initADC@ADCS stored from wreg
+  1197  0015  00F7               	movwf	initADC@ADCS
+  1198  0016                     l935:
+  1199                           
+  1200                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 8:     switch(CHS){
+  1201  0016  288E               	goto	l939
+  1202  0017                     l10:	
+  1203                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 9:         case 0:
+  1204                           
+  1205                           
+  1206                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 10:             ADCON0bits.CH
+      +                          S3 = 0;
+  1207  0017  1283               	bcf	3,5	;RP0=0, select bank0
+  1208  0018  1303               	bcf	3,6	;RP1=0, select bank0
+  1209  0019  129F               	bcf	31,5	;volatile
+  1210                           
+  1211                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 11:             ADCON0bits.CH
+      +                          S2 = 0;
+  1212  001A  121F               	bcf	31,4	;volatile
+  1213                           
+  1214                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 12:             ADCON0bits.CH
+      +                          S1 = 0;
+  1215  001B  119F               	bcf	31,3	;volatile
+  1216                           
+  1217                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 13:             ADCON0bits.CH
+      +                          S0 = 0;
+  1218  001C  111F               	bcf	31,2	;volatile
+  1219                           
+  1220                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 14:             break;
+  1221  001D  28D7               	goto	l943
+  1222  001E                     l12:	
+  1223                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 15:         case 1:
+  1224                           
+  1225                           
+  1226                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 16:             ADCON0bits.CH
+      +                          S3 = 0;
+  1227  001E  1283               	bcf	3,5	;RP0=0, select bank0
+  1228  001F  1303               	bcf	3,6	;RP1=0, select bank0
+  1229  0020  129F               	bcf	31,5	;volatile
+  1230                           
+  1231                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 17:             ADCON0bits.CH
+      +                          S2 = 0;
+  1232  0021  121F               	bcf	31,4	;volatile
+  1233                           
+  1234                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 18:             ADCON0bits.CH
+      +                          S1 = 0;
+  1235  0022  119F               	bcf	31,3	;volatile
+  1236                           
+  1237                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 19:             ADCON0bits.CH
+      +                          S0 = 1;
+  1238  0023  151F               	bsf	31,2	;volatile
+  1239                           
+  1240                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 20:             break;
+  1241  0024  28D7               	goto	l943
+  1242  0025                     l13:	
+  1243                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 21:         case 2:
+  1244                           
+  1245                           
+  1246                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 22:             ADCON0bits.CH
+      +                          S3 = 0;
+  1247  0025  1283               	bcf	3,5	;RP0=0, select bank0
+  1248  0026  1303               	bcf	3,6	;RP1=0, select bank0
+  1249  0027  129F               	bcf	31,5	;volatile
+  1250                           
+  1251                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 23:             ADCON0bits.CH
+      +                          S2 = 0;
+  1252  0028  121F               	bcf	31,4	;volatile
+  1253                           
+  1254                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 24:             ADCON0bits.CH
+      +                          S1 = 1;
+  1255  0029  159F               	bsf	31,3	;volatile
+  1256                           
+  1257                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 25:             ADCON0bits.CH
+      +                          S0 = 0;
+  1258  002A  111F               	bcf	31,2	;volatile
+  1259                           
+  1260                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 26:             break;
+  1261  002B  28D7               	goto	l943
+  1262  002C                     l14:	
+  1263                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 27:         case 3:
+  1264                           
+  1265                           
+  1266                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 28:             ADCON0bits.CH
+      +                          S3 = 0;
+  1267  002C  1283               	bcf	3,5	;RP0=0, select bank0
+  1268  002D  1303               	bcf	3,6	;RP1=0, select bank0
+  1269  002E  129F               	bcf	31,5	;volatile
+  1270                           
+  1271                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 29:             ADCON0bits.CH
+      +                          S2 = 0;
+  1272  002F  121F               	bcf	31,4	;volatile
+  1273                           
+  1274                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 30:             ADCON0bits.CH
+      +                          S1 = 1;
+  1275  0030  159F               	bsf	31,3	;volatile
+  1276                           
+  1277                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 31:             ADCON0bits.CH
+      +                          S0 = 1;
+  1278  0031  151F               	bsf	31,2	;volatile
+  1279                           
+  1280                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 32:             break;
+  1281  0032  28D7               	goto	l943
+  1282  0033                     l15:	
+  1283                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 33:         case 4:
+  1284                           
+  1285                           
+  1286                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 34:             ADCON0bits.CH
+      +                          S3 = 0;
+  1287  0033  1283               	bcf	3,5	;RP0=0, select bank0
+  1288  0034  1303               	bcf	3,6	;RP1=0, select bank0
+  1289  0035  129F               	bcf	31,5	;volatile
+  1290                           
+  1291                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 35:             ADCON0bits.CH
+      +                          S2 = 1;
+  1292  0036  161F               	bsf	31,4	;volatile
+  1293                           
+  1294                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 36:             ADCON0bits.CH
+      +                          S1 = 0;
+  1295  0037  119F               	bcf	31,3	;volatile
+  1296                           
+  1297                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 37:             ADCON0bits.CH
+      +                          S0 = 0;
+  1298  0038  111F               	bcf	31,2	;volatile
+  1299                           
+  1300                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 38:             break;
+  1301  0039  28D7               	goto	l943
+  1302  003A                     l16:	
+  1303                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 39:         case 5:
+  1304                           
+  1305                           
+  1306                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 40:             ADCON0bits.CH
+      +                          S3 = 0;
+  1307  003A  1283               	bcf	3,5	;RP0=0, select bank0
+  1308  003B  1303               	bcf	3,6	;RP1=0, select bank0
+  1309  003C  129F               	bcf	31,5	;volatile
+  1310                           
+  1311                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 41:             ADCON0bits.CH
+      +                          S2 = 1;
+  1312  003D  161F               	bsf	31,4	;volatile
+  1313                           
+  1314                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 42:             ADCON0bits.CH
+      +                          S1 = 0;
+  1315  003E  119F               	bcf	31,3	;volatile
+  1316                           
+  1317                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 43:             ADCON0bits.CH
+      +                          S0 = 1;
+  1318  003F  151F               	bsf	31,2	;volatile
+  1319                           
+  1320                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 44:             break;
+  1321  0040  28D7               	goto	l943
+  1322  0041                     l17:	
+  1323                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 45:         case 6:
+  1324                           
+  1325                           
+  1326                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 46:             ADCON0bits.CH
+      +                          S3 = 0;
+  1327  0041  1283               	bcf	3,5	;RP0=0, select bank0
+  1328  0042  1303               	bcf	3,6	;RP1=0, select bank0
+  1329  0043  129F               	bcf	31,5	;volatile
+  1330                           
+  1331                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 47:             ADCON0bits.CH
+      +                          S2 = 1;
+  1332  0044  161F               	bsf	31,4	;volatile
+  1333                           
+  1334                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 48:             ADCON0bits.CH
+      +                          S1 = 1;
+  1335  0045  159F               	bsf	31,3	;volatile
+  1336                           
+  1337                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 49:             ADCON0bits.CH
+      +                          S0 = 0;
+  1338  0046  111F               	bcf	31,2	;volatile
+  1339                           
+  1340                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 50:             break;
+  1341  0047  28D7               	goto	l943
+  1342  0048                     l18:	
+  1343                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 51:         case 7:
+  1344                           
+  1345                           
+  1346                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 52:             ADCON0bits.CH
+      +                          S3 = 0;
+  1347  0048  1283               	bcf	3,5	;RP0=0, select bank0
+  1348  0049  1303               	bcf	3,6	;RP1=0, select bank0
+  1349  004A  129F               	bcf	31,5	;volatile
+  1350                           
+  1351                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 53:             ADCON0bits.CH
+      +                          S2 = 1;
+  1352  004B  161F               	bsf	31,4	;volatile
+  1353                           
+  1354                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 54:             ADCON0bits.CH
+      +                          S1 = 1;
+  1355  004C  159F               	bsf	31,3	;volatile
+  1356                           
+  1357                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 55:             ADCON0bits.CH
+      +                          S0 = 1;
+  1358  004D  151F               	bsf	31,2	;volatile
+  1359                           
+  1360                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 56:             break;
+  1361  004E  28D7               	goto	l943
+  1362  004F                     l19:	
+  1363                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 57:         case 8:
+  1364                           
+  1365                           
+  1366                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 58:             ADCON0bits.CH
+      +                          S3 = 1;
+  1367  004F  1283               	bcf	3,5	;RP0=0, select bank0
+  1368  0050  1303               	bcf	3,6	;RP1=0, select bank0
+  1369  0051  169F               	bsf	31,5	;volatile
+  1370                           
+  1371                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 59:             ADCON0bits.CH
+      +                          S2 = 0;
+  1372  0052  121F               	bcf	31,4	;volatile
+  1373                           
+  1374                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 60:             ADCON0bits.CH
+      +                          S1 = 0;
+  1375  0053  119F               	bcf	31,3	;volatile
+  1376                           
+  1377                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 61:             ADCON0bits.CH
+      +                          S0 = 0;
+  1378  0054  111F               	bcf	31,2	;volatile
+  1379                           
+  1380                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 62:             break;
+  1381  0055  28D7               	goto	l943
+  1382  0056                     l20:	
+  1383                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 63:         case 9:
+  1384                           
+  1385                           
+  1386                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 64:             ADCON0bits.CH
+      +                          S3 = 1;
+  1387  0056  1283               	bcf	3,5	;RP0=0, select bank0
+  1388  0057  1303               	bcf	3,6	;RP1=0, select bank0
+  1389  0058  169F               	bsf	31,5	;volatile
+  1390                           
+  1391                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 65:             ADCON0bits.CH
+      +                          S2 = 0;
+  1392  0059  121F               	bcf	31,4	;volatile
+  1393                           
+  1394                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 66:             ADCON0bits.CH
+      +                          S1 = 0;
+  1395  005A  119F               	bcf	31,3	;volatile
+  1396                           
+  1397                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 67:             ADCON0bits.CH
+      +                          S0 = 1;
+  1398  005B  151F               	bsf	31,2	;volatile
+  1399                           
+  1400                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 68:             break;
+  1401  005C  28D7               	goto	l943
+  1402  005D                     l21:	
+  1403                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 69:         case 10:
+  1404                           
+  1405                           
+  1406                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 70:             ADCON0bits.CH
+      +                          S3 = 1;
+  1407  005D  1283               	bcf	3,5	;RP0=0, select bank0
+  1408  005E  1303               	bcf	3,6	;RP1=0, select bank0
+  1409  005F  169F               	bsf	31,5	;volatile
+  1410                           
+  1411                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 71:             ADCON0bits.CH
+      +                          S2 = 0;
+  1412  0060  121F               	bcf	31,4	;volatile
+  1413                           
+  1414                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 72:             ADCON0bits.CH
+      +                          S1 = 1;
+  1415  0061  159F               	bsf	31,3	;volatile
+  1416                           
+  1417                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 73:             ADCON0bits.CH
+      +                          S0 = 0;
+  1418  0062  111F               	bcf	31,2	;volatile
+  1419                           
+  1420                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 74:             break;
+  1421  0063  28D7               	goto	l943
+  1422  0064                     l22:	
+  1423                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 75:         case 11:
+  1424                           
+  1425                           
+  1426                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 76:             ADCON0bits.CH
+      +                          S3 = 1;
+  1427  0064  1283               	bcf	3,5	;RP0=0, select bank0
+  1428  0065  1303               	bcf	3,6	;RP1=0, select bank0
+  1429  0066  169F               	bsf	31,5	;volatile
+  1430                           
+  1431                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 77:             ADCON0bits.CH
+      +                          S2 = 0;
+  1432  0067  121F               	bcf	31,4	;volatile
+  1433                           
+  1434                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 78:             ADCON0bits.CH
+      +                          S1 = 1;
+  1435  0068  159F               	bsf	31,3	;volatile
+  1436                           
+  1437                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 79:             ADCON0bits.CH
+      +                          S0 = 1;
+  1438  0069  151F               	bsf	31,2	;volatile
+  1439                           
+  1440                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 80:             break;
+  1441  006A  28D7               	goto	l943
+  1442  006B                     l23:	
+  1443                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 81:         case 12:
+  1444                           
+  1445                           
+  1446                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 82:             ADCON0bits.CH
+      +                          S3 = 1;
+  1447  006B  1283               	bcf	3,5	;RP0=0, select bank0
+  1448  006C  1303               	bcf	3,6	;RP1=0, select bank0
+  1449  006D  169F               	bsf	31,5	;volatile
+  1450                           
+  1451                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 83:             ADCON0bits.CH
+      +                          S2 = 1;
+  1452  006E  161F               	bsf	31,4	;volatile
+  1453                           
+  1454                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 84:             ADCON0bits.CH
+      +                          S1 = 0;
+  1455  006F  119F               	bcf	31,3	;volatile
+  1456                           
+  1457                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 85:             ADCON0bits.CH
+      +                          S0 = 0;
+  1458  0070  111F               	bcf	31,2	;volatile
+  1459                           
+  1460                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 86:             break;
+  1461  0071  28D7               	goto	l943
+  1462  0072                     l24:	
+  1463                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 87:         case 13:
+  1464                           
+  1465                           
+  1466                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 88:             ADCON0bits.CH
+      +                          S3 = 1;
+  1467  0072  1283               	bcf	3,5	;RP0=0, select bank0
+  1468  0073  1303               	bcf	3,6	;RP1=0, select bank0
+  1469  0074  169F               	bsf	31,5	;volatile
+  1470                           
+  1471                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 89:             ADCON0bits.CH
+      +                          S2 = 1;
+  1472  0075  161F               	bsf	31,4	;volatile
+  1473                           
+  1474                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 90:             ADCON0bits.CH
+      +                          S1 = 0;
+  1475  0076  119F               	bcf	31,3	;volatile
+  1476                           
+  1477                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 91:             ADCON0bits.CH
+      +                          S0 = 1;
+  1478  0077  151F               	bsf	31,2	;volatile
+  1479                           
+  1480                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 92:             break;
+  1481  0078  28D7               	goto	l943
+  1482  0079                     l25:	
+  1483                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 93:         case 14:
+  1484                           
+  1485                           
+  1486                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 94:             ADCON0bits.CH
+      +                          S3 = 1;
+  1487  0079  1283               	bcf	3,5	;RP0=0, select bank0
+  1488  007A  1303               	bcf	3,6	;RP1=0, select bank0
+  1489  007B  169F               	bsf	31,5	;volatile
+  1490                           
+  1491                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 95:             ADCON0bits.CH
+      +                          S2 = 1;
+  1492  007C  161F               	bsf	31,4	;volatile
+  1493                           
+  1494                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 96:             ADCON0bits.CH
+      +                          S1 = 1;
+  1495  007D  159F               	bsf	31,3	;volatile
+  1496                           
+  1497                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 97:             ADCON0bits.CH
+      +                          S0 = 0;
+  1498  007E  111F               	bcf	31,2	;volatile
+  1499                           
+  1500                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 98:             break;
+  1501  007F  28D7               	goto	l943
+  1502  0080                     l26:	
+  1503                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 99:         case 15:
+  1504                           
+  1505                           
+  1506                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 100:             ADCON0bits.C
+      +                          HS3 = 1;
+  1507  0080  1283               	bcf	3,5	;RP0=0, select bank0
+  1508  0081  1303               	bcf	3,6	;RP1=0, select bank0
+  1509  0082  169F               	bsf	31,5	;volatile
+  1510                           
+  1511                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 101:             ADCON0bits.C
+      +                          HS2 = 1;
+  1512  0083  161F               	bsf	31,4	;volatile
+  1513                           
+  1514                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 102:             ADCON0bits.C
+      +                          HS1 = 1;
+  1515  0084  159F               	bsf	31,3	;volatile
+  1516                           
+  1517                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 103:             ADCON0bits.C
+      +                          HS0 = 1;
+  1518  0085  151F               	bsf	31,2	;volatile
+  1519                           
+  1520                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 104:             break;
+  1521  0086  28D7               	goto	l943
+  1522  0087                     l27:	
+  1523                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 105:         default:
+  1524                           
+  1525                           
+  1526                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 106:             ADCON0bits.C
+      +                          HS3 = 0;
+  1527  0087  1283               	bcf	3,5	;RP0=0, select bank0
+  1528  0088  1303               	bcf	3,6	;RP1=0, select bank0
+  1529  0089  129F               	bcf	31,5	;volatile
+  1530                           
+  1531                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 107:             ADCON0bits.C
+      +                          HS2 = 0;
+  1532  008A  121F               	bcf	31,4	;volatile
+  1533                           
+  1534                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 108:             ADCON0bits.C
+      +                          HS1 = 0;
+  1535  008B  119F               	bcf	31,3	;volatile
+  1536                           
+  1537                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 109:             ADCON0bits.C
+      +                          HS0 = 0;
+  1538  008C  111F               	bcf	31,2	;volatile
+  1539                           
+  1540                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 110:             break;
+  1541  008D  28D7               	goto	l943
+  1542  008E                     l939:
+  1543  008E  0874               	movf	initADC@CHS,w
+  1544  008F  00F5               	movwf	??_initADC
+  1545  0090  01F6               	clrf	??_initADC+1
+  1546                           
+  1547                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+      +                          itches
+  1548                           ; Switch size 1, requested type "simple"
+  1549                           ; Number of cases is 1, Range of values is 0 to 0
+  1550                           ; switch strategies available:
+  1551                           ; Name         Instructions Cycles
+  1552                           ; simple_byte            4     3 (average)
+  1553                           ; direct_byte           11     8 (fixed)
+  1554                           ; jumptable            260     6 (fixed)
+  1555                           ;	Chosen strategy is simple_byte
+  1556  0091  0876               	movf	??_initADC+1,w
+  1557  0092  3A00               	xorlw	0	; case 0
+  1558  0093  1903               	skipnz
+  1559  0094  2896               	goto	l1173
+  1560  0095  2887               	goto	l27
+  1561  0096                     l1173:
+  1562                           
+  1563                           ; Switch size 1, requested type "simple"
+  1564                           ; Number of cases is 16, Range of values is 0 to 15
+  1565                           ; switch strategies available:
+  1566                           ; Name         Instructions Cycles
+  1567                           ; simple_byte           49    25 (average)
+  1568                           ; direct_byte           56     8 (fixed)
+  1569                           ; jumptable            260     6 (fixed)
+  1570                           ;	Chosen strategy is simple_byte
+  1571  0096  0875               	movf	??_initADC,w
+  1572  0097  3A00               	xorlw	0	; case 0
+  1573  0098  1903               	skipnz
+  1574  0099  2817               	goto	l10
+  1575  009A  3A01               	xorlw	1	; case 1
+  1576  009B  1903               	skipnz
+  1577  009C  281E               	goto	l12
+  1578  009D  3A03               	xorlw	3	; case 2
+  1579  009E  1903               	skipnz
+  1580  009F  2825               	goto	l13
+  1581  00A0  3A01               	xorlw	1	; case 3
+  1582  00A1  1903               	skipnz
+  1583  00A2  282C               	goto	l14
+  1584  00A3  3A07               	xorlw	7	; case 4
+  1585  00A4  1903               	skipnz
+  1586  00A5  2833               	goto	l15
+  1587  00A6  3A01               	xorlw	1	; case 5
+  1588  00A7  1903               	skipnz
+  1589  00A8  283A               	goto	l16
+  1590  00A9  3A03               	xorlw	3	; case 6
+  1591  00AA  1903               	skipnz
+  1592  00AB  2841               	goto	l17
+  1593  00AC  3A01               	xorlw	1	; case 7
+  1594  00AD  1903               	skipnz
+  1595  00AE  2848               	goto	l18
+  1596  00AF  3A0F               	xorlw	15	; case 8
+  1597  00B0  1903               	skipnz
+  1598  00B1  284F               	goto	l19
+  1599  00B2  3A01               	xorlw	1	; case 9
+  1600  00B3  1903               	skipnz
+  1601  00B4  2856               	goto	l20
+  1602  00B5  3A03               	xorlw	3	; case 10
+  1603  00B6  1903               	skipnz
+  1604  00B7  285D               	goto	l21
+  1605  00B8  3A01               	xorlw	1	; case 11
+  1606  00B9  1903               	skipnz
+  1607  00BA  2864               	goto	l22
+  1608  00BB  3A07               	xorlw	7	; case 12
+  1609  00BC  1903               	skipnz
+  1610  00BD  286B               	goto	l23
+  1611  00BE  3A01               	xorlw	1	; case 13
+  1612  00BF  1903               	skipnz
+  1613  00C0  2872               	goto	l24
+  1614  00C1  3A03               	xorlw	3	; case 14
+  1615  00C2  1903               	skipnz
+  1616  00C3  2879               	goto	l25
+  1617  00C4  3A01               	xorlw	1	; case 15
+  1618  00C5  1903               	skipnz
+  1619  00C6  2880               	goto	l26
+  1620  00C7  2887               	goto	l27
+  1621  00C8                     l29:	
+  1622                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 114:         case 0:
+  1623                           
+  1624                           
+  1625                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 115:             ADCON0bits.A
+      +                          DCS0 = 0;
+  1626  00C8  131F               	bcf	31,6	;volatile
+  1627                           
+  1628                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 116:             ADCON0bits.A
+      +                          DCS0 = 0;
+  1629  00C9  131F               	bcf	31,6	;volatile
+  1630                           
+  1631                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 117:             break;
+  1632  00CA  28ED               	goto	l30
+  1633  00CB                     l31:	
+  1634                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 118:         case 1:
+  1635                           
+  1636                           
+  1637                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 119:             ADCON0bits.A
+      +                          DCS0 = 0;
+  1638  00CB  131F               	bcf	31,6	;volatile
+  1639                           
+  1640                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 120:             ADCON0bits.A
+      +                          DCS0 = 1;
+  1641  00CC  171F               	bsf	31,6	;volatile
+  1642                           
+  1643                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 121:             break;
+  1644  00CD  28ED               	goto	l30
+  1645  00CE                     l32:	
+  1646                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 122:         case 2:
+  1647                           
+  1648                           
+  1649                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 123:             ADCON0bits.A
+      +                          DCS0 = 1;
+  1650  00CE  171F               	bsf	31,6	;volatile
+  1651                           
+  1652                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 124:             ADCON0bits.A
+      +                          DCS0 = 0;
+  1653  00CF  131F               	bcf	31,6	;volatile
+  1654                           
+  1655                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 125:             break;
+  1656  00D0  28ED               	goto	l30
+  1657  00D1                     l33:	
+  1658                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 126:         case 3:
+  1659                           
+  1660                           
+  1661                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 127:             ADCON0bits.A
+      +                          DCS0 = 1;
+  1662  00D1  171F               	bsf	31,6	;volatile
+  1663                           
+  1664                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 128:             ADCON0bits.A
+      +                          DCS0 = 1;
+  1665  00D2  171F               	bsf	31,6	;volatile
+  1666                           
+  1667                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 129:             break;
+  1668  00D3  28ED               	goto	l30
+  1669  00D4                     l34:	
+  1670                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 130:         default:
+  1671                           
+  1672                           
+  1673                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 131:             ADCON0bits.A
+      +                          DCS0 = 0;
+  1674  00D4  131F               	bcf	31,6	;volatile
+  1675                           
+  1676                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 132:             ADCON0bits.A
+      +                          DCS0 = 0;
+  1677  00D5  131F               	bcf	31,6	;volatile
+  1678                           
+  1679                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 133:             break;
+  1680  00D6  28ED               	goto	l30
+  1681  00D7                     l943:
+  1682  00D7  0877               	movf	initADC@ADCS,w
+  1683  00D8  00F5               	movwf	??_initADC
+  1684  00D9  01F6               	clrf	??_initADC+1
+  1685                           
+  1686                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+      +                          itches
+  1687                           ; Switch size 1, requested type "simple"
+  1688                           ; Number of cases is 1, Range of values is 0 to 0
+  1689                           ; switch strategies available:
+  1690                           ; Name         Instructions Cycles
+  1691                           ; simple_byte            4     3 (average)
+  1692                           ; direct_byte           11     8 (fixed)
+  1693                           ; jumptable            260     6 (fixed)
+  1694                           ;	Chosen strategy is simple_byte
+  1695  00DA  0876               	movf	??_initADC+1,w
+  1696  00DB  3A00               	xorlw	0	; case 0
+  1697  00DC  1903               	skipnz
+  1698  00DD  28DF               	goto	l1175
+  1699  00DE  28D4               	goto	l34
+  1700  00DF                     l1175:
+  1701                           
+  1702                           ; Switch size 1, requested type "simple"
+  1703                           ; Number of cases is 4, Range of values is 0 to 3
+  1704                           ; switch strategies available:
+  1705                           ; Name         Instructions Cycles
+  1706                           ; simple_byte           13     7 (average)
+  1707                           ; direct_byte           20     8 (fixed)
+  1708                           ; jumptable            260     6 (fixed)
+  1709                           ;	Chosen strategy is simple_byte
+  1710  00DF  0875               	movf	??_initADC,w
+  1711  00E0  3A00               	xorlw	0	; case 0
+  1712  00E1  1903               	skipnz
+  1713  00E2  28C8               	goto	l29
+  1714  00E3  3A01               	xorlw	1	; case 1
+  1715  00E4  1903               	skipnz
+  1716  00E5  28CB               	goto	l31
+  1717  00E6  3A03               	xorlw	3	; case 2
+  1718  00E7  1903               	skipnz
+  1719  00E8  28CE               	goto	l32
+  1720  00E9  3A01               	xorlw	1	; case 3
+  1721  00EA  1903               	skipnz
+  1722  00EB  28D1               	goto	l33
+  1723  00EC  28D4               	goto	l34
+  1724  00ED                     l30:
+  1725                           
+  1726                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 136:     ADCON0bits.ADON = 1;
+  1727  00ED  141F               	bsf	31,0	;volatile
+  1728                           
+  1729                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 138:     ADCON0bits.GO_nDONE 
+      +                          = 1;
+  1730  00EE  149F               	bsf	31,1	;volatile
+  1731  00EF                     l945:
+  1732                           
+  1733                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 140:     ADCON1 = 0b00000000;
+  1734  00EF  1683               	bsf	3,5	;RP0=1, select bank1
+  1735  00F0  1303               	bcf	3,6	;RP1=0, select bank1
+  1736  00F1  019F               	clrf	31	;volatile
+  1737  00F2                     l947:
+  1738                           
+  1739                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 142:     _delay((unsigned lon
+      +                          g)((11)*(4000000/4000.0)));
+  1740  00F2  300F               	movlw	15
+  1741  00F3  00F6               	movwf	??_initADC+1
+  1742  00F4  3047               	movlw	71
+  1743  00F5  00F5               	movwf	??_initADC
+  1744  00F6                     u107:
+  1745  00F6  0BF5               	decfsz	??_initADC,f
+  1746  00F7  28F6               	goto	u107
+  1747  00F8  0BF6               	decfsz	??_initADC+1,f
+  1748  00F9  28F6               	goto	u107
+  1749  00FA  28FB               	nop2
+  1750  00FB                     l35:
+  1751  00FB  0008               	return
+  1752  00FC                     __end_of_initADC:
+  1753                           
+  1754                           	psect	text5
+  1755  0197                     __ptext5:	
+  1756 ;; *************** function _isr *****************
+  1757 ;; Defined at:
+  1758 ;;		line 59 in file "E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c"
+  1759 ;; Parameters:    Size  Location     Type
+  1760 ;;		None
+  1761 ;; Auto vars:     Size  Location     Type
+  1762 ;;		None
+  1763 ;; Return value:  Size  Location     Type
+  1764 ;;                  1    wreg      void 
+  1765 ;; Registers used:
+  1766 ;;		wreg, status,2, status,0, pclath, cstack
+  1767 ;; Tracked objects:
+  1768 ;;		On entry : 0/0
+  1769 ;;		On exit  : 0/0
+  1770 ;;		Unchanged: 0/0
+  1771 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1772 ;;      Params:         0       0       0       0       0
+  1773 ;;      Locals:         0       0       0       0       0
+  1774 ;;      Temps:          3       0       0       0       0
+  1775 ;;      Totals:         3       0       0       0       0
+  1776 ;;Total ram usage:        3 bytes
+  1777 ;; Hardware stack levels used:    1
+  1778 ;; Hardware stack levels required when called:    1
+  1779 ;; This function calls:
+  1780 ;;		_spiWrite
+  1781 ;; This function is called by:
+  1782 ;;		Interrupt level 1
+  1783 ;; This function uses a non-reentrant model
+  1784 ;;
+  1785                           
+  1786                           
+  1787                           ;psect for function _isr
+  1788  0197                     _isr:
+  1789  0197                     i1l845:
+  1790                           
+  1791                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 60:     (INTCONbits.GIE
+      +                           = 0);
+  1792  0197  138B               	bcf	11,7	;volatile
+  1793                           
+  1794                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 62:     if(INTCONbits.T
+      +                          0IF == 1){
+  1795  0198  1D0B               	btfss	11,2	;volatile
+  1796  0199  299B               	goto	u3_21
+  1797  019A  299C               	goto	u3_20
+  1798  019B                     u3_21:
+  1799  019B  29A5               	goto	i1l853
+  1800  019C                     u3_20:
+  1801  019C                     i1l847:
+  1802                           
+  1803                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 63:         TMR0 = 236;
+  1804  019C  30EC               	movlw	236
+  1805  019D  1283               	bcf	3,5	;RP0=0, select bank0
+  1806  019E  1303               	bcf	3,6	;RP1=0, select bank0
+  1807  019F  0081               	movwf	1	;volatile
+  1808  01A0                     i1l849:
+  1809                           
+  1810                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 64:         CONTADOR++;
+  1811  01A0  3001               	movlw	1
+  1812  01A1  00F1               	movwf	??_isr
+  1813  01A2  0871               	movf	??_isr,w
+  1814  01A3  07F8               	addwf	_CONTADOR,f
+  1815  01A4                     i1l851:
+  1816                           
+  1817                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 65:         INTCONbits.
+      +                          T0IF = 0;
+  1818  01A4  110B               	bcf	11,2	;volatile
+  1819  01A5                     i1l853:
+  1820                           
+  1821                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 68:     if (PIR1bits.SS
+      +                          PIF == 1) {
+  1822  01A5  1283               	bcf	3,5	;RP0=0, select bank0
+  1823  01A6  1303               	bcf	3,6	;RP1=0, select bank0
+  1824  01A7  1D8C               	btfss	12,3	;volatile
+  1825  01A8  29AA               	goto	u4_21
+  1826  01A9  29AB               	goto	u4_20
+  1827  01AA                     u4_21:
+  1828  01AA  29B4               	goto	i1l859
+  1829  01AB                     u4_20:
+  1830  01AB                     i1l855:
+  1831                           
+  1832                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 69:         spiWrite(PO
+      +                          RTB);
+  1833  01AB  0806               	movf	6,w	;volatile
+  1834  01AC  120A  118A  21EC  120A  118A  	fcall	_spiWrite
+  1835  01B1                     i1l857:
+  1836                           
+  1837                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 70:         PIR1bits.SS
+      +                          PIF = 0;
+  1838  01B1  1283               	bcf	3,5	;RP0=0, select bank0
+  1839  01B2  1303               	bcf	3,6	;RP1=0, select bank0
+  1840  01B3  118C               	bcf	12,3	;volatile
+  1841  01B4                     i1l859:
+  1842                           
+  1843                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 73:     if(PIR1bits.ADI
+      +                          F == 1){
+  1844  01B4  1F0C               	btfss	12,6	;volatile
+  1845  01B5  29B7               	goto	u5_21
+  1846  01B6  29B8               	goto	u5_20
+  1847  01B7                     u5_21:
+  1848  01B7  29BB               	goto	i1l865
+  1849  01B8                     u5_20:
+  1850  01B8                     i1l861:
+  1851                           
+  1852                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 74:         PORTB = ADR
+      +                          ESH;
+  1853  01B8  081E               	movf	30,w	;volatile
+  1854  01B9  0086               	movwf	6	;volatile
+  1855  01BA                     i1l863:
+  1856                           
+  1857                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 75:         PIR1bits.AD
+      +                          IF = 0;
+  1858  01BA  130C               	bcf	12,6	;volatile
+  1859  01BB                     i1l865:
+  1860                           
+  1861                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 77:     (INTCONbits.GIE
+      +                           = 1);
+  1862  01BB  178B               	bsf	11,7	;volatile
+  1863  01BC                     i1l149:
+  1864  01BC  0873               	movf	??_isr+2,w
+  1865  01BD  008A               	movwf	10
+  1866  01BE  0E72               	swapf	??_isr+1,w
+  1867  01BF  0083               	movwf	3
+  1868  01C0  0EFE               	swapf	btemp,f
+  1869  01C1  0E7E               	swapf	btemp,w
+  1870  01C2  0009               	retfie
+  1871  01C3                     __end_of_isr:
+  1872                           
+  1873                           	psect	intentry
+  1874  0004                     __pintentry:	
+  1875                           ;incstack = 0
+  1876                           ; Regs used in _isr: [wreg+status,2+status,0+pclath+cstack]
+  1877                           
+  1878  0004                     interrupt_function:
+  1879  007E                     saved_w	set	btemp
+  1880  0004  00FE               	movwf	btemp
+  1881  0005  0E03               	swapf	3,w
+  1882  0006  00F2               	movwf	??_isr+1
+  1883  0007  080A               	movf	10,w
+  1884  0008  00F3               	movwf	??_isr+2
+  1885  0009  120A  118A  2997   	ljmp	_isr
+  1886                           
+  1887                           	psect	text6
+  1888  01EC                     __ptext6:	
+  1889 ;; *************** function _spiWrite *****************
+  1890 ;; Defined at:
+  1891 ;;		line 32 in file "E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c"
+  1892 ;; Parameters:    Size  Location     Type
+  1893 ;;  dat             1    wreg     unsigned char 
+  1894 ;; Auto vars:     Size  Location     Type
+  1895 ;;  dat             1    0[COMMON] unsigned char 
+  1896 ;; Return value:  Size  Location     Type
+  1897 ;;                  1    wreg      void 
+  1898 ;; Registers used:
+  1899 ;;		wreg
+  1900 ;; Tracked objects:
+  1901 ;;		On entry : 0/0
+  1902 ;;		On exit  : 0/0
+  1903 ;;		Unchanged: 0/0
+  1904 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1905 ;;      Params:         0       0       0       0       0
+  1906 ;;      Locals:         1       0       0       0       0
+  1907 ;;      Temps:          0       0       0       0       0
+  1908 ;;      Totals:         1       0       0       0       0
+  1909 ;;Total ram usage:        1 bytes
+  1910 ;; Hardware stack levels used:    1
+  1911 ;; This function calls:
+  1912 ;;		Nothing
+  1913 ;; This function is called by:
+  1914 ;;		_isr
+  1915 ;; This function uses a non-reentrant model
+  1916 ;;
+  1917                           
+  1918                           
+  1919                           ;psect for function _spiWrite
+  1920  01EC                     _spiWrite:
+  1921                           
+  1922                           ;incstack = 0
+  1923                           ; Regs used in _spiWrite: [wreg]
+  1924                           ;spiWrite@dat stored from wreg
+  1925  01EC  00F0               	movwf	spiWrite@dat
+  1926  01ED                     i1l797:
+  1927                           
+  1928                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c: 33:     SSPBUF = dat;
+  1929  01ED  0870               	movf	spiWrite@dat,w
+  1930  01EE  1283               	bcf	3,5	;RP0=0, select bank0
+  1931  01EF  1303               	bcf	3,6	;RP1=0, select bank0
+  1932  01F0  0093               	movwf	19	;volatile
+  1933  01F1                     i1l61:
+  1934  01F1  0008               	return
+  1935  01F2                     __end_of_spiWrite:
+  1936  007E                     btemp	set	126	;btemp
+  1937  007E                     wtemp0	set	126
+  1938                           
+  1939                           	psect	config
+  1940                           
+  1941                           ;Config register CONFIG1 @ 0x2007
+  1942                           ;	Oscillator Selection bits
+  1943                           ;	FOSC = INTRC_NOCLKOUT, INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O f
+      +                          unction on RA7/OSC1/CLKIN
+  1944                           ;	Watchdog Timer Enable bit
+  1945                           ;	WDTE = OFF, WDT disabled and can be enabled by SWDTEN bit of the WDTCON register
+  1946                           ;	Power-up Timer Enable bit
+  1947                           ;	PWRTE = OFF, PWRT disabled
+  1948                           ;	RE3/MCLR pin function select bit
+  1949                           ;	MCLRE = OFF, RE3/MCLR pin function is digital input, MCLR internally tied to VDD
+  1950                           ;	Code Protection bit
+  1951                           ;	CP = OFF, Program memory code protection is disabled
+  1952                           ;	Data Code Protection bit
+  1953                           ;	CPD = OFF, Data memory code protection is disabled
+  1954                           ;	Brown Out Reset Selection bits
+  1955                           ;	BOREN = OFF, BOR disabled
+  1956                           ;	Internal External Switchover bit
+  1957                           ;	IESO = OFF, Internal/External Switchover mode is disabled
+  1958                           ;	Fail-Safe Clock Monitor Enabled bit
+  1959                           ;	FCMEN = OFF, Fail-Safe Clock Monitor is disabled
+  1960                           ;	Low Voltage Programming Enable bit
+  1961                           ;	LVP = OFF, RB3 pin has digital I/O, HV on MCLR must be used for programming
+  1962                           ;	In-Circuit Debugger Mode bit
+  1963                           ;	DEBUG = 0x1, unprogrammed default
+  1964  2007                     	org	8199
+  1965  2007  20D4               	dw	8404
+  1966                           
+  1967                           ;Config register CONFIG2 @ 0x2008
+  1968                           ;	Brown-out Reset Selection bit
+  1969                           ;	BOR4V = BOR40V, Brown-out Reset set to 4.0V
+  1970                           ;	Flash Program Memory Self Write Enable bits
+  1971                           ;	WRT = OFF, Write protection off
+  1972  2008                     	org	8200
+  1973  2008  3FFF               	dw	16383
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         2
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      8      10
+    BANK0            80      1       1
+    BANK1            80      0       0
+    BANK3            96      0       0
+    BANK2            96      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    _Setup->_initADC
+    _Setup->_spiInit
+
+Critical Paths under _isr in COMMON
+
+    _isr->_spiWrite
+
+Critical Paths under _main in BANK0
+
+    _main->_Setup
+
+Critical Paths under _isr in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _isr in BANK1
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _isr in BANK3
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _isr in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0     495
+                              _Setup
+ ---------------------------------------------------------------------------------
+ (1) _Setup                                                1     1      0     495
+                                              0 BANK0      1     1      0
+                            _initADC
+                            _initOsc
+                            _spiInit
+ ---------------------------------------------------------------------------------
+ (2) _spiInit                                              4     1      3     360
+                                              4 COMMON     4     1      3
+ ---------------------------------------------------------------------------------
+ (2) _initOsc                                              3     3      0      15
+                                              4 COMMON     3     3      0
+ ---------------------------------------------------------------------------------
+ (2) _initADC                                              4     3      1     120
+                                              4 COMMON     4     3      1
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (3) _isr                                                  3     3      0      15
+                                              1 COMMON     3     3      0
+                           _spiWrite
+ ---------------------------------------------------------------------------------
+ (4) _spiWrite                                             1     1      0      15
+                                              0 COMMON     1     1      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 4
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _Setup
+     _initADC
+     _initOsc
+     _spiInit
+
+ _isr (ROOT)
+   _spiWrite
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            E      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMMON               E      8       A       1       71.4%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       0       2        0.0%
+ABS                  0      0       B       3        0.0%
+BITBANK0            50      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+SFR3                 0      0       0       4        0.0%
+BANK0               50      1       1       5        1.2%
+BITSFR2              0      0       0       5        0.0%
+SFR2                 0      0       0       5        0.0%
+BITBANK1            50      0       0       6        0.0%
+BANK1               50      0       0       7        0.0%
+BITBANK3            60      0       0       8        0.0%
+BANK3               60      0       0       9        0.0%
+BITBANK2            60      0       0      10        0.0%
+BANK2               60      0       0      11        0.0%
+DATA                 0      0       B      12        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.31 build 20201012212115 
+Symbol Table                                                                                   Fri Feb 12 01:46:22 2021
+
+            _SSPSTATbits 0094                       l10 0017                       l20 0056  
+                     l12 001E                       l21 005D                       l13 0025  
+                     l30 00ED                       l22 0064                       l14 002C  
+                     l31 00CB                       l23 006B                       l15 0033  
+                     l32 00CE                       l24 0072                       l16 003A  
+                     l33 00D1                       l25 0079                       l17 0041  
+                     l34 00D4                       l26 0080                       l18 0048  
+                     l35 00FB                       l27 0087                       l19 004F  
+                     l51 01D3                       l52 01D8                       l29 00C8  
+                     l80 0116                       l81 011C                       l82 0122  
+                     l83 0128                       l75 00FE                       l84 012E  
+                     l76 0156                       l85 0157                       l77 0104  
+                     l78 010A                       l79 0110                       u70 01CB  
+                     u71 01CA                       u90 01E4                       u91 01E3  
+                    l161 0196                      l943 00D7                      l935 0016  
+                    l945 00EF                      l785 00FD                      l961 01CD  
+                    l947 00F2                      l939 008E                      l963 01CF  
+                    l789 0134                      l965 01D2                      l957 01C4  
+                    l959 01CB                      u107 00F6                      _isr 0197  
+                   l1101 0192                     l1103 01D9                     l1105 01DE  
+                   l1107 01E4                     l1109 01E7                     l1071 0162  
+                   l1081 016E                     l1073 0164                     l1171 013C  
+                   l1091 0173                     l1083 016F                     l1075 0168  
+                   l1173 0096                     l1093 0174                     l1085 0170  
+                   l1077 016B                     l1069 0158                     l1175 00DF  
+                   l1095 017A                     l1087 0171                     l1079 016C  
+                   l1097 0186                     l1089 0172                     l1099 018F  
+                   ?_isr 0070                     i1l61 01F1                     _TMR0 0001  
+                   u3_20 019C                     u3_21 019B                     u4_20 01AB  
+                   u4_21 01AA                     u5_20 01B8                     u5_21 01B7  
+                   _main 01D9                     btemp 007E                     start 000C  
+            initADC@ADCS 0077                    ??_isr 0071                    ?_main 0070  
+                  _ANSEL 0188                    i1l149 01BC                    i1l851 01A4  
+                  i1l861 01B8                    i1l853 01A5                    i1l845 0197  
+                  i1l863 01BA                    i1l855 01AB                    i1l847 019C  
+                  i1l865 01BB                    i1l857 01B1                    i1l849 01A0  
+                  i1l859 01B4                    i1l797 01ED                    _PORTA 0005  
+                  _PORTB 0006                    _PORTC 0007                    _PORTD 0008  
+                  _PORTE 0009                    _TRISA 0085                    _TRISB 0086  
+                  _TRISC 0087                    _TRISD 0088                    _TRISE 0089  
+                  _Setup 0158          __end_of_initADC 00FC          __end_of_initOsc 0158  
+                  pclath 000A          __end_of_spiInit 01D9                    status 0003  
+                  wtemp0 007E          __initialization 000F             __end_of_main 01EC  
+                 ??_main 0078                   ?_Setup 0070                   _ADCON1 009F  
+                 _ADRESH 001E              initOsc@IRCF 0076                   _ANSELH 0189  
+                 _WDTCON 0105                   _TRISC3 043B                   _TRISC5 043D  
+                 _SSPCON 0014                   _SSPBUF 0013                ??_initADC 0075  
+              ??_initOsc 0074                   saved_w 007E         __end_of_spiWrite 01F2  
+              ??_spiInit 0077  __end_of__initialization 0011           __pcstackCOMMON 0070  
+          __end_of_Setup 0197                  ??_Setup 0020               __pmaintext 01D9  
+             __pintentry 0004                  _VAR_ADC 0079                  _SSPSTAT 0094  
+              ?_spiWrite 0070                _ANSELbits 0188                  __ptext1 0158  
+                __ptext2 01C3                  __ptext3 00FC                  __ptext4 0015  
+                __ptext5 0197                  __ptext6 01EC                  _initADC 0015  
+                _initOsc 00FC             __size_of_isr 002C                  _spiInit 01C3  
+   end_of_initialization 0011               ??_spiWrite 0070              spiWrite@dat 0070  
+             initADC@CHS 0074      start_initialization 000F              __end_of_isr 01C3  
+            __pbssCOMMON 0078                ___latbits 0002            __pcstackBANK0 0020  
+      __size_of_spiWrite 0006                 ?_initADC 0074                 ?_initOsc 0070  
+               ?_spiInit 0074           __size_of_Setup 003F                 _CONTADOR 0078  
+   spiInit@sTransmitEdge 0076        interrupt_function 0004                 _PIE1bits 008C  
+     spiInit@sDataSample 0074                 _PIR1bits 000C               _ADCON0bits 001F  
+       __size_of_initADC 00E7         __size_of_initOsc 005C         __size_of_spiInit 0016  
+          __size_of_main 0013                 _spiWrite 01EC             spiInit@sType 0077  
+      spiInit@sClockIdle 0075               _INTCONbits 000B                 intlevel1 0000  
+             _OSCCONbits 008F               _OPTION_REG 0081  

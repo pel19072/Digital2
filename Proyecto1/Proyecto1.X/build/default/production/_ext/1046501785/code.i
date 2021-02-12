@@ -2834,8 +2834,8 @@ uint8_t VAR_ADC = 0;
 uint8_t CONTADOR = 0;
 uint8_t FLAGTX = 0;
 uint8_t FLAGSS = 0;
-uint8_t TEMPORAL = 0;
 uint8_t COUNTER = 0;
+uint8_t TEMPERATURA = 0;
 
 
 
@@ -2885,9 +2885,8 @@ void main(void) {
                     PORTCbits.RC0 = 0;
                     PORTCbits.RC1 = 1;
                     PORTCbits.RC2 = 1;
-                    spiWrite(TEMPORAL);
+                    spiWrite(0x00);
                     VAR_ADC = spiRead();
-                    PIR1bits.SSPIF = 0;
                     Conversiones();
                     FLAGSS++;
                     break;
@@ -2895,14 +2894,17 @@ void main(void) {
                     PORTCbits.RC0 = 1;
                     PORTCbits.RC1 = 0;
                     PORTCbits.RC2 = 1;
-                    spiWrite(TEMPORAL);
+                    spiWrite(0x00);
                     COUNTER = spiRead();
-                    PORTD = COUNTER;
-                    PIR1bits.SSPIF = 0;
                     Envio_Contador();
                     FLAGSS++;
                     break;
                 case 2:
+                    PORTCbits.RC0 = 1;
+                    PORTCbits.RC1 = 1;
+                    PORTCbits.RC2 = 0;
+                    spiWrite(0x00);
+                    TEMPERATURA = spiRead();
                     FLAGSS = 0;
                     break;
             }
@@ -3005,10 +3007,34 @@ uint8_t Envio(void){
             return 0x2C;
             break;
         case 4:
+            temporal = (COUNTER & 0xF0)>>4;
+            FLAGTX++;
+            return ASCII(temporal);
+            break;
+        case 5:
+            temporal = COUNTER & 0x0F;
+            FLAGTX++;
+            return ASCII(temporal);
+            break;
+        case 6:
+            FLAGTX++;
+            return 0x2C;
+            break;
+        case 7:
+            temporal = (TEMPERATURA & 0xF0)>>4;
+            FLAGTX++;
+            return ASCII(temporal);
+            break;
+        case 8:
+            temporal = TEMPERATURA & 0x0F;
+            FLAGTX++;
+            return ASCII(temporal);
+            break;
+        case 9:
             FLAGTX++;
             return 0x29;
             break;
-        case 5:
+        case 10:
             FLAGTX = 0;
             return 0x0D;
             break;

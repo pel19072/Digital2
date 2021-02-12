@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Fri Feb 12 00:27:00 2021
+                                                                                               Fri Feb 12 01:07:48 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	16F887
@@ -18,1529 +18,1401 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
     12                           	psect	text4,local,class=CODE,merge=1,delta=2
     13                           	psect	intentry,global,class=CODE,delta=2
     14                           	psect	text5,local,class=CODE,merge=1,delta=2
-    15                           	psect	text6,local,class=CODE,merge=1,delta=2
-    16                           	psect	text7,local,class=CODE,merge=1,delta=2
-    17                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
-    18                           	dabs	1,0x7E,2
-    19  0000                     
-    20                           ; Version 2.31
-    21                           ; Generated 13/10/2020 GMT
-    22                           ; 
-    23                           ; Copyright © 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
-    24                           ; All rights reserved.
-    25                           ; 
-    26                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+    15                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
+    16                           	dabs	1,0x7E,2
+    17  0000                     
+    18                           ; Version 2.31
+    19                           ; Generated 13/10/2020 GMT
+    20                           ; 
+    21                           ; Copyright © 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    22                           ; All rights reserved.
+    23                           ; 
+    24                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
       +                          ip").
-    27                           ; 
-    28                           ; Redistribution and use in source and binary forms, with or without modification, are
-    29                           ; permitted provided that the following conditions are met:
-    30                           ; 
-    31                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+    25                           ; 
+    26                           ; Redistribution and use in source and binary forms, with or without modification, are
+    27                           ; permitted provided that the following conditions are met:
+    28                           ; 
+    29                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
       +                          t of
-    32                           ;        conditions and the following disclaimer.
-    33                           ; 
-    34                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+    30                           ;        conditions and the following disclaimer.
+    31                           ; 
+    32                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
       +                          list
-    35                           ;        of conditions and the following disclaimer in the documentation and/or other
-    36                           ;        materials provided with the distribution. Publication is not required when
-    37                           ;        this file is used in an embedded application.
-    38                           ; 
-    39                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+    33                           ;        of conditions and the following disclaimer in the documentation and/or other
+    34                           ;        materials provided with the distribution. Publication is not required when
+    35                           ;        this file is used in an embedded application.
+    36                           ; 
+    37                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
       +                          is
-    40                           ;        software without specific prior written permission.
-    41                           ; 
-    42                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
-    43                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+    38                           ;        software without specific prior written permission.
+    39                           ; 
+    40                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    41                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
       +                          OR
-    44                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+    42                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
       +                          T,
-    45                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
-    46                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
-    47                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+    43                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    44                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    45                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
       +                          RICT
-    48                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+    46                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
       +                          SE OF
-    49                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-    50                           ; 
+    47                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    48                           ; 
+    49                           ; 
+    50                           ; Code-generator required, PIC16F887 Definitions
     51                           ; 
-    52                           ; Code-generator required, PIC16F887 Definitions
-    53                           ; 
-    54                           ; SFR Addresses
-    55  0000                     	;# 
-    56  0001                     	;# 
-    57  0002                     	;# 
-    58  0003                     	;# 
-    59  0004                     	;# 
-    60  0005                     	;# 
-    61  0006                     	;# 
-    62  0007                     	;# 
-    63  0008                     	;# 
-    64  0009                     	;# 
-    65  000A                     	;# 
-    66  000B                     	;# 
-    67  000C                     	;# 
-    68  000D                     	;# 
-    69  000E                     	;# 
-    70  000E                     	;# 
-    71  000F                     	;# 
-    72  0010                     	;# 
-    73  0011                     	;# 
-    74  0012                     	;# 
-    75  0013                     	;# 
-    76  0014                     	;# 
-    77  0015                     	;# 
-    78  0015                     	;# 
-    79  0016                     	;# 
-    80  0017                     	;# 
-    81  0018                     	;# 
-    82  0019                     	;# 
-    83  001A                     	;# 
-    84  001B                     	;# 
-    85  001B                     	;# 
-    86  001C                     	;# 
-    87  001D                     	;# 
-    88  001E                     	;# 
-    89  001F                     	;# 
-    90  0081                     	;# 
-    91  0085                     	;# 
-    92  0086                     	;# 
-    93  0087                     	;# 
-    94  0088                     	;# 
-    95  0089                     	;# 
-    96  008C                     	;# 
-    97  008D                     	;# 
-    98  008E                     	;# 
-    99  008F                     	;# 
-   100  0090                     	;# 
-   101  0091                     	;# 
-   102  0092                     	;# 
+    52                           ; SFR Addresses
+    53  0000                     	;# 
+    54  0001                     	;# 
+    55  0002                     	;# 
+    56  0003                     	;# 
+    57  0004                     	;# 
+    58  0005                     	;# 
+    59  0006                     	;# 
+    60  0007                     	;# 
+    61  0008                     	;# 
+    62  0009                     	;# 
+    63  000A                     	;# 
+    64  000B                     	;# 
+    65  000C                     	;# 
+    66  000D                     	;# 
+    67  000E                     	;# 
+    68  000E                     	;# 
+    69  000F                     	;# 
+    70  0010                     	;# 
+    71  0011                     	;# 
+    72  0012                     	;# 
+    73  0013                     	;# 
+    74  0014                     	;# 
+    75  0015                     	;# 
+    76  0015                     	;# 
+    77  0016                     	;# 
+    78  0017                     	;# 
+    79  0018                     	;# 
+    80  0019                     	;# 
+    81  001A                     	;# 
+    82  001B                     	;# 
+    83  001B                     	;# 
+    84  001C                     	;# 
+    85  001D                     	;# 
+    86  001E                     	;# 
+    87  001F                     	;# 
+    88  0081                     	;# 
+    89  0085                     	;# 
+    90  0086                     	;# 
+    91  0087                     	;# 
+    92  0088                     	;# 
+    93  0089                     	;# 
+    94  008C                     	;# 
+    95  008D                     	;# 
+    96  008E                     	;# 
+    97  008F                     	;# 
+    98  0090                     	;# 
+    99  0091                     	;# 
+   100  0092                     	;# 
+   101  0093                     	;# 
+   102  0093                     	;# 
    103  0093                     	;# 
-   104  0093                     	;# 
-   105  0093                     	;# 
-   106  0094                     	;# 
-   107  0095                     	;# 
-   108  0096                     	;# 
-   109  0097                     	;# 
-   110  0098                     	;# 
-   111  0099                     	;# 
-   112  009A                     	;# 
-   113  009B                     	;# 
-   114  009C                     	;# 
-   115  009D                     	;# 
-   116  009E                     	;# 
-   117  009F                     	;# 
-   118  0105                     	;# 
-   119  0107                     	;# 
-   120  0108                     	;# 
-   121  0109                     	;# 
-   122  010C                     	;# 
-   123  010C                     	;# 
-   124  010D                     	;# 
-   125  010E                     	;# 
-   126  010F                     	;# 
-   127  0185                     	;# 
-   128  0187                     	;# 
-   129  0188                     	;# 
-   130  0189                     	;# 
-   131  018C                     	;# 
-   132  018D                     	;# 
-   133  0000                     	;# 
-   134  0001                     	;# 
-   135  0002                     	;# 
-   136  0003                     	;# 
-   137  0004                     	;# 
-   138  0005                     	;# 
-   139  0006                     	;# 
-   140  0007                     	;# 
-   141  0008                     	;# 
-   142  0009                     	;# 
-   143  000A                     	;# 
-   144  000B                     	;# 
-   145  000C                     	;# 
-   146  000D                     	;# 
-   147  000E                     	;# 
-   148  000E                     	;# 
-   149  000F                     	;# 
-   150  0010                     	;# 
-   151  0011                     	;# 
-   152  0012                     	;# 
-   153  0013                     	;# 
-   154  0014                     	;# 
-   155  0015                     	;# 
-   156  0015                     	;# 
-   157  0016                     	;# 
-   158  0017                     	;# 
-   159  0018                     	;# 
-   160  0019                     	;# 
-   161  001A                     	;# 
-   162  001B                     	;# 
-   163  001B                     	;# 
-   164  001C                     	;# 
-   165  001D                     	;# 
-   166  001E                     	;# 
-   167  001F                     	;# 
-   168  0081                     	;# 
-   169  0085                     	;# 
-   170  0086                     	;# 
-   171  0087                     	;# 
-   172  0088                     	;# 
-   173  0089                     	;# 
-   174  008C                     	;# 
-   175  008D                     	;# 
-   176  008E                     	;# 
-   177  008F                     	;# 
-   178  0090                     	;# 
-   179  0091                     	;# 
-   180  0092                     	;# 
+   104  0094                     	;# 
+   105  0095                     	;# 
+   106  0096                     	;# 
+   107  0097                     	;# 
+   108  0098                     	;# 
+   109  0099                     	;# 
+   110  009A                     	;# 
+   111  009B                     	;# 
+   112  009C                     	;# 
+   113  009D                     	;# 
+   114  009E                     	;# 
+   115  009F                     	;# 
+   116  0105                     	;# 
+   117  0107                     	;# 
+   118  0108                     	;# 
+   119  0109                     	;# 
+   120  010C                     	;# 
+   121  010C                     	;# 
+   122  010D                     	;# 
+   123  010E                     	;# 
+   124  010F                     	;# 
+   125  0185                     	;# 
+   126  0187                     	;# 
+   127  0188                     	;# 
+   128  0189                     	;# 
+   129  018C                     	;# 
+   130  018D                     	;# 
+   131  0000                     	;# 
+   132  0001                     	;# 
+   133  0002                     	;# 
+   134  0003                     	;# 
+   135  0004                     	;# 
+   136  0005                     	;# 
+   137  0006                     	;# 
+   138  0007                     	;# 
+   139  0008                     	;# 
+   140  0009                     	;# 
+   141  000A                     	;# 
+   142  000B                     	;# 
+   143  000C                     	;# 
+   144  000D                     	;# 
+   145  000E                     	;# 
+   146  000E                     	;# 
+   147  000F                     	;# 
+   148  0010                     	;# 
+   149  0011                     	;# 
+   150  0012                     	;# 
+   151  0013                     	;# 
+   152  0014                     	;# 
+   153  0015                     	;# 
+   154  0015                     	;# 
+   155  0016                     	;# 
+   156  0017                     	;# 
+   157  0018                     	;# 
+   158  0019                     	;# 
+   159  001A                     	;# 
+   160  001B                     	;# 
+   161  001B                     	;# 
+   162  001C                     	;# 
+   163  001D                     	;# 
+   164  001E                     	;# 
+   165  001F                     	;# 
+   166  0081                     	;# 
+   167  0085                     	;# 
+   168  0086                     	;# 
+   169  0087                     	;# 
+   170  0088                     	;# 
+   171  0089                     	;# 
+   172  008C                     	;# 
+   173  008D                     	;# 
+   174  008E                     	;# 
+   175  008F                     	;# 
+   176  0090                     	;# 
+   177  0091                     	;# 
+   178  0092                     	;# 
+   179  0093                     	;# 
+   180  0093                     	;# 
    181  0093                     	;# 
-   182  0093                     	;# 
-   183  0093                     	;# 
-   184  0094                     	;# 
-   185  0095                     	;# 
-   186  0096                     	;# 
-   187  0097                     	;# 
-   188  0098                     	;# 
-   189  0099                     	;# 
-   190  009A                     	;# 
-   191  009B                     	;# 
-   192  009C                     	;# 
-   193  009D                     	;# 
-   194  009E                     	;# 
-   195  009F                     	;# 
-   196  0105                     	;# 
-   197  0107                     	;# 
-   198  0108                     	;# 
-   199  0109                     	;# 
-   200  010C                     	;# 
-   201  010C                     	;# 
-   202  010D                     	;# 
-   203  010E                     	;# 
-   204  010F                     	;# 
-   205  0185                     	;# 
-   206  0187                     	;# 
-   207  0188                     	;# 
-   208  0189                     	;# 
-   209  018C                     	;# 
-   210  018D                     	;# 
-   211  0000                     	;# 
-   212  0001                     	;# 
-   213  0002                     	;# 
-   214  0003                     	;# 
-   215  0004                     	;# 
-   216  0005                     	;# 
-   217  0006                     	;# 
-   218  0007                     	;# 
-   219  0008                     	;# 
-   220  0009                     	;# 
-   221  000A                     	;# 
-   222  000B                     	;# 
-   223  000C                     	;# 
-   224  000D                     	;# 
-   225  000E                     	;# 
-   226  000E                     	;# 
-   227  000F                     	;# 
-   228  0010                     	;# 
-   229  0011                     	;# 
-   230  0012                     	;# 
-   231  0013                     	;# 
-   232  0014                     	;# 
-   233  0015                     	;# 
-   234  0015                     	;# 
-   235  0016                     	;# 
-   236  0017                     	;# 
-   237  0018                     	;# 
-   238  0019                     	;# 
-   239  001A                     	;# 
-   240  001B                     	;# 
-   241  001B                     	;# 
-   242  001C                     	;# 
-   243  001D                     	;# 
-   244  001E                     	;# 
-   245  001F                     	;# 
-   246  0081                     	;# 
-   247  0085                     	;# 
-   248  0086                     	;# 
-   249  0087                     	;# 
-   250  0088                     	;# 
-   251  0089                     	;# 
-   252  008C                     	;# 
-   253  008D                     	;# 
-   254  008E                     	;# 
-   255  008F                     	;# 
-   256  0090                     	;# 
-   257  0091                     	;# 
-   258  0092                     	;# 
+   182  0094                     	;# 
+   183  0095                     	;# 
+   184  0096                     	;# 
+   185  0097                     	;# 
+   186  0098                     	;# 
+   187  0099                     	;# 
+   188  009A                     	;# 
+   189  009B                     	;# 
+   190  009C                     	;# 
+   191  009D                     	;# 
+   192  009E                     	;# 
+   193  009F                     	;# 
+   194  0105                     	;# 
+   195  0107                     	;# 
+   196  0108                     	;# 
+   197  0109                     	;# 
+   198  010C                     	;# 
+   199  010C                     	;# 
+   200  010D                     	;# 
+   201  010E                     	;# 
+   202  010F                     	;# 
+   203  0185                     	;# 
+   204  0187                     	;# 
+   205  0188                     	;# 
+   206  0189                     	;# 
+   207  018C                     	;# 
+   208  018D                     	;# 
+   209  0000                     	;# 
+   210  0001                     	;# 
+   211  0002                     	;# 
+   212  0003                     	;# 
+   213  0004                     	;# 
+   214  0005                     	;# 
+   215  0006                     	;# 
+   216  0007                     	;# 
+   217  0008                     	;# 
+   218  0009                     	;# 
+   219  000A                     	;# 
+   220  000B                     	;# 
+   221  000C                     	;# 
+   222  000D                     	;# 
+   223  000E                     	;# 
+   224  000E                     	;# 
+   225  000F                     	;# 
+   226  0010                     	;# 
+   227  0011                     	;# 
+   228  0012                     	;# 
+   229  0013                     	;# 
+   230  0014                     	;# 
+   231  0015                     	;# 
+   232  0015                     	;# 
+   233  0016                     	;# 
+   234  0017                     	;# 
+   235  0018                     	;# 
+   236  0019                     	;# 
+   237  001A                     	;# 
+   238  001B                     	;# 
+   239  001B                     	;# 
+   240  001C                     	;# 
+   241  001D                     	;# 
+   242  001E                     	;# 
+   243  001F                     	;# 
+   244  0081                     	;# 
+   245  0085                     	;# 
+   246  0086                     	;# 
+   247  0087                     	;# 
+   248  0088                     	;# 
+   249  0089                     	;# 
+   250  008C                     	;# 
+   251  008D                     	;# 
+   252  008E                     	;# 
+   253  008F                     	;# 
+   254  0090                     	;# 
+   255  0091                     	;# 
+   256  0092                     	;# 
+   257  0093                     	;# 
+   258  0093                     	;# 
    259  0093                     	;# 
-   260  0093                     	;# 
-   261  0093                     	;# 
-   262  0094                     	;# 
-   263  0095                     	;# 
-   264  0096                     	;# 
-   265  0097                     	;# 
-   266  0098                     	;# 
-   267  0099                     	;# 
-   268  009A                     	;# 
-   269  009B                     	;# 
-   270  009C                     	;# 
-   271  009D                     	;# 
-   272  009E                     	;# 
-   273  009F                     	;# 
-   274  0105                     	;# 
-   275  0107                     	;# 
-   276  0108                     	;# 
-   277  0109                     	;# 
-   278  010C                     	;# 
-   279  010C                     	;# 
-   280  010D                     	;# 
-   281  010E                     	;# 
-   282  010F                     	;# 
-   283  0185                     	;# 
-   284  0187                     	;# 
-   285  0188                     	;# 
-   286  0189                     	;# 
-   287  018C                     	;# 
-   288  018D                     	;# 
-   289  0000                     	;# 
-   290  0001                     	;# 
-   291  0002                     	;# 
-   292  0003                     	;# 
-   293  0004                     	;# 
-   294  0005                     	;# 
-   295  0006                     	;# 
-   296  0007                     	;# 
-   297  0008                     	;# 
-   298  0009                     	;# 
-   299  000A                     	;# 
-   300  000B                     	;# 
-   301  000C                     	;# 
-   302  000D                     	;# 
-   303  000E                     	;# 
-   304  000E                     	;# 
-   305  000F                     	;# 
-   306  0010                     	;# 
-   307  0011                     	;# 
-   308  0012                     	;# 
-   309  0013                     	;# 
-   310  0014                     	;# 
-   311  0015                     	;# 
-   312  0015                     	;# 
-   313  0016                     	;# 
-   314  0017                     	;# 
-   315  0018                     	;# 
-   316  0019                     	;# 
-   317  001A                     	;# 
-   318  001B                     	;# 
-   319  001B                     	;# 
-   320  001C                     	;# 
-   321  001D                     	;# 
-   322  001E                     	;# 
-   323  001F                     	;# 
-   324  0081                     	;# 
-   325  0085                     	;# 
-   326  0086                     	;# 
-   327  0087                     	;# 
-   328  0088                     	;# 
-   329  0089                     	;# 
-   330  008C                     	;# 
-   331  008D                     	;# 
-   332  008E                     	;# 
-   333  008F                     	;# 
-   334  0090                     	;# 
-   335  0091                     	;# 
-   336  0092                     	;# 
+   260  0094                     	;# 
+   261  0095                     	;# 
+   262  0096                     	;# 
+   263  0097                     	;# 
+   264  0098                     	;# 
+   265  0099                     	;# 
+   266  009A                     	;# 
+   267  009B                     	;# 
+   268  009C                     	;# 
+   269  009D                     	;# 
+   270  009E                     	;# 
+   271  009F                     	;# 
+   272  0105                     	;# 
+   273  0107                     	;# 
+   274  0108                     	;# 
+   275  0109                     	;# 
+   276  010C                     	;# 
+   277  010C                     	;# 
+   278  010D                     	;# 
+   279  010E                     	;# 
+   280  010F                     	;# 
+   281  0185                     	;# 
+   282  0187                     	;# 
+   283  0188                     	;# 
+   284  0189                     	;# 
+   285  018C                     	;# 
+   286  018D                     	;# 
+   287  0000                     	;# 
+   288  0001                     	;# 
+   289  0002                     	;# 
+   290  0003                     	;# 
+   291  0004                     	;# 
+   292  0005                     	;# 
+   293  0006                     	;# 
+   294  0007                     	;# 
+   295  0008                     	;# 
+   296  0009                     	;# 
+   297  000A                     	;# 
+   298  000B                     	;# 
+   299  000C                     	;# 
+   300  000D                     	;# 
+   301  000E                     	;# 
+   302  000E                     	;# 
+   303  000F                     	;# 
+   304  0010                     	;# 
+   305  0011                     	;# 
+   306  0012                     	;# 
+   307  0013                     	;# 
+   308  0014                     	;# 
+   309  0015                     	;# 
+   310  0015                     	;# 
+   311  0016                     	;# 
+   312  0017                     	;# 
+   313  0018                     	;# 
+   314  0019                     	;# 
+   315  001A                     	;# 
+   316  001B                     	;# 
+   317  001B                     	;# 
+   318  001C                     	;# 
+   319  001D                     	;# 
+   320  001E                     	;# 
+   321  001F                     	;# 
+   322  0081                     	;# 
+   323  0085                     	;# 
+   324  0086                     	;# 
+   325  0087                     	;# 
+   326  0088                     	;# 
+   327  0089                     	;# 
+   328  008C                     	;# 
+   329  008D                     	;# 
+   330  008E                     	;# 
+   331  008F                     	;# 
+   332  0090                     	;# 
+   333  0091                     	;# 
+   334  0092                     	;# 
+   335  0093                     	;# 
+   336  0093                     	;# 
    337  0093                     	;# 
-   338  0093                     	;# 
-   339  0093                     	;# 
-   340  0094                     	;# 
-   341  0095                     	;# 
-   342  0096                     	;# 
-   343  0097                     	;# 
-   344  0098                     	;# 
-   345  0099                     	;# 
-   346  009A                     	;# 
-   347  009B                     	;# 
-   348  009C                     	;# 
-   349  009D                     	;# 
-   350  009E                     	;# 
-   351  009F                     	;# 
-   352  0105                     	;# 
-   353  0107                     	;# 
-   354  0108                     	;# 
-   355  0109                     	;# 
-   356  010C                     	;# 
-   357  010C                     	;# 
-   358  010D                     	;# 
-   359  010E                     	;# 
-   360  010F                     	;# 
-   361  0185                     	;# 
-   362  0187                     	;# 
-   363  0188                     	;# 
-   364  0189                     	;# 
-   365  018C                     	;# 
-   366  018D                     	;# 
-   367  0013                     _SSPBUF	set	19
-   368  0014                     _SSPCON	set	20
-   369  0009                     _PORTE	set	9
-   370  0007                     _PORTC	set	7
-   371  0006                     _PORTB	set	6
-   372  0005                     _PORTA	set	5
-   373  000C                     _PIR1bits	set	12
-   374  0008                     _PORTD	set	8
-   375  0006                     _PORTBbits	set	6
-   376  000B                     _INTCONbits	set	11
-   377  0094                     _SSPSTATbits	set	148
-   378  0094                     _SSPSTAT	set	148
-   379  008F                     _OSCCONbits	set	143
-   380  008C                     _PIE1bits	set	140
-   381  0096                     _IOCB	set	150
-   382  0081                     _OPTION_REG	set	129
-   383  0095                     _WPUB	set	149
-   384  0089                     _TRISE	set	137
-   385  0088                     _TRISD	set	136
-   386  0087                     _TRISC	set	135
-   387  0086                     _TRISB	set	134
-   388  0085                     _TRISA	set	133
-   389  043B                     _TRISC3	set	1083
-   390  043D                     _TRISC5	set	1085
-   391  0189                     _ANSELH	set	393
-   392  0188                     _ANSEL	set	392
-   393                           
-   394                           	psect	cinit
-   395  000F                     start_initialization:	
-   396                           ; #config settings
+   338  0094                     	;# 
+   339  0095                     	;# 
+   340  0096                     	;# 
+   341  0097                     	;# 
+   342  0098                     	;# 
+   343  0099                     	;# 
+   344  009A                     	;# 
+   345  009B                     	;# 
+   346  009C                     	;# 
+   347  009D                     	;# 
+   348  009E                     	;# 
+   349  009F                     	;# 
+   350  0105                     	;# 
+   351  0107                     	;# 
+   352  0108                     	;# 
+   353  0109                     	;# 
+   354  010C                     	;# 
+   355  010C                     	;# 
+   356  010D                     	;# 
+   357  010E                     	;# 
+   358  010F                     	;# 
+   359  0185                     	;# 
+   360  0187                     	;# 
+   361  0188                     	;# 
+   362  0189                     	;# 
+   363  018C                     	;# 
+   364  018D                     	;# 
+   365  0013                     _SSPBUF	set	19
+   366  0014                     _SSPCON	set	20
+   367  0009                     _PORTE	set	9
+   368  0007                     _PORTC	set	7
+   369  0006                     _PORTB	set	6
+   370  0005                     _PORTA	set	5
+   371  000C                     _PIR1bits	set	12
+   372  0008                     _PORTD	set	8
+   373  0006                     _PORTBbits	set	6
+   374  000B                     _INTCONbits	set	11
+   375  0094                     _SSPSTATbits	set	148
+   376  0094                     _SSPSTAT	set	148
+   377  008F                     _OSCCONbits	set	143
+   378  008C                     _PIE1bits	set	140
+   379  0096                     _IOCB	set	150
+   380  0081                     _OPTION_REG	set	129
+   381  0095                     _WPUB	set	149
+   382  0089                     _TRISE	set	137
+   383  0088                     _TRISD	set	136
+   384  0087                     _TRISC	set	135
+   385  0086                     _TRISB	set	134
+   386  0085                     _TRISA	set	133
+   387  043B                     _TRISC3	set	1083
+   388  043D                     _TRISC5	set	1085
+   389  0189                     _ANSELH	set	393
+   390  0188                     _ANSEL	set	392
+   391                           
+   392                           	psect	cinit
+   393  000F                     start_initialization:	
+   394                           ; #config settings
+   395                           
+   396  000F                     __initialization:
    397                           
-   398  000F                     __initialization:
-   399                           
-   400                           ; Clear objects allocated to COMMON
-   401  000F  01F0               	clrf	__pbssCOMMON& (0+127)
-   402  0010  01F1               	clrf	(__pbssCOMMON+1)& (0+127)
-   403  0011  01F2               	clrf	(__pbssCOMMON+2)& (0+127)
-   404  0012  01F3               	clrf	(__pbssCOMMON+3)& (0+127)
-   405  0013  01F4               	clrf	(__pbssCOMMON+4)& (0+127)
-   406  0014                     end_of_initialization:	
-   407                           ;End of C runtime variable initialization code
-   408                           
-   409  0014                     __end_of__initialization:
-   410  0014  0183               	clrf	3
-   411  0015  120A  118A  2911   	ljmp	_main	;jump to C main() function
-   412                           
-   413                           	psect	bssCOMMON
-   414  0070                     __pbssCOMMON:
-   415  0070                     _ESCRITURA_REVISION:
-   416  0070                     	ds	1
-   417  0071                     _CONTADOR:
-   418  0071                     	ds	1
-   419  0072                     _TOGGLE:
-   420  0072                     	ds	1
-   421  0073                     _FLAGI:
-   422  0073                     	ds	1
-   423  0074                     _FLAGD:
-   424  0074                     	ds	1
-   425                           
-   426                           	psect	cstackCOMMON
-   427  0075                     __pcstackCOMMON:
-   428  0075                     ?_spiWrite:
-   429  0075                     ??_spiWrite:	
-   430                           ; 1 bytes @ 0x0
-   431                           
-   432  0075                     ?_spiRead:	
-   433                           ; 1 bytes @ 0x0
-   434                           
-   435  0075                     ??_spiRead:	
-   436                           ; 1 bytes @ 0x0
-   437                           
-   438  0075                     ?_Setup:	
-   439                           ; 1 bytes @ 0x0
-   440                           
-   441  0075                     ?_initOsc:	
-   442                           ; 1 bytes @ 0x0
-   443                           
-   444  0075                     ?_isr:	
-   445                           ; 1 bytes @ 0x0
-   446                           
-   447  0075                     ?_main:	
-   448                           ; 1 bytes @ 0x0
+   398                           ; Clear objects allocated to COMMON
+   399  000F  01F0               	clrf	__pbssCOMMON& (0+127)
+   400  0010  01F1               	clrf	(__pbssCOMMON+1)& (0+127)
+   401  0011  01F2               	clrf	(__pbssCOMMON+2)& (0+127)
+   402  0012  01F3               	clrf	(__pbssCOMMON+3)& (0+127)
+   403  0013  01F4               	clrf	(__pbssCOMMON+4)& (0+127)
+   404  0014                     end_of_initialization:	
+   405                           ;End of C runtime variable initialization code
+   406                           
+   407  0014                     __end_of__initialization:
+   408  0014  0183               	clrf	3
+   409  0015  120A  118A  2909   	ljmp	_main	;jump to C main() function
+   410                           
+   411                           	psect	bssCOMMON
+   412  0070                     __pbssCOMMON:
+   413  0070                     _ESCRITURA_REVISION:
+   414  0070                     	ds	1
+   415  0071                     _CONTADOR:
+   416  0071                     	ds	1
+   417  0072                     _TOGGLE:
+   418  0072                     	ds	1
+   419  0073                     _FLAGI:
+   420  0073                     	ds	1
+   421  0074                     _FLAGD:
+   422  0074                     	ds	1
+   423                           
+   424                           	psect	cstackCOMMON
+   425  0075                     __pcstackCOMMON:
+   426  0075                     ?_spiWrite:
+   427  0075                     ??_spiWrite:	
+   428                           ; 1 bytes @ 0x0
+   429                           
+   430  0075                     ?_Setup:	
+   431                           ; 1 bytes @ 0x0
+   432                           
+   433  0075                     ?_initOsc:	
+   434                           ; 1 bytes @ 0x0
+   435                           
+   436  0075                     ?_isr:	
+   437                           ; 1 bytes @ 0x0
+   438                           
+   439  0075                     ?_main:	
+   440                           ; 1 bytes @ 0x0
+   441                           
+   442  0075                     spiWrite@dat:	
+   443                           ; 1 bytes @ 0x0
+   444                           
+   445                           
+   446                           ; 1 bytes @ 0x0
+   447  0075                     	ds	1
+   448  0076                     ??_isr:
    449                           
-   450  0075                     ?_spiReceiveWait:	
-   451                           ; 1 bytes @ 0x0
-   452                           
-   453  0075                     ??_spiReceiveWait:	
-   454                           ; 1 bytes @ 0x0
+   450                           ; 1 bytes @ 0x1
+   451  0076                     	ds	3
+   452  0079                     ??_spiInit:
+   453  0079                     initOsc@IRCF:	
+   454                           ; 1 bytes @ 0x4
    455                           
-   456  0075                     spiWrite@dat:	
-   457                           ; 1 bytes @ 0x0
+   456  0079                     spiInit@sType:	
+   457                           ; 1 bytes @ 0x4
    458                           
    459                           
-   460                           ; 1 bytes @ 0x0
-   461  0075                     	ds	1
-   462  0076                     ??_isr:
-   463                           
-   464                           ; 1 bytes @ 0x1
-   465  0076                     	ds	3
-   466  0079                     ??_spiInit:
-   467  0079                     initOsc@IRCF:	
-   468                           ; 1 bytes @ 0x4
-   469                           
-   470  0079                     spiInit@sType:	
-   471                           ; 1 bytes @ 0x4
-   472                           
-   473                           
-   474                           ; 1 bytes @ 0x4
-   475  0079                     	ds	1
-   476  007A                     ??_Setup:
-   477  007A                     ??_main:	
-   478                           ; 1 bytes @ 0x5
-   479                           
-   480                           
-   481                           	psect	cstackBANK0
-   482  0020                     __pcstackBANK0:	
-   483                           ; 1 bytes @ 0x5
-   484                           
-   485  0020                     ??_initOsc:
-   486  0020                     ?_spiInit:	
-   487                           ; 1 bytes @ 0x0
-   488                           
-   489  0020                     spiInit@sDataSample:	
-   490                           ; 1 bytes @ 0x0
-   491                           
-   492                           
-   493                           ; 1 bytes @ 0x0
-   494  0020                     	ds	1
-   495  0021                     spiInit@sClockIdle:
-   496                           
-   497                           ; 1 bytes @ 0x1
-   498  0021                     	ds	1
-   499  0022                     spiInit@sTransmitEdge:
-   500                           
-   501                           ; 1 bytes @ 0x2
-   502  0022                     	ds	1
-   503                           
-   504                           	psect	maintext
-   505  0111                     __pmaintext:	
-   506 ;;
-   507 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
-   508 ;;
-   509 ;; *************** function _main *****************
-   510 ;; Defined at:
-   511 ;;		line 95 in file "E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c"
-   512 ;; Parameters:    Size  Location     Type
-   513 ;;		None
-   514 ;; Auto vars:     Size  Location     Type
-   515 ;;		None
-   516 ;; Return value:  Size  Location     Type
-   517 ;;                  1    wreg      void 
-   518 ;; Registers used:
-   519 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
-   520 ;; Tracked objects:
-   521 ;;		On entry : B00/0
-   522 ;;		On exit  : 0/0
-   523 ;;		Unchanged: 0/0
-   524 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   525 ;;      Params:         0       0       0       0       0
-   526 ;;      Locals:         0       0       0       0       0
-   527 ;;      Temps:          0       0       0       0       0
-   528 ;;      Totals:         0       0       0       0       0
-   529 ;;Total ram usage:        0 bytes
-   530 ;; Hardware stack levels required when called:    5
-   531 ;; This function calls:
-   532 ;;		_Setup
-   533 ;; This function is called by:
-   534 ;;		Startup code after reset
-   535 ;; This function uses a non-reentrant model
-   536 ;;
-   537                           
-   538                           
-   539                           ;psect for function _main
-   540  0111                     _main:
-   541  0111                     l962:	
-   542                           ;incstack = 0
-   543                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
-   544                           
-   545                           
-   546                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 96:     Setup();
-   547  0111  120A  118A  20BD  120A  118A  	fcall	_Setup
-   548  0116                     l76:	
-   549                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 97:     while(1){
-   550                           
-   551  0116                     l77:	
-   552                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 98:     }
-   553                           
-   554  0116  2916               	goto	l76
-   555  0117  120A  118A  280C   	ljmp	start
-   556  011A                     __end_of_main:
-   557                           
-   558                           	psect	text1
-   559  00BD                     __ptext1:	
-   560 ;; *************** function _Setup *****************
-   561 ;; Defined at:
-   562 ;;		line 104 in file "E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c"
-   563 ;; Parameters:    Size  Location     Type
-   564 ;;		None
-   565 ;; Auto vars:     Size  Location     Type
-   566 ;;		None
-   567 ;; Return value:  Size  Location     Type
-   568 ;;                  1    wreg      void 
-   569 ;; Registers used:
-   570 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
-   571 ;; Tracked objects:
-   572 ;;		On entry : 0/0
-   573 ;;		On exit  : 0/0
-   574 ;;		Unchanged: 0/0
-   575 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   576 ;;      Params:         0       0       0       0       0
-   577 ;;      Locals:         0       0       0       0       0
-   578 ;;      Temps:          0       0       0       0       0
-   579 ;;      Totals:         0       0       0       0       0
-   580 ;;Total ram usage:        0 bytes
-   581 ;; Hardware stack levels used:    1
-   582 ;; Hardware stack levels required when called:    4
-   583 ;; This function calls:
-   584 ;;		_initOsc
-   585 ;;		_spiInit
-   586 ;; This function is called by:
-   587 ;;		_main
-   588 ;; This function uses a non-reentrant model
-   589 ;;
-   590                           
-   591                           
-   592                           ;psect for function _Setup
-   593  00BD                     _Setup:
-   594  00BD                     l930:	
-   595                           ;incstack = 0
-   596                           ; Regs used in _Setup: [wreg-fsr0h+status,2+status,0+pclath+cstack]
-   597                           
+   460                           ; 1 bytes @ 0x4
+   461  0079                     	ds	1
+   462  007A                     ??_Setup:
+   463  007A                     ??_main:	
+   464                           ; 1 bytes @ 0x5
+   465                           
+   466                           
+   467                           	psect	cstackBANK0
+   468  0020                     __pcstackBANK0:	
+   469                           ; 1 bytes @ 0x5
+   470                           
+   471  0020                     ??_initOsc:
+   472  0020                     ?_spiInit:	
+   473                           ; 1 bytes @ 0x0
+   474                           
+   475  0020                     spiInit@sDataSample:	
+   476                           ; 1 bytes @ 0x0
+   477                           
+   478                           
+   479                           ; 1 bytes @ 0x0
+   480  0020                     	ds	1
+   481  0021                     spiInit@sClockIdle:
+   482                           
+   483                           ; 1 bytes @ 0x1
+   484  0021                     	ds	1
+   485  0022                     spiInit@sTransmitEdge:
+   486                           
+   487                           ; 1 bytes @ 0x2
+   488  0022                     	ds	1
+   489                           
+   490                           	psect	maintext
+   491  0109                     __pmaintext:	
+   492 ;;
+   493 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   494 ;;
+   495 ;; *************** function _main *****************
+   496 ;; Defined at:
+   497 ;;		line 94 in file "E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c"
+   498 ;; Parameters:    Size  Location     Type
+   499 ;;		None
+   500 ;; Auto vars:     Size  Location     Type
+   501 ;;		None
+   502 ;; Return value:  Size  Location     Type
+   503 ;;                  1    wreg      void 
+   504 ;; Registers used:
+   505 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   506 ;; Tracked objects:
+   507 ;;		On entry : B00/0
+   508 ;;		On exit  : 0/0
+   509 ;;		Unchanged: 0/0
+   510 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   511 ;;      Params:         0       0       0       0       0
+   512 ;;      Locals:         0       0       0       0       0
+   513 ;;      Temps:          0       0       0       0       0
+   514 ;;      Totals:         0       0       0       0       0
+   515 ;;Total ram usage:        0 bytes
+   516 ;; Hardware stack levels required when called:    4
+   517 ;; This function calls:
+   518 ;;		_Setup
+   519 ;; This function is called by:
+   520 ;;		Startup code after reset
+   521 ;; This function uses a non-reentrant model
+   522 ;;
+   523                           
+   524                           
+   525                           ;psect for function _main
+   526  0109                     _main:
+   527  0109                     l960:	
+   528                           ;incstack = 0
+   529                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   530                           
+   531                           
+   532                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 95:     Setup();
+   533  0109  120A  118A  20B5  120A  118A  	fcall	_Setup
+   534  010E                     l74:	
+   535                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 96:     while(1){
+   536                           
+   537  010E                     l75:	
+   538                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 97:     }
+   539                           
+   540  010E  290E               	goto	l74
+   541  010F  120A  118A  280C   	ljmp	start
+   542  0112                     __end_of_main:
+   543                           
+   544                           	psect	text1
+   545  00B5                     __ptext1:	
+   546 ;; *************** function _Setup *****************
+   547 ;; Defined at:
+   548 ;;		line 103 in file "E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c"
+   549 ;; Parameters:    Size  Location     Type
+   550 ;;		None
+   551 ;; Auto vars:     Size  Location     Type
+   552 ;;		None
+   553 ;; Return value:  Size  Location     Type
+   554 ;;                  1    wreg      void 
+   555 ;; Registers used:
+   556 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   557 ;; Tracked objects:
+   558 ;;		On entry : 0/0
+   559 ;;		On exit  : 0/0
+   560 ;;		Unchanged: 0/0
+   561 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   562 ;;      Params:         0       0       0       0       0
+   563 ;;      Locals:         0       0       0       0       0
+   564 ;;      Temps:          0       0       0       0       0
+   565 ;;      Totals:         0       0       0       0       0
+   566 ;;Total ram usage:        0 bytes
+   567 ;; Hardware stack levels used:    1
+   568 ;; Hardware stack levels required when called:    3
+   569 ;; This function calls:
+   570 ;;		_initOsc
+   571 ;;		_spiInit
+   572 ;; This function is called by:
+   573 ;;		_main
+   574 ;; This function uses a non-reentrant model
+   575 ;;
+   576                           
+   577                           
+   578                           ;psect for function _Setup
+   579  00B5                     _Setup:
+   580  00B5                     l928:	
+   581                           ;incstack = 0
+   582                           ; Regs used in _Setup: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   583                           
+   584                           
+   585                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 105:     PORTA = 
+      +                          0;
+   586  00B5  1283               	bcf	3,5	;RP0=0, select bank0
+   587  00B6  1303               	bcf	3,6	;RP1=0, select bank0
+   588  00B7  0185               	clrf	5	;volatile
+   589                           
+   590                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 106:     PORTB = 
+      +                          0;
+   591  00B8  0186               	clrf	6	;volatile
+   592                           
+   593                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 107:     PORTC = 
+      +                          0;
+   594  00B9  0187               	clrf	7	;volatile
+   595                           
+   596                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 108:     PORTD = 
+      +                          0;
+   597  00BA  0188               	clrf	8	;volatile
    598                           
-   599                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 106:     PORTA = 
+   599                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 109:     PORTE = 
       +                          0;
-   600  00BD  1283               	bcf	3,5	;RP0=0, select bank0
-   601  00BE  1303               	bcf	3,6	;RP1=0, select bank0
-   602  00BF  0185               	clrf	5	;volatile
-   603                           
-   604                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 107:     PORTB = 
+   600  00BB  0189               	clrf	9	;volatile
+   601                           
+   602                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 111:     ANSEL = 
       +                          0;
-   605  00C0  0186               	clrf	6	;volatile
+   603  00BC  1683               	bsf	3,5	;RP0=1, select bank3
+   604  00BD  1703               	bsf	3,6	;RP1=1, select bank3
+   605  00BE  0188               	clrf	8	;volatile
    606                           
-   607                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 108:     PORTC = 
-      +                          0;
-   608  00C1  0187               	clrf	7	;volatile
-   609                           
-   610                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 109:     PORTD = 
-      +                          0;
-   611  00C2  0188               	clrf	8	;volatile
-   612                           
-   613                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 110:     PORTE = 
-      +                          0;
-   614  00C3  0189               	clrf	9	;volatile
-   615                           
-   616                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 112:     ANSEL = 
-      +                          0;
-   617  00C4  1683               	bsf	3,5	;RP0=1, select bank3
-   618  00C5  1703               	bsf	3,6	;RP1=1, select bank3
-   619  00C6  0188               	clrf	8	;volatile
-   620                           
-   621                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 113:     ANSELH =
+   607                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 112:     ANSELH =
       +                           0;
-   622  00C7  0189               	clrf	9	;volatile
-   623  00C8                     l932:
-   624                           
-   625                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 115:     TRISA = 
+   608  00BF  0189               	clrf	9	;volatile
+   609  00C0                     l930:
+   610                           
+   611                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 114:     TRISA = 
       +                          0b00100000;
-   626  00C8  3020               	movlw	32
-   627  00C9  1683               	bsf	3,5	;RP0=1, select bank1
-   628  00CA  1303               	bcf	3,6	;RP1=0, select bank1
-   629  00CB  0085               	movwf	5	;volatile
-   630  00CC                     l934:
-   631                           
-   632                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 116:     TRISB = 
+   612  00C0  3020               	movlw	32
+   613  00C1  1683               	bsf	3,5	;RP0=1, select bank1
+   614  00C2  1303               	bcf	3,6	;RP1=0, select bank1
+   615  00C3  0085               	movwf	5	;volatile
+   616  00C4                     l932:
+   617                           
+   618                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 115:     TRISB = 
       +                          0b00000011;
-   633  00CC  3003               	movlw	3
-   634  00CD  0086               	movwf	6	;volatile
-   635  00CE                     l936:
-   636                           
-   637                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 117:     TRISC = 
+   619  00C4  3003               	movlw	3
+   620  00C5  0086               	movwf	6	;volatile
+   621  00C6                     l934:
+   622                           
+   623                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 116:     TRISC = 
       +                          0b00011000;
-   638  00CE  3018               	movlw	24
-   639  00CF  0087               	movwf	7	;volatile
-   640  00D0                     l938:
-   641                           
-   642                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 118:     TRISD = 
+   624  00C6  3018               	movlw	24
+   625  00C7  0087               	movwf	7	;volatile
+   626  00C8                     l936:
+   627                           
+   628                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 117:     TRISD = 
       +                          0;
-   643  00D0  0188               	clrf	8	;volatile
-   644  00D1                     l940:
-   645                           
-   646                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 119:     TRISE = 
+   629  00C8  0188               	clrf	8	;volatile
+   630  00C9                     l938:
+   631                           
+   632                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 118:     TRISE = 
       +                          0;
-   647  00D1  0189               	clrf	9	;volatile
-   648  00D2                     l942:
-   649                           
-   650                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 121:     WPUB = 0
+   633  00C9  0189               	clrf	9	;volatile
+   634  00CA                     l940:
+   635                           
+   636                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 120:     WPUB = 0
       +                          b00000011;
-   651  00D2  3003               	movlw	3
-   652  00D3  0095               	movwf	21	;volatile
-   653  00D4                     l944:
-   654                           
-   655                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 122:     OPTION_R
+   637  00CA  3003               	movlw	3
+   638  00CB  0095               	movwf	21	;volatile
+   639  00CC                     l942:
+   640                           
+   641                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 121:     OPTION_R
       +                          EG = 0b01010111;
-   656  00D4  3057               	movlw	87
-   657  00D5  0081               	movwf	1	;volatile
-   658  00D6                     l946:
-   659                           
-   660                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 125:     initOsc(
+   642  00CC  3057               	movlw	87
+   643  00CD  0081               	movwf	1	;volatile
+   644  00CE                     l944:
+   645                           
+   646                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 124:     initOsc(
       +                          6);
-   661  00D6  3006               	movlw	6
-   662  00D7  120A  118A  2018  120A  118A  	fcall	_initOsc
-   663  00DC                     l948:
-   664                           
-   665                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 127:     IOCB = 0
+   647  00CE  3006               	movlw	6
+   648  00CF  120A  118A  2018  120A  118A  	fcall	_initOsc
+   649  00D4                     l946:
+   650                           
+   651                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 126:     IOCB = 0
       +                          b00000011;
-   666  00DC  3003               	movlw	3
-   667  00DD  1683               	bsf	3,5	;RP0=1, select bank1
-   668  00DE  1303               	bcf	3,6	;RP1=0, select bank1
-   669  00DF  0096               	movwf	22	;volatile
-   670  00E0                     l950:
-   671                           
-   672                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 129:     spiInit(
+   652  00D4  3003               	movlw	3
+   653  00D5  1683               	bsf	3,5	;RP0=1, select bank1
+   654  00D6  1303               	bcf	3,6	;RP1=0, select bank1
+   655  00D7  0096               	movwf	22	;volatile
+   656  00D8                     l948:
+   657                           
+   658                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 128:     spiInit(
       +                          SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-   673  00E0  1283               	bcf	3,5	;RP0=0, select bank0
-   674  00E1  1303               	bcf	3,6	;RP1=0, select bank0
-   675  00E2  01A0               	clrf	spiInit@sDataSample
-   676  00E3  01A1               	clrf	spiInit@sClockIdle
-   677  00E4  01A2               	clrf	spiInit@sTransmitEdge
-   678  00E5  3024               	movlw	36
-   679  00E6  120A  118A  20F3  120A  118A  	fcall	_spiInit
-   680  00EB                     l952:
-   681                           
-   682                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 132:     INTCONbi
+   659  00D8  1283               	bcf	3,5	;RP0=0, select bank0
+   660  00D9  1303               	bcf	3,6	;RP1=0, select bank0
+   661  00DA  01A0               	clrf	spiInit@sDataSample
+   662  00DB  01A1               	clrf	spiInit@sClockIdle
+   663  00DC  01A2               	clrf	spiInit@sTransmitEdge
+   664  00DD  3024               	movlw	36
+   665  00DE  120A  118A  20EB  120A  118A  	fcall	_spiInit
+   666  00E3                     l950:
+   667                           
+   668                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 131:     INTCONbi
       +                          ts.GIE = 1;
-   683  00EB  178B               	bsf	11,7	;volatile
-   684  00EC                     l954:
-   685                           
-   686                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 133:     INTCONbi
+   669  00E3  178B               	bsf	11,7	;volatile
+   670  00E4                     l952:
+   671                           
+   672                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 132:     INTCONbi
       +                          ts.PEIE = 1;
-   687  00EC  170B               	bsf	11,6	;volatile
-   688  00ED                     l956:
-   689                           
-   690                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 134:     INTCONbi
+   673  00E4  170B               	bsf	11,6	;volatile
+   674  00E5                     l954:
+   675                           
+   676                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 133:     INTCONbi
       +                          ts.RBIE = 1;
-   691  00ED  158B               	bsf	11,3	;volatile
-   692  00EE                     l958:
-   693                           
-   694                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 135:     INTCONbi
+   677  00E5  158B               	bsf	11,3	;volatile
+   678  00E6                     l956:
+   679                           
+   680                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 134:     INTCONbi
       +                          ts.RBIF = 0;
-   695  00EE  100B               	bcf	11,0	;volatile
-   696  00EF                     l960:
-   697                           
-   698                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 136:     PIE1bits
+   681  00E6  100B               	bcf	11,0	;volatile
+   682  00E7                     l958:
+   683                           
+   684                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 135:     PIE1bits
       +                          .SSPIE = 1;
-   699  00EF  1683               	bsf	3,5	;RP0=1, select bank1
-   700  00F0  1303               	bcf	3,6	;RP1=0, select bank1
-   701  00F1  158C               	bsf	12,3	;volatile
-   702  00F2                     l82:
-   703  00F2  0008               	return
-   704  00F3                     __end_of_Setup:
-   705                           
-   706                           	psect	text2
-   707  00F3                     __ptext2:	
-   708 ;; *************** function _spiInit *****************
-   709 ;; Defined at:
-   710 ;;		line 12 in file "E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c"
-   711 ;; Parameters:    Size  Location     Type
-   712 ;;  sType           1    wreg     enum E1292
-   713 ;;  sDataSample     1    0[BANK0 ] enum E1300
-   714 ;;  sClockIdle      1    1[BANK0 ] enum E1304
-   715 ;;  sTransmitEdg    1    2[BANK0 ] enum E1308
-   716 ;; Auto vars:     Size  Location     Type
-   717 ;;  sType           1    4[COMMON] enum E1292
-   718 ;; Return value:  Size  Location     Type
-   719 ;;                  1    wreg      void 
-   720 ;; Registers used:
-   721 ;;		wreg, status,2, status,0
-   722 ;; Tracked objects:
-   723 ;;		On entry : 0/0
-   724 ;;		On exit  : 0/0
-   725 ;;		Unchanged: 0/0
-   726 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   727 ;;      Params:         0       3       0       0       0
-   728 ;;      Locals:         1       0       0       0       0
-   729 ;;      Temps:          0       0       0       0       0
-   730 ;;      Totals:         1       3       0       0       0
-   731 ;;Total ram usage:        4 bytes
-   732 ;; Hardware stack levels used:    1
-   733 ;; Hardware stack levels required when called:    3
-   734 ;; This function calls:
-   735 ;;		Nothing
-   736 ;; This function is called by:
-   737 ;;		_Setup
-   738 ;; This function uses a non-reentrant model
-   739 ;;
-   740                           
+   685  00E7  1683               	bsf	3,5	;RP0=1, select bank1
+   686  00E8  1303               	bcf	3,6	;RP1=0, select bank1
+   687  00E9  158C               	bsf	12,3	;volatile
+   688  00EA                     l80:
+   689  00EA  0008               	return
+   690  00EB                     __end_of_Setup:
+   691                           
+   692                           	psect	text2
+   693  00EB                     __ptext2:	
+   694 ;; *************** function _spiInit *****************
+   695 ;; Defined at:
+   696 ;;		line 12 in file "E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c"
+   697 ;; Parameters:    Size  Location     Type
+   698 ;;  sType           1    wreg     enum E1292
+   699 ;;  sDataSample     1    0[BANK0 ] enum E1300
+   700 ;;  sClockIdle      1    1[BANK0 ] enum E1304
+   701 ;;  sTransmitEdg    1    2[BANK0 ] enum E1308
+   702 ;; Auto vars:     Size  Location     Type
+   703 ;;  sType           1    4[COMMON] enum E1292
+   704 ;; Return value:  Size  Location     Type
+   705 ;;                  1    wreg      void 
+   706 ;; Registers used:
+   707 ;;		wreg, status,2, status,0
+   708 ;; Tracked objects:
+   709 ;;		On entry : 0/0
+   710 ;;		On exit  : 0/0
+   711 ;;		Unchanged: 0/0
+   712 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   713 ;;      Params:         0       3       0       0       0
+   714 ;;      Locals:         1       0       0       0       0
+   715 ;;      Temps:          0       0       0       0       0
+   716 ;;      Totals:         1       3       0       0       0
+   717 ;;Total ram usage:        4 bytes
+   718 ;; Hardware stack levels used:    1
+   719 ;; Hardware stack levels required when called:    2
+   720 ;; This function calls:
+   721 ;;		Nothing
+   722 ;; This function is called by:
+   723 ;;		_Setup
+   724 ;; This function uses a non-reentrant model
+   725 ;;
+   726                           
+   727                           
+   728                           ;psect for function _spiInit
+   729  00EB                     _spiInit:
+   730                           
+   731                           ;incstack = 0
+   732                           ; Regs used in _spiInit: [wreg+status,2+status,0]
+   733                           ;spiInit@sType stored from wreg
+   734  00EB  00F9               	movwf	spiInit@sType
+   735  00EC                     l918:
+   736                           
+   737                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c: 13:     TRISC5 = 0;
+   738  00EC  1683               	bsf	3,5	;RP0=1, select bank1
+   739  00ED  1303               	bcf	3,6	;RP1=0, select bank1
+   740  00EE  1287               	bcf	7,5	;volatile
    741                           
-   742                           ;psect for function _spiInit
-   743  00F3                     _spiInit:
-   744                           
-   745                           ;incstack = 0
-   746                           ; Regs used in _spiInit: [wreg+status,2+status,0]
-   747                           ;spiInit@sType stored from wreg
-   748  00F3  00F9               	movwf	spiInit@sType
-   749  00F4                     l920:
-   750                           
-   751                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c: 13:     TRISC5 = 0;
-   752  00F4  1683               	bsf	3,5	;RP0=1, select bank1
-   753  00F5  1303               	bcf	3,6	;RP1=0, select bank1
-   754  00F6  1287               	bcf	7,5	;volatile
-   755                           
-   756                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c: 14:     if(sType & 0b0000
+   742                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c: 14:     if(sType & 0b0000
       +                          0100)
-   757  00F7  1D79               	btfss	spiInit@sType,2
-   758  00F8  28FA               	goto	u101
-   759  00F9  28FB               	goto	u100
-   760  00FA                     u101:
-   761  00FA  2903               	goto	l926
-   762  00FB                     u100:
-   763  00FB                     l922:
-   764                           
-   765                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c: 15:     {;E:/UVG/Semestre
+   743  00EF  1D79               	btfss	spiInit@sType,2
+   744  00F0  28F2               	goto	u101
+   745  00F1  28F3               	goto	u100
+   746  00F2                     u101:
+   747  00F2  28FB               	goto	l924
+   748  00F3                     u100:
+   749  00F3                     l920:
+   750                           
+   751                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c: 15:     {;E:/UVG/Semestre
       +                           5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c: 16:         SSPSTAT = sTransmitEdge;
-   766  00FB  1283               	bcf	3,5	;RP0=0, select bank0
-   767  00FC  1303               	bcf	3,6	;RP1=0, select bank0
-   768  00FD  0822               	movf	spiInit@sTransmitEdge,w
-   769  00FE  1683               	bsf	3,5	;RP0=1, select bank1
-   770  00FF  1303               	bcf	3,6	;RP1=0, select bank1
-   771  0100  0094               	movwf	20	;volatile
-   772  0101                     l924:
-   773                           
-   774                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c: 17:         TRISC3 = 1;
-   775  0101  1587               	bsf	7,3	;volatile
-   776                           
-   777                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c: 18:     }
-   778  0102  290B               	goto	l114
-   779  0103                     l926:
-   780                           
-   781                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c: 20:     {;E:/UVG/Semestre
+   752  00F3  1283               	bcf	3,5	;RP0=0, select bank0
+   753  00F4  1303               	bcf	3,6	;RP1=0, select bank0
+   754  00F5  0822               	movf	spiInit@sTransmitEdge,w
+   755  00F6  1683               	bsf	3,5	;RP0=1, select bank1
+   756  00F7  1303               	bcf	3,6	;RP1=0, select bank1
+   757  00F8  0094               	movwf	20	;volatile
+   758  00F9                     l922:
+   759                           
+   760                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c: 17:         TRISC3 = 1;
+   761  00F9  1587               	bsf	7,3	;volatile
+   762                           
+   763                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c: 18:     }
+   764  00FA  2903               	goto	l112
+   765  00FB                     l924:
+   766                           
+   767                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c: 20:     {;E:/UVG/Semestre
       +                           5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c: 21:         SSPSTAT = sDataSample | sTran
       +                          smitEdge;
-   782  0103  1283               	bcf	3,5	;RP0=0, select bank0
-   783  0104  1303               	bcf	3,6	;RP1=0, select bank0
-   784  0105  0820               	movf	spiInit@sDataSample,w
-   785  0106  0422               	iorwf	spiInit@sTransmitEdge,w
-   786  0107  1683               	bsf	3,5	;RP0=1, select bank1
-   787  0108  1303               	bcf	3,6	;RP1=0, select bank1
-   788  0109  0094               	movwf	20	;volatile
-   789  010A                     l928:
-   790                           
-   791                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c: 22:         TRISC3 = 0;
-   792  010A  1187               	bcf	7,3	;volatile
-   793  010B                     l114:	
-   794                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c: 23:     }
-   795                           
-   796                           
-   797                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c: 25:     SSPCON = sType | 
+   768  00FB  1283               	bcf	3,5	;RP0=0, select bank0
+   769  00FC  1303               	bcf	3,6	;RP1=0, select bank0
+   770  00FD  0820               	movf	spiInit@sDataSample,w
+   771  00FE  0422               	iorwf	spiInit@sTransmitEdge,w
+   772  00FF  1683               	bsf	3,5	;RP0=1, select bank1
+   773  0100  1303               	bcf	3,6	;RP1=0, select bank1
+   774  0101  0094               	movwf	20	;volatile
+   775  0102                     l926:
+   776                           
+   777                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c: 22:         TRISC3 = 0;
+   778  0102  1187               	bcf	7,3	;volatile
+   779  0103                     l112:	
+   780                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c: 23:     }
+   781                           
+   782                           
+   783                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c: 25:     SSPCON = sType | 
       +                          sClockIdle;
-   798  010B  0879               	movf	spiInit@sType,w
-   799  010C  1283               	bcf	3,5	;RP0=0, select bank0
-   800  010D  1303               	bcf	3,6	;RP1=0, select bank0
-   801  010E  0421               	iorwf	spiInit@sClockIdle,w
-   802  010F  0094               	movwf	20	;volatile
-   803  0110                     l115:
-   804  0110  0008               	return
-   805  0111                     __end_of_spiInit:
-   806                           
-   807                           	psect	text3
-   808  0018                     __ptext3:	
-   809 ;; *************** function _initOsc *****************
-   810 ;; Defined at:
-   811 ;;		line 6 in file "E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c"
-   812 ;; Parameters:    Size  Location     Type
-   813 ;;  IRCF            1    wreg     unsigned char 
-   814 ;; Auto vars:     Size  Location     Type
-   815 ;;  IRCF            1    4[COMMON] unsigned char 
-   816 ;; Return value:  Size  Location     Type
-   817 ;;                  1    wreg      void 
-   818 ;; Registers used:
-   819 ;;		wreg, fsr0l, fsr0h, status,2, status,0
-   820 ;; Tracked objects:
-   821 ;;		On entry : 0/0
-   822 ;;		On exit  : 0/0
-   823 ;;		Unchanged: 0/0
-   824 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   825 ;;      Params:         0       0       0       0       0
-   826 ;;      Locals:         1       0       0       0       0
-   827 ;;      Temps:          0       2       0       0       0
-   828 ;;      Totals:         1       2       0       0       0
-   829 ;;Total ram usage:        3 bytes
-   830 ;; Hardware stack levels used:    1
-   831 ;; Hardware stack levels required when called:    3
-   832 ;; This function calls:
-   833 ;;		Nothing
-   834 ;; This function is called by:
-   835 ;;		_Setup
-   836 ;; This function uses a non-reentrant model
-   837 ;;
-   838                           
+   784  0103  0879               	movf	spiInit@sType,w
+   785  0104  1283               	bcf	3,5	;RP0=0, select bank0
+   786  0105  1303               	bcf	3,6	;RP1=0, select bank0
+   787  0106  0421               	iorwf	spiInit@sClockIdle,w
+   788  0107  0094               	movwf	20	;volatile
+   789  0108                     l113:
+   790  0108  0008               	return
+   791  0109                     __end_of_spiInit:
+   792                           
+   793                           	psect	text3
+   794  0018                     __ptext3:	
+   795 ;; *************** function _initOsc *****************
+   796 ;; Defined at:
+   797 ;;		line 6 in file "E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c"
+   798 ;; Parameters:    Size  Location     Type
+   799 ;;  IRCF            1    wreg     unsigned char 
+   800 ;; Auto vars:     Size  Location     Type
+   801 ;;  IRCF            1    4[COMMON] unsigned char 
+   802 ;; Return value:  Size  Location     Type
+   803 ;;                  1    wreg      void 
+   804 ;; Registers used:
+   805 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+   806 ;; Tracked objects:
+   807 ;;		On entry : 0/0
+   808 ;;		On exit  : 0/0
+   809 ;;		Unchanged: 0/0
+   810 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   811 ;;      Params:         0       0       0       0       0
+   812 ;;      Locals:         1       0       0       0       0
+   813 ;;      Temps:          0       2       0       0       0
+   814 ;;      Totals:         1       2       0       0       0
+   815 ;;Total ram usage:        3 bytes
+   816 ;; Hardware stack levels used:    1
+   817 ;; Hardware stack levels required when called:    2
+   818 ;; This function calls:
+   819 ;;		Nothing
+   820 ;; This function is called by:
+   821 ;;		_Setup
+   822 ;; This function uses a non-reentrant model
+   823 ;;
+   824                           
+   825                           
+   826                           ;psect for function _initOsc
+   827  0018                     _initOsc:
+   828                           
+   829                           ;incstack = 0
+   830                           ; Regs used in _initOsc: [wreg-fsr0h+status,2+status,0]
+   831                           ;initOsc@IRCF stored from wreg
+   832  0018  00F9               	movwf	initOsc@IRCF
+   833  0019                     l908:
+   834                           
+   835                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 8:     switch(IRCF){
+   836  0019  2850               	goto	l912
+   837  001A                     l86:	
+   838                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 9:         case 0:
    839                           
-   840                           ;psect for function _initOsc
-   841  0018                     _initOsc:
-   842                           
-   843                           ;incstack = 0
-   844                           ; Regs used in _initOsc: [wreg-fsr0h+status,2+status,0]
-   845                           ;initOsc@IRCF stored from wreg
-   846  0018  00F9               	movwf	initOsc@IRCF
-   847  0019                     l910:
+   840                           
+   841                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 10:             OSCC
+      +                          ONbits.IRCF2 = 0;
+   842  001A  1683               	bsf	3,5	;RP0=1, select bank1
+   843  001B  1303               	bcf	3,6	;RP1=0, select bank1
+   844  001C  130F               	bcf	15,6	;volatile
+   845                           
+   846                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 11:             OSCC
+      +                          ONbits.IRCF1 = 0;
+   847  001D  128F               	bcf	15,5	;volatile
    848                           
-   849                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 8:     switch(IRCF){
-   850  0019  2850               	goto	l914
-   851  001A                     l88:	
-   852                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 9:         case 0:
-   853                           
-   854                           
-   855                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 10:             OSCC
+   849                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 12:             OSCC
+      +                          ONbits.IRCF0 = 0;
+   850  001E  120F               	bcf	15,4	;volatile
+   851                           
+   852                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 13:             brea
+      +                          k;
+   853  001F  2874               	goto	l87
+   854  0020                     l88:	
+   855                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 14:         case 1:
+   856                           
+   857                           
+   858                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 15:             OSCC
       +                          ONbits.IRCF2 = 0;
-   856  001A  1683               	bsf	3,5	;RP0=1, select bank1
-   857  001B  1303               	bcf	3,6	;RP1=0, select bank1
-   858  001C  130F               	bcf	15,6	;volatile
-   859                           
-   860                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 11:             OSCC
-      +                          ONbits.IRCF1 = 0;
-   861  001D  128F               	bcf	15,5	;volatile
+   859  0020  1683               	bsf	3,5	;RP0=1, select bank1
+   860  0021  1303               	bcf	3,6	;RP1=0, select bank1
+   861  0022  130F               	bcf	15,6	;volatile
    862                           
-   863                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 12:             OSCC
-      +                          ONbits.IRCF0 = 0;
-   864  001E  120F               	bcf	15,4	;volatile
+   863                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 16:             OSCC
+      +                          ONbits.IRCF1 = 0;
+   864  0023  128F               	bcf	15,5	;volatile
    865                           
-   866                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 13:             brea
+   866                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 17:             OSCC
+      +                          ONbits.IRCF0 = 1;
+   867  0024  160F               	bsf	15,4	;volatile
+   868                           
+   869                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 18:             brea
       +                          k;
-   867  001F  2874               	goto	l89
-   868  0020                     l90:	
-   869                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 14:         case 1:
-   870                           
-   871                           
-   872                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 15:             OSCC
+   870  0025  2874               	goto	l87
+   871  0026                     l89:	
+   872                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 19:         case 2:
+   873                           
+   874                           
+   875                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 20:             OSCC
       +                          ONbits.IRCF2 = 0;
-   873  0020  1683               	bsf	3,5	;RP0=1, select bank1
-   874  0021  1303               	bcf	3,6	;RP1=0, select bank1
-   875  0022  130F               	bcf	15,6	;volatile
-   876                           
-   877                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 16:             OSCC
-      +                          ONbits.IRCF1 = 0;
-   878  0023  128F               	bcf	15,5	;volatile
+   876  0026  1683               	bsf	3,5	;RP0=1, select bank1
+   877  0027  1303               	bcf	3,6	;RP1=0, select bank1
+   878  0028  130F               	bcf	15,6	;volatile
    879                           
-   880                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 17:             OSCC
-      +                          ONbits.IRCF0 = 1;
-   881  0024  160F               	bsf	15,4	;volatile
+   880                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 21:             OSCC
+      +                          ONbits.IRCF1 = 1;
+   881  0029  168F               	bsf	15,5	;volatile
    882                           
-   883                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 18:             brea
+   883                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 22:             OSCC
+      +                          ONbits.IRCF0 = 0;
+   884  002A  120F               	bcf	15,4	;volatile
+   885                           
+   886                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 23:             brea
       +                          k;
-   884  0025  2874               	goto	l89
-   885  0026                     l91:	
-   886                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 19:         case 2:
-   887                           
-   888                           
-   889                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 20:             OSCC
+   887  002B  2874               	goto	l87
+   888  002C                     l90:	
+   889                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 24:         case 3:
+   890                           
+   891                           
+   892                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 25:             OSCC
       +                          ONbits.IRCF2 = 0;
-   890  0026  1683               	bsf	3,5	;RP0=1, select bank1
-   891  0027  1303               	bcf	3,6	;RP1=0, select bank1
-   892  0028  130F               	bcf	15,6	;volatile
-   893                           
-   894                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 21:             OSCC
-      +                          ONbits.IRCF1 = 1;
-   895  0029  168F               	bsf	15,5	;volatile
+   893  002C  1683               	bsf	3,5	;RP0=1, select bank1
+   894  002D  1303               	bcf	3,6	;RP1=0, select bank1
+   895  002E  130F               	bcf	15,6	;volatile
    896                           
-   897                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 22:             OSCC
-      +                          ONbits.IRCF0 = 0;
-   898  002A  120F               	bcf	15,4	;volatile
+   897                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 26:             OSCC
+      +                          ONbits.IRCF1 = 1;
+   898  002F  168F               	bsf	15,5	;volatile
    899                           
-   900                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 23:             brea
+   900                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 27:             OSCC
+      +                          ONbits.IRCF0 = 1;
+   901  0030  160F               	bsf	15,4	;volatile
+   902                           
+   903                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 28:             brea
       +                          k;
-   901  002B  2874               	goto	l89
-   902  002C                     l92:	
-   903                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 24:         case 3:
-   904                           
-   905                           
-   906                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 25:             OSCC
-      +                          ONbits.IRCF2 = 0;
-   907  002C  1683               	bsf	3,5	;RP0=1, select bank1
-   908  002D  1303               	bcf	3,6	;RP1=0, select bank1
-   909  002E  130F               	bcf	15,6	;volatile
-   910                           
-   911                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 26:             OSCC
-      +                          ONbits.IRCF1 = 1;
-   912  002F  168F               	bsf	15,5	;volatile
+   904  0031  2874               	goto	l87
+   905  0032                     l91:	
+   906                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 29:         case 4:
+   907                           
+   908                           
+   909                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 30:             OSCC
+      +                          ONbits.IRCF2 = 1;
+   910  0032  1683               	bsf	3,5	;RP0=1, select bank1
+   911  0033  1303               	bcf	3,6	;RP1=0, select bank1
+   912  0034  170F               	bsf	15,6	;volatile
    913                           
-   914                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 27:             OSCC
-      +                          ONbits.IRCF0 = 1;
-   915  0030  160F               	bsf	15,4	;volatile
+   914                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 31:             OSCC
+      +                          ONbits.IRCF1 = 0;
+   915  0035  128F               	bcf	15,5	;volatile
    916                           
-   917                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 28:             brea
+   917                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 32:             OSCC
+      +                          ONbits.IRCF0 = 0;
+   918  0036  120F               	bcf	15,4	;volatile
+   919                           
+   920                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 33:             brea
       +                          k;
-   918  0031  2874               	goto	l89
-   919  0032                     l93:	
-   920                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 29:         case 4:
-   921                           
-   922                           
-   923                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 30:             OSCC
+   921  0037  2874               	goto	l87
+   922  0038                     l92:	
+   923                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 34:         case 5:
+   924                           
+   925                           
+   926                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 35:             OSCC
       +                          ONbits.IRCF2 = 1;
-   924  0032  1683               	bsf	3,5	;RP0=1, select bank1
-   925  0033  1303               	bcf	3,6	;RP1=0, select bank1
-   926  0034  170F               	bsf	15,6	;volatile
-   927                           
-   928                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 31:             OSCC
-      +                          ONbits.IRCF1 = 0;
-   929  0035  128F               	bcf	15,5	;volatile
+   927  0038  1683               	bsf	3,5	;RP0=1, select bank1
+   928  0039  1303               	bcf	3,6	;RP1=0, select bank1
+   929  003A  170F               	bsf	15,6	;volatile
    930                           
-   931                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 32:             OSCC
-      +                          ONbits.IRCF0 = 0;
-   932  0036  120F               	bcf	15,4	;volatile
-   933                           
-   934                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 33:             brea
-      +                          k;
-   935  0037  2874               	goto	l89
-   936  0038                     l94:	
-   937                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 34:         case 5:
-   938                           
-   939                           
-   940                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 35:             OSCC
-      +                          ONbits.IRCF2 = 1;
-   941  0038  1683               	bsf	3,5	;RP0=1, select bank1
-   942  0039  1303               	bcf	3,6	;RP1=0, select bank1
-   943  003A  170F               	bsf	15,6	;volatile
-   944                           
-   945                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 36:             OSCC
+   931                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 36:             OSCC
       +                          ONbits.IRCF1 = 0;
-   946  003B  128F               	bcf	15,5	;volatile
+   932  003B  128F               	bcf	15,5	;volatile
+   933                           
+   934                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 37:             OSCC
+      +                          ONbits.IRCF0 = 1;
+   935  003C  160F               	bsf	15,4	;volatile
+   936                           
+   937                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 38:             brea
+      +                          k;
+   938  003D  2874               	goto	l87
+   939  003E                     l93:	
+   940                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 39:         case 6:
+   941                           
+   942                           
+   943                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 40:             OSCC
+      +                          ONbits.IRCF2 = 1;
+   944  003E  1683               	bsf	3,5	;RP0=1, select bank1
+   945  003F  1303               	bcf	3,6	;RP1=0, select bank1
+   946  0040  170F               	bsf	15,6	;volatile
    947                           
-   948                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 37:             OSCC
-      +                          ONbits.IRCF0 = 1;
-   949  003C  160F               	bsf	15,4	;volatile
+   948                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 41:             OSCC
+      +                          ONbits.IRCF1 = 1;
+   949  0041  168F               	bsf	15,5	;volatile
    950                           
-   951                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 38:             brea
+   951                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 42:             OSCC
+      +                          ONbits.IRCF0 = 0;
+   952  0042  120F               	bcf	15,4	;volatile
+   953                           
+   954                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 43:             brea
       +                          k;
-   952  003D  2874               	goto	l89
-   953  003E                     l95:	
-   954                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 39:         case 6:
-   955                           
-   956                           
-   957                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 40:             OSCC
+   955  0043  2874               	goto	l87
+   956  0044                     l94:	
+   957                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 44:         case 7:
+   958                           
+   959                           
+   960                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 45:             OSCC
       +                          ONbits.IRCF2 = 1;
-   958  003E  1683               	bsf	3,5	;RP0=1, select bank1
-   959  003F  1303               	bcf	3,6	;RP1=0, select bank1
-   960  0040  170F               	bsf	15,6	;volatile
-   961                           
-   962                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 41:             OSCC
-      +                          ONbits.IRCF1 = 1;
-   963  0041  168F               	bsf	15,5	;volatile
+   961  0044  1683               	bsf	3,5	;RP0=1, select bank1
+   962  0045  1303               	bcf	3,6	;RP1=0, select bank1
+   963  0046  170F               	bsf	15,6	;volatile
    964                           
-   965                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 42:             OSCC
-      +                          ONbits.IRCF0 = 0;
-   966  0042  120F               	bcf	15,4	;volatile
+   965                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 46:             OSCC
+      +                          ONbits.IRCF1 = 1;
+   966  0047  168F               	bsf	15,5	;volatile
    967                           
-   968                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 43:             brea
-      +                          k;
-   969  0043  2874               	goto	l89
-   970  0044                     l96:	
-   971                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 44:         case 7:
-   972                           
-   973                           
-   974                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 45:             OSCC
-      +                          ONbits.IRCF2 = 1;
-   975  0044  1683               	bsf	3,5	;RP0=1, select bank1
-   976  0045  1303               	bcf	3,6	;RP1=0, select bank1
-   977  0046  170F               	bsf	15,6	;volatile
-   978                           
-   979                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 46:             OSCC
-      +                          ONbits.IRCF1 = 1;
-   980  0047  168F               	bsf	15,5	;volatile
-   981                           
-   982                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 47:             OSCC
+   968                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 47:             OSCC
       +                          ONbits.IRCF0 = 1;
-   983  0048  160F               	bsf	15,4	;volatile
-   984                           
-   985                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 48:             brea
+   969  0048  160F               	bsf	15,4	;volatile
+   970                           
+   971                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 48:             brea
       +                          k;
-   986  0049  2874               	goto	l89
-   987  004A                     l97:	
-   988                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 49:         default:
-   989                           
-   990                           
-   991                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 50:             OSCC
+   972  0049  2874               	goto	l87
+   973  004A                     l95:	
+   974                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 49:         default:
+   975                           
+   976                           
+   977                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 50:             OSCC
       +                          ONbits.IRCF2 = 1;
-   992  004A  1683               	bsf	3,5	;RP0=1, select bank1
-   993  004B  1303               	bcf	3,6	;RP1=0, select bank1
-   994  004C  170F               	bsf	15,6	;volatile
-   995                           
-   996                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 51:             OSCC
+   978  004A  1683               	bsf	3,5	;RP0=1, select bank1
+   979  004B  1303               	bcf	3,6	;RP1=0, select bank1
+   980  004C  170F               	bsf	15,6	;volatile
+   981                           
+   982                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 51:             OSCC
       +                          ONbits.IRCF1 = 1;
-   997  004D  168F               	bsf	15,5	;volatile
-   998                           
-   999                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 52:             OSCC
+   983  004D  168F               	bsf	15,5	;volatile
+   984                           
+   985                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 52:             OSCC
       +                          ONbits.IRCF0 = 0;
-  1000  004E  120F               	bcf	15,4	;volatile
-  1001                           
-  1002                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 53:             brea
+   986  004E  120F               	bcf	15,4	;volatile
+   987                           
+   988                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 53:             brea
       +                          k;
-  1003  004F  2874               	goto	l89
-  1004  0050                     l914:
-  1005  0050  0879               	movf	initOsc@IRCF,w
-  1006  0051  1283               	bcf	3,5	;RP0=0, select bank0
-  1007  0052  1303               	bcf	3,6	;RP1=0, select bank0
-  1008  0053  00A0               	movwf	??_initOsc
-  1009  0054  01A1               	clrf	??_initOsc+1
-  1010                           
-  1011                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+   989  004F  2874               	goto	l87
+   990  0050                     l912:
+   991  0050  0879               	movf	initOsc@IRCF,w
+   992  0051  1283               	bcf	3,5	;RP0=0, select bank0
+   993  0052  1303               	bcf	3,6	;RP1=0, select bank0
+   994  0053  00A0               	movwf	??_initOsc
+   995  0054  01A1               	clrf	??_initOsc+1
+   996                           
+   997                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
       +                          itches
-  1012                           ; Switch size 1, requested type "simple"
-  1013                           ; Number of cases is 1, Range of values is 0 to 0
-  1014                           ; switch strategies available:
-  1015                           ; Name         Instructions Cycles
-  1016                           ; simple_byte            4     3 (average)
-  1017                           ; direct_byte           11     8 (fixed)
-  1018                           ; jumptable            260     6 (fixed)
-  1019                           ;	Chosen strategy is simple_byte
-  1020  0055  0821               	movf	??_initOsc+1,w
-  1021  0056  3A00               	xorlw	0	; case 0
-  1022  0057  1903               	skipnz
-  1023  0058  285A               	goto	l984
-  1024  0059  284A               	goto	l97
-  1025  005A                     l984:
-  1026                           
-  1027                           ; Switch size 1, requested type "simple"
-  1028                           ; Number of cases is 8, Range of values is 0 to 7
-  1029                           ; switch strategies available:
-  1030                           ; Name         Instructions Cycles
-  1031                           ; simple_byte           25    13 (average)
-  1032                           ; direct_byte           32     8 (fixed)
-  1033                           ; jumptable            260     6 (fixed)
-  1034                           ;	Chosen strategy is simple_byte
-  1035  005A  0820               	movf	??_initOsc,w
-  1036  005B  3A00               	xorlw	0	; case 0
-  1037  005C  1903               	skipnz
-  1038  005D  281A               	goto	l88
-  1039  005E  3A01               	xorlw	1	; case 1
-  1040  005F  1903               	skipnz
-  1041  0060  2820               	goto	l90
-  1042  0061  3A03               	xorlw	3	; case 2
-  1043  0062  1903               	skipnz
-  1044  0063  2826               	goto	l91
-  1045  0064  3A01               	xorlw	1	; case 3
-  1046  0065  1903               	skipnz
-  1047  0066  282C               	goto	l92
-  1048  0067  3A07               	xorlw	7	; case 4
-  1049  0068  1903               	skipnz
-  1050  0069  2832               	goto	l93
-  1051  006A  3A01               	xorlw	1	; case 5
-  1052  006B  1903               	skipnz
-  1053  006C  2838               	goto	l94
-  1054  006D  3A03               	xorlw	3	; case 6
-  1055  006E  1903               	skipnz
-  1056  006F  283E               	goto	l95
-  1057  0070  3A01               	xorlw	1	; case 7
-  1058  0071  1903               	skipnz
-  1059  0072  2844               	goto	l96
-  1060  0073  284A               	goto	l97
-  1061  0074                     l89:
-  1062                           
-  1063                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 56:     OSCCONbits.S
+   998                           ; Switch size 1, requested type "simple"
+   999                           ; Number of cases is 1, Range of values is 0 to 0
+  1000                           ; switch strategies available:
+  1001                           ; Name         Instructions Cycles
+  1002                           ; simple_byte            4     3 (average)
+  1003                           ; direct_byte           11     8 (fixed)
+  1004                           ; jumptable            260     6 (fixed)
+  1005                           ;	Chosen strategy is simple_byte
+  1006  0055  0821               	movf	??_initOsc+1,w
+  1007  0056  3A00               	xorlw	0	; case 0
+  1008  0057  1903               	skipnz
+  1009  0058  285A               	goto	l982
+  1010  0059  284A               	goto	l95
+  1011  005A                     l982:
+  1012                           
+  1013                           ; Switch size 1, requested type "simple"
+  1014                           ; Number of cases is 8, Range of values is 0 to 7
+  1015                           ; switch strategies available:
+  1016                           ; Name         Instructions Cycles
+  1017                           ; simple_byte           25    13 (average)
+  1018                           ; direct_byte           32     8 (fixed)
+  1019                           ; jumptable            260     6 (fixed)
+  1020                           ;	Chosen strategy is simple_byte
+  1021  005A  0820               	movf	??_initOsc,w
+  1022  005B  3A00               	xorlw	0	; case 0
+  1023  005C  1903               	skipnz
+  1024  005D  281A               	goto	l86
+  1025  005E  3A01               	xorlw	1	; case 1
+  1026  005F  1903               	skipnz
+  1027  0060  2820               	goto	l88
+  1028  0061  3A03               	xorlw	3	; case 2
+  1029  0062  1903               	skipnz
+  1030  0063  2826               	goto	l89
+  1031  0064  3A01               	xorlw	1	; case 3
+  1032  0065  1903               	skipnz
+  1033  0066  282C               	goto	l90
+  1034  0067  3A07               	xorlw	7	; case 4
+  1035  0068  1903               	skipnz
+  1036  0069  2832               	goto	l91
+  1037  006A  3A01               	xorlw	1	; case 5
+  1038  006B  1903               	skipnz
+  1039  006C  2838               	goto	l92
+  1040  006D  3A03               	xorlw	3	; case 6
+  1041  006E  1903               	skipnz
+  1042  006F  283E               	goto	l93
+  1043  0070  3A01               	xorlw	1	; case 7
+  1044  0071  1903               	skipnz
+  1045  0072  2844               	goto	l94
+  1046  0073  284A               	goto	l95
+  1047  0074                     l87:
+  1048                           
+  1049                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Oscilador.c: 56:     OSCCONbits.S
       +                          CS = 1;
-  1064  0074  140F               	bsf	15,0	;volatile
-  1065  0075                     l98:
-  1066  0075  0008               	return
-  1067  0076                     __end_of_initOsc:
-  1068                           
-  1069                           	psect	text4
-  1070  0076                     __ptext4:	
-  1071 ;; *************** function _isr *****************
-  1072 ;; Defined at:
-  1073 ;;		line 59 in file "E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c"
-  1074 ;; Parameters:    Size  Location     Type
-  1075 ;;		None
-  1076 ;; Auto vars:     Size  Location     Type
-  1077 ;;		None
-  1078 ;; Return value:  Size  Location     Type
-  1079 ;;                  1    wreg      void 
-  1080 ;; Registers used:
-  1081 ;;		wreg, status,2, status,0, pclath, cstack
-  1082 ;; Tracked objects:
-  1083 ;;		On entry : 0/0
-  1084 ;;		On exit  : 0/0
-  1085 ;;		Unchanged: 0/0
-  1086 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1087 ;;      Params:         0       0       0       0       0
-  1088 ;;      Locals:         0       0       0       0       0
-  1089 ;;      Temps:          3       0       0       0       0
-  1090 ;;      Totals:         3       0       0       0       0
-  1091 ;;Total ram usage:        3 bytes
-  1092 ;; Hardware stack levels used:    1
-  1093 ;; Hardware stack levels required when called:    2
-  1094 ;; This function calls:
-  1095 ;;		_spiRead
-  1096 ;;		_spiWrite
-  1097 ;; This function is called by:
-  1098 ;;		Interrupt level 1
-  1099 ;; This function uses a non-reentrant model
-  1100 ;;
-  1101                           
-  1102                           
-  1103                           ;psect for function _isr
-  1104  0076                     _isr:
-  1105  0076                     i1l786:
-  1106                           
-  1107                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 60:     (INTCONbi
+  1050  0074  140F               	bsf	15,0	;volatile
+  1051  0075                     l96:
+  1052  0075  0008               	return
+  1053  0076                     __end_of_initOsc:
+  1054                           
+  1055                           	psect	text4
+  1056  0076                     __ptext4:	
+  1057 ;; *************** function _isr *****************
+  1058 ;; Defined at:
+  1059 ;;		line 59 in file "E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c"
+  1060 ;; Parameters:    Size  Location     Type
+  1061 ;;		None
+  1062 ;; Auto vars:     Size  Location     Type
+  1063 ;;		None
+  1064 ;; Return value:  Size  Location     Type
+  1065 ;;                  1    wreg      void 
+  1066 ;; Registers used:
+  1067 ;;		wreg, status,2, status,0, pclath, cstack
+  1068 ;; Tracked objects:
+  1069 ;;		On entry : 0/0
+  1070 ;;		On exit  : 0/0
+  1071 ;;		Unchanged: 0/0
+  1072 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1073 ;;      Params:         0       0       0       0       0
+  1074 ;;      Locals:         0       0       0       0       0
+  1075 ;;      Temps:          3       0       0       0       0
+  1076 ;;      Totals:         3       0       0       0       0
+  1077 ;;Total ram usage:        3 bytes
+  1078 ;; Hardware stack levels used:    1
+  1079 ;; Hardware stack levels required when called:    1
+  1080 ;; This function calls:
+  1081 ;;		_spiWrite
+  1082 ;; This function is called by:
+  1083 ;;		Interrupt level 1
+  1084 ;; This function uses a non-reentrant model
+  1085 ;;
+  1086                           
+  1087                           
+  1088                           ;psect for function _isr
+  1089  0076                     _isr:
+  1090  0076                     i1l778:
+  1091                           
+  1092                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 60:     (INTCONbi
       +                          ts.GIE = 0);
-  1108  0076  138B               	bcf	11,7	;volatile
-  1109                           
-  1110                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 62:     if(INTCON
+  1093  0076  138B               	bcf	11,7	;volatile
+  1094                           
+  1095                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 62:     if(INTCON
       +                          bits.RBIF == 1){
-  1111  0077  1C0B               	btfss	11,0	;volatile
-  1112  0078  287A               	goto	u3_21
-  1113  0079  287B               	goto	u3_20
-  1114  007A                     u3_21:
-  1115  007A  289E               	goto	i1l810
-  1116  007B                     u3_20:
-  1117  007B                     i1l788:
-  1118                           
-  1119                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 63:         if(PO
+  1096  0077  1C0B               	btfss	11,0	;volatile
+  1097  0078  287A               	goto	u3_21
+  1098  0079  287B               	goto	u3_20
+  1099  007A                     u3_21:
+  1100  007A  289E               	goto	i1l802
+  1101  007B                     u3_20:
+  1102  007B                     i1l780:
+  1103                           
+  1104                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 63:         if(PO
       +                          RTBbits.RB0 == 0){
-  1120  007B  1283               	bcf	3,5	;RP0=0, select bank0
-  1121  007C  1303               	bcf	3,6	;RP1=0, select bank0
-  1122  007D  1806               	btfsc	6,0	;volatile
-  1123  007E  2880               	goto	u4_21
-  1124  007F  2881               	goto	u4_20
-  1125  0080                     u4_21:
-  1126  0080  2884               	goto	i1l792
-  1127  0081                     u4_20:
-  1128  0081                     i1l790:
-  1129                           
-  1130                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 64:             F
+  1105  007B  1283               	bcf	3,5	;RP0=0, select bank0
+  1106  007C  1303               	bcf	3,6	;RP1=0, select bank0
+  1107  007D  1806               	btfsc	6,0	;volatile
+  1108  007E  2880               	goto	u4_21
+  1109  007F  2881               	goto	u4_20
+  1110  0080                     u4_21:
+  1111  0080  2884               	goto	i1l784
+  1112  0081                     u4_20:
+  1113  0081                     i1l782:
+  1114                           
+  1115                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 64:             F
       +                          LAGI = 1;
-  1131  0081  01F3               	clrf	_FLAGI
-  1132  0082  0AF3               	incf	_FLAGI,f
-  1133                           
-  1134                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 65:         }
-  1135  0083  288E               	goto	i1l798
-  1136  0084                     i1l792:
-  1137                           
-  1138                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 67:             i
+  1116  0081  01F3               	clrf	_FLAGI
+  1117  0082  0AF3               	incf	_FLAGI,f
+  1118                           
+  1119                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 65:         }
+  1120  0083  288E               	goto	i1l790
+  1121  0084                     i1l784:
+  1122                           
+  1123                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 67:             i
       +                          f(FLAGI == 1){
-  1139  0084  0373               	decf	_FLAGI,w
-  1140  0085  1D03               	btfss	3,2
-  1141  0086  2888               	goto	u5_21
-  1142  0087  2889               	goto	u5_20
-  1143  0088                     u5_21:
-  1144  0088  288E               	goto	i1l798
-  1145  0089                     u5_20:
-  1146  0089                     i1l794:
-  1147                           
-  1148                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 68:              
+  1124  0084  0373               	decf	_FLAGI,w
+  1125  0085  1D03               	btfss	3,2
+  1126  0086  2888               	goto	u5_21
+  1127  0087  2889               	goto	u5_20
+  1128  0088                     u5_21:
+  1129  0088  288E               	goto	i1l790
+  1130  0089                     u5_20:
+  1131  0089                     i1l786:
+  1132                           
+  1133                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 68:              
       +                             FLAGI = 0;
-  1149  0089  01F3               	clrf	_FLAGI
-  1150  008A                     i1l796:
-  1151                           
-  1152                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 69:              
+  1134  0089  01F3               	clrf	_FLAGI
+  1135  008A                     i1l788:
+  1136                           
+  1137                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 69:              
       +                             PORTD++;
-  1153  008A  3001               	movlw	1
-  1154  008B  00F6               	movwf	??_isr
-  1155  008C  0876               	movf	??_isr,w
-  1156  008D  0788               	addwf	8,f	;volatile
-  1157  008E                     i1l798:
-  1158                           
-  1159                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 72:         if(PO
+  1138  008A  3001               	movlw	1
+  1139  008B  00F6               	movwf	??_isr
+  1140  008C  0876               	movf	??_isr,w
+  1141  008D  0788               	addwf	8,f	;volatile
+  1142  008E                     i1l790:
+  1143                           
+  1144                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 72:         if(PO
       +                          RTBbits.RB1 == 0){
-  1160  008E  1886               	btfsc	6,1	;volatile
-  1161  008F  2891               	goto	u6_21
-  1162  0090  2892               	goto	u6_20
-  1163  0091                     u6_21:
-  1164  0091  2895               	goto	i1l802
-  1165  0092                     u6_20:
-  1166  0092                     i1l800:
-  1167                           
-  1168                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 73:             F
+  1145  008E  1886               	btfsc	6,1	;volatile
+  1146  008F  2891               	goto	u6_21
+  1147  0090  2892               	goto	u6_20
+  1148  0091                     u6_21:
+  1149  0091  2895               	goto	i1l794
+  1150  0092                     u6_20:
+  1151  0092                     i1l792:
+  1152                           
+  1153                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 73:             F
       +                          LAGD = 1;
-  1169  0092  01F4               	clrf	_FLAGD
-  1170  0093  0AF4               	incf	_FLAGD,f
-  1171                           
-  1172                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 74:         }
-  1173  0094  289D               	goto	i1l808
-  1174  0095                     i1l802:
-  1175                           
-  1176                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 76:             i
+  1154  0092  01F4               	clrf	_FLAGD
+  1155  0093  0AF4               	incf	_FLAGD,f
+  1156                           
+  1157                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 74:         }
+  1158  0094  289D               	goto	i1l800
+  1159  0095                     i1l794:
+  1160                           
+  1161                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 76:             i
       +                          f(FLAGD == 1){
-  1177  0095  0374               	decf	_FLAGD,w
-  1178  0096  1D03               	btfss	3,2
-  1179  0097  2899               	goto	u7_21
-  1180  0098  289A               	goto	u7_20
-  1181  0099                     u7_21:
-  1182  0099  289D               	goto	i1l808
-  1183  009A                     u7_20:
-  1184  009A                     i1l804:
-  1185                           
-  1186                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 77:              
+  1162  0095  0374               	decf	_FLAGD,w
+  1163  0096  1D03               	btfss	3,2
+  1164  0097  2899               	goto	u7_21
+  1165  0098  289A               	goto	u7_20
+  1166  0099                     u7_21:
+  1167  0099  289D               	goto	i1l800
+  1168  009A                     u7_20:
+  1169  009A                     i1l796:
+  1170                           
+  1171                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 77:              
       +                             FLAGD = 0;
-  1187  009A  01F4               	clrf	_FLAGD
-  1188  009B                     i1l806:
-  1189                           
-  1190                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 78:              
+  1172  009A  01F4               	clrf	_FLAGD
+  1173  009B                     i1l798:
+  1174                           
+  1175                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 78:              
       +                             PORTD--;
-  1191  009B  3001               	movlw	1
-  1192  009C  0288               	subwf	8,f	;volatile
-  1193  009D                     i1l808:
-  1194                           
-  1195                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 81:         INTCO
+  1176  009B  3001               	movlw	1
+  1177  009C  0288               	subwf	8,f	;volatile
+  1178  009D                     i1l800:
+  1179                           
+  1180                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 81:         INTCO
       +                          Nbits.RBIF = 0;
-  1196  009D  100B               	bcf	11,0	;volatile
-  1197  009E                     i1l810:
-  1198                           
-  1199                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 84:     if (PIR1b
+  1181  009D  100B               	bcf	11,0	;volatile
+  1182  009E                     i1l802:
+  1183                           
+  1184                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 84:     if (PIR1b
       +                          its.SSPIF == 1) {
-  1200  009E  1283               	bcf	3,5	;RP0=0, select bank0
-  1201  009F  1303               	bcf	3,6	;RP1=0, select bank0
-  1202  00A0  1D8C               	btfss	12,3	;volatile
-  1203  00A1  28A3               	goto	u8_21
-  1204  00A2  28A4               	goto	u8_20
-  1205  00A3                     u8_21:
-  1206  00A3  28B5               	goto	i1l816
-  1207  00A4                     u8_20:
-  1208  00A4                     i1l812:
-  1209                           
-  1210                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 85:         spiWr
+  1185  009E  1283               	bcf	3,5	;RP0=0, select bank0
+  1186  009F  1303               	bcf	3,6	;RP1=0, select bank0
+  1187  00A0  1D8C               	btfss	12,3	;volatile
+  1188  00A1  28A3               	goto	u8_21
+  1189  00A2  28A4               	goto	u8_20
+  1190  00A3                     u8_21:
+  1191  00A3  28AD               	goto	i1l808
+  1192  00A4                     u8_20:
+  1193  00A4                     i1l804:
+  1194                           
+  1195                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 85:         spiWr
       +                          ite(PORTD);
-  1211  00A4  0808               	movf	8,w	;volatile
-  1212  00A5  120A  118A  212A  120A  118A  	fcall	_spiWrite
-  1213                           
-  1214                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 86:         ESCRI
-      +                          TURA_REVISION = spiRead();
-  1215  00AA  120A  118A  211A  120A  118A  	fcall	_spiRead
-  1216  00AF  00F6               	movwf	??_isr
-  1217  00B0  0876               	movf	??_isr,w
-  1218  00B1  00F0               	movwf	_ESCRITURA_REVISION
-  1219  00B2                     i1l814:
-  1220                           
-  1221                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 87:         PIR1b
+  1196  00A4  0808               	movf	8,w	;volatile
+  1197  00A5  120A  118A  2112  120A  118A  	fcall	_spiWrite
+  1198  00AA                     i1l806:
+  1199                           
+  1200                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 86:         PIR1b
       +                          its.SSPIF = 0;
-  1222  00B2  1283               	bcf	3,5	;RP0=0, select bank0
-  1223  00B3  1303               	bcf	3,6	;RP1=0, select bank0
-  1224  00B4  118C               	bcf	12,3	;volatile
-  1225  00B5                     i1l816:
-  1226                           
-  1227                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 89:     (INTCONbi
+  1201  00AA  1283               	bcf	3,5	;RP0=0, select bank0
+  1202  00AB  1303               	bcf	3,6	;RP1=0, select bank0
+  1203  00AC  118C               	bcf	12,3	;volatile
+  1204  00AD                     i1l808:
+  1205                           
+  1206                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/Code_Counter.c: 88:     (INTCONbi
       +                          ts.GIE = 1);
-  1228  00B5  178B               	bsf	11,7	;volatile
-  1229  00B6                     i1l71:
-  1230  00B6  0878               	movf	??_isr+2,w
-  1231  00B7  008A               	movwf	10
-  1232  00B8  0E77               	swapf	??_isr+1,w
-  1233  00B9  0083               	movwf	3
-  1234  00BA  0EFE               	swapf	btemp,f
-  1235  00BB  0E7E               	swapf	btemp,w
-  1236  00BC  0009               	retfie
-  1237  00BD                     __end_of_isr:
-  1238                           
-  1239                           	psect	intentry
-  1240  0004                     __pintentry:	
-  1241                           ;incstack = 0
-  1242                           ; Regs used in _isr: [wreg+status,2+status,0+pclath+cstack]
-  1243                           
-  1244  0004                     interrupt_function:
-  1245  007E                     saved_w	set	btemp
-  1246  0004  00FE               	movwf	btemp
-  1247  0005  0E03               	swapf	3,w
-  1248  0006  00F7               	movwf	??_isr+1
-  1249  0007  080A               	movf	10,w
-  1250  0008  00F8               	movwf	??_isr+2
-  1251  0009  120A  118A  2876   	ljmp	_isr
-  1252                           
-  1253                           	psect	text5
-  1254  012A                     __ptext5:	
-  1255 ;; *************** function _spiWrite *****************
-  1256 ;; Defined at:
-  1257 ;;		line 32 in file "E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c"
-  1258 ;; Parameters:    Size  Location     Type
-  1259 ;;  dat             1    wreg     unsigned char 
-  1260 ;; Auto vars:     Size  Location     Type
-  1261 ;;  dat             1    0[COMMON] unsigned char 
-  1262 ;; Return value:  Size  Location     Type
-  1263 ;;                  1    wreg      void 
-  1264 ;; Registers used:
-  1265 ;;		wreg
-  1266 ;; Tracked objects:
-  1267 ;;		On entry : 0/0
-  1268 ;;		On exit  : 0/0
-  1269 ;;		Unchanged: 0/0
-  1270 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1271 ;;      Params:         0       0       0       0       0
-  1272 ;;      Locals:         1       0       0       0       0
-  1273 ;;      Temps:          0       0       0       0       0
-  1274 ;;      Totals:         1       0       0       0       0
-  1275 ;;Total ram usage:        1 bytes
-  1276 ;; Hardware stack levels used:    1
-  1277 ;; This function calls:
-  1278 ;;		Nothing
-  1279 ;; This function is called by:
-  1280 ;;		_isr
-  1281 ;; This function uses a non-reentrant model
-  1282 ;;
+  1207  00AD  178B               	bsf	11,7	;volatile
+  1208  00AE                     i1l69:
+  1209  00AE  0878               	movf	??_isr+2,w
+  1210  00AF  008A               	movwf	10
+  1211  00B0  0E77               	swapf	??_isr+1,w
+  1212  00B1  0083               	movwf	3
+  1213  00B2  0EFE               	swapf	btemp,f
+  1214  00B3  0E7E               	swapf	btemp,w
+  1215  00B4  0009               	retfie
+  1216  00B5                     __end_of_isr:
+  1217                           
+  1218                           	psect	intentry
+  1219  0004                     __pintentry:	
+  1220                           ;incstack = 0
+  1221                           ; Regs used in _isr: [wreg+status,2+status,0+pclath+cstack]
+  1222                           
+  1223  0004                     interrupt_function:
+  1224  007E                     saved_w	set	btemp
+  1225  0004  00FE               	movwf	btemp
+  1226  0005  0E03               	swapf	3,w
+  1227  0006  00F7               	movwf	??_isr+1
+  1228  0007  080A               	movf	10,w
+  1229  0008  00F8               	movwf	??_isr+2
+  1230  0009  120A  118A  2876   	ljmp	_isr
+  1231                           
+  1232                           	psect	text5
+  1233  0112                     __ptext5:	
+  1234 ;; *************** function _spiWrite *****************
+  1235 ;; Defined at:
+  1236 ;;		line 32 in file "E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c"
+  1237 ;; Parameters:    Size  Location     Type
+  1238 ;;  dat             1    wreg     unsigned char 
+  1239 ;; Auto vars:     Size  Location     Type
+  1240 ;;  dat             1    0[COMMON] unsigned char 
+  1241 ;; Return value:  Size  Location     Type
+  1242 ;;                  1    wreg      void 
+  1243 ;; Registers used:
+  1244 ;;		wreg
+  1245 ;; Tracked objects:
+  1246 ;;		On entry : 0/0
+  1247 ;;		On exit  : 0/0
+  1248 ;;		Unchanged: 0/0
+  1249 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1250 ;;      Params:         0       0       0       0       0
+  1251 ;;      Locals:         1       0       0       0       0
+  1252 ;;      Temps:          0       0       0       0       0
+  1253 ;;      Totals:         1       0       0       0       0
+  1254 ;;Total ram usage:        1 bytes
+  1255 ;; Hardware stack levels used:    1
+  1256 ;; This function calls:
+  1257 ;;		Nothing
+  1258 ;; This function is called by:
+  1259 ;;		_isr
+  1260 ;; This function uses a non-reentrant model
+  1261 ;;
+  1262                           
+  1263                           
+  1264                           ;psect for function _spiWrite
+  1265  0112                     _spiWrite:
+  1266                           
+  1267                           ;incstack = 0
+  1268                           ; Regs used in _spiWrite: [wreg]
+  1269                           ;spiWrite@dat stored from wreg
+  1270  0112  00F5               	movwf	spiWrite@dat
+  1271  0113                     i1l742:
+  1272                           
+  1273                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c: 33:     SSPBUF = dat;
+  1274  0113  0875               	movf	spiWrite@dat,w
+  1275  0114  1283               	bcf	3,5	;RP0=0, select bank0
+  1276  0115  1303               	bcf	3,6	;RP1=0, select bank0
+  1277  0116  0093               	movwf	19	;volatile
+  1278  0117                     i1l122:
+  1279  0117  0008               	return
+  1280  0118                     __end_of_spiWrite:
+  1281  007E                     btemp	set	126	;btemp
+  1282  007E                     wtemp0	set	126
   1283                           
-  1284                           
-  1285                           ;psect for function _spiWrite
-  1286  012A                     _spiWrite:
-  1287                           
-  1288                           ;incstack = 0
-  1289                           ; Regs used in _spiWrite: [wreg]
-  1290                           ;spiWrite@dat stored from wreg
-  1291  012A  00F5               	movwf	spiWrite@dat
-  1292  012B                     i1l746:
-  1293                           
-  1294                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c: 33:     SSPBUF = dat;
-  1295  012B  0875               	movf	spiWrite@dat,w
-  1296  012C  1283               	bcf	3,5	;RP0=0, select bank0
-  1297  012D  1303               	bcf	3,6	;RP1=0, select bank0
-  1298  012E  0093               	movwf	19	;volatile
-  1299  012F                     i1l124:
-  1300  012F  0008               	return
-  1301  0130                     __end_of_spiWrite:
-  1302                           
-  1303                           	psect	text6
-  1304  011A                     __ptext6:	
-  1305 ;; *************** function _spiRead *****************
-  1306 ;; Defined at:
-  1307 ;;		line 43 in file "E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c"
-  1308 ;; Parameters:    Size  Location     Type
-  1309 ;;		None
-  1310 ;; Auto vars:     Size  Location     Type
-  1311 ;;		None
-  1312 ;; Return value:  Size  Location     Type
-  1313 ;;                  1    wreg      unsigned char 
-  1314 ;; Registers used:
-  1315 ;;		wreg, status,2, status,0, pclath, cstack
-  1316 ;; Tracked objects:
-  1317 ;;		On entry : 0/0
-  1318 ;;		On exit  : 0/0
-  1319 ;;		Unchanged: 0/0
-  1320 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1321 ;;      Params:         0       0       0       0       0
-  1322 ;;      Locals:         0       0       0       0       0
-  1323 ;;      Temps:          0       0       0       0       0
-  1324 ;;      Totals:         0       0       0       0       0
-  1325 ;;Total ram usage:        0 bytes
-  1326 ;; Hardware stack levels used:    1
-  1327 ;; Hardware stack levels required when called:    1
-  1328 ;; This function calls:
-  1329 ;;		_spiReceiveWait
-  1330 ;; This function is called by:
-  1331 ;;		_isr
-  1332 ;; This function uses a non-reentrant model
-  1333 ;;
-  1334                           
-  1335                           
-  1336                           ;psect for function _spiRead
-  1337  011A                     _spiRead:
-  1338  011A                     i1l748:	
-  1339                           ;incstack = 0
-  1340                           ; Regs used in _spiRead: [wreg+status,2+status,0+pclath+cstack]
-  1341                           
-  1342                           
-  1343                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c: 44:     spiReceiveWait();
-  1344  011A  120A  118A  2123  120A  118A  	fcall	_spiReceiveWait
-  1345  011F                     i1l750:
-  1346                           
-  1347                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c: 45:     return(SSPBUF);
-  1348  011F  1283               	bcf	3,5	;RP0=0, select bank0
-  1349  0120  1303               	bcf	3,6	;RP1=0, select bank0
-  1350  0121  0813               	movf	19,w	;volatile
-  1351  0122                     i1l132:
-  1352  0122  0008               	return
-  1353  0123                     __end_of_spiRead:
-  1354                           
-  1355                           	psect	text7
-  1356  0123                     __ptext7:	
-  1357 ;; *************** function _spiReceiveWait *****************
-  1358 ;; Defined at:
-  1359 ;;		line 28 in file "E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c"
-  1360 ;; Parameters:    Size  Location     Type
-  1361 ;;		None
-  1362 ;; Auto vars:     Size  Location     Type
-  1363 ;;		None
-  1364 ;; Return value:  Size  Location     Type
-  1365 ;;                  1    wreg      void 
-  1366 ;; Registers used:
-  1367 ;;		None
-  1368 ;; Tracked objects:
-  1369 ;;		On entry : 0/0
-  1370 ;;		On exit  : 0/0
-  1371 ;;		Unchanged: 0/0
-  1372 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1373 ;;      Params:         0       0       0       0       0
-  1374 ;;      Locals:         0       0       0       0       0
-  1375 ;;      Temps:          0       0       0       0       0
-  1376 ;;      Totals:         0       0       0       0       0
-  1377 ;;Total ram usage:        0 bytes
-  1378 ;; Hardware stack levels used:    1
-  1379 ;; This function calls:
-  1380 ;;		Nothing
-  1381 ;; This function is called by:
-  1382 ;;		_spiRead
-  1383 ;; This function uses a non-reentrant model
-  1384 ;;
-  1385                           
-  1386                           
-  1387                           ;psect for function _spiReceiveWait
-  1388  0123                     _spiReceiveWait:
-  1389  0123                     i1l744:	
-  1390                           ;incstack = 0
-  1391                           ; Regs used in _spiReceiveWait: []
-  1392                           
-  1393  0123                     i1l118:	
-  1394                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave2_Counter.X/MSSP.c: 29:     while ( !SSPSTATb
-      +                          its.BF );
-  1395                           
-  1396  0123  1683               	bsf	3,5	;RP0=1, select bank1
-  1397  0124  1303               	bcf	3,6	;RP1=0, select bank1
-  1398  0125  1C14               	btfss	20,0	;volatile
-  1399  0126  2928               	goto	u2_21
-  1400  0127  2929               	goto	u2_20
-  1401  0128                     u2_21:
-  1402  0128  2923               	goto	i1l118
-  1403  0129                     u2_20:
-  1404  0129                     i1l121:
-  1405  0129  0008               	return
-  1406  012A                     __end_of_spiReceiveWait:
-  1407  007E                     btemp	set	126	;btemp
-  1408  007E                     wtemp0	set	126
-  1409                           
-  1410                           	psect	config
-  1411                           
-  1412                           ;Config register CONFIG1 @ 0x2007
-  1413                           ;	Oscillator Selection bits
-  1414                           ;	FOSC = INTRC_NOCLKOUT, INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O f
+  1284                           	psect	config
+  1285                           
+  1286                           ;Config register CONFIG1 @ 0x2007
+  1287                           ;	Oscillator Selection bits
+  1288                           ;	FOSC = INTRC_NOCLKOUT, INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O f
       +                          unction on RA7/OSC1/CLKIN
-  1415                           ;	Watchdog Timer Enable bit
-  1416                           ;	WDTE = OFF, WDT disabled and can be enabled by SWDTEN bit of the WDTCON register
-  1417                           ;	Power-up Timer Enable bit
-  1418                           ;	PWRTE = OFF, PWRT disabled
-  1419                           ;	RE3/MCLR pin function select bit
-  1420                           ;	MCLRE = OFF, RE3/MCLR pin function is digital input, MCLR internally tied to VDD
-  1421                           ;	Code Protection bit
-  1422                           ;	CP = OFF, Program memory code protection is disabled
-  1423                           ;	Data Code Protection bit
-  1424                           ;	CPD = OFF, Data memory code protection is disabled
-  1425                           ;	Brown Out Reset Selection bits
-  1426                           ;	BOREN = OFF, BOR disabled
-  1427                           ;	Internal External Switchover bit
-  1428                           ;	IESO = OFF, Internal/External Switchover mode is disabled
-  1429                           ;	Fail-Safe Clock Monitor Enabled bit
-  1430                           ;	FCMEN = OFF, Fail-Safe Clock Monitor is disabled
-  1431                           ;	Low Voltage Programming Enable bit
-  1432                           ;	LVP = OFF, RB3 pin has digital I/O, HV on MCLR must be used for programming
-  1433                           ;	In-Circuit Debugger Mode bit
-  1434                           ;	DEBUG = 0x1, unprogrammed default
-  1435  2007                     	org	8199
-  1436  2007  20D4               	dw	8404
-  1437                           
-  1438                           ;Config register CONFIG2 @ 0x2008
-  1439                           ;	Brown-out Reset Selection bit
-  1440                           ;	BOR4V = BOR40V, Brown-out Reset set to 4.0V
-  1441                           ;	Flash Program Memory Self Write Enable bits
-  1442                           ;	WRT = OFF, Write protection off
-  1443  2008                     	org	8200
-  1444  2008  3FFF               	dw	16383
+  1289                           ;	Watchdog Timer Enable bit
+  1290                           ;	WDTE = OFF, WDT disabled and can be enabled by SWDTEN bit of the WDTCON register
+  1291                           ;	Power-up Timer Enable bit
+  1292                           ;	PWRTE = OFF, PWRT disabled
+  1293                           ;	RE3/MCLR pin function select bit
+  1294                           ;	MCLRE = OFF, RE3/MCLR pin function is digital input, MCLR internally tied to VDD
+  1295                           ;	Code Protection bit
+  1296                           ;	CP = OFF, Program memory code protection is disabled
+  1297                           ;	Data Code Protection bit
+  1298                           ;	CPD = OFF, Data memory code protection is disabled
+  1299                           ;	Brown Out Reset Selection bits
+  1300                           ;	BOREN = OFF, BOR disabled
+  1301                           ;	Internal External Switchover bit
+  1302                           ;	IESO = OFF, Internal/External Switchover mode is disabled
+  1303                           ;	Fail-Safe Clock Monitor Enabled bit
+  1304                           ;	FCMEN = OFF, Fail-Safe Clock Monitor is disabled
+  1305                           ;	Low Voltage Programming Enable bit
+  1306                           ;	LVP = OFF, RB3 pin has digital I/O, HV on MCLR must be used for programming
+  1307                           ;	In-Circuit Debugger Mode bit
+  1308                           ;	DEBUG = 0x1, unprogrammed default
+  1309  2007                     	org	8199
+  1310  2007  20D4               	dw	8404
+  1311                           
+  1312                           ;Config register CONFIG2 @ 0x2008
+  1313                           ;	Brown-out Reset Selection bit
+  1314                           ;	BOR4V = BOR40V, Brown-out Reset set to 4.0V
+  1315                           ;	Flash Program Memory Self Write Enable bits
+  1316                           ;	WRT = OFF, Write protection off
+  1317  2008                     	org	8200
+  1318  2008  3FFF               	dw	16383
 
 Data Sizes:
     Strings     0
@@ -1629,18 +1501,12 @@ Call Graph Tables:
  ---------------------------------------------------------------------------------
  (3) _isr                                                  3     3      0      15
                                               1 COMMON     3     3      0
-                            _spiRead
                            _spiWrite
  ---------------------------------------------------------------------------------
  (4) _spiWrite                                             1     1      0      15
                                               0 COMMON     1     1      0
  ---------------------------------------------------------------------------------
- (4) _spiRead                                              0     0      0       0
-                     _spiReceiveWait
- ---------------------------------------------------------------------------------
- (5) _spiReceiveWait                                       0     0      0       0
- ---------------------------------------------------------------------------------
- Estimated maximum stack depth 5
+ Estimated maximum stack depth 4
  ---------------------------------------------------------------------------------
 
  Call Graph Graphs:
@@ -1651,8 +1517,6 @@ Call Graph Tables:
      _spiInit
 
  _isr (ROOT)
-   _spiRead
-     _spiReceiveWait
    _spiWrite
 
  Address spaces:
@@ -1684,67 +1548,60 @@ DATA                 0      0       D      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Fri Feb 12 00:27:00 2021
+Symbol Table                                                                                   Fri Feb 12 01:07:48 2021
 
-            _SSPSTATbits 0094                       l90 0020                       l82 00F2  
-                     l91 0026                       l92 002C                       l76 0116  
-                     l93 0032                       l77 0116                       l94 0038  
-                     l95 003E                       l96 0044                       l88 001A  
-                     l97 004A                       l89 0074                       l98 0075  
-                    l114 010B                      l115 0110                      l910 0019  
-                    l920 00F4                      l914 0050                      l922 00FB  
-                    l930 00BD                      l924 0101                      l940 00D1  
-                    l932 00C8                      l926 0103                      l950 00E0  
-                    l942 00D2                      l934 00CC                      l928 010A  
-                    l960 00EF                      l952 00EB                      l944 00D4  
-                    l936 00CE                      l954 00EC                      l946 00D6  
-                    l938 00D0                      l962 0111                      l956 00ED  
-                    l948 00DC                      l958 00EE                      l984 005A  
-                    u100 00FB                      u101 00FA                      _isr 0076  
-                   ?_isr 0075                     _IOCB 0096                     i1l71 00B6  
-                   _WPUB 0095                     u2_20 0129                     u2_21 0128  
-                   u3_20 007B                     u3_21 007A                     u4_20 0081  
-                   u4_21 0080                     u5_20 0089                     u5_21 0088  
-                   u6_20 0092                     u6_21 0091                     u7_20 009A  
-                   u7_21 0099                     u8_20 00A4                     u8_21 00A3  
-                   _main 0111                     btemp 007E                     start 000C  
-                  ??_isr 0076                    ?_main 0075                    _FLAGD 0074  
-                  _FLAGI 0073                    _ANSEL 0188                    i1l121 0129  
-                  i1l132 0122                    i1l124 012F                    i1l118 0123  
-                  i1l800 0092                    i1l802 0095                    i1l810 009E  
-                  i1l812 00A4                    i1l804 009A                    i1l750 011F  
-                  i1l814 00B2                    i1l806 009B                    i1l744 0123  
-                  i1l816 00B5                    i1l808 009D                    i1l746 012B  
-                  i1l748 011A                    i1l790 0081                    i1l792 0084  
-                  i1l794 0089                    i1l786 0076                    i1l796 008A  
-                  i1l788 007B                    i1l798 008E                    _PORTA 0005  
-                  _PORTB 0006                    _PORTC 0007                    _PORTD 0008  
-                  _PORTE 0009                    _TRISA 0085                    _TRISB 0086  
-                  _TRISC 0087                    _TRISD 0088                    _TRISE 0089  
-                  _Setup 00BD          __end_of_initOsc 0076                    pclath 000A  
-        __end_of_spiInit 0111          __end_of_spiRead 0123                    status 0003  
-                  wtemp0 007E          __initialization 000F             __end_of_main 011A  
+            _SSPSTATbits 0094                       l80 00EA                       l90 002C  
+                     l74 010E                       l91 0032                       l75 010E  
+                     l92 0038                       l93 003E                       l94 0044  
+                     l86 001A                       l95 004A                       l87 0074  
+                     l96 0075                       l88 0020                       l89 0026  
+                    l112 0103                      l113 0108                      l912 0050  
+                    l920 00F3                      l922 00F9                      l930 00C0  
+                    l908 0019                      l924 00FB                      l940 00CA  
+                    l932 00C4                      l926 0102                      l918 00EC  
+                    l950 00E3                      l942 00CC                      l934 00C6  
+                    l952 00E4                      l944 00CE                      l936 00C8  
+                    l928 00B5                      l960 0109                      l954 00E5  
+                    l946 00D4                      l938 00C9                      l956 00E6  
+                    l948 00D8                      l982 005A                      l958 00E7  
+                    u100 00F3                      u101 00F2                      _isr 0076  
+                   ?_isr 0075                     _IOCB 0096                     i1l69 00AE  
+                   _WPUB 0095                     u3_20 007B                     u3_21 007A  
+                   u4_20 0081                     u4_21 0080                     u5_20 0089  
+                   u5_21 0088                     u6_20 0092                     u6_21 0091  
+                   u7_20 009A                     u7_21 0099                     u8_20 00A4  
+                   u8_21 00A3                     _main 0109                     btemp 007E  
+                   start 000C                    ??_isr 0076                    ?_main 0075  
+                  _FLAGD 0074                    _FLAGI 0073                    _ANSEL 0188  
+                  i1l122 0117                    i1l800 009D                    i1l802 009E  
+                  i1l804 00A4                    i1l742 0113                    i1l806 00AA  
+                  i1l808 00AD                    i1l780 007B                    i1l790 008E  
+                  i1l782 0081                    i1l792 0092                    i1l784 0084  
+                  i1l794 0095                    i1l786 0089                    i1l778 0076  
+                  i1l796 009A                    i1l788 008A                    i1l798 009B  
+                  _PORTA 0005                    _PORTB 0006                    _PORTC 0007  
+                  _PORTD 0008                    _PORTE 0009                    _TRISA 0085  
+                  _TRISB 0086                    _TRISC 0087                    _TRISD 0088  
+                  _TRISE 0089                    _Setup 00B5          __end_of_initOsc 0076  
+                  pclath 000A          __end_of_spiInit 0109                    status 0003  
+                  wtemp0 007E          __initialization 000F             __end_of_main 0112  
                  ??_main 007A                   ?_Setup 0075              initOsc@IRCF 0079  
                  _ANSELH 0189                   _TOGGLE 0072                   _TRISC3 043B  
                  _TRISC5 043D                   _SSPCON 0014                   _SSPBUF 0013  
-              ??_initOsc 0020                   saved_w 007E         __end_of_spiWrite 0130  
-              ??_spiInit 0079                ??_spiRead 0075  __end_of__initialization 0014  
-         __pcstackCOMMON 0075            __end_of_Setup 00F3                  ??_Setup 007A  
-             __pmaintext 0111               __pintentry 0004  __size_of_spiReceiveWait 0007  
-                _SSPSTAT 0094                ?_spiWrite 0075                  __ptext1 00BD  
-                __ptext2 00F3                  __ptext3 0018                  __ptext4 0076  
-                __ptext5 012A                  __ptext6 011A                  __ptext7 0123  
-                _initOsc 0018             __size_of_isr 0047                  _spiInit 00F3  
-                _spiRead 011A     end_of_initialization 0014               ??_spiWrite 0075  
-              _PORTBbits 0006              spiWrite@dat 0075           _spiReceiveWait 0123  
-    start_initialization 000F              __end_of_isr 00BD   __end_of_spiReceiveWait 012A  
-            __pbssCOMMON 0070                ___latbits 0002            __pcstackBANK0 0020  
-        ?_spiReceiveWait 0075        __size_of_spiWrite 0006                 ?_initOsc 0075  
-               ?_spiInit 0020                 ?_spiRead 0075           __size_of_Setup 0036  
+              ??_initOsc 0020                   saved_w 007E         __end_of_spiWrite 0118  
+              ??_spiInit 0079  __end_of__initialization 0014           __pcstackCOMMON 0075  
+          __end_of_Setup 00EB                  ??_Setup 007A               __pmaintext 0109  
+             __pintentry 0004                  _SSPSTAT 0094                ?_spiWrite 0075  
+                __ptext1 00B5                  __ptext2 00EB                  __ptext3 0018  
+                __ptext4 0076                  __ptext5 0112                  _initOsc 0018  
+           __size_of_isr 003F                  _spiInit 00EB     end_of_initialization 0014  
+             ??_spiWrite 0075                _PORTBbits 0006              spiWrite@dat 0075  
+    start_initialization 000F              __end_of_isr 00B5              __pbssCOMMON 0070  
+              ___latbits 0002            __pcstackBANK0 0020        __size_of_spiWrite 0006  
+               ?_initOsc 0075                 ?_spiInit 0020           __size_of_Setup 0036  
                _CONTADOR 0071     spiInit@sTransmitEdge 0022        interrupt_function 0004  
                _PIE1bits 008C       _ESCRITURA_REVISION 0070       spiInit@sDataSample 0020  
                _PIR1bits 000C         __size_of_initOsc 005E         __size_of_spiInit 001E  
-       __size_of_spiRead 0009            __size_of_main 0009                 _spiWrite 012A  
-           spiInit@sType 0079        spiInit@sClockIdle 0021               _INTCONbits 000B  
-               intlevel1 0000         ??_spiReceiveWait 0075               _OSCCONbits 008F  
-             _OPTION_REG 0081  
+          __size_of_main 0009                 _spiWrite 0112             spiInit@sType 0079  
+      spiInit@sClockIdle 0021               _INTCONbits 000B                 intlevel1 0000  
+             _OSCCONbits 008F               _OPTION_REG 0081  
