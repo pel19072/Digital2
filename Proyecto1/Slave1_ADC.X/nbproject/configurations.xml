@@ -4,12 +4,9 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>Oscilador.h</itemPath>
-      <itemPath>ADC.h</itemPath>
-      <itemPath>E:/UVG/Semestre 5/Digital2/Librerias/Libraries.X/LCD.h</itemPath>
-      <itemPath>Display7Seg.h</itemPath>
-      <itemPath>USART.h</itemPath>
-      <itemPath>E:/UVG/Semestre 5/Digital2/Librerias/Libraries.X/MSSP.h</itemPath>
+      <itemPath>E:/UVG/Semestre 5/Digital2/Proyecto1/Slave1_ADC.X/ADC.h</itemPath>
+      <itemPath>E:/UVG/Semestre 5/Digital2/Proyecto1/Slave1_ADC.X/Oscilador.h</itemPath>
+      <itemPath>E:/UVG/Semestre 5/Digital2/Proyecto1/Slave1_ADC.X/MSSP.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -18,12 +15,10 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>Oscilador.c</itemPath>
-      <itemPath>ADC.c</itemPath>
-      <itemPath>E:/UVG/Semestre 5/Digital2/Librerias/Libraries.X/USART.c</itemPath>
-      <itemPath>E:/UVG/Semestre 5/Digital2/Librerias/Libraries.X/LCD.c</itemPath>
-      <itemPath>Display7Seg.c</itemPath>
-      <itemPath>E:/UVG/Semestre 5/Digital2/Librerias/Libraries.X/MSSP.c</itemPath>
+      <itemPath>E:/UVG/Semestre 5/Digital2/Proyecto1/Slave1_ADC.X/ADC.c</itemPath>
+      <itemPath>E:/UVG/Semestre 5/Digital2/Proyecto1/Slave1_ADC.X/Oscilador.c</itemPath>
+      <itemPath>E:/UVG/Semestre 5/Digital2/Proyecto1/Slave1_ADC.X/Code_ADC.c</itemPath>
+      <itemPath>E:/UVG/Semestre 5/Digital2/Proyecto1/Slave1_ADC.X/MSSP.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -32,7 +27,7 @@
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
-    <Elem>.</Elem>
+    <Elem>E:\UVG\Semestre 5\Digital2\Proyecto1\Slave1_ADC.X</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
