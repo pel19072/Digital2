@@ -2836,6 +2836,15 @@ uint8_t FLAGTX = 0;
 uint8_t FLAGSS = 0;
 uint8_t COUNTER = 0;
 uint8_t TEMPERATURA = 0;
+uint8_t TEMPERATURA_FINAL = 0;
+signed int PRUEBA = 0;
+uint8_t unidades_temp = 0;
+uint8_t decimas_temp = 0;
+uint8_t centimas_temp = 0;
+uint8_t unidades_adc = 0;
+uint8_t decimas_adc = 0;
+uint8_t centimas_adc = 0;
+uint8_t SIGNO = 0;
 
 
 
@@ -2844,6 +2853,8 @@ void Setup(void);
 void Conversiones();
 uint8_t Envio(void);
 void Envio_Contador(void);
+void Envio_Temperatura(void);
+void Mappin_Temperature(void);
 
 
 
@@ -2872,11 +2883,11 @@ void __attribute__((picinterrupt(("")))) isr(void) {
 void main(void) {
     Setup();
 
-    Lcd_Set_Cursor(1, 2);
+    Lcd_Set_Cursor(1, 1);
     Lcd_Write_String("ADC");
-    Lcd_Set_Cursor(1, 7);
+    Lcd_Set_Cursor(1, 6);
     Lcd_Write_String("CONT");
-    Lcd_Set_Cursor(1, 13);
+    Lcd_Set_Cursor(1, 12);
     Lcd_Write_String("TEMP");
     while (1) {
         if(CONTADOR>10){
@@ -2896,6 +2907,7 @@ void main(void) {
                     PORTCbits.RC2 = 1;
                     spiWrite(0x00);
                     COUNTER = spiRead();
+                    PORTD = COUNTER;
                     Envio_Contador();
                     FLAGSS++;
                     break;
@@ -2905,6 +2917,7 @@ void main(void) {
                     PORTCbits.RC2 = 0;
                     spiWrite(0x00);
                     TEMPERATURA = spiRead();
+                    Mappin_Temperature();
                     FLAGSS = 0;
                     break;
             }
@@ -2959,28 +2972,25 @@ void Setup(void) {
 
 void Conversiones(){
     uint16_t temporal;
-    uint8_t unidades;
-    uint8_t decimas;
-    uint8_t centimas;
 
     temporal = (VAR_ADC*100)/51;
 
-    unidades = temporal/100;
-    temporal = temporal - 100*unidades;
+    unidades_adc = temporal/100;
+    temporal = temporal - 100*unidades_adc;
 
-    decimas = temporal/10;
-    temporal = temporal - 10*decimas;
+    decimas_adc = temporal/10;
+    temporal = temporal - 10*decimas_adc;
 
-    centimas = temporal;
+    centimas_adc = temporal;
 
     Lcd_Set_Cursor(2,1);
-    Lcd_Write_String(Cambio(unidades));
+    Lcd_Write_String(Cambio(unidades_adc));
     Lcd_Set_Cursor(2,2);
     Lcd_Write_String(".");
     Lcd_Set_Cursor(2,3);
-    Lcd_Write_String(Cambio(decimas));
+    Lcd_Write_String(Cambio(decimas_adc));
     Lcd_Set_Cursor(2,4);
-    Lcd_Write_String(Cambio(centimas));
+    Lcd_Write_String(Cambio(centimas_adc));
     Lcd_Set_Cursor(2,5);
 }
 
@@ -2993,48 +3003,60 @@ uint8_t Envio(void){
             return 0x28;
             break;
         case 1:
-            temporal = (VAR_ADC & 0xF0)>>4;
             FLAGTX++;
-            return ASCII(temporal);
+            return ASCII(unidades_adc);
             break;
         case 2:
-            temporal = VAR_ADC & 0x0F;
             FLAGTX++;
-            return ASCII(temporal);
+            return 0x2E;
             break;
         case 3:
             FLAGTX++;
-            return 0x2C;
+            return ASCII(decimas_adc);
             break;
         case 4:
+            FLAGTX++;
+            return ASCII(centimas_adc);
+            break;
+        case 5:
+            FLAGTX++;
+            return 0x2C;
+            break;
+        case 6:
             temporal = (COUNTER & 0xF0)>>4;
             FLAGTX++;
             return ASCII(temporal);
             break;
-        case 5:
+        case 7:
             temporal = COUNTER & 0x0F;
             FLAGTX++;
             return ASCII(temporal);
             break;
-        case 6:
+        case 8:
             FLAGTX++;
             return 0x2C;
             break;
-        case 7:
-            temporal = (TEMPERATURA & 0xF0)>>4;
-            FLAGTX++;
-            return ASCII(temporal);
-            break;
-        case 8:
-            temporal = TEMPERATURA & 0x0F;
-            FLAGTX++;
-            return ASCII(temporal);
-            break;
         case 9:
+            FLAGTX++;
+            return SIGNO;
+            break;
+        case 10:
+            FLAGTX++;
+            return ASCII(unidades_temp);
+            break;
+        case 11:
+            FLAGTX++;
+            return ASCII(decimas_temp);
+            break;
+        case 12:
+            FLAGTX++;
+            return ASCII(centimas_temp);
+            break;
+        case 13:
             FLAGTX++;
             return 0x29;
             break;
-        case 10:
+        case 14:
             FLAGTX = 0;
             return 0x0D;
             break;
@@ -3063,4 +3085,43 @@ void Envio_Contador(void){
     Lcd_Set_Cursor(2,9);
     Lcd_Write_String(Cambio(centimas));
     Lcd_Set_Cursor(2,10);
+}
+
+void Mappin_Temperature(void){
+    PRUEBA = ((TEMPERATURA*205)/128)-55;
+    if (PRUEBA < 0){
+        TEMPERATURA_FINAL = PRUEBA*(-1);
+        Lcd_Set_Cursor(2,12);
+        Lcd_Write_String("-");
+        Envio_Temperatura();
+        SIGNO = 45;
+    }
+    else{
+        TEMPERATURA_FINAL = PRUEBA;
+        Lcd_Set_Cursor(2,12);
+        Lcd_Write_String("+");
+        Envio_Temperatura();
+        SIGNO = 43;
+    }
+}
+
+void Envio_Temperatura(void){
+    uint8_t temporal;
+    temporal = TEMPERATURA_FINAL;
+
+    unidades_temp = temporal/100;
+    temporal = temporal - 100*unidades_temp;
+
+    decimas_temp = temporal/10;
+    temporal = temporal - 10*decimas_temp;
+
+    centimas_temp = temporal;
+
+    Lcd_Set_Cursor(2,13);
+    Lcd_Write_String(Cambio(unidades_temp));
+    Lcd_Set_Cursor(2,14);
+    Lcd_Write_String(Cambio(decimas_temp));
+    Lcd_Set_Cursor(2,15);
+    Lcd_Write_String(Cambio(centimas_temp));
+    Lcd_Set_Cursor(2,16);
 }

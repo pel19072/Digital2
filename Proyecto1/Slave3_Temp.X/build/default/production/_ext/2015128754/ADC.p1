@@ -686,8 +686,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 138:     ADCON0bits.GO_nDONE = 1;
 [e = . . _ADCON0bits 0 1 -> -> 1 `i `uc ]
 "140
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 140:     ADCON1 = 0b00000000;
-[e = _ADCON1 -> -> 0 `i `uc ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 140:     ADCON1 = 0b00010000;
+[e = _ADCON1 -> -> 16 `i `uc ]
 "142
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 142:     _delay((unsigned long)((11)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 11 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]

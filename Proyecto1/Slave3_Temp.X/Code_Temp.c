@@ -71,7 +71,7 @@ void __interrupt() isr(void) {
     }
     //INTERUPCION DEL ADC
     if(PIR1bits.ADIF == 1){
-        PORTB = ADRESH;    
+        PORTB = ADRESH;  
         PIR1bits.ADIF = 0;
     }
     ei(); //VUELVE A HABILITAR LAS INTERRUPCIONES
@@ -90,20 +90,20 @@ void main(void) {
             ADCON0bits.GO_nDONE = 1;    //HABILITA LECTURA NUEVAMENTE
             CONTADOR = 0;               //SE REINICIA EL CONTADOR
         }
-        if(PORTB <= 0x20){
-            PORTDbits.RD0 = 1;
+        if(PORTB <= 0x63){
+            PORTDbits.RD0 = 0;
             PORTDbits.RD1 = 0;
-            PORTDbits.RD2 = 0;
+            PORTDbits.RD2 = 1;
         }
-        else if(PORTB >= 0x21 && PORTB <= 0x30){
+        else if(PORTB >= 0x64 && PORTB <= 0x71){
             PORTDbits.RD0 = 0;
             PORTDbits.RD1 = 1;
             PORTDbits.RD2 = 0;
         }
-        else if(PORTB >= 0x31){
-            PORTDbits.RD0 = 0;
+        else if(PORTB >= 0x72){
+            PORTDbits.RD0 = 1;
             PORTDbits.RD1 = 0;
-            PORTDbits.RD2 = 1;
+            PORTDbits.RD2 = 0;
         }
     }
 }
@@ -124,7 +124,7 @@ void Setup(void) {
     ANSELbits.ANS5 = 1;  //POT EN E0
     ANSELH = 0;
 
-    TRISA = 0b00100000; //TODOS OUTPUTS --> LCD
+    TRISA = 0b00101000; //TODOS OUTPUTS --> LCD
     TRISB = 0; //TODOS OUTPUTS --> SIN USAR
     TRISC = 0b00011000; //TODOS OUTPUTS --> TX Y RX
     TRISD = 0; //TODOS OUTPUTS --> EN, RS Y RW

@@ -2858,20 +2858,20 @@ void main(void) {
             ADCON0bits.GO_nDONE = 1;
             CONTADOR = 0;
         }
-        if(PORTB <= 0x20){
-            PORTDbits.RD0 = 1;
+        if(PORTB <= 0x63){
+            PORTDbits.RD0 = 0;
             PORTDbits.RD1 = 0;
-            PORTDbits.RD2 = 0;
+            PORTDbits.RD2 = 1;
         }
-        else if(PORTB >= 0x21 && PORTB <= 0x30){
+        else if(PORTB >= 0x64 && PORTB <= 0x71){
             PORTDbits.RD0 = 0;
             PORTDbits.RD1 = 1;
             PORTDbits.RD2 = 0;
         }
-        else if(PORTB >= 0x31){
-            PORTDbits.RD0 = 0;
+        else if(PORTB >= 0x72){
+            PORTDbits.RD0 = 1;
             PORTDbits.RD1 = 0;
-            PORTDbits.RD2 = 1;
+            PORTDbits.RD2 = 0;
         }
     }
 }
@@ -2892,7 +2892,7 @@ void Setup(void) {
     ANSELbits.ANS5 = 1;
     ANSELH = 0;
 
-    TRISA = 0b00100000;
+    TRISA = 0b00101000;
     TRISB = 0;
     TRISC = 0b00011000;
     TRISD = 0;

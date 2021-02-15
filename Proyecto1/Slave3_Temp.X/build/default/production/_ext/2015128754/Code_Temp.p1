@@ -518,26 +518,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 147 ]
 "93
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 93:         if(PORTB <= 0x20){
-[e $ ! <= -> _PORTB `i -> 32 `i 148  ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 93:         if(PORTB <= 0x63){
+[e $ ! <= -> _PORTB `i -> 99 `i 148  ]
 {
 "94
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 94:             PORTDbits.RD0 = 1;
-[e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 94:             PORTDbits.RD0 = 0;
+[e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
 "95
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 95:             PORTDbits.RD1 = 0;
 [e = . . _PORTDbits 0 1 -> -> 0 `i `uc ]
 "96
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 96:             PORTDbits.RD2 = 0;
-[e = . . _PORTDbits 0 2 -> -> 0 `i `uc ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 96:             PORTDbits.RD2 = 1;
+[e = . . _PORTDbits 0 2 -> -> 1 `i `uc ]
 "97
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 97:         }
 }
 [e $U 149  ]
 "98
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 98:         else if(PORTB >= 0x21 && PORTB <= 0x30){
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 98:         else if(PORTB >= 0x64 && PORTB <= 0x71){
 [e :U 148 ]
-[e $ ! && >= -> _PORTB `i -> 33 `i <= -> _PORTB `i -> 48 `i 150  ]
+[e $ ! && >= -> _PORTB `i -> 100 `i <= -> _PORTB `i -> 113 `i 150  ]
 {
 "99
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 99:             PORTDbits.RD0 = 0;
@@ -553,19 +553,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 151  ]
 "103
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 103:         else if(PORTB >= 0x31){
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 103:         else if(PORTB >= 0x72){
 [e :U 150 ]
-[e $ ! >= -> _PORTB `i -> 49 `i 152  ]
+[e $ ! >= -> _PORTB `i -> 114 `i 152  ]
 {
 "104
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 104:             PORTDbits.RD0 = 0;
-[e = . . _PORTDbits 0 0 -> -> 0 `i `uc ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 104:             PORTDbits.RD0 = 1;
+[e = . . _PORTDbits 0 0 -> -> 1 `i `uc ]
 "105
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 105:             PORTDbits.RD1 = 0;
 [e = . . _PORTDbits 0 1 -> -> 0 `i `uc ]
 "106
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 106:             PORTDbits.RD2 = 1;
-[e = . . _PORTDbits 0 2 -> -> 1 `i `uc ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 106:             PORTDbits.RD2 = 0;
+[e = . . _PORTDbits 0 2 -> -> 0 `i `uc ]
 "107
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 107:         }
 }
@@ -613,8 +613,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 125:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
 "127
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 127:     TRISA = 0b00100000;
-[e = _TRISA -> -> 32 `i `uc ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 127:     TRISA = 0b00101000;
+[e = _TRISA -> -> 40 `i `uc ]
 "128
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 128:     TRISB = 0;
 [e = _TRISB -> -> 0 `i `uc ]

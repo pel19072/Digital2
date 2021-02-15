@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"166 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c
+"179 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c
 [e E1351 . `uc
 SPI_MASTER_OSC_DIV4 32
 SPI_MASTER_OSC_DIV16 33
@@ -61,18 +61,22 @@ SPI_ACTIVE_2_IDLE 64
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"67 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c
+"78 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c
 [v _isr isr `II(v  1 e 1 0 ]
-"87
+"98
 [v _main main `(v  1 e 1 0 ]
-"136
+"149
 [v _Setup Setup `(v  1 e 1 0 ]
-"175
+"188
 [v _Conversiones Conversiones `(v  1 e 1 0 ]
-"203
+"213
 [v _Envio Envio `(uc  1 e 1 0 ]
-"259
+"281
 [v _Envio_Contador Envio_Contador `(v  1 e 1 0 ]
+"305
+[v _Mappin_Temperature Mappin_Temperature `(v  1 e 1 0 ]
+"323
+[v _Envio_Temperatura Envio_Temperatura `(v  1 e 1 0 ]
 "13 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/LCD.c
 [v _Lcd_Port Lcd_Port `(v  1 e 1 0 ]
 "17
@@ -125,14 +129,14 @@ SPI_ACTIVE_2_IDLE 64
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 "415
 [v _PORTE PORTE `VEuc  1 e 1 @9 ]
-[s S439 . 1 `uc 1 RE0 1 0 :1:0 
+[s S458 . 1 `uc 1 RE0 1 0 :1:0 
 `uc 1 RE1 1 0 :1:1 
 `uc 1 RE2 1 0 :1:2 
 `uc 1 RE3 1 0 :1:3 
 ]
 "428
-[u S444 . 1 `S439 1 . 1 0 ]
-[v _PORTEbits PORTEbits `VES444  1 e 1 @9 ]
+[u S463 . 1 `S458 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES463  1 e 1 @9 ]
 [s S59 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
@@ -165,7 +169,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 "851
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
-[s S553 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S572 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -175,18 +179,18 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 SPEN 1 0 :1:7 
 ]
 "1069
-[s S562 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S581 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S566 . 1 `uc 1 . 1 0 :6:0 
+[s S585 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nRC8 1 0 :1:6 
 ]
-[s S569 . 1 `uc 1 . 1 0 :6:0 
+[s S588 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[u S572 . 1 `S553 1 . 1 0 `S562 1 . 1 0 `S566 1 . 1 0 `S569 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES572  1 e 1 @24 ]
+[u S591 . 1 `S572 1 . 1 0 `S581 1 . 1 0 `S585 1 . 1 0 `S588 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES591  1 e 1 @24 ]
 "1134
 [v _TXREG TXREG `VEuc  1 e 1 @25 ]
 "1347
@@ -228,7 +232,7 @@ SPI_ACTIVE_2_IDLE 64
 [v _OSCCONbits OSCCONbits `VES33  1 e 1 @143 ]
 "2178
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
-[s S329 . 1 `uc 1 BF 1 0 :1:0 
+[s S348 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -238,40 +242,40 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 SMP 1 0 :1:7 
 ]
 "2232
-[s S338 . 1 `uc 1 . 1 0 :2:0 
+[s S357 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S343 . 1 `uc 1 . 1 0 :2:0 
+[s S362 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S349 . 1 `uc 1 . 1 0 :2:0 
+[s S368 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S354 . 1 `uc 1 . 1 0 :2:0 
+[s S373 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S359 . 1 `uc 1 . 1 0 :2:0 
+[s S378 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S364 . 1 `uc 1 . 1 0 :2:0 
+[s S383 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S369 . 1 `S329 1 . 1 0 `S338 1 . 1 0 `S343 1 . 1 0 `S349 1 . 1 0 `S354 1 . 1 0 `S359 1 . 1 0 `S364 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES369  1 e 1 @148 ]
-[s S493 . 1 `uc 1 TX9D 1 0 :1:0 
+[u S388 . 1 `S348 1 . 1 0 `S357 1 . 1 0 `S362 1 . 1 0 `S368 1 . 1 0 `S373 1 . 1 0 `S378 1 . 1 0 `S383 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES388  1 e 1 @148 ]
+[s S512 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -281,22 +285,22 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 CSRC 1 0 :1:7 
 ]
 "2583
-[s S502 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S521 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S506 . 1 `uc 1 . 1 0 :6:0 
+[s S525 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[u S509 . 1 `S493 1 . 1 0 `S502 1 . 1 0 `S506 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES509  1 e 1 @152 ]
+[u S528 . 1 `S512 1 . 1 0 `S521 1 . 1 0 `S525 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES528  1 e 1 @152 ]
 "2643
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
 "2705
 [v _SPBRGH SPBRGH `VEuc  1 e 1 @154 ]
 "3012
 [v _WDTCON WDTCON `VEuc  1 e 1 @261 ]
-[s S530 . 1 `uc 1 ABDEN 1 0 :1:0 
+[s S549 . 1 `uc 1 ABDEN 1 0 :1:0 
 `uc 1 WUE 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG16 1 0 :1:3 
@@ -306,8 +310,8 @@ SPI_ACTIVE_2_IDLE 64
 `uc 1 ABDOVF 1 0 :1:7 
 ]
 "3353
-[u S539 . 1 `S530 1 . 1 0 ]
-[v _BAUDCTLbits BAUDCTLbits `VES539  1 e 1 @391 ]
+[u S558 . 1 `S549 1 . 1 0 ]
+[v _BAUDCTLbits BAUDCTLbits `VES558  1 e 1 @391 ]
 "3388
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3450
@@ -328,10 +332,28 @@ SPI_ACTIVE_2_IDLE 64
 [v _COUNTER COUNTER `uc  1 e 1 0 ]
 "53
 [v _TEMPERATURA TEMPERATURA `uc  1 e 1 0 ]
-"87
+"54
+[v _TEMPERATURA_FINAL TEMPERATURA_FINAL `uc  1 e 1 0 ]
+"55
+[v _PRUEBA PRUEBA `i  1 e 2 0 ]
+"56
+[v _unidades_temp unidades_temp `uc  1 e 1 0 ]
+"57
+[v _decimas_temp decimas_temp `uc  1 e 1 0 ]
+"58
+[v _centimas_temp centimas_temp `uc  1 e 1 0 ]
+"59
+[v _unidades_adc unidades_adc `uc  1 e 1 0 ]
+"60
+[v _decimas_adc decimas_adc `uc  1 e 1 0 ]
+"61
+[v _centimas_adc centimas_adc `uc  1 e 1 0 ]
+"62
+[v _SIGNO SIGNO `uc  1 e 1 0 ]
+"98
 [v _main main `(v  1 e 1 0 ]
 {
-"130
+"143
 } 0
 "32 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/MSSP.c
 [v _spiWrite spiWrite `(v  1 e 1 0 ]
@@ -351,10 +373,10 @@ SPI_ACTIVE_2_IDLE 64
 {
 "30
 } 0
-"136 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c
+"149 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c
 [v _Setup Setup `(v  1 e 1 0 ]
 {
-"170
+"183
 } 0
 "12 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/MSSP.c
 [v _spiInit spiInit `(v  1 e 1 0 ]
@@ -385,18 +407,30 @@ SPI_ACTIVE_2_IDLE 64
 {
 "54
 } 0
-"259 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c
+"305 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c
+[v _Mappin_Temperature Mappin_Temperature `(v  1 e 1 0 ]
+{
+"321
+} 0
+"323
+[v _Envio_Temperatura Envio_Temperatura `(v  1 e 1 0 ]
+{
+"324
+[v Envio_Temperatura@temporal temporal `uc  1 a 1 18 ]
+"342
+} 0
+"281
 [v _Envio_Contador Envio_Contador `(v  1 e 1 0 ]
 {
-"260
+"282
 [v Envio_Contador@temporal temporal `uc  1 a 1 21 ]
-"262
+"284
 [v Envio_Contador@decimas decimas `uc  1 a 1 20 ]
-"261
+"283
 [v Envio_Contador@unidades unidades `uc  1 a 1 19 ]
-"263
+"285
 [v Envio_Contador@centimas centimas `uc  1 a 1 18 ]
-"281
+"303
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul8.c
 [v ___bmul __bmul `(uc  1 e 1 0 ]
@@ -411,18 +445,12 @@ SPI_ACTIVE_2_IDLE 64
 [v ___bmul@multiplier multiplier `uc  1 a 1 3 ]
 "51
 } 0
-"175 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c
+"188 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c
 [v _Conversiones Conversiones `(v  1 e 1 0 ]
 {
-"176
-[v Conversiones@temporal temporal `ui  1 a 2 20 ]
-"178
-[v Conversiones@decimas decimas `uc  1 a 1 19 ]
-"177
-[v Conversiones@unidades unidades `uc  1 a 1 18 ]
-"179
-[v Conversiones@centimas centimas `uc  1 a 1 17 ]
-"200
+"189
+[v Conversiones@temporal temporal `ui  1 a 2 17 ]
+"210
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
@@ -511,17 +539,17 @@ SPI_ACTIVE_2_IDLE 64
 [v Cambio@numero numero `uc  1 a 1 2 ]
 "111
 } 0
-"67 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c
+"78 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/code.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"81
+"92
 } 0
-"203
+"213
 [v _Envio Envio `(uc  1 e 1 0 ]
 {
-"204
+"214
 [v Envio@temporal temporal `uc  1 a 1 5 ]
-"257
+"279
 } 0
 "22 E:/UVG/Semestre 5/Digital2/Proyecto1/Proyecto1.X/USART.c
 [v _ASCII ASCII `(uc  1 e 1 0 ]

@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Fri Feb 12 02:50:53 2021
+                                                                                               Mon Feb 15 14:59:54 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	16F887
@@ -500,7 +500,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    486                           
    487  0011                     __end_of__initialization:
    488  0011  0183               	clrf	3
-   489  0012  120A  118A  2997   	ljmp	_main	;jump to C main() function
+   489  0012  120A  118A  2998   	ljmp	_main	;jump to C main() function
    490                           
    491                           	psect	bssCOMMON
    492  0078                     __pbssCOMMON:
@@ -589,7 +589,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    575  0020                     	ds	1
    576                           
    577                           	psect	maintext
-   578  0197                     __pmaintext:	
+   578  0198                     __pmaintext:	
    579 ;;
    580 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
    581 ;;
@@ -624,132 +624,132 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    610                           
    611                           
    612                           ;psect for function _main
-   613  0197                     _main:
-   614  0197                     l1138:	
+   613  0198                     _main:
+   614  0198                     l1134:	
    615                           ;incstack = 0
    616                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
    617                           
    618                           
    619                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 85:     Setup();
-   620  0197  120A  118A  2158  120A  118A  	fcall	_Setup
-   621  019C                     l1140:
+   620  0198  120A  118A  2159  120A  118A  	fcall	_Setup
+   621  019D                     l1136:
    622                           
    623                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 89:         if(CONTADOR
       +                          >10){
-   624  019C  300B               	movlw	11
-   625  019D  0278               	subwf	_CONTADOR,w
-   626  019E  1C03               	skipc
-   627  019F  29A1               	goto	u171
-   628  01A0  29A2               	goto	u170
-   629  01A1                     u171:
-   630  01A1  29A6               	goto	l1146
-   631  01A2                     u170:
-   632  01A2                     l1142:
+   624  019D  300B               	movlw	11
+   625  019E  0278               	subwf	_CONTADOR,w
+   626  019F  1C03               	skipc
+   627  01A0  29A2               	goto	u171
+   628  01A1  29A3               	goto	u170
+   629  01A2                     u171:
+   630  01A2  29A7               	goto	l1142
+   631  01A3                     u170:
+   632  01A3                     l1138:
    633                           
    634                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 90:             ADCON0b
       +                          its.GO_nDONE = 1;
-   635  01A2  1283               	bcf	3,5	;RP0=0, select bank0
-   636  01A3  1303               	bcf	3,6	;RP1=0, select bank0
-   637  01A4  149F               	bsf	31,1	;volatile
-   638  01A5                     l1144:
+   635  01A3  1283               	bcf	3,5	;RP0=0, select bank0
+   636  01A4  1303               	bcf	3,6	;RP1=0, select bank0
+   637  01A5  149F               	bsf	31,1	;volatile
+   638  01A6                     l1140:
    639                           
    640                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 91:             CONTADO
       +                          R = 0;
-   641  01A5  01F8               	clrf	_CONTADOR
-   642  01A6                     l1146:
+   641  01A6  01F8               	clrf	_CONTADOR
+   642  01A7                     l1142:
    643                           
    644                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 93:         if(PORTB <=
-      +                           0x20){
-   645  01A6  3021               	movlw	33
-   646  01A7  1283               	bcf	3,5	;RP0=0, select bank0
-   647  01A8  1303               	bcf	3,6	;RP1=0, select bank0
-   648  01A9  0206               	subwf	6,w	;volatile
-   649  01AA  1803               	skipnc
-   650  01AB  29AD               	goto	u181
-   651  01AC  29AE               	goto	u180
-   652  01AD                     u181:
-   653  01AD  29B2               	goto	l1150
-   654  01AE                     u180:
-   655  01AE                     l1148:
+      +                           0x63){
+   645  01A7  3064               	movlw	100
+   646  01A8  1283               	bcf	3,5	;RP0=0, select bank0
+   647  01A9  1303               	bcf	3,6	;RP1=0, select bank0
+   648  01AA  0206               	subwf	6,w	;volatile
+   649  01AB  1803               	skipnc
+   650  01AC  29AE               	goto	u181
+   651  01AD  29AF               	goto	u180
+   652  01AE                     u181:
+   653  01AE  29B3               	goto	l1146
+   654  01AF                     u180:
+   655  01AF                     l1144:
    656                           
    657                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 94:             PORTDbi
-      +                          ts.RD0 = 1;
-   658  01AE  1408               	bsf	8,0	;volatile
+      +                          ts.RD0 = 0;
+   658  01AF  1008               	bcf	8,0	;volatile
    659                           
    660                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 95:             PORTDbi
       +                          ts.RD1 = 0;
-   661  01AF  1088               	bcf	8,1	;volatile
+   661  01B0  1088               	bcf	8,1	;volatile
    662                           
    663                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 96:             PORTDbi
-      +                          ts.RD2 = 0;
-   664  01B0  1108               	bcf	8,2	;volatile
+      +                          ts.RD2 = 1;
+   664  01B1  1508               	bsf	8,2	;volatile
    665                           
    666                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 97:         }
-   667  01B1  299C               	goto	l1140
-   668  01B2                     l1150:
-   669  01B2  3021               	movlw	33
-   670  01B3  0206               	subwf	6,w	;volatile
-   671  01B4  1C03               	skipc
-   672  01B5  29B7               	goto	u191
-   673  01B6  29B8               	goto	u190
-   674  01B7                     u191:
-   675  01B7  29C2               	goto	l1156
-   676  01B8                     u190:
-   677  01B8                     l1152:
-   678  01B8  3031               	movlw	49
-   679  01B9  0206               	subwf	6,w	;volatile
-   680  01BA  1803               	skipnc
-   681  01BB  29BD               	goto	u201
-   682  01BC  29BE               	goto	u200
-   683  01BD                     u201:
-   684  01BD  29C2               	goto	l1156
-   685  01BE                     u200:
-   686  01BE                     l1154:
+   667  01B2  299D               	goto	l1136
+   668  01B3                     l1146:
+   669  01B3  3064               	movlw	100
+   670  01B4  0206               	subwf	6,w	;volatile
+   671  01B5  1C03               	skipc
+   672  01B6  29B8               	goto	u191
+   673  01B7  29B9               	goto	u190
+   674  01B8                     u191:
+   675  01B8  29C3               	goto	l1152
+   676  01B9                     u190:
+   677  01B9                     l1148:
+   678  01B9  3072               	movlw	114
+   679  01BA  0206               	subwf	6,w	;volatile
+   680  01BB  1803               	skipnc
+   681  01BC  29BE               	goto	u201
+   682  01BD  29BF               	goto	u200
+   683  01BE                     u201:
+   684  01BE  29C3               	goto	l1152
+   685  01BF                     u200:
+   686  01BF                     l1150:
    687                           
    688                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 99:             PORTDbi
       +                          ts.RD0 = 0;
-   689  01BE  1008               	bcf	8,0	;volatile
+   689  01BF  1008               	bcf	8,0	;volatile
    690                           
    691                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 100:             PORTDb
       +                          its.RD1 = 1;
-   692  01BF  1488               	bsf	8,1	;volatile
+   692  01C0  1488               	bsf	8,1	;volatile
    693                           
    694                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 101:             PORTDb
       +                          its.RD2 = 0;
-   695  01C0  1108               	bcf	8,2	;volatile
+   695  01C1  1108               	bcf	8,2	;volatile
    696                           
    697                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 102:         }
-   698  01C1  299C               	goto	l1140
-   699  01C2                     l1156:
-   700  01C2  3031               	movlw	49
-   701  01C3  0206               	subwf	6,w	;volatile
-   702  01C4  1C03               	skipc
-   703  01C5  29C7               	goto	u211
-   704  01C6  29C8               	goto	u210
-   705  01C7                     u211:
-   706  01C7  29CC               	goto	l159
-   707  01C8                     u210:
-   708  01C8                     l1158:
+   698  01C2  299D               	goto	l1136
+   699  01C3                     l1152:
+   700  01C3  3072               	movlw	114
+   701  01C4  0206               	subwf	6,w	;volatile
+   702  01C5  1C03               	skipc
+   703  01C6  29C8               	goto	u211
+   704  01C7  29C9               	goto	u210
+   705  01C8                     u211:
+   706  01C8  29CD               	goto	l159
+   707  01C9                     u210:
+   708  01C9                     l1154:
    709                           
    710                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 104:             PORTDb
-      +                          its.RD0 = 0;
-   711  01C8  1008               	bcf	8,0	;volatile
+      +                          its.RD0 = 1;
+   711  01C9  1408               	bsf	8,0	;volatile
    712                           
    713                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 105:             PORTDb
       +                          its.RD1 = 0;
-   714  01C9  1088               	bcf	8,1	;volatile
+   714  01CA  1088               	bcf	8,1	;volatile
    715                           
    716                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 106:             PORTDb
-      +                          its.RD2 = 1;
-   717  01CA  1508               	bsf	8,2	;volatile
-   718  01CB  299C               	goto	l1140
-   719  01CC                     l159:
-   720  01CC  299C               	goto	l1140
-   721  01CD  120A  118A  280C   	ljmp	start
-   722  01D0                     __end_of_main:
+      +                          its.RD2 = 0;
+   717  01CB  1108               	bcf	8,2	;volatile
+   718  01CC  299D               	goto	l1136
+   719  01CD                     l159:
+   720  01CD  299D               	goto	l1136
+   721  01CE  120A  118A  280C   	ljmp	start
+   722  01D1                     __end_of_main:
    723                           
    724                           	psect	text1
-   725  0158                     __ptext1:	
+   725  0159                     __ptext1:	
    726 ;; *************** function _Setup *****************
    727 ;; Defined at:
    728 ;;		line 115 in file "E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c"
@@ -784,142 +784,142 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    757                           
    758                           
    759                           ;psect for function _Setup
-   760  0158                     _Setup:
-   761  0158                     l1104:	
+   760  0159                     _Setup:
+   761  0159                     l1100:	
    762                           ;incstack = 0
    763                           ; Regs used in _Setup: [wreg-fsr0h+status,2+status,0+pclath+cstack]
    764                           
    765                           
    766                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 117:     PORTA = 0;
-   767  0158  1283               	bcf	3,5	;RP0=0, select bank0
-   768  0159  1303               	bcf	3,6	;RP1=0, select bank0
-   769  015A  0185               	clrf	5	;volatile
+   767  0159  1283               	bcf	3,5	;RP0=0, select bank0
+   768  015A  1303               	bcf	3,6	;RP1=0, select bank0
+   769  015B  0185               	clrf	5	;volatile
    770                           
    771                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 118:     PORTB = 0;
-   772  015B  0186               	clrf	6	;volatile
+   772  015C  0186               	clrf	6	;volatile
    773                           
    774                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 119:     PORTC = 0;
-   775  015C  0187               	clrf	7	;volatile
+   775  015D  0187               	clrf	7	;volatile
    776                           
    777                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 120:     PORTD = 0;
-   778  015D  0188               	clrf	8	;volatile
+   778  015E  0188               	clrf	8	;volatile
    779                           
    780                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 121:     PORTE = 0;
-   781  015E  0189               	clrf	9	;volatile
+   781  015F  0189               	clrf	9	;volatile
    782                           
    783                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 123:     ANSEL = 0;
-   784  015F  1683               	bsf	3,5	;RP0=1, select bank3
-   785  0160  1703               	bsf	3,6	;RP1=1, select bank3
-   786  0161  0188               	clrf	8	;volatile
-   787  0162                     l1106:
+   784  0160  1683               	bsf	3,5	;RP0=1, select bank3
+   785  0161  1703               	bsf	3,6	;RP1=1, select bank3
+   786  0162  0188               	clrf	8	;volatile
+   787  0163                     l1102:
    788                           
    789                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 124:     ANSELbits.ANS5
       +                           = 1;
-   790  0162  1688               	bsf	8,5	;volatile
+   790  0163  1688               	bsf	8,5	;volatile
    791                           
    792                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 125:     ANSELH = 0;
-   793  0163  0189               	clrf	9	;volatile
-   794  0164                     l1108:
+   793  0164  0189               	clrf	9	;volatile
+   794  0165                     l1104:
    795                           
    796                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 127:     TRISA = 0b0010
-      +                          0000;
-   797  0164  3020               	movlw	32
-   798  0165  1683               	bsf	3,5	;RP0=1, select bank1
-   799  0166  1303               	bcf	3,6	;RP1=0, select bank1
-   800  0167  0085               	movwf	5	;volatile
-   801  0168                     l1110:
+      +                          1000;
+   797  0165  3028               	movlw	40
+   798  0166  1683               	bsf	3,5	;RP0=1, select bank1
+   799  0167  1303               	bcf	3,6	;RP1=0, select bank1
+   800  0168  0085               	movwf	5	;volatile
+   801  0169                     l1106:
    802                           
    803                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 128:     TRISB = 0;
-   804  0168  0186               	clrf	6	;volatile
+   804  0169  0186               	clrf	6	;volatile
    805                           
    806                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 129:     TRISC = 0b0001
       +                          1000;
-   807  0169  3018               	movlw	24
-   808  016A  0087               	movwf	7	;volatile
-   809  016B                     l1112:
+   807  016A  3018               	movlw	24
+   808  016B  0087               	movwf	7	;volatile
+   809  016C                     l1108:
    810                           
    811                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 130:     TRISD = 0;
-   812  016B  0188               	clrf	8	;volatile
-   813  016C                     l1114:
+   812  016C  0188               	clrf	8	;volatile
+   813  016D                     l1110:
    814                           
    815                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 131:     TRISE = 1;
-   816  016C  3001               	movlw	1
-   817  016D  0089               	movwf	9	;volatile
-   818  016E                     l1116:
+   816  016D  3001               	movlw	1
+   817  016E  0089               	movwf	9	;volatile
+   818  016F                     l1112:
    819                           
    820                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 134:     INTCONbits.GIE
       +                           = 1;
-   821  016E  178B               	bsf	11,7	;volatile
-   822  016F                     l1118:
+   821  016F  178B               	bsf	11,7	;volatile
+   822  0170                     l1114:
    823                           
    824                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 135:     INTCONbits.PEI
       +                          E = 1;
-   825  016F  170B               	bsf	11,6	;volatile
-   826  0170                     l1120:
+   825  0170  170B               	bsf	11,6	;volatile
+   826  0171                     l1116:
    827                           
    828                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 136:     PIE1bits.SSPIE
       +                           = 1;
-   829  0170  158C               	bsf	12,3	;volatile
-   830  0171                     l1122:
+   829  0171  158C               	bsf	12,3	;volatile
+   830  0172                     l1118:
    831                           
    832                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 137:     INTCONbits.T0I
       +                          E = 1;
-   833  0171  168B               	bsf	11,5	;volatile
-   834  0172                     l1124:
+   833  0172  168B               	bsf	11,5	;volatile
+   834  0173                     l1120:
    835                           
    836                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 138:     INTCONbits.T0I
       +                          F = 0;
-   837  0172  110B               	bcf	11,2	;volatile
-   838  0173                     l1126:
+   837  0173  110B               	bcf	11,2	;volatile
+   838  0174                     l1122:
    839                           
    840                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 139:     PIE1bits.ADIE 
       +                          = 1;
-   841  0173  170C               	bsf	12,6	;volatile
-   842  0174                     l1128:
+   841  0174  170C               	bsf	12,6	;volatile
+   842  0175                     l1124:
    843                           
    844                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 142:     initOsc(6);
-   845  0174  3006               	movlw	6
-   846  0175  120A  118A  20FC  120A  118A  	fcall	_initOsc
-   847  017A                     l1130:
+   845  0175  3006               	movlw	6
+   846  0176  120A  118A  20FD  120A  118A  	fcall	_initOsc
+   847  017B                     l1126:
    848                           
    849                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 144:     initADC(2,5);
-   850  017A  3005               	movlw	5
-   851  017B  1283               	bcf	3,5	;RP0=0, select bank0
-   852  017C  1303               	bcf	3,6	;RP1=0, select bank0
-   853  017D  00A0               	movwf	??_Setup
-   854  017E  0820               	movf	??_Setup,w
-   855  017F  00F4               	movwf	initADC@CHS
-   856  0180  3002               	movlw	2
-   857  0181  120A  118A  2015  120A  118A  	fcall	_initADC
-   858  0186                     l1132:
+   850  017B  3005               	movlw	5
+   851  017C  1283               	bcf	3,5	;RP0=0, select bank0
+   852  017D  1303               	bcf	3,6	;RP1=0, select bank0
+   853  017E  00A0               	movwf	??_Setup
+   854  017F  0820               	movf	??_Setup,w
+   855  0180  00F4               	movwf	initADC@CHS
+   856  0181  3002               	movlw	2
+   857  0182  120A  118A  2015  120A  118A  	fcall	_initADC
+   858  0187                     l1128:
    859                           
    860                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 146:     spiInit(SPI_SL
       +                          AVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
-   861  0186  01F4               	clrf	spiInit@sDataSample
-   862  0187  01F5               	clrf	spiInit@sClockIdle
-   863  0188  01F6               	clrf	spiInit@sTransmitEdge
-   864  0189  3024               	movlw	36
-   865  018A  120A  118A  21FC  120A  118A  	fcall	_spiInit
-   866  018F                     l1134:
+   861  0187  01F4               	clrf	spiInit@sDataSample
+   862  0188  01F5               	clrf	spiInit@sClockIdle
+   863  0189  01F6               	clrf	spiInit@sTransmitEdge
+   864  018A  3024               	movlw	36
+   865  018B  120A  118A  21FD  120A  118A  	fcall	_spiInit
+   866  0190                     l1130:
    867                           
    868                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 148:     WDTCON = 0;
-   869  018F  1283               	bcf	3,5	;RP0=0, select bank2
-   870  0190  1703               	bsf	3,6	;RP1=1, select bank2
-   871  0191  0185               	clrf	5	;volatile
-   872  0192                     l1136:
+   869  0190  1283               	bcf	3,5	;RP0=0, select bank2
+   870  0191  1703               	bsf	3,6	;RP1=1, select bank2
+   871  0192  0185               	clrf	5	;volatile
+   872  0193                     l1132:
    873                           
    874                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 149:     OPTION_REG = 0
       +                          b11010111;
-   875  0192  30D7               	movlw	215
-   876  0193  1683               	bsf	3,5	;RP0=1, select bank1
-   877  0194  1303               	bcf	3,6	;RP1=0, select bank1
-   878  0195  0081               	movwf	1	;volatile
-   879  0196                     l168:
-   880  0196  0008               	return
-   881  0197                     __end_of_Setup:
+   875  0193  30D7               	movlw	215
+   876  0194  1683               	bsf	3,5	;RP0=1, select bank1
+   877  0195  1303               	bcf	3,6	;RP1=0, select bank1
+   878  0196  0081               	movwf	1	;volatile
+   879  0197                     l168:
+   880  0197  0008               	return
+   881  0198                     __end_of_Setup:
    882                           
    883                           	psect	text2
-   884  01FC                     __ptext2:	
+   884  01FD                     __ptext2:	
    885 ;; *************** function _spiInit *****************
    886 ;; Defined at:
    887 ;;		line 12 in file "E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c"
@@ -955,69 +955,69 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
    917                           
    918                           
    919                           ;psect for function _spiInit
-   920  01FC                     _spiInit:
+   920  01FD                     _spiInit:
    921                           
    922                           ;incstack = 0
    923                           ; Regs used in _spiInit: [wreg+status,2+status,0]
    924                           ;spiInit@sType stored from wreg
-   925  01FC  00F7               	movwf	spiInit@sType
-   926  01FD                     l978:
+   925  01FD  00F7               	movwf	spiInit@sType
+   926  01FE                     l974:
    927                           
    928                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c: 13:     TRISC5 = 0;
-   929  01FD  1683               	bsf	3,5	;RP0=1, select bank1
-   930  01FE  1303               	bcf	3,6	;RP1=0, select bank1
-   931  01FF  1287               	bcf	7,5	;volatile
+   929  01FE  1683               	bsf	3,5	;RP0=1, select bank1
+   930  01FF  1303               	bcf	3,6	;RP1=0, select bank1
+   931  0200  1287               	bcf	7,5	;volatile
    932                           
    933                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c: 14:     if(sType & 0b0000010
       +                          0)
-   934  0200  1D77               	btfss	spiInit@sType,2
-   935  0201  2A03               	goto	u111
-   936  0202  2A04               	goto	u110
-   937  0203                     u111:
-   938  0203  2A08               	goto	l984
-   939  0204                     u110:
-   940  0204                     l980:
+   934  0201  1D77               	btfss	spiInit@sType,2
+   935  0202  2A04               	goto	u111
+   936  0203  2A05               	goto	u110
+   937  0204                     u111:
+   938  0204  2A09               	goto	l980
+   939  0205                     u110:
+   940  0205                     l976:
    941                           
    942                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c: 15:     {;E:/UVG/Semestre 5/
       +                          Digital2/Proyecto1/Slave3_Temp.X/MSSP.c: 16:         SSPSTAT = sTransmitEdge;
-   943  0204  0876               	movf	spiInit@sTransmitEdge,w
-   944  0205  0094               	movwf	20	;volatile
-   945  0206                     l982:
+   943  0205  0876               	movf	spiInit@sTransmitEdge,w
+   944  0206  0094               	movwf	20	;volatile
+   945  0207                     l978:
    946                           
    947                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c: 17:         TRISC3 = 1;
-   948  0206  1587               	bsf	7,3	;volatile
+   948  0207  1587               	bsf	7,3	;volatile
    949                           
    950                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c: 18:     }
-   951  0207  2A0C               	goto	l51
-   952  0208                     l984:
+   951  0208  2A0D               	goto	l51
+   952  0209                     l980:
    953                           
    954                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c: 20:     {;E:/UVG/Semestre 5/
       +                          Digital2/Proyecto1/Slave3_Temp.X/MSSP.c: 21:         SSPSTAT = sDataSample | sTransmitEd
       +                          ge;
-   955  0208  0874               	movf	spiInit@sDataSample,w
-   956  0209  0476               	iorwf	spiInit@sTransmitEdge,w
-   957  020A  0094               	movwf	20	;volatile
-   958  020B                     l986:
+   955  0209  0874               	movf	spiInit@sDataSample,w
+   956  020A  0476               	iorwf	spiInit@sTransmitEdge,w
+   957  020B  0094               	movwf	20	;volatile
+   958  020C                     l982:
    959                           
    960                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c: 22:         TRISC3 = 0;
-   961  020B  1187               	bcf	7,3	;volatile
-   962  020C                     l51:	
+   961  020C  1187               	bcf	7,3	;volatile
+   962  020D                     l51:	
    963                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c: 23:     }
    964                           
    965                           
    966                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c: 25:     SSPCON = sType | sCl
       +                          ockIdle;
-   967  020C  0877               	movf	spiInit@sType,w
-   968  020D  0475               	iorwf	spiInit@sClockIdle,w
-   969  020E  1283               	bcf	3,5	;RP0=0, select bank0
-   970  020F  1303               	bcf	3,6	;RP1=0, select bank0
-   971  0210  0094               	movwf	20	;volatile
-   972  0211                     l52:
-   973  0211  0008               	return
-   974  0212                     __end_of_spiInit:
+   967  020D  0877               	movf	spiInit@sType,w
+   968  020E  0475               	iorwf	spiInit@sClockIdle,w
+   969  020F  1283               	bcf	3,5	;RP0=0, select bank0
+   970  0210  1303               	bcf	3,6	;RP1=0, select bank0
+   971  0211  0094               	movwf	20	;volatile
+   972  0212                     l52:
+   973  0212  0008               	return
+   974  0213                     __end_of_spiInit:
    975                           
    976                           	psect	text3
-   977  00FC                     __ptext3:	
+   977  00FD                     __ptext3:	
    978 ;; *************** function _initOsc *****************
    979 ;; Defined at:
    980 ;;		line 6 in file "E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c"
@@ -1050,200 +1050,200 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1007                           
   1008                           
   1009                           ;psect for function _initOsc
-  1010  00FC                     _initOsc:
+  1010  00FD                     _initOsc:
   1011                           
   1012                           ;incstack = 0
   1013                           ; Regs used in _initOsc: [wreg-fsr0h+status,2+status,0]
   1014                           ;initOsc@IRCF stored from wreg
-  1015  00FC  00F6               	movwf	initOsc@IRCF
-  1016  00FD                     l792:
+  1015  00FD  00F6               	movwf	initOsc@IRCF
+  1016  00FE                     l790:
   1017                           
   1018                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 8:     switch(IRCF){
-  1019  00FD  2934               	goto	l796
-  1020  00FE                     l75:	
+  1019  00FE  2935               	goto	l794
+  1020  00FF                     l75:	
   1021                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 9:         case 0:
   1022                           
   1023                           
   1024                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 10:             OSCCONb
       +                          its.IRCF2 = 0;
-  1025  00FE  1683               	bsf	3,5	;RP0=1, select bank1
-  1026  00FF  1303               	bcf	3,6	;RP1=0, select bank1
-  1027  0100  130F               	bcf	15,6	;volatile
+  1025  00FF  1683               	bsf	3,5	;RP0=1, select bank1
+  1026  0100  1303               	bcf	3,6	;RP1=0, select bank1
+  1027  0101  130F               	bcf	15,6	;volatile
   1028                           
   1029                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 11:             OSCCONb
       +                          its.IRCF1 = 0;
-  1030  0101  128F               	bcf	15,5	;volatile
+  1030  0102  128F               	bcf	15,5	;volatile
   1031                           
   1032                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 12:             OSCCONb
       +                          its.IRCF0 = 0;
-  1033  0102  120F               	bcf	15,4	;volatile
+  1033  0103  120F               	bcf	15,4	;volatile
   1034                           
   1035                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 13:             break;
-  1036  0103  2956               	goto	l76
-  1037  0104                     l77:	
+  1036  0104  2957               	goto	l76
+  1037  0105                     l77:	
   1038                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 14:         case 1:
   1039                           
   1040                           
   1041                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 15:             OSCCONb
       +                          its.IRCF2 = 0;
-  1042  0104  1683               	bsf	3,5	;RP0=1, select bank1
-  1043  0105  1303               	bcf	3,6	;RP1=0, select bank1
-  1044  0106  130F               	bcf	15,6	;volatile
+  1042  0105  1683               	bsf	3,5	;RP0=1, select bank1
+  1043  0106  1303               	bcf	3,6	;RP1=0, select bank1
+  1044  0107  130F               	bcf	15,6	;volatile
   1045                           
   1046                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 16:             OSCCONb
       +                          its.IRCF1 = 0;
-  1047  0107  128F               	bcf	15,5	;volatile
+  1047  0108  128F               	bcf	15,5	;volatile
   1048                           
   1049                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 17:             OSCCONb
       +                          its.IRCF0 = 1;
-  1050  0108  160F               	bsf	15,4	;volatile
+  1050  0109  160F               	bsf	15,4	;volatile
   1051                           
   1052                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 18:             break;
-  1053  0109  2956               	goto	l76
-  1054  010A                     l78:	
+  1053  010A  2957               	goto	l76
+  1054  010B                     l78:	
   1055                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 19:         case 2:
   1056                           
   1057                           
   1058                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 20:             OSCCONb
       +                          its.IRCF2 = 0;
-  1059  010A  1683               	bsf	3,5	;RP0=1, select bank1
-  1060  010B  1303               	bcf	3,6	;RP1=0, select bank1
-  1061  010C  130F               	bcf	15,6	;volatile
+  1059  010B  1683               	bsf	3,5	;RP0=1, select bank1
+  1060  010C  1303               	bcf	3,6	;RP1=0, select bank1
+  1061  010D  130F               	bcf	15,6	;volatile
   1062                           
   1063                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 21:             OSCCONb
       +                          its.IRCF1 = 1;
-  1064  010D  168F               	bsf	15,5	;volatile
+  1064  010E  168F               	bsf	15,5	;volatile
   1065                           
   1066                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 22:             OSCCONb
       +                          its.IRCF0 = 0;
-  1067  010E  120F               	bcf	15,4	;volatile
+  1067  010F  120F               	bcf	15,4	;volatile
   1068                           
   1069                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 23:             break;
-  1070  010F  2956               	goto	l76
-  1071  0110                     l79:	
+  1070  0110  2957               	goto	l76
+  1071  0111                     l79:	
   1072                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 24:         case 3:
   1073                           
   1074                           
   1075                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 25:             OSCCONb
       +                          its.IRCF2 = 0;
-  1076  0110  1683               	bsf	3,5	;RP0=1, select bank1
-  1077  0111  1303               	bcf	3,6	;RP1=0, select bank1
-  1078  0112  130F               	bcf	15,6	;volatile
+  1076  0111  1683               	bsf	3,5	;RP0=1, select bank1
+  1077  0112  1303               	bcf	3,6	;RP1=0, select bank1
+  1078  0113  130F               	bcf	15,6	;volatile
   1079                           
   1080                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 26:             OSCCONb
       +                          its.IRCF1 = 1;
-  1081  0113  168F               	bsf	15,5	;volatile
+  1081  0114  168F               	bsf	15,5	;volatile
   1082                           
   1083                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 27:             OSCCONb
       +                          its.IRCF0 = 1;
-  1084  0114  160F               	bsf	15,4	;volatile
+  1084  0115  160F               	bsf	15,4	;volatile
   1085                           
   1086                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 28:             break;
-  1087  0115  2956               	goto	l76
-  1088  0116                     l80:	
+  1087  0116  2957               	goto	l76
+  1088  0117                     l80:	
   1089                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 29:         case 4:
   1090                           
   1091                           
   1092                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 30:             OSCCONb
       +                          its.IRCF2 = 1;
-  1093  0116  1683               	bsf	3,5	;RP0=1, select bank1
-  1094  0117  1303               	bcf	3,6	;RP1=0, select bank1
-  1095  0118  170F               	bsf	15,6	;volatile
+  1093  0117  1683               	bsf	3,5	;RP0=1, select bank1
+  1094  0118  1303               	bcf	3,6	;RP1=0, select bank1
+  1095  0119  170F               	bsf	15,6	;volatile
   1096                           
   1097                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 31:             OSCCONb
       +                          its.IRCF1 = 0;
-  1098  0119  128F               	bcf	15,5	;volatile
+  1098  011A  128F               	bcf	15,5	;volatile
   1099                           
   1100                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 32:             OSCCONb
       +                          its.IRCF0 = 0;
-  1101  011A  120F               	bcf	15,4	;volatile
+  1101  011B  120F               	bcf	15,4	;volatile
   1102                           
   1103                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 33:             break;
-  1104  011B  2956               	goto	l76
-  1105  011C                     l81:	
+  1104  011C  2957               	goto	l76
+  1105  011D                     l81:	
   1106                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 34:         case 5:
   1107                           
   1108                           
   1109                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 35:             OSCCONb
       +                          its.IRCF2 = 1;
-  1110  011C  1683               	bsf	3,5	;RP0=1, select bank1
-  1111  011D  1303               	bcf	3,6	;RP1=0, select bank1
-  1112  011E  170F               	bsf	15,6	;volatile
+  1110  011D  1683               	bsf	3,5	;RP0=1, select bank1
+  1111  011E  1303               	bcf	3,6	;RP1=0, select bank1
+  1112  011F  170F               	bsf	15,6	;volatile
   1113                           
   1114                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 36:             OSCCONb
       +                          its.IRCF1 = 0;
-  1115  011F  128F               	bcf	15,5	;volatile
+  1115  0120  128F               	bcf	15,5	;volatile
   1116                           
   1117                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 37:             OSCCONb
       +                          its.IRCF0 = 1;
-  1118  0120  160F               	bsf	15,4	;volatile
+  1118  0121  160F               	bsf	15,4	;volatile
   1119                           
   1120                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 38:             break;
-  1121  0121  2956               	goto	l76
-  1122  0122                     l82:	
+  1121  0122  2957               	goto	l76
+  1122  0123                     l82:	
   1123                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 39:         case 6:
   1124                           
   1125                           
   1126                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 40:             OSCCONb
       +                          its.IRCF2 = 1;
-  1127  0122  1683               	bsf	3,5	;RP0=1, select bank1
-  1128  0123  1303               	bcf	3,6	;RP1=0, select bank1
-  1129  0124  170F               	bsf	15,6	;volatile
+  1127  0123  1683               	bsf	3,5	;RP0=1, select bank1
+  1128  0124  1303               	bcf	3,6	;RP1=0, select bank1
+  1129  0125  170F               	bsf	15,6	;volatile
   1130                           
   1131                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 41:             OSCCONb
       +                          its.IRCF1 = 1;
-  1132  0125  168F               	bsf	15,5	;volatile
+  1132  0126  168F               	bsf	15,5	;volatile
   1133                           
   1134                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 42:             OSCCONb
       +                          its.IRCF0 = 0;
-  1135  0126  120F               	bcf	15,4	;volatile
+  1135  0127  120F               	bcf	15,4	;volatile
   1136                           
   1137                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 43:             break;
-  1138  0127  2956               	goto	l76
-  1139  0128                     l83:	
+  1138  0128  2957               	goto	l76
+  1139  0129                     l83:	
   1140                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 44:         case 7:
   1141                           
   1142                           
   1143                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 45:             OSCCONb
       +                          its.IRCF2 = 1;
-  1144  0128  1683               	bsf	3,5	;RP0=1, select bank1
-  1145  0129  1303               	bcf	3,6	;RP1=0, select bank1
-  1146  012A  170F               	bsf	15,6	;volatile
+  1144  0129  1683               	bsf	3,5	;RP0=1, select bank1
+  1145  012A  1303               	bcf	3,6	;RP1=0, select bank1
+  1146  012B  170F               	bsf	15,6	;volatile
   1147                           
   1148                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 46:             OSCCONb
       +                          its.IRCF1 = 1;
-  1149  012B  168F               	bsf	15,5	;volatile
+  1149  012C  168F               	bsf	15,5	;volatile
   1150                           
   1151                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 47:             OSCCONb
       +                          its.IRCF0 = 1;
-  1152  012C  160F               	bsf	15,4	;volatile
+  1152  012D  160F               	bsf	15,4	;volatile
   1153                           
   1154                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 48:             break;
-  1155  012D  2956               	goto	l76
-  1156  012E                     l84:	
+  1155  012E  2957               	goto	l76
+  1156  012F                     l84:	
   1157                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 49:         default:
   1158                           
   1159                           
   1160                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 50:             OSCCONb
       +                          its.IRCF2 = 1;
-  1161  012E  1683               	bsf	3,5	;RP0=1, select bank1
-  1162  012F  1303               	bcf	3,6	;RP1=0, select bank1
-  1163  0130  170F               	bsf	15,6	;volatile
+  1161  012F  1683               	bsf	3,5	;RP0=1, select bank1
+  1162  0130  1303               	bcf	3,6	;RP1=0, select bank1
+  1163  0131  170F               	bsf	15,6	;volatile
   1164                           
   1165                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 51:             OSCCONb
       +                          its.IRCF1 = 1;
-  1166  0131  168F               	bsf	15,5	;volatile
+  1166  0132  168F               	bsf	15,5	;volatile
   1167                           
   1168                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 52:             OSCCONb
       +                          its.IRCF0 = 0;
-  1169  0132  120F               	bcf	15,4	;volatile
+  1169  0133  120F               	bcf	15,4	;volatile
   1170                           
   1171                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 53:             break;
-  1172  0133  2956               	goto	l76
-  1173  0134                     l796:
-  1174  0134  0876               	movf	initOsc@IRCF,w
-  1175  0135  00F4               	movwf	??_initOsc
-  1176  0136  01F5               	clrf	??_initOsc+1
+  1172  0134  2957               	goto	l76
+  1173  0135                     l794:
+  1174  0135  0876               	movf	initOsc@IRCF,w
+  1175  0136  00F4               	movwf	??_initOsc
+  1176  0137  01F5               	clrf	??_initOsc+1
   1177                           
   1178                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
       +                          itches
@@ -1255,12 +1255,12 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1184                           ; direct_byte           11     8 (fixed)
   1185                           ; jumptable            260     6 (fixed)
   1186                           ;	Chosen strategy is simple_byte
-  1187  0137  0875               	movf	??_initOsc+1,w
-  1188  0138  3A00               	xorlw	0	; case 0
-  1189  0139  1903               	skipnz
-  1190  013A  293C               	goto	l1220
-  1191  013B  292E               	goto	l84
-  1192  013C                     l1220:
+  1187  0138  0875               	movf	??_initOsc+1,w
+  1188  0139  3A00               	xorlw	0	; case 0
+  1189  013A  1903               	skipnz
+  1190  013B  293D               	goto	l1216
+  1191  013C  292F               	goto	l84
+  1192  013D                     l1216:
   1193                           
   1194                           ; Switch size 1, requested type "simple"
   1195                           ; Number of cases is 8, Range of values is 0 to 7
@@ -1270,40 +1270,40 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1199                           ; direct_byte           32     8 (fixed)
   1200                           ; jumptable            260     6 (fixed)
   1201                           ;	Chosen strategy is simple_byte
-  1202  013C  0874               	movf	??_initOsc,w
-  1203  013D  3A00               	xorlw	0	; case 0
-  1204  013E  1903               	skipnz
-  1205  013F  28FE               	goto	l75
-  1206  0140  3A01               	xorlw	1	; case 1
-  1207  0141  1903               	skipnz
-  1208  0142  2904               	goto	l77
-  1209  0143  3A03               	xorlw	3	; case 2
-  1210  0144  1903               	skipnz
-  1211  0145  290A               	goto	l78
-  1212  0146  3A01               	xorlw	1	; case 3
-  1213  0147  1903               	skipnz
-  1214  0148  2910               	goto	l79
-  1215  0149  3A07               	xorlw	7	; case 4
-  1216  014A  1903               	skipnz
-  1217  014B  2916               	goto	l80
-  1218  014C  3A01               	xorlw	1	; case 5
-  1219  014D  1903               	skipnz
-  1220  014E  291C               	goto	l81
-  1221  014F  3A03               	xorlw	3	; case 6
-  1222  0150  1903               	skipnz
-  1223  0151  2922               	goto	l82
-  1224  0152  3A01               	xorlw	1	; case 7
-  1225  0153  1903               	skipnz
-  1226  0154  2928               	goto	l83
-  1227  0155  292E               	goto	l84
-  1228  0156                     l76:
+  1202  013D  0874               	movf	??_initOsc,w
+  1203  013E  3A00               	xorlw	0	; case 0
+  1204  013F  1903               	skipnz
+  1205  0140  28FF               	goto	l75
+  1206  0141  3A01               	xorlw	1	; case 1
+  1207  0142  1903               	skipnz
+  1208  0143  2905               	goto	l77
+  1209  0144  3A03               	xorlw	3	; case 2
+  1210  0145  1903               	skipnz
+  1211  0146  290B               	goto	l78
+  1212  0147  3A01               	xorlw	1	; case 3
+  1213  0148  1903               	skipnz
+  1214  0149  2911               	goto	l79
+  1215  014A  3A07               	xorlw	7	; case 4
+  1216  014B  1903               	skipnz
+  1217  014C  2917               	goto	l80
+  1218  014D  3A01               	xorlw	1	; case 5
+  1219  014E  1903               	skipnz
+  1220  014F  291D               	goto	l81
+  1221  0150  3A03               	xorlw	3	; case 6
+  1222  0151  1903               	skipnz
+  1223  0152  2923               	goto	l82
+  1224  0153  3A01               	xorlw	1	; case 7
+  1225  0154  1903               	skipnz
+  1226  0155  2929               	goto	l83
+  1227  0156  292F               	goto	l84
+  1228  0157                     l76:
   1229                           
   1230                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Oscilador.c: 56:     OSCCONbits.SCS 
       +                          = 1;
-  1231  0156  140F               	bsf	15,0	;volatile
-  1232  0157                     l85:
-  1233  0157  0008               	return
-  1234  0158                     __end_of_initOsc:
+  1231  0157  140F               	bsf	15,0	;volatile
+  1232  0158                     l85:
+  1233  0158  0008               	return
+  1234  0159                     __end_of_initOsc:
   1235                           
   1236                           	psect	text4
   1237  0015                     __ptext4:	
@@ -1346,10 +1346,10 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1274                           ; Regs used in _initADC: [wreg-fsr0h+status,2+status,0]
   1275                           ;initADC@ADCS stored from wreg
   1276  0015  00F7               	movwf	initADC@ADCS
-  1277  0016                     l956:
+  1277  0016                     l954:
   1278                           
   1279                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 8:     switch(CHS){
-  1280  0016  288E               	goto	l960
+  1280  0016  288E               	goto	l958
   1281  0017                     l10:	
   1282                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 9:         case 0:
   1283                           
@@ -1373,7 +1373,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1297  001C  111F               	bcf	31,2	;volatile
   1298                           
   1299                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 14:             break;
-  1300  001D  28D7               	goto	l964
+  1300  001D  28D7               	goto	l962
   1301  001E                     l12:	
   1302                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 15:         case 1:
   1303                           
@@ -1397,7 +1397,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1317  0023  151F               	bsf	31,2	;volatile
   1318                           
   1319                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 20:             break;
-  1320  0024  28D7               	goto	l964
+  1320  0024  28D7               	goto	l962
   1321  0025                     l13:	
   1322                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 21:         case 2:
   1323                           
@@ -1421,7 +1421,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1337  002A  111F               	bcf	31,2	;volatile
   1338                           
   1339                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 26:             break;
-  1340  002B  28D7               	goto	l964
+  1340  002B  28D7               	goto	l962
   1341  002C                     l14:	
   1342                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 27:         case 3:
   1343                           
@@ -1445,7 +1445,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1357  0031  151F               	bsf	31,2	;volatile
   1358                           
   1359                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 32:             break;
-  1360  0032  28D7               	goto	l964
+  1360  0032  28D7               	goto	l962
   1361  0033                     l15:	
   1362                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 33:         case 4:
   1363                           
@@ -1469,7 +1469,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1377  0038  111F               	bcf	31,2	;volatile
   1378                           
   1379                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 38:             break;
-  1380  0039  28D7               	goto	l964
+  1380  0039  28D7               	goto	l962
   1381  003A                     l16:	
   1382                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 39:         case 5:
   1383                           
@@ -1493,7 +1493,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1397  003F  151F               	bsf	31,2	;volatile
   1398                           
   1399                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 44:             break;
-  1400  0040  28D7               	goto	l964
+  1400  0040  28D7               	goto	l962
   1401  0041                     l17:	
   1402                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 45:         case 6:
   1403                           
@@ -1517,7 +1517,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1417  0046  111F               	bcf	31,2	;volatile
   1418                           
   1419                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 50:             break;
-  1420  0047  28D7               	goto	l964
+  1420  0047  28D7               	goto	l962
   1421  0048                     l18:	
   1422                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 51:         case 7:
   1423                           
@@ -1541,7 +1541,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1437  004D  151F               	bsf	31,2	;volatile
   1438                           
   1439                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 56:             break;
-  1440  004E  28D7               	goto	l964
+  1440  004E  28D7               	goto	l962
   1441  004F                     l19:	
   1442                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 57:         case 8:
   1443                           
@@ -1565,7 +1565,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1457  0054  111F               	bcf	31,2	;volatile
   1458                           
   1459                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 62:             break;
-  1460  0055  28D7               	goto	l964
+  1460  0055  28D7               	goto	l962
   1461  0056                     l20:	
   1462                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 63:         case 9:
   1463                           
@@ -1589,7 +1589,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1477  005B  151F               	bsf	31,2	;volatile
   1478                           
   1479                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 68:             break;
-  1480  005C  28D7               	goto	l964
+  1480  005C  28D7               	goto	l962
   1481  005D                     l21:	
   1482                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 69:         case 10:
   1483                           
@@ -1613,7 +1613,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1497  0062  111F               	bcf	31,2	;volatile
   1498                           
   1499                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 74:             break;
-  1500  0063  28D7               	goto	l964
+  1500  0063  28D7               	goto	l962
   1501  0064                     l22:	
   1502                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 75:         case 11:
   1503                           
@@ -1637,7 +1637,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1517  0069  151F               	bsf	31,2	;volatile
   1518                           
   1519                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 80:             break;
-  1520  006A  28D7               	goto	l964
+  1520  006A  28D7               	goto	l962
   1521  006B                     l23:	
   1522                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 81:         case 12:
   1523                           
@@ -1661,7 +1661,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1537  0070  111F               	bcf	31,2	;volatile
   1538                           
   1539                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 86:             break;
-  1540  0071  28D7               	goto	l964
+  1540  0071  28D7               	goto	l962
   1541  0072                     l24:	
   1542                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 87:         case 13:
   1543                           
@@ -1685,7 +1685,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1557  0077  151F               	bsf	31,2	;volatile
   1558                           
   1559                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 92:             break;
-  1560  0078  28D7               	goto	l964
+  1560  0078  28D7               	goto	l962
   1561  0079                     l25:	
   1562                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 93:         case 14:
   1563                           
@@ -1709,7 +1709,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1577  007E  111F               	bcf	31,2	;volatile
   1578                           
   1579                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 98:             break;
-  1580  007F  28D7               	goto	l964
+  1580  007F  28D7               	goto	l962
   1581  0080                     l26:	
   1582                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 99:         case 15:
   1583                           
@@ -1733,7 +1733,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1597  0085  151F               	bsf	31,2	;volatile
   1598                           
   1599                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 104:             break;
-  1600  0086  28D7               	goto	l964
+  1600  0086  28D7               	goto	l962
   1601  0087                     l27:	
   1602                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 105:         default:
   1603                           
@@ -1757,8 +1757,8 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1617  008C  111F               	bcf	31,2	;volatile
   1618                           
   1619                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 110:             break;
-  1620  008D  28D7               	goto	l964
-  1621  008E                     l960:
+  1620  008D  28D7               	goto	l962
+  1621  008E                     l958:
   1622  008E  0874               	movf	initADC@CHS,w
   1623  008F  00F5               	movwf	??_initADC
   1624  0090  01F6               	clrf	??_initADC+1
@@ -1776,9 +1776,9 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1635  0091  0876               	movf	??_initADC+1,w
   1636  0092  3A00               	xorlw	0	; case 0
   1637  0093  1903               	skipnz
-  1638  0094  2896               	goto	l1222
+  1638  0094  2896               	goto	l1218
   1639  0095  2887               	goto	l27
-  1640  0096                     l1222:
+  1640  0096                     l1218:
   1641                           
   1642                           ; Switch size 1, requested type "simple"
   1643                           ; Number of cases is 16, Range of values is 0 to 15
@@ -1908,7 +1908,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1757                           
   1758                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 133:             break;
   1759  00D6  28ED               	goto	l30
-  1760  00D7                     l964:
+  1760  00D7                     l962:
   1761  00D7  0877               	movf	initADC@ADCS,w
   1762  00D8  00F5               	movwf	??_initADC
   1763  00D9  01F6               	clrf	??_initADC+1
@@ -1926,9 +1926,9 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1774  00DA  0876               	movf	??_initADC+1,w
   1775  00DB  3A00               	xorlw	0	; case 0
   1776  00DC  1903               	skipnz
-  1777  00DD  28DF               	goto	l1224
+  1777  00DD  28DF               	goto	l1220
   1778  00DE  28D4               	goto	l34
-  1779  00DF                     l1224:
+  1779  00DF                     l1220:
   1780                           
   1781                           ; Switch size 1, requested type "simple"
   1782                           ; Number of cases is 4, Range of values is 0 to 3
@@ -1960,32 +1960,32 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1808                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 138:     ADCON0bits.GO_nDONE 
       +                          = 1;
   1809  00EE  149F               	bsf	31,1	;volatile
-  1810  00EF                     l966:
+  1810  00EF                     l964:
   1811                           
-  1812                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 140:     ADCON1 = 0b00000000;
-  1813  00EF  1683               	bsf	3,5	;RP0=1, select bank1
-  1814  00F0  1303               	bcf	3,6	;RP1=0, select bank1
-  1815  00F1  019F               	clrf	31	;volatile
-  1816  00F2                     l968:
+  1812                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 140:     ADCON1 = 0b00010000;
+  1813  00EF  3010               	movlw	16
+  1814  00F0  1683               	bsf	3,5	;RP0=1, select bank1
+  1815  00F1  1303               	bcf	3,6	;RP1=0, select bank1
+  1816  00F2  009F               	movwf	31	;volatile
   1817                           
   1818                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/ADC.c: 142:     _delay((unsigned lon
       +                          g)((11)*(4000000/4000.0)));
-  1819  00F2  300F               	movlw	15
-  1820  00F3  00F6               	movwf	??_initADC+1
-  1821  00F4  3047               	movlw	71
-  1822  00F5  00F5               	movwf	??_initADC
-  1823  00F6                     u227:
-  1824  00F6  0BF5               	decfsz	??_initADC,f
-  1825  00F7  28F6               	goto	u227
-  1826  00F8  0BF6               	decfsz	??_initADC+1,f
-  1827  00F9  28F6               	goto	u227
-  1828  00FA  28FB               	nop2
-  1829  00FB                     l35:
-  1830  00FB  0008               	return
-  1831  00FC                     __end_of_initADC:
+  1819  00F3  300F               	movlw	15
+  1820  00F4  00F6               	movwf	??_initADC+1
+  1821  00F5  3047               	movlw	71
+  1822  00F6  00F5               	movwf	??_initADC
+  1823  00F7                     u227:
+  1824  00F7  0BF5               	decfsz	??_initADC,f
+  1825  00F8  28F7               	goto	u227
+  1826  00F9  0BF6               	decfsz	??_initADC+1,f
+  1827  00FA  28F7               	goto	u227
+  1828  00FB  28FC               	nop2
+  1829  00FC                     l35:
+  1830  00FC  0008               	return
+  1831  00FD                     __end_of_initADC:
   1832                           
   1833                           	psect	text5
-  1834  01D0                     __ptext5:	
+  1834  01D1                     __ptext5:	
   1835 ;; *************** function _isr *****************
   1836 ;; Defined at:
   1837 ;;		line 59 in file "E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c"
@@ -2018,100 +2018,100 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1864                           
   1865                           
   1866                           ;psect for function _isr
-  1867  01D0                     _isr:
-  1868  01D0                     i1l852:
+  1867  01D1                     _isr:
+  1868  01D1                     i1l850:
   1869                           
   1870                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 60:     (INTCONbits.GIE
       +                           = 0);
-  1871  01D0  138B               	bcf	11,7	;volatile
+  1871  01D1  138B               	bcf	11,7	;volatile
   1872                           
   1873                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 62:     if(INTCONbits.T
       +                          0IF == 1){
-  1874  01D1  1D0B               	btfss	11,2	;volatile
-  1875  01D2  29D4               	goto	u3_21
-  1876  01D3  29D5               	goto	u3_20
-  1877  01D4                     u3_21:
-  1878  01D4  29DE               	goto	i1l860
-  1879  01D5                     u3_20:
-  1880  01D5                     i1l854:
+  1874  01D2  1D0B               	btfss	11,2	;volatile
+  1875  01D3  29D5               	goto	u3_21
+  1876  01D4  29D6               	goto	u3_20
+  1877  01D5                     u3_21:
+  1878  01D5  29DF               	goto	i1l858
+  1879  01D6                     u3_20:
+  1880  01D6                     i1l852:
   1881                           
   1882                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 63:         TMR0 = 236;
-  1883  01D5  30EC               	movlw	236
-  1884  01D6  1283               	bcf	3,5	;RP0=0, select bank0
-  1885  01D7  1303               	bcf	3,6	;RP1=0, select bank0
-  1886  01D8  0081               	movwf	1	;volatile
-  1887  01D9                     i1l856:
+  1883  01D6  30EC               	movlw	236
+  1884  01D7  1283               	bcf	3,5	;RP0=0, select bank0
+  1885  01D8  1303               	bcf	3,6	;RP1=0, select bank0
+  1886  01D9  0081               	movwf	1	;volatile
+  1887  01DA                     i1l854:
   1888                           
   1889                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 64:         CONTADOR++;
-  1890  01D9  3001               	movlw	1
-  1891  01DA  00F1               	movwf	??_isr
-  1892  01DB  0871               	movf	??_isr,w
-  1893  01DC  07F8               	addwf	_CONTADOR,f
-  1894  01DD                     i1l858:
+  1890  01DA  3001               	movlw	1
+  1891  01DB  00F1               	movwf	??_isr
+  1892  01DC  0871               	movf	??_isr,w
+  1893  01DD  07F8               	addwf	_CONTADOR,f
+  1894  01DE                     i1l856:
   1895                           
   1896                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 65:         INTCONbits.
       +                          T0IF = 0;
-  1897  01DD  110B               	bcf	11,2	;volatile
-  1898  01DE                     i1l860:
+  1897  01DE  110B               	bcf	11,2	;volatile
+  1898  01DF                     i1l858:
   1899                           
   1900                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 68:     if (PIR1bits.SS
       +                          PIF == 1) {
-  1901  01DE  1283               	bcf	3,5	;RP0=0, select bank0
-  1902  01DF  1303               	bcf	3,6	;RP1=0, select bank0
-  1903  01E0  1D8C               	btfss	12,3	;volatile
-  1904  01E1  29E3               	goto	u4_21
-  1905  01E2  29E4               	goto	u4_20
-  1906  01E3                     u4_21:
-  1907  01E3  29ED               	goto	i1l866
-  1908  01E4                     u4_20:
-  1909  01E4                     i1l862:
+  1901  01DF  1283               	bcf	3,5	;RP0=0, select bank0
+  1902  01E0  1303               	bcf	3,6	;RP1=0, select bank0
+  1903  01E1  1D8C               	btfss	12,3	;volatile
+  1904  01E2  29E4               	goto	u4_21
+  1905  01E3  29E5               	goto	u4_20
+  1906  01E4                     u4_21:
+  1907  01E4  29EE               	goto	i1l864
+  1908  01E5                     u4_20:
+  1909  01E5                     i1l860:
   1910                           
   1911                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 69:         spiWrite(PO
       +                          RTB);
-  1912  01E4  0806               	movf	6,w	;volatile
-  1913  01E5  120A  118A  2212  120A  118A  	fcall	_spiWrite
-  1914  01EA                     i1l864:
+  1912  01E5  0806               	movf	6,w	;volatile
+  1913  01E6  120A  118A  2213  120A  118A  	fcall	_spiWrite
+  1914  01EB                     i1l862:
   1915                           
   1916                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 70:         PIR1bits.SS
       +                          PIF = 0;
-  1917  01EA  1283               	bcf	3,5	;RP0=0, select bank0
-  1918  01EB  1303               	bcf	3,6	;RP1=0, select bank0
-  1919  01EC  118C               	bcf	12,3	;volatile
-  1920  01ED                     i1l866:
+  1917  01EB  1283               	bcf	3,5	;RP0=0, select bank0
+  1918  01EC  1303               	bcf	3,6	;RP1=0, select bank0
+  1919  01ED  118C               	bcf	12,3	;volatile
+  1920  01EE                     i1l864:
   1921                           
   1922                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 73:     if(PIR1bits.ADI
       +                          F == 1){
-  1923  01ED  1F0C               	btfss	12,6	;volatile
-  1924  01EE  29F0               	goto	u5_21
-  1925  01EF  29F1               	goto	u5_20
-  1926  01F0                     u5_21:
-  1927  01F0  29F4               	goto	i1l872
-  1928  01F1                     u5_20:
-  1929  01F1                     i1l868:
+  1923  01EE  1F0C               	btfss	12,6	;volatile
+  1924  01EF  29F1               	goto	u5_21
+  1925  01F0  29F2               	goto	u5_20
+  1926  01F1                     u5_21:
+  1927  01F1  29F5               	goto	i1l870
+  1928  01F2                     u5_20:
+  1929  01F2                     i1l866:
   1930                           
   1931                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 74:         PORTB = ADR
       +                          ESH;
-  1932  01F1  081E               	movf	30,w	;volatile
-  1933  01F2  0086               	movwf	6	;volatile
-  1934  01F3                     i1l870:
+  1932  01F2  081E               	movf	30,w	;volatile
+  1933  01F3  0086               	movwf	6	;volatile
+  1934  01F4                     i1l868:
   1935                           
   1936                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 75:         PIR1bits.AD
       +                          IF = 0;
-  1937  01F3  130C               	bcf	12,6	;volatile
-  1938  01F4                     i1l872:
+  1937  01F4  130C               	bcf	12,6	;volatile
+  1938  01F5                     i1l870:
   1939                           
   1940                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 77:     (INTCONbits.GIE
       +                           = 1);
-  1941  01F4  178B               	bsf	11,7	;volatile
-  1942  01F5                     i1l151:
-  1943  01F5  0873               	movf	??_isr+2,w
-  1944  01F6  008A               	movwf	10
-  1945  01F7  0E72               	swapf	??_isr+1,w
-  1946  01F8  0083               	movwf	3
-  1947  01F9  0EFE               	swapf	btemp,f
-  1948  01FA  0E7E               	swapf	btemp,w
-  1949  01FB  0009               	retfie
-  1950  01FC                     __end_of_isr:
+  1941  01F5  178B               	bsf	11,7	;volatile
+  1942  01F6                     i1l151:
+  1943  01F6  0873               	movf	??_isr+2,w
+  1944  01F7  008A               	movwf	10
+  1945  01F8  0E72               	swapf	??_isr+1,w
+  1946  01F9  0083               	movwf	3
+  1947  01FA  0EFE               	swapf	btemp,f
+  1948  01FB  0E7E               	swapf	btemp,w
+  1949  01FC  0009               	retfie
+  1950  01FD                     __end_of_isr:
   1951                           
   1952                           	psect	intentry
   1953  0004                     __pintentry:	
@@ -2125,10 +2125,10 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1961  0006  00F2               	movwf	??_isr+1
   1962  0007  080A               	movf	10,w
   1963  0008  00F3               	movwf	??_isr+2
-  1964  0009  120A  118A  29D0   	ljmp	_isr
+  1964  0009  120A  118A  29D1   	ljmp	_isr
   1965                           
   1966                           	psect	text6
-  1967  0212                     __ptext6:	
+  1967  0213                     __ptext6:	
   1968 ;; *************** function _spiWrite *****************
   1969 ;; Defined at:
   1970 ;;		line 32 in file "E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c"
@@ -2160,22 +2160,22 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1996                           
   1997                           
   1998                           ;psect for function _spiWrite
-  1999  0212                     _spiWrite:
+  1999  0213                     _spiWrite:
   2000                           
   2001                           ;incstack = 0
   2002                           ; Regs used in _spiWrite: [wreg]
   2003                           ;spiWrite@dat stored from wreg
-  2004  0212  00F0               	movwf	spiWrite@dat
-  2005  0213                     i1l804:
+  2004  0213  00F0               	movwf	spiWrite@dat
+  2005  0214                     i1l802:
   2006                           
   2007                           ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c: 33:     SSPBUF = dat;
-  2008  0213  0870               	movf	spiWrite@dat,w
-  2009  0214  1283               	bcf	3,5	;RP0=0, select bank0
-  2010  0215  1303               	bcf	3,6	;RP1=0, select bank0
-  2011  0216  0093               	movwf	19	;volatile
-  2012  0217                     i1l61:
-  2013  0217  0008               	return
-  2014  0218                     __end_of_spiWrite:
+  2008  0214  0870               	movf	spiWrite@dat,w
+  2009  0215  1283               	bcf	3,5	;RP0=0, select bank0
+  2010  0216  1303               	bcf	3,6	;RP1=0, select bank0
+  2011  0217  0093               	movwf	19	;volatile
+  2012  0218                     i1l61:
+  2013  0218  0008               	return
+  2014  0219                     __end_of_spiWrite:
   2015  007E                     btemp	set	126	;btemp
   2016  007E                     wtemp0	set	126
   2017                           
@@ -2354,7 +2354,7 @@ DATA                 0      0       B      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Fri Feb 12 02:50:53 2021
+Symbol Table                                                                                   Mon Feb 15 14:59:54 2021
 
             _SSPSTATbits 0094                       l10 0017                       l20 0056  
                      l12 001E                       l21 005D                       l13 0025  
@@ -2363,68 +2363,67 @@ Symbol Table                                                                    
                      l32 00CE                       l24 0072                       l16 003A  
                      l33 00D1                       l25 0079                       l17 0041  
                      l34 00D4                       l26 0080                       l18 0048  
-                     l35 00FB                       l27 0087                       l19 004F  
-                     l51 020C                       l52 0211                       l29 00C8  
-                     l80 0116                       l81 011C                       l82 0122  
-                     l83 0128                       l75 00FE                       l84 012E  
-                     l76 0156                       l85 0157                       l77 0104  
-                     l78 010A                       l79 0110                      l159 01CC  
-                    l168 0196                      l960 008E                      l792 00FD  
-                    l964 00D7                      l956 0016                      l796 0134  
-                    l980 0204                      l966 00EF                      l982 0206  
-                    l968 00F2                      l984 0208                      l986 020B  
-                    l978 01FD                      u110 0204                      u111 0203  
-                    u200 01BE                      u201 01BD                      u210 01C8  
-                    u211 01C7                      u170 01A2                      u227 00F6  
-                    u171 01A1                      u180 01AE                      u181 01AD  
-                    u190 01B8                      u191 01B7                      _isr 01D0  
-                   l1110 0168                     l1120 0170                     l1112 016B  
-                   l1104 0158                     l1130 017A                     l1122 0171  
-                   l1114 016C                     l1106 0162                     l1220 013C  
-                   l1132 0186                     l1124 0172                     l1116 016E  
-                   l1108 0164                     l1140 019C                     l1222 0096  
-                   l1134 018F                     l1126 0173                     l1118 016F  
-                   l1150 01B2                     l1142 01A2                     l1224 00DF  
-                   l1136 0192                     l1128 0174                     l1152 01B8  
-                   l1144 01A5                     l1154 01BE                     l1146 01A6  
-                   l1138 0197                     l1156 01C2                     l1148 01AE  
-                   l1158 01C8                     ?_isr 0070                     i1l61 0217  
-                   _TMR0 0001                     u3_20 01D5                     u3_21 01D4  
-                   u4_20 01E4                     u4_21 01E3                     u5_20 01F1  
-                   u5_21 01F0                     _main 0197                     btemp 007E  
-                   start 000C              initADC@ADCS 0077                    ??_isr 0071  
-                  ?_main 0070                    _ANSEL 0188                    i1l151 01F5  
-                  i1l804 0213                    i1l860 01DE                    i1l852 01D0  
-                  i1l870 01F3                    i1l862 01E4                    i1l854 01D5  
-                  i1l872 01F4                    i1l864 01EA                    i1l856 01D9  
-                  i1l866 01ED                    i1l858 01DD                    i1l868 01F1  
-                  _PORTA 0005                    _PORTB 0006                    _PORTC 0007  
-                  _PORTD 0008                    _PORTE 0009                    _TRISA 0085  
-                  _TRISB 0086                    _TRISC 0087                    _TRISD 0088  
-                  _TRISE 0089                    _Setup 0158          __end_of_initADC 00FC  
-        __end_of_initOsc 0158                    pclath 000A          __end_of_spiInit 0212  
-                  status 0003                    wtemp0 007E          __initialization 000F  
-           __end_of_main 01D0                   ??_main 0078                   ?_Setup 0070  
-                 _ADCON1 009F                   _ADRESH 001E              initOsc@IRCF 0076  
-                 _ANSELH 0189                   _WDTCON 0105                   _TRISC3 043B  
-                 _TRISC5 043D                   _SSPCON 0014                   _SSPBUF 0013  
-              ??_initADC 0075                ??_initOsc 0074                   saved_w 007E  
-       __end_of_spiWrite 0218                ??_spiInit 0077  __end_of__initialization 0011  
-         __pcstackCOMMON 0070            __end_of_Setup 0197                  ??_Setup 0020  
-             __pmaintext 0197               __pintentry 0004                  _VAR_ADC 0079  
-                _SSPSTAT 0094                ?_spiWrite 0070                _ANSELbits 0188  
-                __ptext1 0158                  __ptext2 01FC                  __ptext3 00FC  
-                __ptext4 0015                  __ptext5 01D0                  __ptext6 0212  
-                _initADC 0015                  _initOsc 00FC             __size_of_isr 002C  
-                _spiInit 01FC     end_of_initialization 0011               ??_spiWrite 0070  
-              _PORTDbits 0008              spiWrite@dat 0070               initADC@CHS 0074  
-    start_initialization 000F              __end_of_isr 01FC              __pbssCOMMON 0078  
-              ___latbits 0002            __pcstackBANK0 0020        __size_of_spiWrite 0006  
-               ?_initADC 0074                 ?_initOsc 0070                 ?_spiInit 0074  
-         __size_of_Setup 003F                 _CONTADOR 0078     spiInit@sTransmitEdge 0076  
-      interrupt_function 0004                 _PIE1bits 008C       spiInit@sDataSample 0074  
-               _PIR1bits 000C               _ADCON0bits 001F         __size_of_initADC 00E7  
-       __size_of_initOsc 005C         __size_of_spiInit 0016            __size_of_main 0039  
-               _spiWrite 0212             spiInit@sType 0077        spiInit@sClockIdle 0075  
-             _INTCONbits 000B                 intlevel1 0000               _OSCCONbits 008F  
-             _OPTION_REG 0081  
+                     l35 00FC                       l27 0087                       l19 004F  
+                     l51 020D                       l52 0212                       l29 00C8  
+                     l80 0117                       l81 011D                       l82 0123  
+                     l83 0129                       l75 00FF                       l84 012F  
+                     l76 0157                       l85 0158                       l77 0105  
+                     l78 010B                       l79 0111                      l159 01CD  
+                    l168 0197                      l790 00FE                      l962 00D7  
+                    l954 0016                      l794 0135                      l964 00EF  
+                    l980 0209                      l958 008E                      l982 020C  
+                    l974 01FE                      l976 0205                      l978 0207  
+                    u110 0205                      u111 0204                      u200 01BF  
+                    u201 01BE                      u210 01C9                      u211 01C8  
+                    u170 01A3                      u227 00F7                      u171 01A2  
+                    u180 01AF                      u181 01AE                      u190 01B9  
+                    u191 01B8                      _isr 01D1                     l1100 0159  
+                   l1110 016D                     l1102 0163                     l1120 0173  
+                   l1112 016F                     l1104 0165                     l1130 0190  
+                   l1122 0174                     l1114 0170                     l1106 0169  
+                   l1220 00DF                     l1132 0193                     l1124 0175  
+                   l1116 0171                     l1108 016C                     l1140 01A6  
+                   l1126 017B                     l1118 0172                     l1150 01BF  
+                   l1142 01A7                     l1134 0198                     l1216 013D  
+                   l1128 0187                     l1152 01C3                     l1144 01AF  
+                   l1136 019D                     l1218 0096                     l1154 01C9  
+                   l1146 01B3                     l1138 01A3                     l1148 01B9  
+                   ?_isr 0070                     i1l61 0218                     _TMR0 0001  
+                   u3_20 01D6                     u3_21 01D5                     u4_20 01E5  
+                   u4_21 01E4                     u5_20 01F2                     u5_21 01F1  
+                   _main 0198                     btemp 007E                     start 000C  
+            initADC@ADCS 0077                    ??_isr 0071                    ?_main 0070  
+                  _ANSEL 0188                    i1l151 01F6                    i1l802 0214  
+                  i1l850 01D1                    i1l860 01E5                    i1l852 01D6  
+                  i1l870 01F5                    i1l862 01EB                    i1l854 01DA  
+                  i1l864 01EE                    i1l856 01DE                    i1l866 01F2  
+                  i1l858 01DF                    i1l868 01F4                    _PORTA 0005  
+                  _PORTB 0006                    _PORTC 0007                    _PORTD 0008  
+                  _PORTE 0009                    _TRISA 0085                    _TRISB 0086  
+                  _TRISC 0087                    _TRISD 0088                    _TRISE 0089  
+                  _Setup 0159          __end_of_initADC 00FD          __end_of_initOsc 0159  
+                  pclath 000A          __end_of_spiInit 0213                    status 0003  
+                  wtemp0 007E          __initialization 000F             __end_of_main 01D1  
+                 ??_main 0078                   ?_Setup 0070                   _ADCON1 009F  
+                 _ADRESH 001E              initOsc@IRCF 0076                   _ANSELH 0189  
+                 _WDTCON 0105                   _TRISC3 043B                   _TRISC5 043D  
+                 _SSPCON 0014                   _SSPBUF 0013                ??_initADC 0075  
+              ??_initOsc 0074                   saved_w 007E         __end_of_spiWrite 0219  
+              ??_spiInit 0077  __end_of__initialization 0011           __pcstackCOMMON 0070  
+          __end_of_Setup 0198                  ??_Setup 0020               __pmaintext 0198  
+             __pintentry 0004                  _VAR_ADC 0079                  _SSPSTAT 0094  
+              ?_spiWrite 0070                _ANSELbits 0188                  __ptext1 0159  
+                __ptext2 01FD                  __ptext3 00FD                  __ptext4 0015  
+                __ptext5 01D1                  __ptext6 0213                  _initADC 0015  
+                _initOsc 00FD             __size_of_isr 002C                  _spiInit 01FD  
+   end_of_initialization 0011               ??_spiWrite 0070                _PORTDbits 0008  
+            spiWrite@dat 0070               initADC@CHS 0074      start_initialization 000F  
+            __end_of_isr 01FD              __pbssCOMMON 0078                ___latbits 0002  
+          __pcstackBANK0 0020        __size_of_spiWrite 0006                 ?_initADC 0074  
+               ?_initOsc 0070                 ?_spiInit 0074           __size_of_Setup 003F  
+               _CONTADOR 0078     spiInit@sTransmitEdge 0076        interrupt_function 0004  
+               _PIE1bits 008C       spiInit@sDataSample 0074                 _PIR1bits 000C  
+             _ADCON0bits 001F         __size_of_initADC 00E8         __size_of_initOsc 005C  
+       __size_of_spiInit 0016            __size_of_main 0039                 _spiWrite 0213  
+           spiInit@sType 0077        spiInit@sClockIdle 0075               _INTCONbits 000B  
+               intlevel1 0000               _OSCCONbits 008F               _OPTION_REG 0081  

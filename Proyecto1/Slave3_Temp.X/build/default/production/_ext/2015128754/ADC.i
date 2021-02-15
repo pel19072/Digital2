@@ -2780,7 +2780,7 @@ void initADC(uint8_t ADCS, uint8_t CHS){
 
     ADCON0bits.GO_nDONE = 1;
 
-    ADCON1 = 0b00000000;
+    ADCON1 = 0b00010000;
 
     _delay((unsigned long)((11)*(4000000/4000.0)));
 }
