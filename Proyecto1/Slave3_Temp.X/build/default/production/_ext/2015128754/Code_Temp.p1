@@ -518,8 +518,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 147 ]
 "93
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 93:         if(PORTB <= 0x63){
-[e $ ! <= -> _PORTB `i -> 99 `i 148  ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 93:         if(PORTB <= 50){
+[e $ ! <= -> _PORTB `i -> 50 `i 148  ]
 {
 "94
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 94:             PORTDbits.RD0 = 0;
@@ -535,9 +535,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 149  ]
 "98
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 98:         else if(PORTB >= 0x64 && PORTB <= 0x71){
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 98:         else if(PORTB >= 51 && PORTB <= 57){
 [e :U 148 ]
-[e $ ! && >= -> _PORTB `i -> 100 `i <= -> _PORTB `i -> 113 `i 150  ]
+[e $ ! && >= -> _PORTB `i -> 51 `i <= -> _PORTB `i -> 57 `i 150  ]
 {
 "99
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 99:             PORTDbits.RD0 = 0;
@@ -553,9 +553,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 151  ]
 "103
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 103:         else if(PORTB >= 0x72){
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 103:         else if(PORTB >= 58){
 [e :U 150 ]
-[e $ ! >= -> _PORTB `i -> 114 `i 152  ]
+[e $ ! >= -> _PORTB `i -> 58 `i 152  ]
 {
 "104
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c: 104:             PORTDbits.RD0 = 1;

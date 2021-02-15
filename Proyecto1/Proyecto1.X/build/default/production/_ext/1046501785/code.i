@@ -2844,6 +2844,9 @@ uint8_t centimas_temp = 0;
 uint8_t unidades_adc = 0;
 uint8_t decimas_adc = 0;
 uint8_t centimas_adc = 0;
+uint8_t unidades_cont = 0;
+uint8_t decimas_cont = 0;
+uint8_t centimas_cont = 0;
 uint8_t SIGNO = 0;
 
 
@@ -3023,40 +3026,42 @@ uint8_t Envio(void){
             return 0x2C;
             break;
         case 6:
-            temporal = (COUNTER & 0xF0)>>4;
             FLAGTX++;
-            return ASCII(temporal);
+            return ASCII(unidades_cont);
             break;
         case 7:
-            temporal = COUNTER & 0x0F;
             FLAGTX++;
-            return ASCII(temporal);
+            return ASCII(decimas_cont);
             break;
         case 8:
             FLAGTX++;
-            return 0x2C;
+            return ASCII(centimas_cont);
             break;
         case 9:
             FLAGTX++;
-            return SIGNO;
+            return 0x2C;
             break;
         case 10:
             FLAGTX++;
-            return ASCII(unidades_temp);
+            return SIGNO;
             break;
         case 11:
             FLAGTX++;
-            return ASCII(decimas_temp);
+            return ASCII(unidades_temp);
             break;
         case 12:
             FLAGTX++;
-            return ASCII(centimas_temp);
+            return ASCII(decimas_temp);
             break;
         case 13:
             FLAGTX++;
-            return 0x29;
+            return ASCII(centimas_temp);
             break;
         case 14:
+            FLAGTX++;
+            return 0x29;
+            break;
+        case 15:
             FLAGTX = 0;
             return 0x0D;
             break;
@@ -3065,25 +3070,22 @@ uint8_t Envio(void){
 
 void Envio_Contador(void){
     uint8_t temporal;
-    uint8_t unidades;
-    uint8_t decimas;
-    uint8_t centimas;
     temporal = PORTD;
 
-    unidades = temporal/100;
-    temporal = temporal - 100*unidades;
+    unidades_cont = temporal/100;
+    temporal = temporal - 100*unidades_cont;
 
-    decimas = temporal/10;
-    temporal = temporal - 10*decimas;
+    decimas_cont = temporal/10;
+    temporal = temporal - 10*decimas_cont;
 
-    centimas = temporal;
+    centimas_cont = temporal;
 
     Lcd_Set_Cursor(2,7);
-    Lcd_Write_String(Cambio(unidades));
+    Lcd_Write_String(Cambio(unidades_cont));
     Lcd_Set_Cursor(2,8);
-    Lcd_Write_String(Cambio(decimas));
+    Lcd_Write_String(Cambio(decimas_cont));
     Lcd_Set_Cursor(2,9);
-    Lcd_Write_String(Cambio(centimas));
+    Lcd_Write_String(Cambio(centimas_cont));
     Lcd_Set_Cursor(2,10);
 }
 

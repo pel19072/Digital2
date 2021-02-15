@@ -25,7 +25,7 @@ cstackBANK0 BANK0 1 20 20 1 1
 intentry CODE 0 4 4 8 2
 bssCOMMON COMMON 1 78 78 2 1
 config CONFIG 4 2007 2007 2 2
-$C:\Users\Ricardo\AppData\Local\Temp\sn5k.o
+$C:\Users\Ricardo\AppData\Local\Temp\s9o0.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 4 2007 2007 2 2
@@ -75,13 +75,13 @@ STRING 219-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Slave3_Temp.X.production.o
-F cinit CODE >960:C:\Users\Ricardo\AppData\Local\Temp\sn5k.s
-F cinit CODE >963:C:\Users\Ricardo\AppData\Local\Temp\sn5k.s
-F cinit CODE >977:C:\Users\Ricardo\AppData\Local\Temp\sn5k.s
-10 cinit CODE >978:C:\Users\Ricardo\AppData\Local\Temp\sn5k.s
-11 cinit CODE >984:C:\Users\Ricardo\AppData\Local\Temp\sn5k.s
-11 cinit CODE >986:C:\Users\Ricardo\AppData\Local\Temp\sn5k.s
-12 cinit CODE >987:C:\Users\Ricardo\AppData\Local\Temp\sn5k.s
+F cinit CODE >960:C:\Users\Ricardo\AppData\Local\Temp\s9o0.s
+F cinit CODE >963:C:\Users\Ricardo\AppData\Local\Temp\s9o0.s
+F cinit CODE >977:C:\Users\Ricardo\AppData\Local\Temp\s9o0.s
+10 cinit CODE >978:C:\Users\Ricardo\AppData\Local\Temp\s9o0.s
+11 cinit CODE >984:C:\Users\Ricardo\AppData\Local\Temp\s9o0.s
+11 cinit CODE >986:C:\Users\Ricardo\AppData\Local\Temp\s9o0.s
+12 cinit CODE >987:C:\Users\Ricardo\AppData\Local\Temp\s9o0.s
 4 intentry CODE >59:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/Code_Temp.c
 213 text6 CODE >32:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
 214 text6 CODE >33:E:/UVG/Semestre 5/Digital2/Proyecto1/Slave3_Temp.X/MSSP.c
@@ -360,19 +360,19 @@ spiInit@sTransmitEdge 76 0 COMMON 1 cstackCOMMON dist/default/production\Slave3_
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
 _TMR0 1 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\Ricardo\AppData\Local\Temp\sn5k.o
+___sp 0 0 STACK 2 stack C:\Users\Ricardo\AppData\Local\Temp\s9o0.o
 _main 330 0 CODE 0 maintext dist/default/production\Slave3_Temp.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
-start 18 0 CODE 0 init C:\Users\Ricardo\AppData\Local\Temp\sn5k.o
+start 18 0 CODE 0 init C:\Users\Ricardo\AppData\Local\Temp\s9o0.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\sn5k.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\sn5k.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\sn5k.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\sn5k.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\sn5k.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\sn5k.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s9o0.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s9o0.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s9o0.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s9o0.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s9o0.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s9o0.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
@@ -387,8 +387,8 @@ initADC@ADCS 77 0 COMMON 1 cstackCOMMON dist/default/production\Slave3_Temp.X.pr
 __size_of_spiInit 0 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 _OPTION_REG 81 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\Ricardo\AppData\Local\Temp\sn5k.o
-___stacklo 0 0 ABS 0 - C:\Users\Ricardo\AppData\Local\Temp\sn5k.o
+___stackhi 0 0 ABS 0 - C:\Users\Ricardo\AppData\Local\Temp\s9o0.o
+___stacklo 0 0 ABS 0 - C:\Users\Ricardo\AppData\Local\Temp\s9o0.o
 __size_of_Setup 0 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
 spiInit@sDataSample 74 0 COMMON 1 cstackCOMMON dist/default/production\Slave3_Temp.X.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\Slave3_Temp.X.production.o
@@ -401,7 +401,7 @@ initADC@CHS 74 0 COMMON 1 cstackCOMMON dist/default/production\Slave3_Temp.X.pro
 _WDTCON 105 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
 __end_of_initADC 1FA 0 CODE 0 text4 dist/default/production\Slave3_Temp.X.production.o
 __end_of_initOsc 2B2 0 CODE 0 text3 dist/default/production\Slave3_Temp.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Ricardo\AppData\Local\Temp\sn5k.o
+___int_sp 0 0 STACK 2 stack C:\Users\Ricardo\AppData\Local\Temp\s9o0.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -447,7 +447,7 @@ _CONTADOR 78 0 COMMON 1 bssCOMMON dist/default/production\Slave3_Temp.X.producti
 saved_w 7E 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
 __end_of_isr 3FA 0 CODE 0 text5 dist/default/production\Slave3_Temp.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Ricardo\AppData\Local\Temp\sn5k.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Ricardo\AppData\Local\Temp\s9o0.o
 initOsc@IRCF 76 0 COMMON 1 cstackCOMMON dist/default/production\Slave3_Temp.X.production.o
 _PIE1bits 8C 0 ABS 0 - dist/default/production\Slave3_Temp.X.production.o
 __pmaintext 330 0 CODE 0 maintext dist/default/production\Slave3_Temp.X.production.o

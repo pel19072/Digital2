@@ -90,17 +90,17 @@ void main(void) {
             ADCON0bits.GO_nDONE = 1;    //HABILITA LECTURA NUEVAMENTE
             CONTADOR = 0;               //SE REINICIA EL CONTADOR
         }
-        if(PORTB <= 0x63){
+        if(PORTB <= 50){
             PORTDbits.RD0 = 0;
             PORTDbits.RD1 = 0;
             PORTDbits.RD2 = 1;
         }
-        else if(PORTB >= 0x64 && PORTB <= 0x71){
+        else if(PORTB >= 51 && PORTB <= 57){
             PORTDbits.RD0 = 0;
             PORTDbits.RD1 = 1;
             PORTDbits.RD2 = 0;
         }
-        else if(PORTB >= 0x72){
+        else if(PORTB >= 58){
             PORTDbits.RD0 = 1;
             PORTDbits.RD1 = 0;
             PORTDbits.RD2 = 0;
