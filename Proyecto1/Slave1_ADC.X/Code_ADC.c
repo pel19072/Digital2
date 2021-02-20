@@ -83,7 +83,6 @@ void __interrupt() isr(void) {
 
 void main(void) {
     Setup();
-    
     while (1) {
         //SIRVE PARA DARLE UN TIEMPO A LA LECTURA DEL ADC
         if(CONTADOR>10){

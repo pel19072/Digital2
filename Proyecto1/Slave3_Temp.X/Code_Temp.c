@@ -90,16 +90,20 @@ void main(void) {
             ADCON0bits.GO_nDONE = 1;    //HABILITA LECTURA NUEVAMENTE
             CONTADOR = 0;               //SE REINICIA EL CONTADOR
         }
+        //SEMÁFORO
+        //VERDE
         if(PORTB <= 50){
             PORTDbits.RD0 = 0;
             PORTDbits.RD1 = 0;
             PORTDbits.RD2 = 1;
         }
+        //AMARILLO
         else if(PORTB >= 51 && PORTB <= 57){
             PORTDbits.RD0 = 0;
             PORTDbits.RD1 = 1;
             PORTDbits.RD2 = 0;
         }
+        //ROJO
         else if(PORTB >= 58){
             PORTDbits.RD0 = 1;
             PORTDbits.RD1 = 0;

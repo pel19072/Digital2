@@ -52,7 +52,7 @@ uint8_t FLAGSS = 0;
 uint8_t COUNTER = 0;
 uint8_t TEMPERATURA = 0;
 uint8_t TEMPERATURA_FINAL = 0;
-signed int PRUEBA = 0;
+signed int PRUEBA = 0; //PARA EL SIGNO DE LA TEMPERATURA
 uint8_t unidades_temp = 0;
 uint8_t decimas_temp = 0;
 uint8_t centimas_temp = 0;
@@ -111,31 +111,31 @@ void main(void) {
         if(CONTADOR>10){
             switch(FLAGSS){
                 case 0: //SLAVE 1  
-                    PORTCbits.RC0 = 0;
+                    PORTCbits.RC0 = 0;      //ESCOJO EL SLAVE 1
                     PORTCbits.RC1 = 1;
                     PORTCbits.RC2 = 1;
-                    spiWrite(0x00);
-                    VAR_ADC = spiRead();
-                    Conversiones();
+                    spiWrite(0x00);         //VACÍO EL BUFFER PARA PODER LEER
+                    VAR_ADC = spiRead();    //GUARDO LA LECTURA EN VAR_ADC
+                    Conversiones();         //SEPARO EN DÍGITOS
                     FLAGSS++;
                     break;
                 case 1: //SLAVE 2
                     PORTCbits.RC0 = 1;
-                    PORTCbits.RC1 = 0;
+                    PORTCbits.RC1 = 0;      //ESCOJO EL SLAVE 2
                     PORTCbits.RC2 = 1;
                     spiWrite(0x00);
-                    COUNTER = spiRead();
+                    COUNTER = spiRead();    //GUARDO LA LECTURA EN COUNTER
                     PORTD = COUNTER;
-                    Envio_Contador();
+                    Envio_Contador();       //SEPARO EN DÍGITOS
                     FLAGSS++;
                     break;
                 case 2: //SLAVE 3
                     PORTCbits.RC0 = 1;
                     PORTCbits.RC1 = 1;
-                    PORTCbits.RC2 = 0;
+                    PORTCbits.RC2 = 0;      //ESCOJO EL SLAVE 3
                     spiWrite(0x00);
-                    TEMPERATURA = spiRead();
-                    Mappin_Temperature();
+                    TEMPERATURA = spiRead();//GUARDO LA LECTURA EN TEMPERATURA
+                    Mappin_Temperature();   //SEPARO EN DÍGITOS
                     FLAGSS = 0;
                     break;
             }          
@@ -305,7 +305,9 @@ void Envio_Contador(void){
 }
 
 void Mappin_Temperature(void){
+    //REGRESIÓN LINEAL PARA OBTENER LA TEMPERATURA
     PRUEBA = ((TEMPERATURA*205)/128)-55;
+    //IF PARA CONTEMPLAR EL SIGNO DE LA TEMPERATURA
     if (PRUEBA < 0){
         TEMPERATURA_FINAL = PRUEBA*(-1);
         Lcd_Set_Cursor(2,12);
