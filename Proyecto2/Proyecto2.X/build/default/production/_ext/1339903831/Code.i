@@ -2716,6 +2716,7 @@ unsigned char I2C_Master_Read(unsigned char a);
 # 46 "E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c"
 uint8_t CONTADOR = 0;
 uint8_t FLAGTX = 0;
+uint8_t FLAGRX = 0;
 uint8_t FLAGI2C = 0;
 uint8_t SECONDS = 0;
 uint8_t MINUTES = 0;
@@ -2724,6 +2725,8 @@ uint8_t DAY = 0;
 uint8_t DATE = 0;
 uint8_t MONTH = 0;
 uint8_t YEAR = 0;
+uint8_t RECEPCION_LED = 0;
+uint8_t RECEPCION_ENTER = 0;
 
 
 
@@ -2749,6 +2752,7 @@ void __attribute__((picinterrupt(("")))) isr(void) {
         TXREG = Envio();
         PIE1bits.TXIE = 0;
     }
+# 105 "E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c"
     (INTCONbits.GIE = 1);
 }
 
@@ -2764,41 +2768,16 @@ void main(void) {
         I2C_Master_Start();
         I2C_Master_Write(0xD0);
         I2C_Master_Write(0);
-        I2C_Master_Stop();
 
 
-        I2C_Master_Start();
+        I2C_Master_RepeatedStart();
         I2C_Master_Write(0xD1);
-        SECONDS = I2C_Master_Read(0);
-        I2C_Master_Stop();
-
-        I2C_Master_Start();
-        I2C_Master_Write(0xD1);
-        MINUTES = I2C_Master_Read(0);
-        I2C_Master_Stop();
-
-        I2C_Master_Start();
-        I2C_Master_Write(0xD1);
-        HOUR = I2C_Master_Read(0);
-        I2C_Master_Stop();
-
-        I2C_Master_Start();
-        I2C_Master_Write(0xD1);
-        DAY = I2C_Master_Read(0);
-        I2C_Master_Stop();
-
-        I2C_Master_Start();
-        I2C_Master_Write(0xD1);
-        DATE = I2C_Master_Read(0);
-        I2C_Master_Stop();
-
-        I2C_Master_Start();
-        I2C_Master_Write(0xD1);
-        MONTH = I2C_Master_Read(0);
-        I2C_Master_Stop();
-
-        I2C_Master_Start();
-        I2C_Master_Write(0xD1);
+        SECONDS = I2C_Master_Read(1);
+        MINUTES = I2C_Master_Read(1);
+        HOUR = I2C_Master_Read(1);
+        DAY = I2C_Master_Read(1);
+        DATE = I2C_Master_Read(1);
+        MONTH = I2C_Master_Read(1);
         YEAR = I2C_Master_Read(0);
         I2C_Master_Stop();
 
@@ -2838,6 +2817,7 @@ void Setup(void) {
     INTCONbits.T0IF = 0;
     PIE1bits.TXIE = 1;
 
+
     initOsc(6);
 
     initUART();
@@ -2858,37 +2838,73 @@ uint8_t Envio(void) {
     switch (FLAGTX) {
         case 0:
             FLAGTX++;
-            return ASCII((HOUR & 0x10) >> 4);
+            return ASCII((YEAR & 0xF0) >> 4);
             break;
         case 1:
             FLAGTX++;
-            return ASCII(HOUR & 0x0F);
+            return ASCII(YEAR & 0x0F);
             break;
         case 2:
             FLAGTX++;
-            return 0x3A;
+            return 0x2F;
             break;
         case 3:
             FLAGTX++;
-            return ASCII((MINUTES & 0xF0) >> 4);
+            return ASCII((MONTH & 0x10) >> 4);
             break;
         case 4:
             FLAGTX++;
-            return ASCII(MINUTES & 0x0F);
+            return ASCII(MONTH & 0x0F);
             break;
         case 5:
             FLAGTX++;
-            return 0x3A;
+            return 0x2F;
             break;
         case 6:
             FLAGTX++;
-            return ASCII((SECONDS & 0xF0) >> 4);
+            return ASCII((DATE & 0x30) >> 4);
             break;
         case 7:
             FLAGTX++;
-            return ASCII(SECONDS & 0x0F);
+            return ASCII(DATE & 0x0F);
             break;
         case 8:
+            FLAGTX++;
+            return 0x09;
+            break;
+        case 9:
+            FLAGTX++;
+            return ASCII((HOUR & 0x10) >> 4);
+            break;
+        case 10:
+            FLAGTX++;
+            return ASCII(HOUR & 0x0F);
+            break;
+        case 11:
+            FLAGTX++;
+            return 0x3A;
+            break;
+        case 12:
+            FLAGTX++;
+            return ASCII((MINUTES & 0xF0) >> 4);
+            break;
+        case 13:
+            FLAGTX++;
+            return ASCII(MINUTES & 0x0F);
+            break;
+        case 14:
+            FLAGTX++;
+            return 0x3A;
+            break;
+        case 15:
+            FLAGTX++;
+            return ASCII((SECONDS & 0xF0) >> 4);
+            break;
+        case 16:
+            FLAGTX++;
+            return ASCII(SECONDS & 0x0F);
+            break;
+        case 17:
             FLAGTX = 0;
             return 0x0A;
             break;
@@ -2901,11 +2917,11 @@ void I2C_RTC_Init(void) {
     I2C_Master_Write(0b11010000);
     I2C_Master_Write(0x00);
     I2C_Master_Write(0x00);
-    I2C_Master_Write(0x21);
-    I2C_Master_Write(0x71);
-    I2C_Master_Write(0x07);
-    I2C_Master_Write(0x28);
-    I2C_Master_Write(0x02);
+    I2C_Master_Write(0x22);
+    I2C_Master_Write(0x41);
+    I2C_Master_Write(0x01);
+    I2C_Master_Write(0x01);
+    I2C_Master_Write(0x03);
     I2C_Master_Write(0x21);
     I2C_Master_Stop();
     _delay((unsigned long)((20)*(4000000/4000.0)));

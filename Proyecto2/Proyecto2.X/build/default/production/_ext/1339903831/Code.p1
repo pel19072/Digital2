@@ -33,8 +33,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1134
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 1134: extern volatile unsigned char TXREG __attribute__((address(0x019)));
 [v _TXREG `Vuc ~T0 @X0 0 e@25 ]
-"61 E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 61: uint8_t Envio(void);
+"64 E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 64: uint8_t Envio(void);
 [v _Envio `(uc ~T0 @X0 0 ef ]
 "1709 C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 1709:     struct {
@@ -48,11 +48,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 1719: extern volatile PIE1bits_t PIE1bits __attribute__((address(0x08C)));
 [v _PIE1bits `VS62 ~T0 @X0 0 e@140 ]
 [p mainexit ]
-"60 E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 60: void Setup(void);
+"63 E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 63: void Setup(void);
 [v _Setup `(v ~T0 @X0 0 ef ]
-"62
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 62: void I2C_RTC_Init(void);
+"65
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 65: void I2C_RTC_Init(void);
 [v _I2C_RTC_Init `(v ~T0 @X0 0 ef ]
 "41 E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.h
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.h: 41: void I2C_Master_Start(void);
@@ -60,12 +60,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "55
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.h: 55: void I2C_Master_Write(unsigned char d);
 [v _I2C_Master_Write `(v ~T0 @X0 0 ef1`uc ]
-"49
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.h: 49: void I2C_Master_Stop(void);
-[v _I2C_Master_Stop `(v ~T0 @X0 0 ef ]
+"45
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.h: 45: void I2C_Master_RepeatedStart(void);
+[v _I2C_Master_RepeatedStart `(v ~T0 @X0 0 ef ]
 "60
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.h: 60: unsigned char I2C_Master_Read(unsigned char a);
 [v _I2C_Master_Read `(uc ~T0 @X0 0 ef1`uc ]
+"49
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.h: 49: void I2C_Master_Stop(void);
+[v _I2C_Master_Stop `(v ~T0 @X0 0 ef ]
 "167 C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 167: extern volatile unsigned char PORTA __attribute__((address(0x005)));
 [v _PORTA `Vuc ~T0 @X0 0 e@5 ]
@@ -395,294 +398,255 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "48
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 48: uint8_t FLAGI2C = 0;
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 48: uint8_t FLAGRX = 0;
+[v _FLAGRX `uc ~T0 @X0 1 e ]
+[i _FLAGRX
+-> -> 0 `i `uc
+]
+"49
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 49: uint8_t FLAGI2C = 0;
 [v _FLAGI2C `uc ~T0 @X0 1 e ]
 [i _FLAGI2C
 -> -> 0 `i `uc
 ]
-"49
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 49: uint8_t SECONDS = 0;
+"50
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 50: uint8_t SECONDS = 0;
 [v _SECONDS `uc ~T0 @X0 1 e ]
 [i _SECONDS
 -> -> 0 `i `uc
 ]
-"50
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 50: uint8_t MINUTES = 0;
+"51
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 51: uint8_t MINUTES = 0;
 [v _MINUTES `uc ~T0 @X0 1 e ]
 [i _MINUTES
 -> -> 0 `i `uc
 ]
-"51
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 51: uint8_t HOUR = 0;
+"52
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 52: uint8_t HOUR = 0;
 [v _HOUR `uc ~T0 @X0 1 e ]
 [i _HOUR
 -> -> 0 `i `uc
 ]
-"52
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 52: uint8_t DAY = 0;
+"53
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 53: uint8_t DAY = 0;
 [v _DAY `uc ~T0 @X0 1 e ]
 [i _DAY
 -> -> 0 `i `uc
 ]
-"53
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 53: uint8_t DATE = 0;
+"54
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 54: uint8_t DATE = 0;
 [v _DATE `uc ~T0 @X0 1 e ]
 [i _DATE
 -> -> 0 `i `uc
 ]
-"54
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 54: uint8_t MONTH = 0;
+"55
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 55: uint8_t MONTH = 0;
 [v _MONTH `uc ~T0 @X0 1 e ]
 [i _MONTH
 -> -> 0 `i `uc
 ]
-"55
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 55: uint8_t YEAR = 0;
+"56
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 56: uint8_t YEAR = 0;
 [v _YEAR `uc ~T0 @X0 1 e ]
 [i _YEAR
 -> -> 0 `i `uc
 ]
+"57
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 57: uint8_t RECEPCION_LED = 0;
+[v _RECEPCION_LED `uc ~T0 @X0 1 e ]
+[i _RECEPCION_LED
+-> -> 0 `i `uc
+]
+"58
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 58: uint8_t RECEPCION_ENTER = 0;
+[v _RECEPCION_ENTER `uc ~T0 @X0 1 e ]
+[i _RECEPCION_ENTER
+-> -> 0 `i `uc
+]
 [v $root$_isr `(v ~T0 @X0 0 e ]
-"68
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 68: void __attribute__((picinterrupt(("")))) isr(void) {
+"71
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 71: void __attribute__((picinterrupt(("")))) isr(void) {
 [v _isr `(v ~T1 @X0 1 ef ]
 {
 [e :U _isr ]
 [f ]
-"69
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 69:     (INTCONbits.GIE = 0);
+"72
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 72:     (INTCONbits.GIE = 0);
 [e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
-"71
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 71:     if (INTCONbits.T0IF == 1) {
+"74
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 74:     if (INTCONbits.T0IF == 1) {
 [e $ ! == -> . . _INTCONbits 0 2 `i -> 1 `i 139  ]
 {
-"72
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 72:         TMR0 = 236;
-[e = _TMR0 -> -> 236 `i `uc ]
-"73
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 73:         CONTADOR++;
-[e ++ _CONTADOR -> -> 1 `i `uc ]
-"74
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 74:         INTCONbits.T0IF = 0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
 "75
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 75:     }
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 75:         TMR0 = 236;
+[e = _TMR0 -> -> 236 `i `uc ]
+"76
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 76:         CONTADOR++;
+[e ++ _CONTADOR -> -> 1 `i `uc ]
+"77
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 77:         INTCONbits.T0IF = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"78
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 78:     }
 }
 [e :U 139 ]
-"77
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 77:     if (PIR1bits.TXIF == 1) {
+"80
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 80:     if (PIR1bits.TXIF == 1) {
 [e $ ! == -> . . _PIR1bits 0 4 `i -> 1 `i 140  ]
 {
-"78
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 78:         TXREG = Envio();
+"81
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 81:         TXREG = Envio();
 [e = _TXREG ( _Envio ..  ]
-"79
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 79:         PIE1bits.TXIE = 0;
+"82
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 82:         PIE1bits.TXIE = 0;
 [e = . . _PIE1bits 0 4 -> -> 0 `i `uc ]
-"80
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 80:     }
+"83
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 83:     }
 }
 [e :U 140 ]
-"81
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 81:     (INTCONbits.GIE = 1);
+"105
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 105:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"82
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 82: }
+"106
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 106: }
 [e :UE 138 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"88
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 88: void main(void) {
+"112
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 112: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"89
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 89:     Setup();
+"113
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 113:     Setup();
 [e ( _Setup ..  ]
-"90
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 90:     I2C_RTC_Init();
+"114
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 114:     I2C_RTC_Init();
 [e ( _I2C_RTC_Init ..  ]
-"91
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 91:     while (1) {
+"115
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 115:     while (1) {
 [e :U 143 ]
 {
-"93
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 93:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"94
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 94:         I2C_Master_Write(0xD0);
-[e ( _I2C_Master_Write (1 -> -> 208 `i `uc ]
-"95
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 95:         I2C_Master_Write(0);
-[e ( _I2C_Master_Write (1 -> -> 0 `i `uc ]
-"96
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 96:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"99
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 99:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"100
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 100:         I2C_Master_Write(0xD1);
-[e ( _I2C_Master_Write (1 -> -> 209 `i `uc ]
-"101
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 101:         SECONDS = I2C_Master_Read(0);
-[e = _SECONDS ( _I2C_Master_Read (1 -> -> 0 `i `uc ]
-"102
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 102:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"104
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 104:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"105
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 105:         I2C_Master_Write(0xD1);
-[e ( _I2C_Master_Write (1 -> -> 209 `i `uc ]
-"106
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 106:         MINUTES = I2C_Master_Read(0);
-[e = _MINUTES ( _I2C_Master_Read (1 -> -> 0 `i `uc ]
-"107
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 107:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"109
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 109:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"110
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 110:         I2C_Master_Write(0xD1);
-[e ( _I2C_Master_Write (1 -> -> 209 `i `uc ]
-"111
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 111:         HOUR = I2C_Master_Read(0);
-[e = _HOUR ( _I2C_Master_Read (1 -> -> 0 `i `uc ]
-"112
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 112:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"114
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 114:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"115
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 115:         I2C_Master_Write(0xD1);
-[e ( _I2C_Master_Write (1 -> -> 209 `i `uc ]
-"116
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 116:         DAY = I2C_Master_Read(0);
-[e = _DAY ( _I2C_Master_Read (1 -> -> 0 `i `uc ]
 "117
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 117:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 117:         I2C_Master_Start();
+[e ( _I2C_Master_Start ..  ]
+"118
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 118:         I2C_Master_Write(0xD0);
+[e ( _I2C_Master_Write (1 -> -> 208 `i `uc ]
 "119
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 119:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"120
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 120:         I2C_Master_Write(0xD1);
-[e ( _I2C_Master_Write (1 -> -> 209 `i `uc ]
-"121
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 121:         DATE = I2C_Master_Read(0);
-[e = _DATE ( _I2C_Master_Read (1 -> -> 0 `i `uc ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 119:         I2C_Master_Write(0);
+[e ( _I2C_Master_Write (1 -> -> 0 `i `uc ]
 "122
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 122:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 122:         I2C_Master_RepeatedStart();
+[e ( _I2C_Master_RepeatedStart ..  ]
+"123
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 123:         I2C_Master_Write(0xD1);
+[e ( _I2C_Master_Write (1 -> -> 209 `i `uc ]
 "124
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 124:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 124:         SECONDS = I2C_Master_Read(1);
+[e = _SECONDS ( _I2C_Master_Read (1 -> -> 1 `i `uc ]
 "125
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 125:         I2C_Master_Write(0xD1);
-[e ( _I2C_Master_Write (1 -> -> 209 `i `uc ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 125:         MINUTES = I2C_Master_Read(1);
+[e = _MINUTES ( _I2C_Master_Read (1 -> -> 1 `i `uc ]
 "126
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 126:         MONTH = I2C_Master_Read(0);
-[e = _MONTH ( _I2C_Master_Read (1 -> -> 0 `i `uc ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 126:         HOUR = I2C_Master_Read(1);
+[e = _HOUR ( _I2C_Master_Read (1 -> -> 1 `i `uc ]
 "127
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 127:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 127:         DAY = I2C_Master_Read(1);
+[e = _DAY ( _I2C_Master_Read (1 -> -> 1 `i `uc ]
+"128
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 128:         DATE = I2C_Master_Read(1);
+[e = _DATE ( _I2C_Master_Read (1 -> -> 1 `i `uc ]
 "129
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 129:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 129:         MONTH = I2C_Master_Read(1);
+[e = _MONTH ( _I2C_Master_Read (1 -> -> 1 `i `uc ]
 "130
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 130:         I2C_Master_Write(0xD1);
-[e ( _I2C_Master_Write (1 -> -> 209 `i `uc ]
-"131
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 131:         YEAR = I2C_Master_Read(0);
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 130:         YEAR = I2C_Master_Read(0);
 [e = _YEAR ( _I2C_Master_Read (1 -> -> 0 `i `uc ]
-"132
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 132:         I2C_Master_Stop();
+"131
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 131:         I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"135
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 135:         if (CONTADOR > 10) {
+"134
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 134:         if (CONTADOR > 10) {
 [e $ ! > -> _CONTADOR `i -> 10 `i 145  ]
 {
-"136
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 136:             PIE1bits.TXIE = 1;
+"135
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 135:             PIE1bits.TXIE = 1;
 [e = . . _PIE1bits 0 4 -> -> 1 `i `uc ]
-"137
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 137:             CONTADOR = 0;
+"136
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 136:             CONTADOR = 0;
 [e = _CONTADOR -> -> 0 `i `uc ]
-"138
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 138:         }
+"137
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 137:         }
 }
 [e :U 145 ]
-"139
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 139:     }
+"138
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 138:     }
 }
 [e :U 142 ]
 [e $U 143  ]
 [e :U 144 ]
-"140
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 140: }
+"139
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 139: }
 [e :UE 141 ]
 }
-"146
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 146: void Setup(void) {
+"145
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 145: void Setup(void) {
 [v _Setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _Setup ]
 [f ]
-"148
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 148:     PORTA = 0;
+"147
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 147:     PORTA = 0;
 [e = _PORTA -> -> 0 `i `uc ]
-"149
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 149:     PORTB = 0;
+"148
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 148:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
-"150
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 150:     PORTC = 0;
+"149
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 149:     PORTC = 0;
 [e = _PORTC -> -> 0 `i `uc ]
-"151
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 151:     PORTD = 0;
+"150
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 150:     PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
-"152
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 152:     PORTE = 0;
+"151
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 151:     PORTE = 0;
 [e = _PORTE -> -> 0 `i `uc ]
-"154
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 154:     ANSEL = 0;
+"153
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 153:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"155
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 155:     ANSELH = 0;
+"154
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 154:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"157
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 157:     TRISA = 0;
+"156
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 156:     TRISA = 0;
 [e = _TRISA -> -> 0 `i `uc ]
-"158
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 158:     TRISB = 0;
+"157
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 157:     TRISB = 0;
 [e = _TRISB -> -> 0 `i `uc ]
-"159
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 159:     TRISC = 0;
+"158
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 158:     TRISC = 0;
 [e = _TRISC -> -> 0 `i `uc ]
-"160
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 160:     TRISD = 0;
+"159
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 159:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"161
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 161:     TRISE = 0;
+"160
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 160:     TRISE = 0;
 [e = _TRISE -> -> 0 `i `uc ]
-"164
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 164:     INTCONbits.GIE = 1;
+"163
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 163:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"165
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 165:     INTCONbits.PEIE = 1;
+"164
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 164:     INTCONbits.PEIE = 1;
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"166
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 166:     INTCONbits.T0IE = 1;
+"165
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 165:     INTCONbits.T0IE = 1;
 [e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-"167
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 167:     INTCONbits.T0IF = 0;
+"166
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 166:     INTCONbits.T0IF = 0;
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"168
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 168:     PIE1bits.TXIE = 1;
+"167
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 167:     PIE1bits.TXIE = 1;
 [e = . . _PIE1bits 0 4 -> -> 1 `i `uc ]
 "170
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 170:     initOsc(6);
@@ -720,8 +684,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 189:             FLAGTX++;
 [e ++ _FLAGTX -> -> 1 `i `uc ]
 "190
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 190:             return ASCII((HOUR & 0x10) >> 4);
-[e ) ( _ASCII (1 -> >> & -> _HOUR `i -> 16 `i -> 4 `i `uc ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 190:             return ASCII((YEAR & 0xF0) >> 4);
+[e ) ( _ASCII (1 -> >> & -> _YEAR `i -> 240 `i -> 4 `i `uc ]
 [e $UE 147  ]
 "191
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 191:             break;
@@ -733,8 +697,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 193:             FLAGTX++;
 [e ++ _FLAGTX -> -> 1 `i `uc ]
 "194
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 194:             return ASCII(HOUR & 0x0F);
-[e ) ( _ASCII (1 -> & -> _HOUR `i -> 15 `i `uc ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 194:             return ASCII(YEAR & 0x0F);
+[e ) ( _ASCII (1 -> & -> _YEAR `i -> 15 `i `uc ]
 [e $UE 147  ]
 "195
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 195:             break;
@@ -746,8 +710,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 197:             FLAGTX++;
 [e ++ _FLAGTX -> -> 1 `i `uc ]
 "198
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 198:             return 0x3A;
-[e ) -> -> 58 `i `uc ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 198:             return 0x2F;
+[e ) -> -> 47 `i `uc ]
 [e $UE 147  ]
 "199
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 199:             break;
@@ -759,8 +723,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 201:             FLAGTX++;
 [e ++ _FLAGTX -> -> 1 `i `uc ]
 "202
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 202:             return ASCII((MINUTES & 0xF0) >> 4);
-[e ) ( _ASCII (1 -> >> & -> _MINUTES `i -> 240 `i -> 4 `i `uc ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 202:             return ASCII((MONTH & 0x10) >> 4);
+[e ) ( _ASCII (1 -> >> & -> _MONTH `i -> 16 `i -> 4 `i `uc ]
 [e $UE 147  ]
 "203
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 203:             break;
@@ -772,8 +736,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 205:             FLAGTX++;
 [e ++ _FLAGTX -> -> 1 `i `uc ]
 "206
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 206:             return ASCII(MINUTES & 0x0F);
-[e ) ( _ASCII (1 -> & -> _MINUTES `i -> 15 `i `uc ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 206:             return ASCII(MONTH & 0x0F);
+[e ) ( _ASCII (1 -> & -> _MONTH `i -> 15 `i `uc ]
 [e $UE 147  ]
 "207
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 207:             break;
@@ -785,8 +749,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 209:             FLAGTX++;
 [e ++ _FLAGTX -> -> 1 `i `uc ]
 "210
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 210:             return 0x3A;
-[e ) -> -> 58 `i `uc ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 210:             return 0x2F;
+[e ) -> -> 47 `i `uc ]
 [e $UE 147  ]
 "211
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 211:             break;
@@ -798,8 +762,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 213:             FLAGTX++;
 [e ++ _FLAGTX -> -> 1 `i `uc ]
 "214
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 214:             return ASCII((SECONDS & 0xF0) >> 4);
-[e ) ( _ASCII (1 -> >> & -> _SECONDS `i -> 240 `i -> 4 `i `uc ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 214:             return ASCII((DATE & 0x30) >> 4);
+[e ) ( _ASCII (1 -> >> & -> _DATE `i -> 48 `i -> 4 `i `uc ]
 [e $UE 147  ]
 "215
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 215:             break;
@@ -811,8 +775,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 217:             FLAGTX++;
 [e ++ _FLAGTX -> -> 1 `i `uc ]
 "218
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 218:             return ASCII(SECONDS & 0x0F);
-[e ) ( _ASCII (1 -> & -> _SECONDS `i -> 15 `i `uc ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 218:             return ASCII(DATE & 0x0F);
+[e ) ( _ASCII (1 -> & -> _DATE `i -> 15 `i `uc ]
 [e $UE 147  ]
 "219
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 219:             break;
@@ -821,17 +785,134 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 220:         case 8:
 [e :U 158 ]
 "221
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 221:             FLAGTX = 0;
-[e = _FLAGTX -> -> 0 `i `uc ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 221:             FLAGTX++;
+[e ++ _FLAGTX -> -> 1 `i `uc ]
 "222
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 222:             return 0x0A;
-[e ) -> -> 10 `i `uc ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 222:             return 0x09;
+[e ) -> -> 9 `i `uc ]
 [e $UE 147  ]
 "223
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 223:             break;
 [e $U 148  ]
 "224
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 224:     }
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 224:         case 9:
+[e :U 159 ]
+"225
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 225:             FLAGTX++;
+[e ++ _FLAGTX -> -> 1 `i `uc ]
+"226
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 226:             return ASCII((HOUR & 0x10) >> 4);
+[e ) ( _ASCII (1 -> >> & -> _HOUR `i -> 16 `i -> 4 `i `uc ]
+[e $UE 147  ]
+"227
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 227:             break;
+[e $U 148  ]
+"228
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 228:         case 10:
+[e :U 160 ]
+"229
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 229:             FLAGTX++;
+[e ++ _FLAGTX -> -> 1 `i `uc ]
+"230
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 230:             return ASCII(HOUR & 0x0F);
+[e ) ( _ASCII (1 -> & -> _HOUR `i -> 15 `i `uc ]
+[e $UE 147  ]
+"231
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 231:             break;
+[e $U 148  ]
+"232
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 232:         case 11:
+[e :U 161 ]
+"233
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 233:             FLAGTX++;
+[e ++ _FLAGTX -> -> 1 `i `uc ]
+"234
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 234:             return 0x3A;
+[e ) -> -> 58 `i `uc ]
+[e $UE 147  ]
+"235
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 235:             break;
+[e $U 148  ]
+"236
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 236:         case 12:
+[e :U 162 ]
+"237
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 237:             FLAGTX++;
+[e ++ _FLAGTX -> -> 1 `i `uc ]
+"238
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 238:             return ASCII((MINUTES & 0xF0) >> 4);
+[e ) ( _ASCII (1 -> >> & -> _MINUTES `i -> 240 `i -> 4 `i `uc ]
+[e $UE 147  ]
+"239
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 239:             break;
+[e $U 148  ]
+"240
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 240:         case 13:
+[e :U 163 ]
+"241
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 241:             FLAGTX++;
+[e ++ _FLAGTX -> -> 1 `i `uc ]
+"242
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 242:             return ASCII(MINUTES & 0x0F);
+[e ) ( _ASCII (1 -> & -> _MINUTES `i -> 15 `i `uc ]
+[e $UE 147  ]
+"243
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 243:             break;
+[e $U 148  ]
+"244
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 244:         case 14:
+[e :U 164 ]
+"245
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 245:             FLAGTX++;
+[e ++ _FLAGTX -> -> 1 `i `uc ]
+"246
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 246:             return 0x3A;
+[e ) -> -> 58 `i `uc ]
+[e $UE 147  ]
+"247
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 247:             break;
+[e $U 148  ]
+"248
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 248:         case 15:
+[e :U 165 ]
+"249
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 249:             FLAGTX++;
+[e ++ _FLAGTX -> -> 1 `i `uc ]
+"250
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 250:             return ASCII((SECONDS & 0xF0) >> 4);
+[e ) ( _ASCII (1 -> >> & -> _SECONDS `i -> 240 `i -> 4 `i `uc ]
+[e $UE 147  ]
+"251
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 251:             break;
+[e $U 148  ]
+"252
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 252:         case 16:
+[e :U 166 ]
+"253
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 253:             FLAGTX++;
+[e ++ _FLAGTX -> -> 1 `i `uc ]
+"254
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 254:             return ASCII(SECONDS & 0x0F);
+[e ) ( _ASCII (1 -> & -> _SECONDS `i -> 15 `i `uc ]
+[e $UE 147  ]
+"255
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 255:             break;
+[e $U 148  ]
+"256
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 256:         case 17:
+[e :U 167 ]
+"257
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 257:             FLAGTX = 0;
+[e = _FLAGTX -> -> 0 `i `uc ]
+"258
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 258:             return 0x0A;
+[e ) -> -> 10 `i `uc ]
+[e $UE 147  ]
+"259
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 259:             break;
+[e $U 148  ]
+"260
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 260:     }
 }
 [e $U 148  ]
 [e :U 149 ]
@@ -844,55 +925,64 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 6 `i 156
  , $ -> 7 `i 157
  , $ -> 8 `i 158
+ , $ -> 9 `i 159
+ , $ -> 10 `i 160
+ , $ -> 11 `i 161
+ , $ -> 12 `i 162
+ , $ -> 13 `i 163
+ , $ -> 14 `i 164
+ , $ -> 15 `i 165
+ , $ -> 16 `i 166
+ , $ -> 17 `i 167
  148 ]
 [e :U 148 ]
-"225
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 225: }
+"261
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 261: }
 [e :UE 147 ]
 }
-"228
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 228: void I2C_RTC_Init(void) {
+"264
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 264: void I2C_RTC_Init(void) {
 [v _I2C_RTC_Init `(v ~T0 @X0 1 ef ]
 {
 [e :U _I2C_RTC_Init ]
 [f ]
-"229
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 229:     I2C_Master_Start();
+"265
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 265:     I2C_Master_Start();
 [e ( _I2C_Master_Start ..  ]
-"230
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 230:     I2C_Master_Write(0b11010000);
+"266
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 266:     I2C_Master_Write(0b11010000);
 [e ( _I2C_Master_Write (1 -> -> 208 `i `uc ]
-"231
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 231:     I2C_Master_Write(0x00);
+"267
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 267:     I2C_Master_Write(0x00);
 [e ( _I2C_Master_Write (1 -> -> 0 `i `uc ]
-"232
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 232:     I2C_Master_Write(0x00);
+"268
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 268:     I2C_Master_Write(0x00);
 [e ( _I2C_Master_Write (1 -> -> 0 `i `uc ]
-"233
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 233:     I2C_Master_Write(0x21);
+"269
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 269:     I2C_Master_Write(0x22);
+[e ( _I2C_Master_Write (1 -> -> 34 `i `uc ]
+"270
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 270:     I2C_Master_Write(0x41);
+[e ( _I2C_Master_Write (1 -> -> 65 `i `uc ]
+"271
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 271:     I2C_Master_Write(0x01);
+[e ( _I2C_Master_Write (1 -> -> 1 `i `uc ]
+"272
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 272:     I2C_Master_Write(0x01);
+[e ( _I2C_Master_Write (1 -> -> 1 `i `uc ]
+"273
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 273:     I2C_Master_Write(0x03);
+[e ( _I2C_Master_Write (1 -> -> 3 `i `uc ]
+"274
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 274:     I2C_Master_Write(0x21);
 [e ( _I2C_Master_Write (1 -> -> 33 `i `uc ]
-"234
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 234:     I2C_Master_Write(0x71);
-[e ( _I2C_Master_Write (1 -> -> 113 `i `uc ]
-"235
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 235:     I2C_Master_Write(0x07);
-[e ( _I2C_Master_Write (1 -> -> 7 `i `uc ]
-"236
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 236:     I2C_Master_Write(0x28);
-[e ( _I2C_Master_Write (1 -> -> 40 `i `uc ]
-"237
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 237:     I2C_Master_Write(0x02);
-[e ( _I2C_Master_Write (1 -> -> 2 `i `uc ]
-"238
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 238:     I2C_Master_Write(0x21);
-[e ( _I2C_Master_Write (1 -> -> 33 `i `uc ]
-"239
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 239:     I2C_Master_Stop();
+"275
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 275:     I2C_Master_Stop();
 [e ( _I2C_Master_Stop ..  ]
-"240
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 240:     _delay((unsigned long)((20)*(4000000/4000.0)));
+"276
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 276:     _delay((unsigned long)((20)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"241
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 241: }
-[e :UE 159 ]
+"277
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 277: }
+[e :UE 168 ]
 }
