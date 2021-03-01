@@ -45,6 +45,7 @@
 #define  _XTAL_FREQ 4000000 //Necesario para la función de Delay
 uint8_t CONTADOR = 0;
 uint8_t FLAGTX = 0;
+uint8_t FLAGI2C = 0;
 uint8_t SECONDS = 0;
 uint8_t MINUTES = 0;
 uint8_t HOUR = 0;
@@ -67,13 +68,13 @@ void I2C_RTC_Init(void);
 void __interrupt() isr(void) {
     di(); //DESACTIVA LAS INTERRUPCIONES
     //INTERUPCION DEL TIMER0
-    if(INTCONbits.T0IF == 1){
+    if (INTCONbits.T0IF == 1) {
         TMR0 = 236; //248 PARA 2ms | 236 PARA 5ms
         CONTADOR++; //CONTADOR PARA HABILITAR LA LECTURA DEL ADC
         INTCONbits.T0IF = 0;
     }
     //INTERUPCION DEL TX
-    if(PIR1bits.TXIF == 1){
+    if (PIR1bits.TXIF == 1) {
         TXREG = Envio();
         PIE1bits.TXIE = 0;
     }
@@ -85,59 +86,55 @@ void __interrupt() isr(void) {
 //******************************************************************************
 
 void main(void) {
-    Setup();        
-    I2C_RTC_Init();       
-    while (1) {        
+    Setup();
+    I2C_RTC_Init();
+    while (1) {
+        //START to Read 
         I2C_Master_Start();
         I2C_Master_Write(0xD0);
         I2C_Master_Write(0);
         I2C_Master_Stop();
-//        
+
+        //READ
         I2C_Master_Start();
-        I2C_Master_Write(0xD1);
-        SECONDS = I2C_Master_Read(0);
+        I2C_Master_Write(0xD1); //Bloque para guardar los datos del RTC en variables
+        SECONDS = I2C_Master_Read(0); //De una vez se convierten de binario a decimal
         I2C_Master_Stop();
-//        
+
         I2C_Master_Start();
-        I2C_Master_Write(0xD1);
-        MINUTES = I2C_Master_Read(0);
+        I2C_Master_Write(0xD1); //Bloque para guardar los datos del RTC en variables
+        MINUTES = I2C_Master_Read(0); //De una vez se convierten de binario a decimal
         I2C_Master_Stop();
-//        
+
         I2C_Master_Start();
         I2C_Master_Write(0xD1);
         HOUR = I2C_Master_Read(0);
         I2C_Master_Stop();
-//        
+
         I2C_Master_Start();
         I2C_Master_Write(0xD1);
-        DAY = I2C_Master_Read(0);
+        DAY = I2C_Master_Read(0); //No nos interesa saber el dia       
         I2C_Master_Stop();
-//        
+
         I2C_Master_Start();
         I2C_Master_Write(0xD1);
         DATE = I2C_Master_Read(0);
         I2C_Master_Stop();
-//        
+
         I2C_Master_Start();
         I2C_Master_Write(0xD1);
         MONTH = I2C_Master_Read(0);
         I2C_Master_Stop();
-//        
+
         I2C_Master_Start();
         I2C_Master_Write(0xD1);
         YEAR = I2C_Master_Read(0);
         I2C_Master_Stop();
-        
-        I2C_Master_Stop();
-        
-        I2C_Master_Start(); 
-        I2C_Master_Write(0xD1);
-        I2C_Master_Read(0);
-        I2C_Master_Stop();
+
         //**********************************************************************
-        if(CONTADOR>10){          
-            PIE1bits.TXIE = 1;          //HABILITA EL ENVIO NUEVAMENTE  
-            CONTADOR = 0;               //SE REINICIA EL CONTADOR
+        if (CONTADOR > 10) {
+            PIE1bits.TXIE = 1; //HABILITA EL ENVIO NUEVAMENTE  
+            CONTADOR = 0; //SE REINICIA EL CONTADOR
         }
     }
 }
@@ -185,58 +182,60 @@ void Setup(void) {
 //******************************************************************************
 
 //MULTIPLEXACION PARA ENVIO DE POTENCIOMETROS
-uint8_t Envio(void){
-    switch(FLAGTX){
-        case 0:            
+
+uint8_t Envio(void) {
+    switch (FLAGTX) {
+        case 0:
             FLAGTX++;
-            return ASCII((HOUR & 0x10)>>4);
+            return ASCII((HOUR & 0xF0) >> 4);
             break;
-        case 1:            
+        case 1:
             FLAGTX++;
             return ASCII(HOUR & 0x0F);
             break;
         case 2:
             FLAGTX++;
-            return 0x3A;    //DOS PUNTOS
+            return 0x3A; //DOS PUNTOS
             break;
-        case 3:            
+        case 3:
             FLAGTX++;
-            return ASCII((MINUTES & 0xF0)>>4);
+            return ASCII((MINUTES & 0xF0) >> 4);
             break;
-        case 4:            
+        case 4:
             FLAGTX++;
             return ASCII(MINUTES & 0x0F);
             break;
         case 5:
             FLAGTX++;
-            return 0x3A;    //DOS PUNTOS
+            return 0x3A; //DOS PUNTOS
             break;
-        case 6:            
+        case 6:
             FLAGTX++;
-            return ASCII((SECONDS & 0xF0)>>4);
+            return ASCII((SECONDS & 0xF0) >> 4);
             break;
-        case 7:            
+        case 7:
             FLAGTX++;
             return ASCII(SECONDS & 0x0F);
             break;
         case 8:
             FLAGTX = 0;
-            return 0x0A;    //ENTER
+            return 0x0A; //ENTER -> 0x0D PARA PROTEUS | 0x0A ASCII
             break;
-    }    
+    }
 }
 //INICIALIZACION DE DATOS DEL RELOJ
-void I2C_RTC_Init(void){
+
+void I2C_RTC_Init(void) {
     I2C_Master_Start();
-    I2C_Master_Write(0b11010000);   // SLAVE | WRITE
-    I2C_Master_Write(0x00);         // POINTER EN 00h
-    I2C_Master_Write(0x00);         // SEGUNDOS
-    I2C_Master_Write(0x42);         // MINUTOS
-    I2C_Master_Write(0x65);         // HORAS | FORMATO
-    I2C_Master_Write(0x05);         // DIA DE LA SEMANA
-    I2C_Master_Write(0x25);         // FECHA (DIA)
-    I2C_Master_Write(0x02);         // FECHA (MES)
-    I2C_Master_Write(0x21);         // AÑO
-    I2C_Master_Stop(); 
+    I2C_Master_Write(0b11010000); // SLAVE | WRITE
+    I2C_Master_Write(0x00); // POINTER EN 00h
+    I2C_Master_Write(0x00); // SEGUNDOS
+    I2C_Master_Write(0x42); // MINUTOS
+    I2C_Master_Write(0x65); // HORAS | FORMATO
+    I2C_Master_Write(0x05); // DIA DE LA SEMANA
+    I2C_Master_Write(0x25); // FECHA (DIA)
+    I2C_Master_Write(0x02); // FECHA (MES)
+    I2C_Master_Write(0x21); // AÑO
+    I2C_Master_Stop();
     __delay_ms(20);
 }

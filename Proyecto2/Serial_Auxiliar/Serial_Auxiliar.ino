@@ -1,14 +1,18 @@
-char incomingByte = 0; // for incoming serial data
-
+#define RXD2 16
+#define TXD2 17
+char sensor = 0;
 void setup() {
-  Serial.begin(9600); // opens serial port, sets data rate to 9600 bps
+  // Start Serial port
+  Serial.begin(9600);
+  Serial2.begin(9600, SERIAL_8N1, RXD2, TXD2);
 }
 
 void loop() {
-  // send data only when you receive data:
-  if (Serial.available()) {
+  if (Serial2.available() > 0) {
     // read the incoming byte:
-    incomingByte = Serial.read();
-    Serial.print(incomingByte);
+    sensor = Serial2.read();
+    Serial.print(sensor);
+    //Serial.println(color);
+    //Serial2.write(color);
   }
 }

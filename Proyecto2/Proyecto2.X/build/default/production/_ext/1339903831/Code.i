@@ -2716,6 +2716,7 @@ unsigned char I2C_Master_Read(unsigned char a);
 # 46 "E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c"
 uint8_t CONTADOR = 0;
 uint8_t FLAGTX = 0;
+uint8_t FLAGI2C = 0;
 uint8_t SECONDS = 0;
 uint8_t MINUTES = 0;
 uint8_t HOUR = 0;
@@ -2738,13 +2739,13 @@ void I2C_RTC_Init(void);
 void __attribute__((picinterrupt(("")))) isr(void) {
     (INTCONbits.GIE = 0);
 
-    if(INTCONbits.T0IF == 1){
+    if (INTCONbits.T0IF == 1) {
         TMR0 = 236;
         CONTADOR++;
         INTCONbits.T0IF = 0;
     }
 
-    if(PIR1bits.TXIF == 1){
+    if (PIR1bits.TXIF == 1) {
         TXREG = Envio();
         PIE1bits.TXIE = 0;
     }
@@ -2759,10 +2760,12 @@ void main(void) {
     Setup();
     I2C_RTC_Init();
     while (1) {
+
         I2C_Master_Start();
         I2C_Master_Write(0xD0);
         I2C_Master_Write(0);
         I2C_Master_Stop();
+
 
         I2C_Master_Start();
         I2C_Master_Write(0xD1);
@@ -2799,14 +2802,8 @@ void main(void) {
         YEAR = I2C_Master_Read(0);
         I2C_Master_Stop();
 
-        I2C_Master_Stop();
 
-        I2C_Master_Start();
-        I2C_Master_Write(0xD1);
-        I2C_Master_Read(0);
-        I2C_Master_Stop();
-
-        if(CONTADOR>10){
+        if (CONTADOR > 10) {
             PIE1bits.TXIE = 1;
             CONTADOR = 0;
         }
@@ -2856,11 +2853,12 @@ void Setup(void) {
 
 
 
-uint8_t Envio(void){
-    switch(FLAGTX){
+
+uint8_t Envio(void) {
+    switch (FLAGTX) {
         case 0:
             FLAGTX++;
-            return ASCII((HOUR & 0x10)>>4);
+            return ASCII((HOUR & 0xF0) >> 4);
             break;
         case 1:
             FLAGTX++;
@@ -2872,7 +2870,7 @@ uint8_t Envio(void){
             break;
         case 3:
             FLAGTX++;
-            return ASCII((MINUTES & 0xF0)>>4);
+            return ASCII((MINUTES & 0xF0) >> 4);
             break;
         case 4:
             FLAGTX++;
@@ -2884,7 +2882,7 @@ uint8_t Envio(void){
             break;
         case 6:
             FLAGTX++;
-            return ASCII((SECONDS & 0xF0)>>4);
+            return ASCII((SECONDS & 0xF0) >> 4);
             break;
         case 7:
             FLAGTX++;
@@ -2897,7 +2895,8 @@ uint8_t Envio(void){
     }
 }
 
-void I2C_RTC_Init(void){
+
+void I2C_RTC_Init(void) {
     I2C_Master_Start();
     I2C_Master_Write(0b11010000);
     I2C_Master_Write(0x00);
