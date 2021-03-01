@@ -720,8 +720,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 189:             FLAGTX++;
 [e ++ _FLAGTX -> -> 1 `i `uc ]
 "190
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 190:             return ASCII((HOUR & 0xF0) >> 4);
-[e ) ( _ASCII (1 -> >> & -> _HOUR `i -> 240 `i -> 4 `i `uc ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 190:             return ASCII((HOUR & 0x10) >> 4);
+[e ) ( _ASCII (1 -> >> & -> _HOUR `i -> 16 `i -> 4 `i `uc ]
 [e $UE 147  ]
 "191
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 191:             break;
@@ -869,17 +869,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 232:     I2C_Master_Write(0x00);
 [e ( _I2C_Master_Write (1 -> -> 0 `i `uc ]
 "233
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 233:     I2C_Master_Write(0x42);
-[e ( _I2C_Master_Write (1 -> -> 66 `i `uc ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 233:     I2C_Master_Write(0x21);
+[e ( _I2C_Master_Write (1 -> -> 33 `i `uc ]
 "234
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 234:     I2C_Master_Write(0x65);
-[e ( _I2C_Master_Write (1 -> -> 101 `i `uc ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 234:     I2C_Master_Write(0x71);
+[e ( _I2C_Master_Write (1 -> -> 113 `i `uc ]
 "235
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 235:     I2C_Master_Write(0x05);
-[e ( _I2C_Master_Write (1 -> -> 5 `i `uc ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 235:     I2C_Master_Write(0x07);
+[e ( _I2C_Master_Write (1 -> -> 7 `i `uc ]
 "236
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 236:     I2C_Master_Write(0x25);
-[e ( _I2C_Master_Write (1 -> -> 37 `i `uc ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 236:     I2C_Master_Write(0x28);
+[e ( _I2C_Master_Write (1 -> -> 40 `i `uc ]
 "237
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 237:     I2C_Master_Write(0x02);
 [e ( _I2C_Master_Write (1 -> -> 2 `i `uc ]

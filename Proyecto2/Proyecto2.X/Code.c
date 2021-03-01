@@ -187,7 +187,7 @@ uint8_t Envio(void) {
     switch (FLAGTX) {
         case 0:
             FLAGTX++;
-            return ASCII((HOUR & 0xF0) >> 4);
+            return ASCII((HOUR & 0x10) >> 4);
             break;
         case 1:
             FLAGTX++;
@@ -230,10 +230,10 @@ void I2C_RTC_Init(void) {
     I2C_Master_Write(0b11010000); // SLAVE | WRITE
     I2C_Master_Write(0x00); // POINTER EN 00h
     I2C_Master_Write(0x00); // SEGUNDOS
-    I2C_Master_Write(0x42); // MINUTOS
-    I2C_Master_Write(0x65); // HORAS | FORMATO
-    I2C_Master_Write(0x05); // DIA DE LA SEMANA
-    I2C_Master_Write(0x25); // FECHA (DIA)
+    I2C_Master_Write(0x21); // MINUTOS
+    I2C_Master_Write(0x71); // HORAS | FORMATO
+    I2C_Master_Write(0x07); // DIA DE LA SEMANA
+    I2C_Master_Write(0x28); // FECHA (DIA)
     I2C_Master_Write(0x02); // FECHA (MES)
     I2C_Master_Write(0x21); // AÑO
     I2C_Master_Stop();

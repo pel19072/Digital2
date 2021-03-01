@@ -11,6 +11,10 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
+$C:\Users\Ricardo\AppData\Local\Temp\s13tc.o
+reset_vec CODE 0 0 0 3 2
+end_init CODE 0 E E 3 2
+config CONFIG 4 2007 2007 2 2
 $dist/default/production\Proyecto2.X.production.o
 cinit CODE 0 11 11 10 2
 text1 CODE 0 355 355 39 2
@@ -33,10 +37,6 @@ cstackBANK0 BANK0 1 20 20 17 1
 intentry CODE 0 4 4 A 2
 bssBANK0 BANK0 1 37 37 8 1
 bssCOMMON COMMON 1 79 79 2 1
-config CONFIG 4 2007 2007 2 2
-$C:\Users\Ricardo\AppData\Local\Temp\ss88.o
-reset_vec CODE 0 0 0 3 2
-end_init CODE 0 E E 3 2
 config CONFIG 4 2007 2007 2 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -84,23 +84,23 @@ STRING 428-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Proyecto2.X.production.o
-11 cinit CODE >986:C:\Users\Ricardo\AppData\Local\Temp\ss88.s
-11 cinit CODE >989:C:\Users\Ricardo\AppData\Local\Temp\ss88.s
-11 cinit CODE >1030:C:\Users\Ricardo\AppData\Local\Temp\ss88.s
-12 cinit CODE >1031:C:\Users\Ricardo\AppData\Local\Temp\ss88.s
-13 cinit CODE >1034:C:\Users\Ricardo\AppData\Local\Temp\ss88.s
-14 cinit CODE >1035:C:\Users\Ricardo\AppData\Local\Temp\ss88.s
-15 cinit CODE >1036:C:\Users\Ricardo\AppData\Local\Temp\ss88.s
-16 cinit CODE >1037:C:\Users\Ricardo\AppData\Local\Temp\ss88.s
-17 cinit CODE >1038:C:\Users\Ricardo\AppData\Local\Temp\ss88.s
-18 cinit CODE >1039:C:\Users\Ricardo\AppData\Local\Temp\ss88.s
-19 cinit CODE >1040:C:\Users\Ricardo\AppData\Local\Temp\ss88.s
-1A cinit CODE >1041:C:\Users\Ricardo\AppData\Local\Temp\ss88.s
-1B cinit CODE >1042:C:\Users\Ricardo\AppData\Local\Temp\ss88.s
-1C cinit CODE >1043:C:\Users\Ricardo\AppData\Local\Temp\ss88.s
-1D cinit CODE >1049:C:\Users\Ricardo\AppData\Local\Temp\ss88.s
-1D cinit CODE >1051:C:\Users\Ricardo\AppData\Local\Temp\ss88.s
-1E cinit CODE >1052:C:\Users\Ricardo\AppData\Local\Temp\ss88.s
+11 cinit CODE >986:C:\Users\Ricardo\AppData\Local\Temp\s13tc.s
+11 cinit CODE >989:C:\Users\Ricardo\AppData\Local\Temp\s13tc.s
+11 cinit CODE >1030:C:\Users\Ricardo\AppData\Local\Temp\s13tc.s
+12 cinit CODE >1031:C:\Users\Ricardo\AppData\Local\Temp\s13tc.s
+13 cinit CODE >1034:C:\Users\Ricardo\AppData\Local\Temp\s13tc.s
+14 cinit CODE >1035:C:\Users\Ricardo\AppData\Local\Temp\s13tc.s
+15 cinit CODE >1036:C:\Users\Ricardo\AppData\Local\Temp\s13tc.s
+16 cinit CODE >1037:C:\Users\Ricardo\AppData\Local\Temp\s13tc.s
+17 cinit CODE >1038:C:\Users\Ricardo\AppData\Local\Temp\s13tc.s
+18 cinit CODE >1039:C:\Users\Ricardo\AppData\Local\Temp\s13tc.s
+19 cinit CODE >1040:C:\Users\Ricardo\AppData\Local\Temp\s13tc.s
+1A cinit CODE >1041:C:\Users\Ricardo\AppData\Local\Temp\s13tc.s
+1B cinit CODE >1042:C:\Users\Ricardo\AppData\Local\Temp\s13tc.s
+1C cinit CODE >1043:C:\Users\Ricardo\AppData\Local\Temp\s13tc.s
+1D cinit CODE >1049:C:\Users\Ricardo\AppData\Local\Temp\s13tc.s
+1D cinit CODE >1051:C:\Users\Ricardo\AppData\Local\Temp\s13tc.s
+1E cinit CODE >1052:C:\Users\Ricardo\AppData\Local\Temp\s13tc.s
 4 intentry CODE >68:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
 272 text14 CODE >22:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
 273 text14 CODE >23:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
@@ -371,21 +371,21 @@ _DATE 39 0 BANK0 1 bssBANK0 dist/default/production\Proyecto2.X.production.o
 _HOUR 3B 0 BANK0 1 bssBANK0 dist/default/production\Proyecto2.X.production.o
 _TMR0 1 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 _YEAR 37 0 BANK0 1 bssBANK0 dist/default/production\Proyecto2.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\Ricardo\AppData\Local\Temp\ss88.o
+___sp 0 0 STACK 2 stack C:\Users\Ricardo\AppData\Local\Temp\s13tc.o
 _main 42 0 CODE 0 maintext dist/default/production\Proyecto2.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
-start 1C 0 CODE 0 init C:\Users\Ricardo\AppData\Local\Temp\ss88.o
+start 1C 0 CODE 0 init C:\Users\Ricardo\AppData\Local\Temp\s13tc.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 __size_of___lldiv 0 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
 I2C_Master_Read@a 24 0 BANK0 1 cstackBANK0 dist/default/production\Proyecto2.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\ss88.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\ss88.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\ss88.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\ss88.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\ss88.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\ss88.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s13tc.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s13tc.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s13tc.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s13tc.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s13tc.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s13tc.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _initUART 7D0 0 CODE 0 text2 dist/default/production\Proyecto2.X.production.o
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
@@ -400,8 +400,8 @@ _FLAGTX 7A 0 COMMON 1 bssCOMMON dist/default/production\Proyecto2.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 __end_of___lldiv 428 0 CODE 0 text5 dist/default/production\Proyecto2.X.production.o
 _OPTION_REG 81 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\Ricardo\AppData\Local\Temp\ss88.o
-___stacklo 0 0 ABS 0 - C:\Users\Ricardo\AppData\Local\Temp\ss88.o
+___stackhi 0 0 ABS 0 - C:\Users\Ricardo\AppData\Local\Temp\s13tc.o
+___stacklo 0 0 ABS 0 - C:\Users\Ricardo\AppData\Local\Temp\s13tc.o
 __size_of_ASCII 0 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 __size_of_Envio 0 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 _BAUDCTLbits 187 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
@@ -417,7 +417,7 @@ _SSPBUF 13 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 _SSPCON 14 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 _WDTCON 105 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 __end_of_initOsc 4E4 0 CODE 0 text3 dist/default/production\Proyecto2.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Ricardo\AppData\Local\Temp\ss88.o
+___int_sp 0 0 STACK 2 stack C:\Users\Ricardo\AppData\Local\Temp\s13tc.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -467,7 +467,7 @@ _I2C_Master_Write 7F8 0 CODE 0 text7 dist/default/production\Proyecto2.X.product
 __end_of_isr 7D0 0 CODE 0 text12 dist/default/production\Proyecto2.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
 ___lldiv@divisor 20 0 BANK0 1 cstackBANK0 dist/default/production\Proyecto2.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Ricardo\AppData\Local\Temp\ss88.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Ricardo\AppData\Local\Temp\s13tc.o
 initOsc@IRCF 22 0 BANK0 1 cstackBANK0 dist/default/production\Proyecto2.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 _RCSTAbits 18 0 ABS 0 - dist/default/production\Proyecto2.X.production.o

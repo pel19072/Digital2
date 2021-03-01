@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
-                                                                                               Sun Feb 28 23:05:11 2021
+                                                                                               Sun Feb 28 23:18:56 2021
 
 Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	16F887
@@ -1856,24 +1856,24 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   1773  02E0  3000               	movlw	0
   1774  02E1  120A  118A  23FC  120A  118A  	fcall	_I2C_Master_Write
   1775                           
-  1776                           ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 233:     I2C_Master_Write(0x42
+  1776                           ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 233:     I2C_Master_Write(0x21
       +                          );
-  1777  02E6  3042               	movlw	66
+  1777  02E6  3021               	movlw	33
   1778  02E7  120A  118A  23FC  120A  118A  	fcall	_I2C_Master_Write
   1779                           
-  1780                           ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 234:     I2C_Master_Write(0x65
+  1780                           ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 234:     I2C_Master_Write(0x71
       +                          );
-  1781  02EC  3065               	movlw	101
+  1781  02EC  3071               	movlw	113
   1782  02ED  120A  118A  23FC  120A  118A  	fcall	_I2C_Master_Write
   1783                           
-  1784                           ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 235:     I2C_Master_Write(0x05
+  1784                           ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 235:     I2C_Master_Write(0x07
       +                          );
-  1785  02F2  3005               	movlw	5
+  1785  02F2  3007               	movlw	7
   1786  02F3  120A  118A  23FC  120A  118A  	fcall	_I2C_Master_Write
   1787                           
-  1788                           ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 236:     I2C_Master_Write(0x25
+  1788                           ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 236:     I2C_Master_Write(0x28
       +                          );
-  1789  02F8  3025               	movlw	37
+  1789  02F8  3028               	movlw	40
   1790  02F9  120A  118A  23FC  120A  118A  	fcall	_I2C_Master_Write
   1791                           
   1792                           ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 237:     I2C_Master_Write(0x02
@@ -2436,7 +2436,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   2339  0115                     i1l1464:
   2340                           
   2341                           ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 190:             return ASCII(
-      +                          (HOUR & 0xF0) >> 4);
+      +                          (HOUR & 0x10) >> 4);
   2342  0115  1283               	bcf	3,5	;RP0=0, select bank0
   2343  0116  1303               	bcf	3,6	;RP1=0, select bank0
   2344  0117  083B               	movf	_HOUR,w
@@ -2449,7 +2449,7 @@ Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1
   2351  011D  1D03               	skipz
   2352  011E  291A               	goto	u29_25
   2353  011F  0873               	movf	??_Envio,w
-  2354  0120  390F               	andlw	15
+  2354  0120  3901               	andlw	1
   2355  0121  120A  118A  2272  120A  118A  	fcall	_ASCII
   2356  0126  29AB               	goto	i1l196
   2357  0127                     i1l1470:
@@ -3076,7 +3076,7 @@ DATA                 0      0      2A      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.31 build 20201012212115 
-Symbol Table                                                                                   Sun Feb 28 23:05:11 2021
+Symbol Table                                                                                   Sun Feb 28 23:18:56 2021
 
                         l6 0218                          l7 0270                          l8 021E  
                         l9 0224                         l10 022A                         l11 0230  
