@@ -13,15 +13,15 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"71 E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+"72 E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
 [v _isr isr `II(v  1 e 1 0 ]
-"112
+"109
 [v _main main `(v  1 e 1 0 ]
-"145
+"149
 [v _Setup Setup `(v  1 e 1 0 ]
-"186
+"190
 [v _Envio Envio `(uc  1 e 1 0 ]
-"264
+"269
 [v _I2C_RTC_Init I2C_RTC_Init `(v  1 e 1 0 ]
 "15 E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
 [v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
@@ -111,6 +111,8 @@
 [v _RCSTAbits RCSTAbits `VES138  1 e 1 @24 ]
 "1134
 [v _TXREG TXREG `VEuc  1 e 1 @25 ]
+"1141
+[v _RCREG RCREG `VEuc  1 e 1 @26 ]
 "1347
 [v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
 "1417
@@ -223,6 +225,8 @@
 [v _CONTADOR CONTADOR `uc  1 e 1 0 ]
 "47
 [v _FLAGTX FLAGTX `uc  1 e 1 0 ]
+"48
+[v _FLAGRX FLAGRX `uc  1 e 1 0 ]
 "50
 [v _SECONDS SECONDS `uc  1 e 1 0 ]
 "51
@@ -237,15 +241,17 @@
 [v _MONTH MONTH `uc  1 e 1 0 ]
 "56
 [v _YEAR YEAR `uc  1 e 1 0 ]
-"112
+"59
+[v _RECEPCION_ENTER RECEPCION_ENTER `uc  1 e 1 0 ]
+"109
 [v _main main `(v  1 e 1 0 ]
 {
-"139
+"143
 } 0
-"145
+"149
 [v _Setup Setup `(v  1 e 1 0 ]
 {
-"178
+"182
 } 0
 "6 E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
 [v _initUART initUART `(v  1 e 1 0 ]
@@ -278,10 +284,10 @@
 [v ___lldiv@dividend dividend `ul  1 p 4 4 ]
 "30
 } 0
-"264 E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+"269 E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
 [v _I2C_RTC_Init I2C_RTC_Init `(v  1 e 1 0 ]
 {
-"277
+"282
 } 0
 "50 E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
 [v _I2C_Master_Write I2C_Master_Write `(v  1 e 1 0 ]
@@ -323,15 +329,15 @@
 {
 "33
 } 0
-"71 E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+"72 E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"106
+"103
 } 0
-"186
+"190
 [v _Envio Envio `(uc  1 e 1 0 ]
 {
-"261
+"266
 } 0
 "22 E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
 [v _ASCII ASCII `(uc  1 e 1 0 ]

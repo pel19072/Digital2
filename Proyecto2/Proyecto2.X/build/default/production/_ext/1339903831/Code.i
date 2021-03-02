@@ -2726,6 +2726,7 @@ uint8_t DATE = 0;
 uint8_t MONTH = 0;
 uint8_t YEAR = 0;
 uint8_t RECEPCION_LED = 0;
+uint8_t RECEPCION_ACTIVACION = 0;
 uint8_t RECEPCION_ENTER = 0;
 
 
@@ -2752,7 +2753,23 @@ void __attribute__((picinterrupt(("")))) isr(void) {
         TXREG = Envio();
         PIE1bits.TXIE = 0;
     }
-# 105 "E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c"
+
+    if (PIR1bits.RCIF == 1) {
+        switch (FLAGRX) {
+
+
+
+
+            case 0:
+                FLAGRX++;
+                PORTA = RCREG;
+                break;
+            case 1:
+                FLAGRX = 0;
+                RECEPCION_ENTER = RCREG;
+                break;
+        }
+    }
     (INTCONbits.GIE = 1);
 }
 
@@ -2782,9 +2799,16 @@ void main(void) {
         I2C_Master_Stop();
 
 
-        if (CONTADOR > 10) {
-            PIE1bits.TXIE = 1;
-            CONTADOR = 0;
+        if (RECEPCION_ENTER == 0x0A) {
+            INTCONbits.T0IE = 1;
+            if (CONTADOR > 10) {
+                PIE1bits.TXIE = 1;
+                CONTADOR = 0;
+            }
+        }
+        else {
+            INTCONbits.T0IE = 0;
+            INTCONbits.T0IF = 0;
         }
     }
 }
@@ -2806,7 +2830,7 @@ void Setup(void) {
 
     TRISA = 0;
     TRISB = 0;
-    TRISC = 0;
+    TRISC = 0b10011000;
     TRISD = 0;
     TRISE = 0;
 
@@ -2816,7 +2840,7 @@ void Setup(void) {
     INTCONbits.T0IE = 1;
     INTCONbits.T0IF = 0;
     PIE1bits.TXIE = 1;
-
+    PIE1bits.RCIE = 1;
 
     initOsc(6);
 
@@ -2905,6 +2929,7 @@ uint8_t Envio(void) {
             return ASCII(SECONDS & 0x0F);
             break;
         case 17:
+            RECEPCION_ENTER = 0x00;
             FLAGTX = 0;
             return 0x0A;
             break;

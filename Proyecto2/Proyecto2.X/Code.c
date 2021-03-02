@@ -55,6 +55,7 @@ uint8_t DATE = 0;
 uint8_t MONTH = 0;
 uint8_t YEAR = 0;
 uint8_t RECEPCION_LED = 0;
+uint8_t RECEPCION_ACTIVACION = 0;
 uint8_t RECEPCION_ENTER = 0;
 
 //******************************************************************************
@@ -81,27 +82,23 @@ void __interrupt() isr(void) {
         TXREG = Envio();
         PIE1bits.TXIE = 0;
     }
-//    //INTERUPCION DEL RX
-//    if (PIR1bits.RCIF == 1) {
-//        switch (FLAGRX) {
+    //INTERUPCION DEL RX
+    if (PIR1bits.RCIF == 1) {
+        switch (FLAGRX) {
 //            case 0:
 //                FLAGRX++;
-//                RECEPCION_LED = RCREG;
+//                RECEPCION_ACTIVACION = RCREG;
 //                break;
-//            case 1:
-//                FLAGRX = 0;
-//                RECEPCION_ENTER = RCREG;
-//        }
-//        if (RECEPCION_ENTER == 10) {
-//            if (RECEPCION_LED == 48) {
-//                PORTAbits.RA0 = 1;
-//            } 
-//            else {
-//                PORTAbits.RA0 = 0;
-//            }
-//        }
-//
-//    }
+            case 0:
+                FLAGRX++;
+                PORTA = RCREG;
+                break;
+            case 1:
+                FLAGRX = 0;
+                RECEPCION_ENTER = RCREG;
+                break;
+        }
+    }
     ei(); //VUELVE A HABILITAR LAS INTERRUPCIONES
 }
 
@@ -131,9 +128,16 @@ void main(void) {
         I2C_Master_Stop();
 
         //**********************************************************************
-        if (CONTADOR > 10) {
-            PIE1bits.TXIE = 1; //HABILITA EL ENVIO NUEVAMENTE  
-            CONTADOR = 0; //SE REINICIA EL CONTADOR
+        if (RECEPCION_ENTER == 0x0A) {
+            INTCONbits.T0IE = 1;
+            if (CONTADOR > 10) {
+                PIE1bits.TXIE = 1; //HABILITA EL ENVIO NUEVAMENTE  
+                CONTADOR = 0; //SE REINICIA EL CONTADOR  
+            }
+        }
+        else {
+            INTCONbits.T0IE = 0;
+            INTCONbits.T0IF = 0;
         }
     }
 }
@@ -155,7 +159,7 @@ void Setup(void) {
 
     TRISA = 0; //TODOS OUTPUTS --> LCD
     TRISB = 0; //TODOS OUTPUTS --> SIN USAR
-    TRISC = 0; //TODOS OUTPUTS --> TX Y RX
+    TRISC = 0b10011000; //TODOS OUTPUTS --> TX Y RX
     TRISD = 0; //TODOS OUTPUTS --> EN, RS Y RW
     TRISE = 0; //2 INPUTS --> POTENCIOMETROS
 
@@ -165,7 +169,7 @@ void Setup(void) {
     INTCONbits.T0IE = 1;
     INTCONbits.T0IF = 0;
     PIE1bits.TXIE = 1;
-    //PIE1bits.RCIE = 1;
+    PIE1bits.RCIE = 1;
     //OSCILADOR
     initOsc(6);
     //RX Y TX
@@ -254,6 +258,7 @@ uint8_t Envio(void) {
             return ASCII(SECONDS & 0x0F);
             break;
         case 17:
+            RECEPCION_ENTER = 0x00;
             FLAGTX = 0;
             return 0x0A; //ENTER -> 0x0D PARA PROTEUS | 0x0A ASCII
             break;
