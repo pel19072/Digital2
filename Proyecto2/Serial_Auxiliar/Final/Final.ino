@@ -5,10 +5,11 @@
 #define TXD2 17
 #define IO_LOOP_DELAY 5000
 
-String sensor = "";
+char sensor[19];
 char sensor1 = 0;
 int count = 0;
-char prueba = 0x00;
+char led_blanca = 0x00;
+char led_anaranjada = 0x00;
 unsigned long lastUpdate = 0;
 
 // set up the 'counter' feed
@@ -20,11 +21,6 @@ void setup() {
   // start the serial connection
   Serial.begin(9600);
   Serial2.begin(9600, SERIAL_8N1, RXD2, TXD2);
-
-  // wait for serial monitor to open
-  while (! Serial);
-
-  Serial.print("Connecting to Adafruit IO");
 
   // connect to io.adafruit.com
   io.connect();
@@ -40,12 +36,7 @@ void setup() {
     Serial.print(".");
     delay(500);
   }
-
-  // we are connected
-  Serial.println();
-  Serial.println(io.statusText());
   leds->get();
-
 }
 
 void loop() {
@@ -54,26 +45,27 @@ void loop() {
   // function. it keeps the client connected to
   // io.adafruit.com, and processes any incoming data.
   io.run();
-  Serial2.write(prueba);
-  Serial2.write(0x0A);
-  if (millis() > (lastUpdate + IO_LOOP_DELAY)) {
-    // save count to the 'counter' feed on Adafruit IO
-    secs->save(count);
-    count++;
-    // after publishing, store the current time
-    lastUpdate = millis();
+  if (Serial2.available() > 0) {
+    Serial2.write(led_blanca);
+    Serial2.write(0x0A);
+    Serial2.readBytesUntil(10, sensor, 17);
+    Serial.println(sensor);
+    //prueba = ~prueba;
   }
+  secs->save(sensor);
+  delay(2500);
 }
 
 // this function is called whenever a 'counter' message
 // is received from Adafruit IO. it was attached to
 // the counter feed in the setup() function above.
 void handleMessage(AdafruitIO_Data *data) {
-  Serial.println(data->value());
-  if (data->value() == "I"){
-    prueba = 0xFF;
+  String LED = data->toString();
+  Serial.println(LED);
+  if (LED == "I"){
+    led_blanca = 0x01;
   }
   else{
-    prueba = 0x00;
+    led_blanca = 0x00;
   }
 }
