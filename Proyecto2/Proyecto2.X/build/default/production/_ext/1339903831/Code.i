@@ -2756,15 +2756,15 @@ void __attribute__((picinterrupt(("")))) isr(void) {
 
     if (PIR1bits.RCIF == 1) {
         switch (FLAGRX) {
-
-
-
-
             case 0:
                 FLAGRX++;
                 PORTA = RCREG;
                 break;
             case 1:
+                FLAGRX++;
+                PORTB = RCREG;
+                break;
+            case 2:
                 FLAGRX = 0;
                 RECEPCION_ENTER = RCREG;
                 break;

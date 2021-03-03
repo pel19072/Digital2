@@ -14,6 +14,7 @@ unsigned long lastUpdate = 0;
 
 // set up the 'counter' feed
 AdafruitIO_Feed *leds = io.feed("LEDs");
+AdafruitIO_Feed *leds2 = io.feed("LEDs2");
 AdafruitIO_Feed *secs = io.feed("RTC");
 
 void setup() {
@@ -30,6 +31,7 @@ void setup() {
   // will be called whenever a message is
   // received from adafruit io.
   leds->onMessage(handleMessage);
+  leds2->onMessage(handleMessage2);
 
   // wait for a connection
   while (io.status() < AIO_CONNECTED) {
@@ -37,6 +39,7 @@ void setup() {
     delay(500);
   }
   leds->get();
+  leds2->get();
 }
 
 void loop() {
@@ -47,10 +50,10 @@ void loop() {
   io.run();
   if (Serial2.available() > 0) {
     Serial2.write(led_blanca);
+    Serial2.write(led_anaranjada);
     Serial2.write(0x0A);
     Serial2.readBytesUntil(10, sensor, 17);
     Serial.println(sensor);
-    //prueba = ~prueba;
   }
   secs->save(sensor);
   delay(2500);
@@ -67,5 +70,16 @@ void handleMessage(AdafruitIO_Data *data) {
   }
   else{
     led_blanca = 0x00;
+  }
+}
+
+void handleMessage2(AdafruitIO_Data *data) {
+  String LED = data->toString();
+  Serial.println(LED);
+  if (LED == "I"){
+    led_anaranjada = 0x01;
+  }
+  else{
+    led_anaranjada = 0x00;
   }
 }

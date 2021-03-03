@@ -11,25 +11,21 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\Ricardo\AppData\Local\Temp\s168s.o
-reset_vec CODE 0 0 0 3 2
-end_init CODE 0 E E 3 2
-config CONFIG 4 2007 2007 2 2
 $dist/default/production\Proyecto2.X.production.o
 cinit CODE 0 11 11 14 2
-text1 CODE 0 3A6 3A6 3B 2
-text2 CODE 0 44C 44C 14 2
+text1 CODE 0 3B0 3B0 3B 2
+text2 CODE 0 456 456 14 2
 text3 CODE 0 253 253 5E 2
-text4 CODE 0 3E1 3E1 3A 2
+text4 CODE 0 3EB 3EB 3A 2
 text5 CODE 0 1EB 1EB 68 2
-text6 CODE 0 30E 30E 4C 2
-text7 CODE 0 460 460 D 2
-text8 CODE 0 47A 47A 9 2
-text9 CODE 0 483 483 9 2
-text10 CODE 0 48C 48C 9 2
-text11 CODE 0 41B 41B 31 2
-text12 CODE 0 46D 46D D 2
-text13 CODE 0 35A 35A 4C 2
+text6 CODE 0 364 364 4C 2
+text7 CODE 0 46A 46A D 2
+text8 CODE 0 484 484 9 2
+text9 CODE 0 48D 48D 9 2
+text10 CODE 0 496 496 9 2
+text11 CODE 0 425 425 31 2
+text12 CODE 0 477 477 D 2
+text13 CODE 0 30E 30E 56 2
 text14 CODE 0 25 25 132 2
 text15 CODE 0 2B1 2B1 5D 2
 maintext CODE 0 157 157 94 2
@@ -38,6 +34,10 @@ cstackBANK0 BANK0 1 20 20 17 1
 intentry CODE 0 4 4 A 2
 bssBANK0 BANK0 1 37 37 A 1
 bssCOMMON COMMON 1 7A 7A 4 1
+config CONFIG 4 2007 2007 2 2
+$C:\Users\Ricardo\AppData\Local\Temp\ssbs.o
+reset_vec CODE 0 0 0 3 2
+end_init CODE 0 E E 3 2
 config CONFIG 4 2007 2007 2 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -54,22 +54,22 @@ BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST 495-1FFF 2
+CONST 49F-1FFF 2
 ENTRY 3-3 2
-ENTRY 495-1FFF 2
+ENTRY 49F-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
 CODE 3-3 2
-CODE 495-1FFF 2
+CODE 49F-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
 SFR3 180-18F 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE 495-1FFF 2
+STRCODE 49F-1FFF 2
 STRING 3-3 2
-STRING 495-1FFF 2
+STRING 49F-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -84,27 +84,27 @@ STRING 495-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Proyecto2.X.production.o
-11 cinit CODE >992:C:\Users\Ricardo\AppData\Local\Temp\s168s.s
-11 cinit CODE >995:C:\Users\Ricardo\AppData\Local\Temp\s168s.s
-11 cinit CODE >1048:C:\Users\Ricardo\AppData\Local\Temp\s168s.s
-12 cinit CODE >1049:C:\Users\Ricardo\AppData\Local\Temp\s168s.s
-13 cinit CODE >1050:C:\Users\Ricardo\AppData\Local\Temp\s168s.s
-14 cinit CODE >1051:C:\Users\Ricardo\AppData\Local\Temp\s168s.s
-15 cinit CODE >1054:C:\Users\Ricardo\AppData\Local\Temp\s168s.s
-16 cinit CODE >1055:C:\Users\Ricardo\AppData\Local\Temp\s168s.s
-17 cinit CODE >1056:C:\Users\Ricardo\AppData\Local\Temp\s168s.s
-18 cinit CODE >1057:C:\Users\Ricardo\AppData\Local\Temp\s168s.s
-19 cinit CODE >1058:C:\Users\Ricardo\AppData\Local\Temp\s168s.s
-1A cinit CODE >1059:C:\Users\Ricardo\AppData\Local\Temp\s168s.s
-1B cinit CODE >1060:C:\Users\Ricardo\AppData\Local\Temp\s168s.s
-1C cinit CODE >1061:C:\Users\Ricardo\AppData\Local\Temp\s168s.s
-1D cinit CODE >1062:C:\Users\Ricardo\AppData\Local\Temp\s168s.s
-1E cinit CODE >1063:C:\Users\Ricardo\AppData\Local\Temp\s168s.s
-1F cinit CODE >1064:C:\Users\Ricardo\AppData\Local\Temp\s168s.s
-20 cinit CODE >1065:C:\Users\Ricardo\AppData\Local\Temp\s168s.s
-21 cinit CODE >1071:C:\Users\Ricardo\AppData\Local\Temp\s168s.s
-21 cinit CODE >1073:C:\Users\Ricardo\AppData\Local\Temp\s168s.s
-22 cinit CODE >1074:C:\Users\Ricardo\AppData\Local\Temp\s168s.s
+11 cinit CODE >992:C:\Users\Ricardo\AppData\Local\Temp\ssbs.s
+11 cinit CODE >995:C:\Users\Ricardo\AppData\Local\Temp\ssbs.s
+11 cinit CODE >1048:C:\Users\Ricardo\AppData\Local\Temp\ssbs.s
+12 cinit CODE >1049:C:\Users\Ricardo\AppData\Local\Temp\ssbs.s
+13 cinit CODE >1050:C:\Users\Ricardo\AppData\Local\Temp\ssbs.s
+14 cinit CODE >1051:C:\Users\Ricardo\AppData\Local\Temp\ssbs.s
+15 cinit CODE >1054:C:\Users\Ricardo\AppData\Local\Temp\ssbs.s
+16 cinit CODE >1055:C:\Users\Ricardo\AppData\Local\Temp\ssbs.s
+17 cinit CODE >1056:C:\Users\Ricardo\AppData\Local\Temp\ssbs.s
+18 cinit CODE >1057:C:\Users\Ricardo\AppData\Local\Temp\ssbs.s
+19 cinit CODE >1058:C:\Users\Ricardo\AppData\Local\Temp\ssbs.s
+1A cinit CODE >1059:C:\Users\Ricardo\AppData\Local\Temp\ssbs.s
+1B cinit CODE >1060:C:\Users\Ricardo\AppData\Local\Temp\ssbs.s
+1C cinit CODE >1061:C:\Users\Ricardo\AppData\Local\Temp\ssbs.s
+1D cinit CODE >1062:C:\Users\Ricardo\AppData\Local\Temp\ssbs.s
+1E cinit CODE >1063:C:\Users\Ricardo\AppData\Local\Temp\ssbs.s
+1F cinit CODE >1064:C:\Users\Ricardo\AppData\Local\Temp\ssbs.s
+20 cinit CODE >1065:C:\Users\Ricardo\AppData\Local\Temp\ssbs.s
+21 cinit CODE >1071:C:\Users\Ricardo\AppData\Local\Temp\ssbs.s
+21 cinit CODE >1073:C:\Users\Ricardo\AppData\Local\Temp\ssbs.s
+22 cinit CODE >1074:C:\Users\Ricardo\AppData\Local\Temp\ssbs.s
 4 intentry CODE >72:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
 2B1 text15 CODE >22:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
 2B2 text15 CODE >23:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
@@ -163,74 +163,77 @@ F0 text14 CODE >254:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
 114 text14 CODE >263:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
 116 text14 CODE >265:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
 156 text14 CODE >266:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-35A text13 CODE >72:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-35A text13 CODE >73:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-35B text13 CODE >75:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-35F text13 CODE >76:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-363 text13 CODE >77:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-367 text13 CODE >78:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-368 text13 CODE >81:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-36E text13 CODE >82:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-376 text13 CODE >83:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-379 text13 CODE >86:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-37F text13 CODE >93:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-383 text13 CODE >94:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-385 text13 CODE >95:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-386 text13 CODE >97:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-387 text13 CODE >98:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-38B text13 CODE >99:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-38C text13 CODE >100:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-39C text13 CODE >101:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-39C text13 CODE >102:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-39D text13 CODE >103:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-46D text12 CODE >25:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-46D text12 CODE >26:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-479 text12 CODE >33:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-41B text11 CODE >55:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-41E text11 CODE >57:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-423 text11 CODE >58:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-426 text11 CODE >59:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-42B text11 CODE >60:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-434 text11 CODE >61:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-439 text11 CODE >62:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-440 text11 CODE >63:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-443 text11 CODE >64:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-444 text11 CODE >65:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-444 text11 CODE >66:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-447 text11 CODE >67:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-447 text11 CODE >68:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-448 text11 CODE >69:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-44B text11 CODE >70:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-48C text10 CODE >40:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-48C text10 CODE >41:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-491 text10 CODE >42:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-494 text10 CODE >43:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-483 text9 CODE >35:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-483 text9 CODE >36:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-488 text9 CODE >37:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-48B text9 CODE >38:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-47A text8 CODE >45:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-47A text8 CODE >46:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-47F text8 CODE >47:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-482 text8 CODE >48:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-460 text7 CODE >50:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-463 text7 CODE >51:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-468 text7 CODE >52:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-46C text7 CODE >53:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-30E text6 CODE >269:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-30E text6 CODE >270:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-313 text6 CODE >271:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-319 text6 CODE >272:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-31F text6 CODE >273:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-325 text6 CODE >274:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-32B text6 CODE >275:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-331 text6 CODE >276:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-337 text6 CODE >277:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-33D text6 CODE >278:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-343 text6 CODE >279:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-349 text6 CODE >280:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-34E text6 CODE >281:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-359 text6 CODE >282:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+30E text13 CODE >72:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+30E text13 CODE >73:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+30F text13 CODE >75:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+313 text13 CODE >76:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+317 text13 CODE >77:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+31B text13 CODE >78:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+31C text13 CODE >81:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+322 text13 CODE >82:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+32A text13 CODE >83:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+32D text13 CODE >86:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+333 text13 CODE >89:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+337 text13 CODE >90:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+339 text13 CODE >91:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+33A text13 CODE >93:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+33E text13 CODE >94:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+340 text13 CODE >95:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+341 text13 CODE >97:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+342 text13 CODE >98:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+346 text13 CODE >99:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+347 text13 CODE >100:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+35A text13 CODE >101:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+35A text13 CODE >102:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+35B text13 CODE >103:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+477 text12 CODE >25:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+477 text12 CODE >26:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+483 text12 CODE >33:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+425 text11 CODE >55:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+428 text11 CODE >57:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+42D text11 CODE >58:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+430 text11 CODE >59:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+435 text11 CODE >60:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+43E text11 CODE >61:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+443 text11 CODE >62:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+44A text11 CODE >63:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+44D text11 CODE >64:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+44E text11 CODE >65:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+44E text11 CODE >66:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+451 text11 CODE >67:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+451 text11 CODE >68:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+452 text11 CODE >69:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+455 text11 CODE >70:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+496 text10 CODE >40:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+496 text10 CODE >41:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+49B text10 CODE >42:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+49E text10 CODE >43:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+48D text9 CODE >35:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+48D text9 CODE >36:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+492 text9 CODE >37:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+495 text9 CODE >38:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+484 text8 CODE >45:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+484 text8 CODE >46:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+489 text8 CODE >47:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+48C text8 CODE >48:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+46A text7 CODE >50:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+46D text7 CODE >51:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+472 text7 CODE >52:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+476 text7 CODE >53:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+364 text6 CODE >269:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+364 text6 CODE >270:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+369 text6 CODE >271:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+36F text6 CODE >272:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+375 text6 CODE >273:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+37B text6 CODE >274:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+381 text6 CODE >275:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+387 text6 CODE >276:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+38D text6 CODE >277:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+393 text6 CODE >278:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+399 text6 CODE >279:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+39F text6 CODE >280:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+3A4 text6 CODE >281:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+3AF text6 CODE >282:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
 1EB text5 CODE >5:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
 1EB text5 CODE >13:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
 1F5 text5 CODE >14:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
@@ -247,14 +250,14 @@ F0 text14 CODE >254:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
 244 text5 CODE >27:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
 24A text5 CODE >29:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
 252 text5 CODE >30:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c90\common\__lldiv.c
-3E1 text4 CODE >15:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-3E1 text4 CODE >16:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-3E5 text4 CODE >17:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-3E8 text4 CODE >18:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-417 text4 CODE >19:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-418 text4 CODE >21:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-419 text4 CODE >22:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
-41A text4 CODE >23:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+3EB text4 CODE >15:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+3EB text4 CODE >16:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+3EF text4 CODE >17:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+3F2 text4 CODE >18:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+421 text4 CODE >19:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+422 text4 CODE >21:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+423 text4 CODE >22:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
+424 text4 CODE >23:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.c
 253 text3 CODE >6:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Oscilador.c
 256 text3 CODE >8:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Oscilador.c
 257 text3 CODE >9:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Oscilador.c
@@ -305,43 +308,43 @@ F0 text14 CODE >254:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
 28D text3 CODE >54:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Oscilador.c
 2AF text3 CODE >56:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Oscilador.c
 2B0 text3 CODE >58:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Oscilador.c
-44C text2 CODE >6:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
-44C text2 CODE >8:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
-44F text2 CODE >9:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
-450 text2 CODE >10:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
-451 text2 CODE >11:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
-454 text2 CODE >12:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
-458 text2 CODE >13:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
-459 text2 CODE >14:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
-45A text2 CODE >17:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
-45D text2 CODE >18:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
-45E text2 CODE >19:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
-45F text2 CODE >20:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
-3A6 text1 CODE >149:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-3A6 text1 CODE >151:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-3A9 text1 CODE >152:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-3AA text1 CODE >153:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-3AB text1 CODE >154:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-3AC text1 CODE >155:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-3AD text1 CODE >157:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-3B0 text1 CODE >158:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-3B1 text1 CODE >160:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-3B4 text1 CODE >161:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-3B5 text1 CODE >162:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-3B7 text1 CODE >163:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-3B8 text1 CODE >164:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-3B9 text1 CODE >167:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-3BA text1 CODE >168:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-3BB text1 CODE >169:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-3BC text1 CODE >170:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-3BD text1 CODE >171:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-3BE text1 CODE >172:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-3BF text1 CODE >174:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-3C5 text1 CODE >176:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-3CA text1 CODE >178:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-3CD text1 CODE >179:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-3D1 text1 CODE >181:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
-3E0 text1 CODE >182:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+456 text2 CODE >6:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
+456 text2 CODE >8:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
+459 text2 CODE >9:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
+45A text2 CODE >10:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
+45B text2 CODE >11:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
+45E text2 CODE >12:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
+462 text2 CODE >13:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
+463 text2 CODE >14:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
+464 text2 CODE >17:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
+467 text2 CODE >18:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
+468 text2 CODE >19:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
+469 text2 CODE >20:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/USART.c
+3B0 text1 CODE >149:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+3B0 text1 CODE >151:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+3B3 text1 CODE >152:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+3B4 text1 CODE >153:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+3B5 text1 CODE >154:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+3B6 text1 CODE >155:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+3B7 text1 CODE >157:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+3BA text1 CODE >158:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+3BB text1 CODE >160:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+3BE text1 CODE >161:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+3BF text1 CODE >162:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+3C1 text1 CODE >163:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+3C2 text1 CODE >164:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+3C3 text1 CODE >167:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+3C4 text1 CODE >168:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+3C5 text1 CODE >169:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+3C6 text1 CODE >170:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+3C7 text1 CODE >171:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+3C8 text1 CODE >172:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+3C9 text1 CODE >174:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+3CF text1 CODE >176:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+3D4 text1 CODE >178:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+3D7 text1 CODE >179:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+3DB text1 CODE >181:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
+3EA text1 CODE >182:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
 157 maintext CODE >109:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
 157 maintext CODE >110:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
 15C maintext CODE >111:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
@@ -379,7 +382,7 @@ F0 text14 CODE >254:E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
-__Hspace_0 495 0 ABS 0 - -
+__Hspace_0 49F 0 ABS 0 - -
 __Hspace_1 7E 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
@@ -392,29 +395,29 @@ _DATE 3B 0 BANK0 1 bssBANK0 dist/default/production\Proyecto2.X.production.o
 _HOUR 3D 0 BANK0 1 bssBANK0 dist/default/production\Proyecto2.X.production.o
 _TMR0 1 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 _YEAR 39 0 BANK0 1 bssBANK0 dist/default/production\Proyecto2.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\Ricardo\AppData\Local\Temp\s168s.o
+___sp 0 0 STACK 2 stack C:\Users\Ricardo\AppData\Local\Temp\ssbs.o
 _main 2AE 0 CODE 0 maintext dist/default/production\Proyecto2.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
-start 1C 0 CODE 0 init C:\Users\Ricardo\AppData\Local\Temp\s168s.o
+start 1C 0 CODE 0 init C:\Users\Ricardo\AppData\Local\Temp\ssbs.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 __size_of___lldiv 0 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
 I2C_Master_Read@a 24 0 BANK0 1 cstackBANK0 dist/default/production\Proyecto2.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s168s.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s168s.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s168s.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s168s.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s168s.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\s168s.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\ssbs.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\ssbs.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\ssbs.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\ssbs.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\ssbs.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Ricardo\AppData\Local\Temp\ssbs.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
-_initUART 898 0 CODE 0 text2 dist/default/production\Proyecto2.X.production.o
+_initUART 8AC 0 CODE 0 text2 dist/default/production\Proyecto2.X.production.o
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 I2C_Master_Read@temp 22 0 BANK0 1 cstackBANK0 dist/default/production\Proyecto2.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
-__end_of_initUART 8C0 0 CODE 0 text2 dist/default/production\Proyecto2.X.production.o
+__end_of_initUART 8D4 0 CODE 0 text2 dist/default/production\Proyecto2.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 __size_of_initOsc 0 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 _FLAGRX 7C 0 COMMON 1 bssCOMMON dist/default/production\Proyecto2.X.production.o
@@ -422,8 +425,8 @@ _FLAGTX 7D 0 COMMON 1 bssCOMMON dist/default/production\Proyecto2.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 __end_of___lldiv 4A6 0 CODE 0 text5 dist/default/production\Proyecto2.X.production.o
 _OPTION_REG 81 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\Ricardo\AppData\Local\Temp\s168s.o
-___stacklo 0 0 ABS 0 - C:\Users\Ricardo\AppData\Local\Temp\s168s.o
+___stackhi 0 0 ABS 0 - C:\Users\Ricardo\AppData\Local\Temp\ssbs.o
+___stacklo 0 0 ABS 0 - C:\Users\Ricardo\AppData\Local\Temp\ssbs.o
 __size_of_ASCII 0 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 __size_of_Envio 0 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 _BAUDCTLbits 187 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
@@ -439,7 +442,7 @@ _SSPBUF 13 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 _SSPCON 14 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 _WDTCON 105 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 __end_of_initOsc 562 0 CODE 0 text3 dist/default/production\Proyecto2.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Ricardo\AppData\Local\Temp\s168s.o
+___int_sp 0 0 STACK 2 stack C:\Users\Ricardo\AppData\Local\Temp\ssbs.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -448,7 +451,7 @@ __Hcinit 4A 0 CODE 0 cinit -
 __Hstack 0 0 STACK 2 stack -
 I2C_Master_Write@d 20 0 BANK0 1 cstackBANK0 dist/default/production\Proyecto2.X.production.o
 __Hmaintext 0 0 ABS 0 maintext -
-_I2C_Master_RepeatedStart 918 0 CODE 0 text10 dist/default/production\Proyecto2.X.production.o
+_I2C_Master_RepeatedStart 92C 0 CODE 0 text10 dist/default/production\Proyecto2.X.production.o
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 4012 0 CONFIG 4 config -
 __Lbank0 0 0 ABS 0 bank0 -
@@ -477,28 +480,28 @@ __Ltext 0 0 ABS 0 text -
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 _DAY 3C 0 BANK0 1 bssBANK0 dist/default/production\Proyecto2.X.production.o
-__S0 495 0 ABS 0 - -
+__S0 49F 0 ABS 0 - -
 __S1 7E 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_isr 6B4 0 CODE 0 text13 dist/default/production\Proyecto2.X.production.o
+_isr 61C 0 CODE 0 text13 dist/default/production\Proyecto2.X.production.o
 _CONTADOR 40 0 BANK0 1 bssBANK0 dist/default/production\Proyecto2.X.production.o
 saved_w 7E 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 ASCII@valor 72 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto2.X.production.o
-_I2C_Master_Start 906 0 CODE 0 text9 dist/default/production\Proyecto2.X.production.o
-_I2C_Master_Write 8C0 0 CODE 0 text7 dist/default/production\Proyecto2.X.production.o
-__end_of_isr 74C 0 CODE 0 text13 dist/default/production\Proyecto2.X.production.o
+_I2C_Master_Start 91A 0 CODE 0 text9 dist/default/production\Proyecto2.X.production.o
+_I2C_Master_Write 8D4 0 CODE 0 text7 dist/default/production\Proyecto2.X.production.o
+__end_of_isr 6C8 0 CODE 0 text13 dist/default/production\Proyecto2.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
 ___lldiv@divisor 20 0 BANK0 1 cstackBANK0 dist/default/production\Proyecto2.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Ricardo\AppData\Local\Temp\s168s.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Ricardo\AppData\Local\Temp\ssbs.o
 initOsc@IRCF 22 0 BANK0 1 cstackBANK0 dist/default/production\Proyecto2.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 _RCSTAbits 18 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 _PIE1bits 8C 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
-__ptext10 918 0 CODE 0 text10 dist/default/production\Proyecto2.X.production.o
-__ptext11 836 0 CODE 0 text11 dist/default/production\Proyecto2.X.production.o
-__ptext12 8DA 0 CODE 0 text12 dist/default/production\Proyecto2.X.production.o
-__ptext13 6B4 0 CODE 0 text13 dist/default/production\Proyecto2.X.production.o
+__ptext10 92C 0 CODE 0 text10 dist/default/production\Proyecto2.X.production.o
+__ptext11 84A 0 CODE 0 text11 dist/default/production\Proyecto2.X.production.o
+__ptext12 8EE 0 CODE 0 text12 dist/default/production\Proyecto2.X.production.o
+__ptext13 61C 0 CODE 0 text13 dist/default/production\Proyecto2.X.production.o
 __ptext14 4A 0 CODE 0 text14 dist/default/production\Proyecto2.X.production.o
 __ptext15 562 0 CODE 0 text15 dist/default/production\Proyecto2.X.production.o
 ___lldiv 3D6 0 CODE 0 text5 dist/default/production\Proyecto2.X.production.o
@@ -506,17 +509,17 @@ __pmaintext 2AE 0 CODE 0 maintext dist/default/production\Proyecto2.X.production
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
 __size_of_I2C_Master_RepeatedStart 0 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
-__end_of_I2C_Master_Init 836 0 CODE 0 text4 dist/default/production\Proyecto2.X.production.o
-__end_of_I2C_Master_Read 898 0 CODE 0 text11 dist/default/production\Proyecto2.X.production.o
-__end_of_I2C_Master_Stop 906 0 CODE 0 text8 dist/default/production\Proyecto2.X.production.o
-__end_of_I2C_Master_Wait 8F4 0 CODE 0 text12 dist/default/production\Proyecto2.X.production.o
-__end_of_I2C_Master_Start 918 0 CODE 0 text9 dist/default/production\Proyecto2.X.production.o
+__end_of_I2C_Master_Init 84A 0 CODE 0 text4 dist/default/production\Proyecto2.X.production.o
+__end_of_I2C_Master_Read 8AC 0 CODE 0 text11 dist/default/production\Proyecto2.X.production.o
+__end_of_I2C_Master_Stop 91A 0 CODE 0 text8 dist/default/production\Proyecto2.X.production.o
+__end_of_I2C_Master_Wait 908 0 CODE 0 text12 dist/default/production\Proyecto2.X.production.o
+__end_of_I2C_Master_Start 92C 0 CODE 0 text9 dist/default/production\Proyecto2.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
-__end_of_I2C_Master_Write 8DA 0 CODE 0 text7 dist/default/production\Proyecto2.X.production.o
+__end_of_I2C_Master_Write 8EE 0 CODE 0 text7 dist/default/production\Proyecto2.X.production.o
 _RECEPCION_ENTER 37 0 BANK0 1 bssBANK0 dist/default/production\Proyecto2.X.production.o
 __pbssCOMMON 7A 0 COMMON 1 bssCOMMON dist/default/production\Proyecto2.X.production.o
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
@@ -527,7 +530,7 @@ __size_of_I2C_Master_Start 0 0 ABS 0 - dist/default/production\Proyecto2.X.produ
 __size_of_I2C_Master_Write 0 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 end_of_initialization 42 0 CODE 0 cinit dist/default/production\Proyecto2.X.production.o
 __Hintentry 1C 0 CODE 0 intentry -
-_I2C_RTC_Init 61C 0 CODE 0 text6 dist/default/production\Proyecto2.X.production.o
+_I2C_RTC_Init 6C8 0 CODE 0 text6 dist/default/production\Proyecto2.X.production.o
 __Lstrings 0 0 ABS 0 strings -
 ?___lldiv 20 0 BANK0 1 cstackBANK0 dist/default/production\Proyecto2.X.production.o
 __Hreset_vec 6 0 CODE 0 reset_vec -
@@ -535,23 +538,23 @@ __HbssBANK0 0 0 ABS 0 bssBANK0 -
 _initOsc 4A6 0 CODE 0 text3 dist/default/production\Proyecto2.X.production.o
 _SECONDS 3F 0 BANK0 1 bssBANK0 dist/default/production\Proyecto2.X.production.o
 _SSPCON2bits 91 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
-__ptext1 74C 0 CODE 0 text1 dist/default/production\Proyecto2.X.production.o
-__ptext2 898 0 CODE 0 text2 dist/default/production\Proyecto2.X.production.o
+__ptext1 760 0 CODE 0 text1 dist/default/production\Proyecto2.X.production.o
+__ptext2 8AC 0 CODE 0 text2 dist/default/production\Proyecto2.X.production.o
 __ptext3 4A6 0 CODE 0 text3 dist/default/production\Proyecto2.X.production.o
-__ptext4 7C2 0 CODE 0 text4 dist/default/production\Proyecto2.X.production.o
+__ptext4 7D6 0 CODE 0 text4 dist/default/production\Proyecto2.X.production.o
 __ptext5 3D6 0 CODE 0 text5 dist/default/production\Proyecto2.X.production.o
-__ptext6 61C 0 CODE 0 text6 dist/default/production\Proyecto2.X.production.o
-__ptext7 8C0 0 CODE 0 text7 dist/default/production\Proyecto2.X.production.o
-__ptext8 8F4 0 CODE 0 text8 dist/default/production\Proyecto2.X.production.o
-__ptext9 906 0 CODE 0 text9 dist/default/production\Proyecto2.X.production.o
+__ptext6 6C8 0 CODE 0 text6 dist/default/production\Proyecto2.X.production.o
+__ptext7 8D4 0 CODE 0 text7 dist/default/production\Proyecto2.X.production.o
+__ptext8 908 0 CODE 0 text8 dist/default/production\Proyecto2.X.production.o
+__ptext9 91A 0 CODE 0 text9 dist/default/production\Proyecto2.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
-_I2C_Master_Init 7C2 0 CODE 0 text4 dist/default/production\Proyecto2.X.production.o
-_I2C_Master_Read 836 0 CODE 0 text11 dist/default/production\Proyecto2.X.production.o
-_I2C_Master_Stop 8F4 0 CODE 0 text8 dist/default/production\Proyecto2.X.production.o
-_I2C_Master_Wait 8DA 0 CODE 0 text12 dist/default/production\Proyecto2.X.production.o
+_I2C_Master_Init 7D6 0 CODE 0 text4 dist/default/production\Proyecto2.X.production.o
+_I2C_Master_Read 84A 0 CODE 0 text11 dist/default/production\Proyecto2.X.production.o
+_I2C_Master_Stop 908 0 CODE 0 text8 dist/default/production\Proyecto2.X.production.o
+_I2C_Master_Wait 8EE 0 CODE 0 text12 dist/default/production\Proyecto2.X.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec -
-__end_of_I2C_Master_RepeatedStart 92A 0 CODE 0 text10 dist/default/production\Proyecto2.X.production.o
+__end_of_I2C_Master_RepeatedStart 93E 0 CODE 0 text10 dist/default/production\Proyecto2.X.production.o
 __size_of_I2C_RTC_Init 0 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 __end_of__initialization 42 0 CODE 0 cinit dist/default/production\Proyecto2.X.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
@@ -562,11 +565,11 @@ _TXSTAbits 98 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 _SSPCON2 91 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 _SSPSTAT 94 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 __Hend_init 22 0 CODE 0 end_init -
-__end_of_I2C_RTC_Init 6B4 0 CODE 0 text6 dist/default/production\Proyecto2.X.production.o
+__end_of_I2C_RTC_Init 760 0 CODE 0 text6 dist/default/production\Proyecto2.X.production.o
 __end_of_main 3D6 0 CODE 0 maintext dist/default/production\Proyecto2.X.production.o
 __end_of_ASCII 61C 0 CODE 0 text15 dist/default/production\Proyecto2.X.production.o
 __end_of_Envio 2AE 0 CODE 0 text14 dist/default/production\Proyecto2.X.production.o
-__end_of_Setup 7C2 0 CODE 0 text1 dist/default/production\Proyecto2.X.production.o
+__end_of_Setup 7D6 0 CODE 0 text1 dist/default/production\Proyecto2.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 _ASCII 562 0 CODE 0 text15 dist/default/production\Proyecto2.X.production.o
 _Envio 4A 0 CODE 0 text14 dist/default/production\Proyecto2.X.production.o
@@ -578,7 +581,7 @@ _PORTD 8 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 _PORTE 9 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 _RCREG 1A 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 _SPBRG 99 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
-_Setup 74C 0 CODE 0 text1 dist/default/production\Proyecto2.X.production.o
+_Setup 760 0 CODE 0 text1 dist/default/production\Proyecto2.X.production.o
 _TRISA 85 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 _TRISB 86 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
 _TRISC 87 0 ABS 0 - dist/default/production\Proyecto2.X.production.o
@@ -624,7 +627,7 @@ _MINUTES 3E 0 BANK0 1 bssBANK0 dist/default/production\Proyecto2.X.production.o
 %SEGMENTS
 cstackCOMMON 1 70 70 E 1
 cstackBANK0 1 20 20 21 1
-intentry 0 4 8 491 2
+intentry 0 4 8 49B 2
 reset_vec 0 0 0 3 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section

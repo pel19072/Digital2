@@ -53,6 +53,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1141
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 1141: extern volatile unsigned char RCREG __attribute__((address(0x01A)));
 [v _RCREG `Vuc ~T0 @X0 0 e@26 ]
+"229
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 229: extern volatile unsigned char PORTB __attribute__((address(0x006)));
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
 [p mainexit ]
 "64 E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 64: void Setup(void);
@@ -75,10 +78,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "49
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/I2C.h: 49: void I2C_Master_Stop(void);
 [v _I2C_Master_Stop `(v ~T0 @X0 0 ef ]
-"229 C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h
-[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 229: extern volatile unsigned char PORTB __attribute__((address(0x006)));
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
-"291
+"291 C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h
 [; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\proc\pic16f887.h: 291: extern volatile unsigned char PORTC __attribute__((address(0x007)));
 [v _PORTC `Vuc ~T0 @X0 0 e@7 ]
 "353
@@ -521,21 +521,33 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 87:         switch (FLAGRX) {
 [e $U 143  ]
 {
-"92
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 92:             case 0:
+"88
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 88:             case 0:
 [e :U 144 ]
+"89
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 89:                 FLAGRX++;
+[e ++ _FLAGRX -> -> 1 `i `uc ]
+"90
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 90:                 PORTA = RCREG;
+[e = _PORTA _RCREG ]
+"91
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 91:                 break;
+[e $U 142  ]
+"92
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 92:             case 1:
+[e :U 145 ]
 "93
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 93:                 FLAGRX++;
 [e ++ _FLAGRX -> -> 1 `i `uc ]
 "94
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 94:                 PORTA = RCREG;
-[e = _PORTA _RCREG ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 94:                 PORTB = RCREG;
+[e = _PORTB _RCREG ]
 "95
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 95:                 break;
 [e $U 142  ]
 "96
-[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 96:             case 1:
-[e :U 145 ]
+[; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 96:             case 2:
+[e :U 146 ]
 "97
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 97:                 FLAGRX = 0;
 [e = _FLAGRX -> -> 0 `i `uc ]
@@ -552,6 +564,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 143 ]
 [e [\ -> _FLAGRX `i , $ -> 0 `i 144
  , $ -> 1 `i 145
+ , $ -> 2 `i 146
  142 ]
 [e :U 142 ]
 "101
@@ -580,7 +593,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _I2C_RTC_Init ..  ]
 "112
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 112:     while (1) {
-[e :U 148 ]
+[e :U 149 ]
 {
 "114
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 114:         I2C_Master_Start();
@@ -623,14 +636,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _I2C_Master_Stop ..  ]
 "131
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 131:         if (RECEPCION_ENTER == 0x0A) {
-[e $ ! == -> _RECEPCION_ENTER `i -> 10 `i 150  ]
+[e $ ! == -> _RECEPCION_ENTER `i -> 10 `i 151  ]
 {
 "132
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 132:             INTCONbits.T0IE = 1;
 [e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
 "133
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 133:             if (CONTADOR > 10) {
-[e $ ! > -> _CONTADOR `i -> 10 `i 151  ]
+[e $ ! > -> _CONTADOR `i -> 10 `i 152  ]
 {
 "134
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 134:                 PIE1bits.TXIE = 1;
@@ -641,14 +654,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "136
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 136:             }
 }
-[e :U 151 ]
+[e :U 152 ]
 "137
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 137:         }
 }
-[e $U 152  ]
+[e $U 153  ]
 "138
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 138:         else {
-[e :U 150 ]
+[e :U 151 ]
 {
 "139
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 139:             INTCONbits.T0IE = 0;
@@ -659,16 +672,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "141
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 141:         }
 }
-[e :U 152 ]
+[e :U 153 ]
 "142
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 142:     }
 }
-[e :U 147 ]
-[e $U 148  ]
-[e :U 149 ]
+[e :U 148 ]
+[e $U 149  ]
+[e :U 150 ]
 "143
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 143: }
-[e :UE 146 ]
+[e :UE 147 ]
 }
 "149
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 149: void Setup(void) {
@@ -747,7 +760,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
 "182
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 182: }
-[e :UE 153 ]
+[e :UE 154 ]
 }
 "190
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 190: uint8_t Envio(void) {
@@ -757,232 +770,232 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "191
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 191:     switch (FLAGTX) {
-[e $U 156  ]
+[e $U 157  ]
 {
 "192
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 192:         case 0:
-[e :U 157 ]
+[e :U 158 ]
 "193
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 193:             FLAGTX++;
 [e ++ _FLAGTX -> -> 1 `i `uc ]
 "194
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 194:             return ASCII((YEAR & 0xF0) >> 4);
 [e ) ( _ASCII (1 -> >> & -> _YEAR `i -> 240 `i -> 4 `i `uc ]
-[e $UE 154  ]
+[e $UE 155  ]
 "195
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 195:             break;
-[e $U 155  ]
+[e $U 156  ]
 "196
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 196:         case 1:
-[e :U 158 ]
+[e :U 159 ]
 "197
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 197:             FLAGTX++;
 [e ++ _FLAGTX -> -> 1 `i `uc ]
 "198
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 198:             return ASCII(YEAR & 0x0F);
 [e ) ( _ASCII (1 -> & -> _YEAR `i -> 15 `i `uc ]
-[e $UE 154  ]
+[e $UE 155  ]
 "199
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 199:             break;
-[e $U 155  ]
+[e $U 156  ]
 "200
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 200:         case 2:
-[e :U 159 ]
+[e :U 160 ]
 "201
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 201:             FLAGTX++;
 [e ++ _FLAGTX -> -> 1 `i `uc ]
 "202
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 202:             return 0x2F;
 [e ) -> -> 47 `i `uc ]
-[e $UE 154  ]
+[e $UE 155  ]
 "203
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 203:             break;
-[e $U 155  ]
+[e $U 156  ]
 "204
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 204:         case 3:
-[e :U 160 ]
+[e :U 161 ]
 "205
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 205:             FLAGTX++;
 [e ++ _FLAGTX -> -> 1 `i `uc ]
 "206
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 206:             return ASCII((MONTH & 0x10) >> 4);
 [e ) ( _ASCII (1 -> >> & -> _MONTH `i -> 16 `i -> 4 `i `uc ]
-[e $UE 154  ]
+[e $UE 155  ]
 "207
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 207:             break;
-[e $U 155  ]
+[e $U 156  ]
 "208
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 208:         case 4:
-[e :U 161 ]
+[e :U 162 ]
 "209
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 209:             FLAGTX++;
 [e ++ _FLAGTX -> -> 1 `i `uc ]
 "210
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 210:             return ASCII(MONTH & 0x0F);
 [e ) ( _ASCII (1 -> & -> _MONTH `i -> 15 `i `uc ]
-[e $UE 154  ]
+[e $UE 155  ]
 "211
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 211:             break;
-[e $U 155  ]
+[e $U 156  ]
 "212
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 212:         case 5:
-[e :U 162 ]
+[e :U 163 ]
 "213
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 213:             FLAGTX++;
 [e ++ _FLAGTX -> -> 1 `i `uc ]
 "214
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 214:             return 0x2F;
 [e ) -> -> 47 `i `uc ]
-[e $UE 154  ]
+[e $UE 155  ]
 "215
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 215:             break;
-[e $U 155  ]
+[e $U 156  ]
 "216
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 216:         case 6:
-[e :U 163 ]
+[e :U 164 ]
 "217
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 217:             FLAGTX++;
 [e ++ _FLAGTX -> -> 1 `i `uc ]
 "218
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 218:             return ASCII((DATE & 0x30) >> 4);
 [e ) ( _ASCII (1 -> >> & -> _DATE `i -> 48 `i -> 4 `i `uc ]
-[e $UE 154  ]
+[e $UE 155  ]
 "219
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 219:             break;
-[e $U 155  ]
+[e $U 156  ]
 "220
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 220:         case 7:
-[e :U 164 ]
+[e :U 165 ]
 "221
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 221:             FLAGTX++;
 [e ++ _FLAGTX -> -> 1 `i `uc ]
 "222
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 222:             return ASCII(DATE & 0x0F);
 [e ) ( _ASCII (1 -> & -> _DATE `i -> 15 `i `uc ]
-[e $UE 154  ]
+[e $UE 155  ]
 "223
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 223:             break;
-[e $U 155  ]
+[e $U 156  ]
 "224
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 224:         case 8:
-[e :U 165 ]
+[e :U 166 ]
 "225
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 225:             FLAGTX++;
 [e ++ _FLAGTX -> -> 1 `i `uc ]
 "226
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 226:             return 0x09;
 [e ) -> -> 9 `i `uc ]
-[e $UE 154  ]
+[e $UE 155  ]
 "227
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 227:             break;
-[e $U 155  ]
+[e $U 156  ]
 "228
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 228:         case 9:
-[e :U 166 ]
+[e :U 167 ]
 "229
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 229:             FLAGTX++;
 [e ++ _FLAGTX -> -> 1 `i `uc ]
 "230
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 230:             return ASCII((HOUR & 0x10) >> 4);
 [e ) ( _ASCII (1 -> >> & -> _HOUR `i -> 16 `i -> 4 `i `uc ]
-[e $UE 154  ]
+[e $UE 155  ]
 "231
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 231:             break;
-[e $U 155  ]
+[e $U 156  ]
 "232
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 232:         case 10:
-[e :U 167 ]
+[e :U 168 ]
 "233
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 233:             FLAGTX++;
 [e ++ _FLAGTX -> -> 1 `i `uc ]
 "234
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 234:             return ASCII(HOUR & 0x0F);
 [e ) ( _ASCII (1 -> & -> _HOUR `i -> 15 `i `uc ]
-[e $UE 154  ]
+[e $UE 155  ]
 "235
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 235:             break;
-[e $U 155  ]
+[e $U 156  ]
 "236
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 236:         case 11:
-[e :U 168 ]
+[e :U 169 ]
 "237
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 237:             FLAGTX++;
 [e ++ _FLAGTX -> -> 1 `i `uc ]
 "238
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 238:             return 0x3A;
 [e ) -> -> 58 `i `uc ]
-[e $UE 154  ]
+[e $UE 155  ]
 "239
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 239:             break;
-[e $U 155  ]
+[e $U 156  ]
 "240
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 240:         case 12:
-[e :U 169 ]
+[e :U 170 ]
 "241
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 241:             FLAGTX++;
 [e ++ _FLAGTX -> -> 1 `i `uc ]
 "242
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 242:             return ASCII((MINUTES & 0xF0) >> 4);
 [e ) ( _ASCII (1 -> >> & -> _MINUTES `i -> 240 `i -> 4 `i `uc ]
-[e $UE 154  ]
+[e $UE 155  ]
 "243
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 243:             break;
-[e $U 155  ]
+[e $U 156  ]
 "244
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 244:         case 13:
-[e :U 170 ]
+[e :U 171 ]
 "245
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 245:             FLAGTX++;
 [e ++ _FLAGTX -> -> 1 `i `uc ]
 "246
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 246:             return ASCII(MINUTES & 0x0F);
 [e ) ( _ASCII (1 -> & -> _MINUTES `i -> 15 `i `uc ]
-[e $UE 154  ]
+[e $UE 155  ]
 "247
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 247:             break;
-[e $U 155  ]
+[e $U 156  ]
 "248
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 248:         case 14:
-[e :U 171 ]
+[e :U 172 ]
 "249
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 249:             FLAGTX++;
 [e ++ _FLAGTX -> -> 1 `i `uc ]
 "250
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 250:             return 0x3A;
 [e ) -> -> 58 `i `uc ]
-[e $UE 154  ]
+[e $UE 155  ]
 "251
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 251:             break;
-[e $U 155  ]
+[e $U 156  ]
 "252
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 252:         case 15:
-[e :U 172 ]
+[e :U 173 ]
 "253
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 253:             FLAGTX++;
 [e ++ _FLAGTX -> -> 1 `i `uc ]
 "254
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 254:             return ASCII((SECONDS & 0xF0) >> 4);
 [e ) ( _ASCII (1 -> >> & -> _SECONDS `i -> 240 `i -> 4 `i `uc ]
-[e $UE 154  ]
+[e $UE 155  ]
 "255
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 255:             break;
-[e $U 155  ]
+[e $U 156  ]
 "256
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 256:         case 16:
-[e :U 173 ]
+[e :U 174 ]
 "257
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 257:             FLAGTX++;
 [e ++ _FLAGTX -> -> 1 `i `uc ]
 "258
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 258:             return ASCII(SECONDS & 0x0F);
 [e ) ( _ASCII (1 -> & -> _SECONDS `i -> 15 `i `uc ]
-[e $UE 154  ]
+[e $UE 155  ]
 "259
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 259:             break;
-[e $U 155  ]
+[e $U 156  ]
 "260
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 260:         case 17:
-[e :U 174 ]
+[e :U 175 ]
 "261
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 261:             RECEPCION_ENTER = 0x00;
 [e = _RECEPCION_ENTER -> -> 0 `i `uc ]
@@ -992,38 +1005,38 @@ Version 4.0 HI-TECH Software Intermediate Code
 "263
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 263:             return 0x0A;
 [e ) -> -> 10 `i `uc ]
-[e $UE 154  ]
+[e $UE 155  ]
 "264
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 264:             break;
-[e $U 155  ]
+[e $U 156  ]
 "265
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 265:     }
 }
-[e $U 155  ]
+[e $U 156  ]
+[e :U 157 ]
+[e [\ -> _FLAGTX `i , $ -> 0 `i 158
+ , $ -> 1 `i 159
+ , $ -> 2 `i 160
+ , $ -> 3 `i 161
+ , $ -> 4 `i 162
+ , $ -> 5 `i 163
+ , $ -> 6 `i 164
+ , $ -> 7 `i 165
+ , $ -> 8 `i 166
+ , $ -> 9 `i 167
+ , $ -> 10 `i 168
+ , $ -> 11 `i 169
+ , $ -> 12 `i 170
+ , $ -> 13 `i 171
+ , $ -> 14 `i 172
+ , $ -> 15 `i 173
+ , $ -> 16 `i 174
+ , $ -> 17 `i 175
+ 156 ]
 [e :U 156 ]
-[e [\ -> _FLAGTX `i , $ -> 0 `i 157
- , $ -> 1 `i 158
- , $ -> 2 `i 159
- , $ -> 3 `i 160
- , $ -> 4 `i 161
- , $ -> 5 `i 162
- , $ -> 6 `i 163
- , $ -> 7 `i 164
- , $ -> 8 `i 165
- , $ -> 9 `i 166
- , $ -> 10 `i 167
- , $ -> 11 `i 168
- , $ -> 12 `i 169
- , $ -> 13 `i 170
- , $ -> 14 `i 171
- , $ -> 15 `i 172
- , $ -> 16 `i 173
- , $ -> 17 `i 174
- 155 ]
-[e :U 155 ]
 "266
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 266: }
-[e :UE 154 ]
+[e :UE 155 ]
 }
 "269
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 269: void I2C_RTC_Init(void) {
@@ -1069,5 +1082,5 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "282
 [; ;E:/UVG/Semestre 5/Digital2/Proyecto2/Proyecto2.X/Code.c: 282: }
-[e :UE 175 ]
+[e :UE 176 ]
 }
