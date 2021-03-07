@@ -84,6 +84,9 @@ void __interrupt() isr(void) {
     }
     //INTERUPCION DEL RX
     if (PIR1bits.RCIF == 1) {
+        /*
+        Recibo el estado de las dos LEDs y un indicador (el enter) 
+        */
         switch (FLAGRX) {
             case 0:
                 FLAGRX++;
@@ -108,26 +111,27 @@ void __interrupt() isr(void) {
 
 void main(void) {
     Setup();
-    I2C_RTC_Init();
+    I2C_RTC_Init();     //CONFIGURACIÓN
     while (1) {
         //START to Read 
         I2C_Master_Start();
-        I2C_Master_Write(0xD0);
+        I2C_Master_Write(0xD0); //COLOCO EL POINTER EL RELOJ EN 00h
         I2C_Master_Write(0);
 
         //READ
         I2C_Master_RepeatedStart();
-        I2C_Master_Write(0xD1); //Bloque para guardar los datos del RTC en variables
-        SECONDS = I2C_Master_Read(1); //De una vez se convierten de binario a decimal
-        MINUTES = I2C_Master_Read(1); //De una vez se convierten de binario a decimal
+        I2C_Master_Write(0xD1); //COMIENZO LA LECTURA
+        SECONDS = I2C_Master_Read(1); //COMIENZO A GUARDAR VALORES
+        MINUTES = I2C_Master_Read(1); //EL POINTER DEL RTC AUMENTA SOLO
         HOUR = I2C_Master_Read(1);
-        DAY = I2C_Master_Read(1); //No nos interesa saber el dia       
+        DAY = I2C_Master_Read(1);      
         DATE = I2C_Master_Read(1);
         MONTH = I2C_Master_Read(1);
         YEAR = I2C_Master_Read(0);
         I2C_Master_Stop();
 
         //**********************************************************************
+        //COMIENZA A MANDAR SÍ Y SOLO SÍ EL INDICADOR RECIBIDO ES UN ENTER
         if (RECEPCION_ENTER == 0x0A) {
             INTCONbits.T0IE = 1;
             if (CONTADOR > 10) {
@@ -258,7 +262,8 @@ uint8_t Envio(void) {
             return ASCII(SECONDS & 0x0F);
             break;
         case 17:
-            RECEPCION_ENTER = 0x00;
+            RECEPCION_ENTER = 0x00; //REINICIO EL INDICADOR PARA VOLVER A MANDAR
+                                    //SOLO CUANDO EL ESP32 LO PIDA
             FLAGTX = 0;
             return 0x0A; //ENTER -> 0x0D PARA PROTEUS | 0x0A ASCII
             break;

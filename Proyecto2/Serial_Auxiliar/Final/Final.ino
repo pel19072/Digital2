@@ -5,7 +5,7 @@
 #define TXD2 17
 #define IO_LOOP_DELAY 5000
 
-char sensor[19];
+char sensor[19];  //Buffer que se enviará a Adafruit
 char sensor1 = 0;
 int count = 0;
 char led_blanca = 0x00;
@@ -49,14 +49,24 @@ void loop() {
   // io.adafruit.com, and processes any incoming data.
   io.run();
   if (Serial2.available() > 0) {
+    //Mando los dos estados de las leds y
+    //un indicador (en este caso un enter)
+    //para que el PIC comience a enviar.
     Serial2.write(led_blanca);
     Serial2.write(led_anaranjada);
     Serial2.write(0x0A);
+    //Leo HASTA encontrar el enter, 
+    //el cual es el indicador desde el PIC
     Serial2.readBytesUntil(10, sensor, 17);
     Serial.println(sensor);
   }
-  secs->save(sensor);
-  delay(2500);
+  //Programación defensiva para evitar desfases
+  if (sensor[2] == '/' && sensor[5] == '/') {
+    secs->save(sensor);
+    //Para cumplir con no más de 30 datos por minuto.
+    delay(3000);
+  }
+
 }
 
 // this function is called whenever a 'counter' message
@@ -65,10 +75,12 @@ void loop() {
 void handleMessage(AdafruitIO_Data *data) {
   String LED = data->toString();
   Serial.println(LED);
-  if (LED == "I"){
+  //Según el valor que se mande, 
+  //cambio el estado de las LEDs
+  if (LED == "I") {
     led_blanca = 0x01;
   }
-  else{
+  else {
     led_blanca = 0x00;
   }
 }
@@ -76,10 +88,10 @@ void handleMessage(AdafruitIO_Data *data) {
 void handleMessage2(AdafruitIO_Data *data) {
   String LED = data->toString();
   Serial.println(LED);
-  if (LED == "I"){
+  if (LED == "I") {
     led_anaranjada = 0x01;
   }
-  else{
+  else {
     led_anaranjada = 0x00;
   }
 }
