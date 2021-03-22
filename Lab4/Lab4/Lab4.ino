@@ -107,15 +107,6 @@ void loop() {
       delay(50);
     }
   }
-/*
-  Serial.print("i: ");
-  Serial.print(i);
-  Serial.print("  j: ");
-  Serial.print(j);
-  Serial.print("  S: ");
-  Serial.println(START);
-  delay(200);
-  */
 }
 
 void semaforo(void) {
