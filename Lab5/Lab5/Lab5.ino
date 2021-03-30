@@ -1,8 +1,8 @@
 #include <SPI.h>
 #include <SD.h>
+#include <stdint.h>
 File myFile;
 File root;
-String document = "hola";
 unsigned char eleccion = 0x00;
 
 void show(void);
@@ -27,13 +27,17 @@ void setup()
 void loop()
 {
   eleccion = Serial.read();
-  Serial.println(eleccion);
-  //choice();
+  delay(200);
+  if (eleccion == 48 || eleccion == 49 || eleccion == 50 || eleccion == 51) {
+    choice();
+  }
 }
 
 void show(void) {
   root = SD.open("/");
   printDirectory(root, 0);
+  root.close();
+  Serial.println("Escoja el documento que desea ver:\n1:Yoshi\n2:Peach\n3:Toad");
 }
 
 void printDirectory(File dir, int numTabs) {
@@ -62,36 +66,54 @@ void printDirectory(File dir, int numTabs) {
 
 void choice(void) {
   switch (eleccion) {
-    case 0:
+    case 48:
+      Serial.println("Escoja el documento que desea ver:\n1:Yoshi\n2:Peach\n3:Toad");
       break;
-    case 1:
-      document = "yoshi.txt";
-      Serial.println(document);
-      eleccion = 0;
+    case 49:
+      myFile = SD.open("yoshi.txt");
+      if (myFile) {
+        // read from the file until there's nothing else in it:
+        while (myFile.available()) {
+          Serial.write(myFile.read());
+        }
+        // close the file:
+        myFile.close();
+      } else {
+        // if the file didn't open, print an error:
+        Serial.println("error opening document");
+      }
+      Serial.println("Escoja el documento que desea ver:\n1:Yoshi\n2:Peach\n3:Toad");
       break;
-    case 2:
-      document = "yoshi.txt";
-      Serial.println(document);
-      eleccion = 0;
+    case 50:
+      myFile = SD.open("peach.txt");
+      if (myFile) {
+        // read from the file until there's nothing else in it:
+        while (myFile.available()) {
+          Serial.write(myFile.read());
+        }
+        // close the file:
+        myFile.close();
+      } else {
+        // if the file didn't open, print an error:
+        Serial.println("error opening document");
+      }
+      Serial.println("Escoja el documento que desea ver:\n1:Yoshi\n2:Peach\n3:Toad");
       break;
-    case 3:
-      document = "yoshi.txt";
-      Serial.println(document);
-      eleccion = 0;
+    case 51:
+      myFile = SD.open("toad.txt");
+      if (myFile) {
+        // read from the file until there's nothing else in it:
+        while (myFile.available()) {
+          Serial.write(myFile.read());
+        }
+        // close the file:
+        myFile.close();
+      } else {
+        // if the file didn't open, print an error:
+        Serial.println("error opening document");
+      }
+      Serial.println("Escoja el documento que desea ver:\n1:Yoshi\n2:Peach\n3:Toad");
       break;
   }
-  myFile = SD.open(document);
-  if (myFile) {
-    Serial.println(document);
 
-    // read from the file until there's nothing else in it:
-    while (myFile.available()) {
-      Serial.write(myFile.read());
-    }
-    // close the file:
-    myFile.close();
-  } else {
-    // if the file didn't open, print an error:
-    Serial.println("error opening document");
-  }
 }
