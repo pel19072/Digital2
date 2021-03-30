@@ -3,7 +3,7 @@
 #include <stdint.h>
 File myFile;
 File root;
-unsigned char eleccion = 0x00;
+unsigned char eleccion = 0x00; //Para la lectura serial y escoger lo que se ve
 
 void show(void);
 void choice(void);
@@ -11,7 +11,7 @@ void choice(void);
 void setup()
 {
   Serial.begin(9600);
-  SPI.setModule(0);
+  SPI.setModule(0); //Utiliza al PA_3 como CS
 
   Serial.print("Initializing SD card...");
   pinMode(PA_3, OUTPUT);
@@ -28,6 +28,8 @@ void loop()
 {
   eleccion = Serial.read();
   delay(200);
+  //Solo hace algo si la lectura está entre 0 y 3 -int decimal- o de 48 a 51 -ascii-
+  //Se usó la opción ascii porque eleccion se definió como char
   if (eleccion == 48 || eleccion == 49 || eleccion == 50 || eleccion == 51) {
     choice();
   }
@@ -65,6 +67,7 @@ void printDirectory(File dir, int numTabs) {
 }
 
 void choice(void) {
+  //swtich case para escoger el personaje que desea verse
   switch (eleccion) {
     case 48:
       Serial.println("Escoja el documento que desea ver:\n1:Yoshi\n2:Peach\n3:Toad");
