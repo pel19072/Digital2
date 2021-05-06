@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ImportExportAction">
+		<item key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID" value="com.ti.ccstudio.project.ui.wizards.importexport.ImportMacrosWizard"/>
+		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
+			<item value="com.ti.common.ui.import"/>
+		</list>
+	</section>
+	<section name="WorkbenchPreferenceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="280"/>
+		<item key="DIALOG_Y_ORIGIN" value="9"/>
+	</section>
+	<section name="MemoryDumperFillAction">
+		<item key="com.ti.ccstudio.system.setup.ui.editors.connectionName" value="Stellaris In-Circuit Debug Interface"/>
+		<item key="com.ti.ccstudio.system.setup.ui.editors.connectionType" value="LM_ICDI"/>
+	</section>
+	<section name="org.eclipse.ui.preferences.keysPreferencePage">
+	</section>
+</section>

@@ -1,0 +1,1016 @@
+!SESSION 2021-04-29 19:02:41.763 -----------------------------------------------
+eclipse.buildId=4.14.0.I20191210-0610
+java.version=1.8.0_144
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product com.ti.ccstudio.branding.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product com.ti.ccstudio.branding.product
+
+!ENTRY com.ti.common.core 1 0 2021-04-29 19:02:55.428
+!MESSAGE path=ccs_base/DebugServer
+
+!ENTRY com.ti.common.core 1 0 2021-04-29 19:02:55.429
+!MESSAGE debugServerDir=C:/ti/ccs1030/ccs/ccs_base/DebugServer
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-04-29 19:02:57.717
+!MESSAGE constructor
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-04-29 19:02:57.718
+!MESSAGE done with directories
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-04-29 19:02:57.719
+!MESSAGE loading ti_logger
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-04-29 19:02:57.720
+!MESSAGE Platform os: win32
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-04-29 19:02:57.721
+!MESSAGE loading cToolsIF
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-04-29 19:02:57.724
+!MESSAGE loading cTools
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-04-29 19:02:57.726
+!MESSAGE loading TraceFactory
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-04-29 19:02:57.728
+!MESSAGE loading sqlite3
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-04-29 19:02:57.730
+!MESSAGE loading CloudTrace
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-04-29 19:02:57.742
+!MESSAGE CloudTrace interface loaded
+
+!ENTRY org.eclipse.equinox.event 4 0 2021-04-29 19:03:01.665
+!MESSAGE Exception while dispatching event org.osgi.service.event.Event [topic=org/eclipse/e4/ui/model/application/ApplicationElement/tags/ADD] {ChangedElement=org.eclipse.e4.primaryDataStack=org.eclipse.e4.ui.model.application.ui.basic.impl.PartStackImpl@f6e3b67 (tags: [org.eclipse.e4.primaryDataStack, EditorStack, active, Maximized], contributorURI: null) (widget: CTabFolder {}, renderer: org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer@71c74011, toBeRendered: true, onTop: false, visible: true, containerData: null, accessibilityPhrase: null), org.eclipse.e4.data={ChangedElement=org.eclipse.e4.primaryDataStack=org.eclipse.e4.ui.model.application.ui.basic.impl.PartStackImpl@f6e3b67 (tags: [org.eclipse.e4.primaryDataStack, EditorStack, active, Maximized], contributorURI: null) (widget: CTabFolder {}, renderer: org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer@71c74011, toBeRendered: true, onTop: false, visible: true, containerData: null, accessibilityPhrase: null), AttName=tags, EventType=ADD, Position=3, Widget=CTabFolder {}, NewValue=Maximized}, AttName=tags, EventType=ADD, Position=3, Widget=CTabFolder {}, NewValue=Maximized} to handler org.eclipse.e4.ui.internal.di.UIEventObjectSupplier$UIEventHandler@44f8d884
+!STACK 0
+org.eclipse.e4.core.di.InjectionException: java.lang.IllegalArgumentException: 
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:68)
+	at org.eclipse.e4.ui.internal.di.UIEventObjectSupplier$UIEventHandler.lambda$0(UIEventObjectSupplier.java:64)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:236)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:146)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4629)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application$1.syncExec(E4Application.java:219)
+	at org.eclipse.e4.ui.internal.di.UIEventObjectSupplier$UIEventHandler.handleEvent(UIEventObjectSupplier.java:64)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:205)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:203)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:132)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:75)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:44)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:55)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:63)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.emf.ecore.util.EcoreEList.dispatchNotification(EcoreEList.java:249)
+	at org.eclipse.emf.common.notify.impl.NotifyingListImpl.addUnique(NotifyingListImpl.java:304)
+	at org.eclipse.emf.common.util.AbstractEList.add(AbstractEList.java:304)
+	at org.eclipse.ui.internal.WorkbenchIntroManager.setIntroStandby(WorkbenchIntroManager.java:200)
+	at org.eclipse.ui.internal.WorkbenchIntroManager.showIntro(WorkbenchIntroManager.java:139)
+	at org.eclipse.ui.application.WorkbenchWindowAdvisor.openIntro(WorkbenchWindowAdvisor.java:188)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchWindowAdvisor.openIntro(IDEWorkbenchWindowAdvisor.java:572)
+	at org.eclipse.ui.internal.WorkbenchWindow.setup(WorkbenchWindow.java:963)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:1002)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:139)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.inject(InjectorImpl.java:95)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.inject(ContextInjectionFactory.java:83)
+	at org.eclipse.ui.internal.Workbench.createWorkbenchWindow(Workbench.java:1505)
+	at org.eclipse.ui.internal.StandardTrim.createStatusLine(StandardTrim.java:119)
+	at org.eclipse.ui.internal.StandardTrim.createWidget(StandardTrim.java:48)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:1002)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:139)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:408)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:345)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:227)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:94)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:60)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ToolControlRenderer.createWidget(ToolControlRenderer.java:129)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:1002)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:662)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:768)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:739)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.TrimBarRenderer.processContents(TrimBarRenderer.java:134)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:676)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$1.run(PartRenderingEngine.java:547)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:531)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer.processContents(WBWRenderer.java:687)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:676)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:768)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$0(PartRenderingEngine.java:739)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:733)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:717)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1086)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1049)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:660)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:559)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:154)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+Caused by: java.lang.IllegalArgumentException: 
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:66)
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:50)
+	at org.eclipse.e4.ui.internal.workbench.ModelServiceImpl.findElementsRecursive(ModelServiceImpl.java:176)
+	at org.eclipse.e4.ui.internal.workbench.ModelServiceImpl.findElements(ModelServiceImpl.java:438)
+	at org.eclipse.e4.ui.internal.workbench.ModelServiceImpl.findElements(ModelServiceImpl.java:431)
+	at org.eclipse.e4.ui.workbench.addons.minmax.MinMaxAddon.findValidElementsToMinimize(MinMaxAddon.java:824)
+	at org.eclipse.e4.ui.workbench.addons.minmax.MinMaxAddon.getElementsToMinimize(MinMaxAddon.java:767)
+	at org.eclipse.e4.ui.workbench.addons.minmax.MinMaxAddon.maximize(MinMaxAddon.java:696)
+	at org.eclipse.e4.ui.workbench.addons.minmax.MinMaxAddon.subscribeTopicTagsChanged(MinMaxAddon.java:387)
+	at sun.reflect.GeneratedMethodAccessor12.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	... 92 more
+
+!ENTRY com.ti.ccstudio.project.ui.webcontent 1 0 2021-04-29 19:03:01.944
+!MESSAGE CCS HTTP adapter started! [ccs.port:52680] - Open 'http://localhost:52680/ide' in web browser to see listing of available APIs...
+
+!ENTRY com.ti.ccstudio.ui 1 0 2021-04-29 19:03:03.334
+!MESSAGE CCS IDE session started!
+	CCS build: 10.3.0.00007
+	CCS location: C:/ti/ccs1030/ccs
+	Workspace location: C:/Users/Ricardo/workspace_v10
+!SESSION 2021-04-29 19:08:16.546 -----------------------------------------------
+eclipse.buildId=4.14.0.I20191210-0610
+java.version=1.8.0_144
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product com.ti.ccstudio.branding.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product com.ti.ccstudio.branding.product
+
+!ENTRY com.ti.common.core 1 0 2021-04-29 19:08:17.739
+!MESSAGE path=ccs_base/DebugServer
+
+!ENTRY com.ti.common.core 1 0 2021-04-29 19:08:17.739
+!MESSAGE debugServerDir=C:/ti/ccs1030/ccs/ccs_base/DebugServer
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-04-29 19:08:20.401
+!MESSAGE constructor
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-04-29 19:08:20.402
+!MESSAGE done with directories
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-04-29 19:08:20.402
+!MESSAGE loading ti_logger
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-04-29 19:08:20.404
+!MESSAGE Platform os: win32
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-04-29 19:08:20.404
+!MESSAGE loading cToolsIF
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-04-29 19:08:20.406
+!MESSAGE loading cTools
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-04-29 19:08:20.408
+!MESSAGE loading TraceFactory
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-04-29 19:08:20.409
+!MESSAGE loading sqlite3
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-04-29 19:08:20.410
+!MESSAGE loading CloudTrace
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-04-29 19:08:20.416
+!MESSAGE CloudTrace interface loaded
+
+!ENTRY com.ti.ccstudio.project.ui.webcontent 1 0 2021-04-29 19:08:21.633
+!MESSAGE CCS HTTP adapter started! [ccs.port:52760] - Open 'http://localhost:52760/ide' in web browser to see listing of available APIs...
+
+!ENTRY com.ti.ccstudio.ui 1 0 2021-04-29 19:08:23.634
+!MESSAGE CCS IDE session started!
+	CCS build: 10.3.0.00007
+	CCS location: C:/ti/ccs1030/ccs
+	Workspace location: C:/Users/Ricardo/workspace_v10
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-04-29 19:11:34.211
+!MESSAGE Indexed 'Lab6' (2 sources, 4 headers) in 0.288 sec: 52 declarations; 236 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+!SESSION 2021-05-03 18:21:29.996 -----------------------------------------------
+eclipse.buildId=4.14.0.I20191210-0610
+java.version=1.8.0_144
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product com.ti.ccstudio.branding.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product com.ti.ccstudio.branding.product
+
+!ENTRY com.ti.common.core 1 0 2021-05-03 18:21:33.326
+!MESSAGE path=ccs_base/DebugServer
+
+!ENTRY com.ti.common.core 1 0 2021-05-03 18:21:33.328
+!MESSAGE debugServerDir=C:/ti/ccs1030/ccs/ccs_base/DebugServer
+
+!ENTRY com.ti.ccstudio.ui 1 0 2021-05-03 18:21:55.334
+!MESSAGE CCS IDE session started!
+	CCS build: 10.3.0.00007
+	CCS location: C:/ti/ccs1030/ccs
+	Workspace location: C:/Users/Ricardo/workspace_v10
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-03 18:21:55.694
+!MESSAGE constructor
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-03 18:21:55.695
+!MESSAGE done with directories
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-03 18:21:55.696
+!MESSAGE loading ti_logger
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-03 18:21:55.697
+!MESSAGE Platform os: win32
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-03 18:21:55.698
+!MESSAGE loading cToolsIF
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-03 18:21:55.737
+!MESSAGE loading cTools
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-03 18:21:55.776
+!MESSAGE loading TraceFactory
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-03 18:21:55.810
+!MESSAGE loading sqlite3
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-03 18:21:55.839
+!MESSAGE loading CloudTrace
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-03 18:21:55.949
+!MESSAGE CloudTrace interface loaded
+
+!ENTRY com.ti.ccstudio.project.ui.webcontent 1 0 2021-05-03 18:21:56.034
+!MESSAGE CCS HTTP adapter started! [ccs.port:51838] - Open 'http://localhost:51838/ide' in web browser to see listing of available APIs...
+
+!ENTRY org.eclipse.ui 2 2 2021-05-03 18:44:19.207
+!MESSAGE com.ti.ccstudio.system.setup.ui.views.TargetConfigurationView: Deprecated relationship "fast" should be converted to "stack".
+
+!ENTRY com.ti.chromium.browser 4 0 2021-05-03 18:55:03.432
+!MESSAGE Render channel is already closed.
+!STACK 0
+java.lang.IllegalStateException: Render channel is already closed.
+	at com.teamdev.jxbrowser.chromium.internal.RenderChannelAccessor.a(SourceFile:82)
+	at com.teamdev.jxbrowser.chromium.internal.RenderChannelAccessor.send(SourceFile:55)
+	at com.teamdev.jxbrowser.chromium.Browser.executeJavaScript(SourceFile:2110)
+	at com.teamdev.jxbrowser.chromium.Browser.executeJavaScript(SourceFile:2062)
+	at com.ti.chromium.browser.JxBrowser.lambda$12(JxBrowser.java:524)
+	at com.ti.chromium.browser.internal.jxbrowser.BrowserTaskExecutor$2.call(BrowserTaskExecutor.java:68)
+	at com.ti.chromium.browser.internal.jxbrowser.BrowserTaskExecutor$2.call(BrowserTaskExecutor.java:1)
+	at com.ti.chromium.browser.internal.jxbrowser.BrowserTaskExecutor.execute(BrowserTaskExecutor.java:56)
+	at com.ti.chromium.browser.internal.jxbrowser.BrowserTaskExecutor.execute(BrowserTaskExecutor.java:65)
+	at com.ti.chromium.browser.JxBrowser.execute(JxBrowser.java:524)
+	at com.ti.browser.internal.TIBrowser.execute(TIBrowser.java:329)
+	at com.ti.ccstudio.webcontent.cloudagent.CloudAgentBrowserExtension.changed(CloudAgentBrowserExtension.java:33)
+	at com.ti.ccstudio.webcontent.cloudagent.CloudAgentBrowserExtension.init(CloudAgentBrowserExtension.java:28)
+	at com.ti.ccstudio.webcontent.internal.CommonBrowserExtensionContributor.init(CommonBrowserExtensionContributor.java:29)
+	at com.ti.browser.internal.TIBrowser$1.run(TIBrowser.java:103)
+	at com.ti.chromium.browser.JxBrowser$4.onScriptContextCreated(JxBrowser.java:351)
+	at com.teamdev.jxbrowser.chromium.Browser$d.b(SourceFile:3647)
+	at com.teamdev.jxbrowser.chromium.Browser$d.onMessageReceived(SourceFile:5616)
+	at com.teamdev.jxbrowser.chromium.internal.ipc.q.a(SourceFile:1084)
+	at com.teamdev.jxbrowser.chromium.internal.ipc.r.run(SourceFile:68)
+	at com.teamdev.jxbrowser.chromium.internal.r.run(SourceFile:79)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.ti.chromium.browser 4 0 2021-05-03 18:55:03.433
+!MESSAGE Render channel is already closed.
+!STACK 0
+java.lang.IllegalStateException: Render channel is already closed.
+	at com.teamdev.jxbrowser.chromium.internal.RenderChannelAccessor.a(SourceFile:82)
+	at com.teamdev.jxbrowser.chromium.internal.RenderChannelAccessor.send(SourceFile:55)
+	at com.teamdev.jxbrowser.chromium.Browser.executeJavaScript(SourceFile:2110)
+	at com.teamdev.jxbrowser.chromium.Browser.executeJavaScript(SourceFile:2062)
+	at com.ti.chromium.browser.JxBrowser.lambda$12(JxBrowser.java:524)
+	at com.ti.chromium.browser.internal.jxbrowser.BrowserTaskExecutor$2.call(BrowserTaskExecutor.java:68)
+	at com.ti.chromium.browser.internal.jxbrowser.BrowserTaskExecutor$2.call(BrowserTaskExecutor.java:1)
+	at com.ti.chromium.browser.internal.jxbrowser.BrowserTaskExecutor.execute(BrowserTaskExecutor.java:56)
+	at com.ti.chromium.browser.internal.jxbrowser.BrowserTaskExecutor.execute(BrowserTaskExecutor.java:65)
+	at com.ti.chromium.browser.JxBrowser.execute(JxBrowser.java:524)
+	at com.ti.browser.internal.TIBrowser.execute(TIBrowser.java:329)
+	at com.ti.ccstudio.webcontent.internal.ABrowserExtension.createNamespaces(ABrowserExtension.java:45)
+	at com.ti.ccstudio.webcontent.internal.ABrowserExtension.init(ABrowserExtension.java:26)
+	at com.ti.ccstudio.webcontent.internal.DebugUIBrowserExtension.init(DebugUIBrowserExtension.java:203)
+	at com.ti.ccstudio.webcontent.internal.CommonBrowserExtensionContributor.init(CommonBrowserExtensionContributor.java:30)
+	at com.ti.browser.internal.TIBrowser$1.run(TIBrowser.java:103)
+	at com.ti.chromium.browser.JxBrowser$4.onScriptContextCreated(JxBrowser.java:351)
+	at com.teamdev.jxbrowser.chromium.Browser$d.b(SourceFile:3647)
+	at com.teamdev.jxbrowser.chromium.Browser$d.onMessageReceived(SourceFile:5616)
+	at com.teamdev.jxbrowser.chromium.internal.ipc.q.a(SourceFile:1084)
+	at com.teamdev.jxbrowser.chromium.internal.ipc.r.run(SourceFile:68)
+	at com.teamdev.jxbrowser.chromium.internal.r.run(SourceFile:79)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.ti.chromium.browser 4 0 2021-05-03 18:55:03.434
+!MESSAGE Render channel is already closed.
+!STACK 0
+java.lang.IllegalStateException: Render channel is already closed.
+	at com.teamdev.jxbrowser.chromium.internal.RenderChannelAccessor.a(SourceFile:82)
+	at com.teamdev.jxbrowser.chromium.internal.RenderChannelAccessor.send(SourceFile:55)
+	at com.teamdev.jxbrowser.chromium.Browser.executeJavaScript(SourceFile:2110)
+	at com.teamdev.jxbrowser.chromium.Browser.executeJavaScript(SourceFile:2062)
+	at com.ti.chromium.browser.JxBrowser.lambda$12(JxBrowser.java:524)
+	at com.ti.chromium.browser.internal.jxbrowser.BrowserTaskExecutor$2.call(BrowserTaskExecutor.java:68)
+	at com.ti.chromium.browser.internal.jxbrowser.BrowserTaskExecutor$2.call(BrowserTaskExecutor.java:1)
+	at com.ti.chromium.browser.internal.jxbrowser.BrowserTaskExecutor.execute(BrowserTaskExecutor.java:56)
+	at com.ti.chromium.browser.internal.jxbrowser.BrowserTaskExecutor.execute(BrowserTaskExecutor.java:65)
+	at com.ti.chromium.browser.JxBrowser.execute(JxBrowser.java:524)
+	at com.ti.browser.internal.TIBrowser.execute(TIBrowser.java:329)
+	at com.ti.ccstudio.webcontent.internal.ABrowserExtension.createNamespaces(ABrowserExtension.java:46)
+	at com.ti.ccstudio.webcontent.internal.ABrowserExtension.init(ABrowserExtension.java:26)
+	at com.ti.ccstudio.webcontent.internal.DebugUIBrowserExtension.init(DebugUIBrowserExtension.java:203)
+	at com.ti.ccstudio.webcontent.internal.CommonBrowserExtensionContributor.init(CommonBrowserExtensionContributor.java:30)
+	at com.ti.browser.internal.TIBrowser$1.run(TIBrowser.java:103)
+	at com.ti.chromium.browser.JxBrowser$4.onScriptContextCreated(JxBrowser.java:351)
+	at com.teamdev.jxbrowser.chromium.Browser$d.b(SourceFile:3647)
+	at com.teamdev.jxbrowser.chromium.Browser$d.onMessageReceived(SourceFile:5616)
+	at com.teamdev.jxbrowser.chromium.internal.ipc.q.a(SourceFile:1084)
+	at com.teamdev.jxbrowser.chromium.internal.ipc.r.run(SourceFile:68)
+	at com.teamdev.jxbrowser.chromium.internal.r.run(SourceFile:79)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.ti.chromium.browser 4 0 2021-05-03 18:55:03.435
+!MESSAGE Render channel is already closed.
+!STACK 0
+java.lang.IllegalStateException: Render channel is already closed.
+	at com.teamdev.jxbrowser.chromium.internal.RenderChannelAccessor.a(SourceFile:82)
+	at com.teamdev.jxbrowser.chromium.internal.RenderChannelAccessor.send(SourceFile:55)
+	at com.teamdev.jxbrowser.chromium.Browser.executeJavaScript(SourceFile:2110)
+	at com.teamdev.jxbrowser.chromium.Browser.executeJavaScript(SourceFile:2062)
+	at com.ti.chromium.browser.JxBrowser.lambda$12(JxBrowser.java:524)
+	at com.ti.chromium.browser.internal.jxbrowser.BrowserTaskExecutor$2.call(BrowserTaskExecutor.java:68)
+	at com.ti.chromium.browser.internal.jxbrowser.BrowserTaskExecutor$2.call(BrowserTaskExecutor.java:1)
+	at com.ti.chromium.browser.internal.jxbrowser.BrowserTaskExecutor.execute(BrowserTaskExecutor.java:56)
+	at com.ti.chromium.browser.internal.jxbrowser.BrowserTaskExecutor.execute(BrowserTaskExecutor.java:65)
+	at com.ti.chromium.browser.JxBrowser.execute(JxBrowser.java:524)
+	at com.ti.browser.internal.TIBrowser.execute(TIBrowser.java:329)
+	at com.ti.ccstudio.webcontent.internal.ABrowserExtension.createNamespaces(ABrowserExtension.java:47)
+	at com.ti.ccstudio.webcontent.internal.ABrowserExtension.init(ABrowserExtension.java:26)
+	at com.ti.ccstudio.webcontent.internal.DebugUIBrowserExtension.init(DebugUIBrowserExtension.java:203)
+	at com.ti.ccstudio.webcontent.internal.CommonBrowserExtensionContributor.init(CommonBrowserExtensionContributor.java:30)
+	at com.ti.browser.internal.TIBrowser$1.run(TIBrowser.java:103)
+	at com.ti.chromium.browser.JxBrowser$4.onScriptContextCreated(JxBrowser.java:351)
+	at com.teamdev.jxbrowser.chromium.Browser$d.b(SourceFile:3647)
+	at com.teamdev.jxbrowser.chromium.Browser$d.onMessageReceived(SourceFile:5616)
+	at com.teamdev.jxbrowser.chromium.internal.ipc.q.a(SourceFile:1084)
+	at com.teamdev.jxbrowser.chromium.internal.ipc.r.run(SourceFile:68)
+	at com.teamdev.jxbrowser.chromium.internal.r.run(SourceFile:79)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.ti.chromium.browser 4 0 2021-05-03 18:55:03.436
+!MESSAGE Render channel is already closed.
+!STACK 0
+java.lang.IllegalStateException: Render channel is already closed.
+	at com.teamdev.jxbrowser.chromium.internal.RenderChannelAccessor.a(SourceFile:82)
+	at com.teamdev.jxbrowser.chromium.internal.RenderChannelAccessor.send(SourceFile:55)
+	at com.teamdev.jxbrowser.chromium.Browser.executeJavaScript(SourceFile:2110)
+	at com.teamdev.jxbrowser.chromium.Browser.executeJavaScript(SourceFile:2062)
+	at com.ti.chromium.browser.JxBrowser.lambda$12(JxBrowser.java:524)
+	at com.ti.chromium.browser.internal.jxbrowser.BrowserTaskExecutor$2.call(BrowserTaskExecutor.java:68)
+	at com.ti.chromium.browser.internal.jxbrowser.BrowserTaskExecutor$2.call(BrowserTaskExecutor.java:1)
+	at com.ti.chromium.browser.internal.jxbrowser.BrowserTaskExecutor.execute(BrowserTaskExecutor.java:56)
+	at com.ti.chromium.browser.internal.jxbrowser.BrowserTaskExecutor.execute(BrowserTaskExecutor.java:65)
+	at com.ti.chromium.browser.JxBrowser.execute(JxBrowser.java:524)
+	at com.ti.browser.internal.TIBrowser.execute(TIBrowser.java:329)
+	at com.ti.ccstudio.webcontent.internal.ABrowserExtension.createNamespaces(ABrowserExtension.java:48)
+	at com.ti.ccstudio.webcontent.internal.ABrowserExtension.init(ABrowserExtension.java:26)
+	at com.ti.ccstudio.webcontent.internal.DebugUIBrowserExtension.init(DebugUIBrowserExtension.java:203)
+	at com.ti.ccstudio.webcontent.internal.CommonBrowserExtensionContributor.init(CommonBrowserExtensionContributor.java:30)
+	at com.ti.browser.internal.TIBrowser$1.run(TIBrowser.java:103)
+	at com.ti.chromium.browser.JxBrowser$4.onScriptContextCreated(JxBrowser.java:351)
+	at com.teamdev.jxbrowser.chromium.Browser$d.b(SourceFile:3647)
+	at com.teamdev.jxbrowser.chromium.Browser$d.onMessageReceived(SourceFile:5616)
+	at com.teamdev.jxbrowser.chromium.internal.ipc.q.a(SourceFile:1084)
+	at com.teamdev.jxbrowser.chromium.internal.ipc.r.run(SourceFile:68)
+	at com.teamdev.jxbrowser.chromium.internal.r.run(SourceFile:79)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.ti.chromium.browser 4 0 2021-05-03 18:55:03.436
+!MESSAGE Render channel is already closed.
+!STACK 0
+java.lang.IllegalStateException: Render channel is already closed.
+	at com.teamdev.jxbrowser.chromium.internal.RenderChannelAccessor.a(SourceFile:82)
+	at com.teamdev.jxbrowser.chromium.internal.RenderChannelAccessor.send(SourceFile:55)
+	at com.teamdev.jxbrowser.chromium.Browser.executeJavaScript(SourceFile:2110)
+	at com.teamdev.jxbrowser.chromium.Browser.executeJavaScript(SourceFile:2062)
+	at com.ti.chromium.browser.JxBrowser.lambda$12(JxBrowser.java:524)
+	at com.ti.chromium.browser.internal.jxbrowser.BrowserTaskExecutor$2.call(BrowserTaskExecutor.java:68)
+	at com.ti.chromium.browser.internal.jxbrowser.BrowserTaskExecutor$2.call(BrowserTaskExecutor.java:1)
+	at com.ti.chromium.browser.internal.jxbrowser.BrowserTaskExecutor.execute(BrowserTaskExecutor.java:56)
+	at com.ti.chromium.browser.internal.jxbrowser.BrowserTaskExecutor.execute(BrowserTaskExecutor.java:65)
+	at com.ti.chromium.browser.JxBrowser.execute(JxBrowser.java:524)
+	at com.ti.browser.internal.TIBrowser.execute(TIBrowser.java:329)
+	at com.ti.ccstudio.webcontent.internal.ABrowserExtension.createNamespaces(ABrowserExtension.java:49)
+	at com.ti.ccstudio.webcontent.internal.ABrowserExtension.init(ABrowserExtension.java:26)
+	at com.ti.ccstudio.webcontent.internal.DebugUIBrowserExtension.init(DebugUIBrowserExtension.java:203)
+	at com.ti.ccstudio.webcontent.internal.CommonBrowserExtensionContributor.init(CommonBrowserExtensionContributor.java:30)
+	at com.ti.browser.internal.TIBrowser$1.run(TIBrowser.java:103)
+	at com.ti.chromium.browser.JxBrowser$4.onScriptContextCreated(JxBrowser.java:351)
+	at com.teamdev.jxbrowser.chromium.Browser$d.b(SourceFile:3647)
+	at com.teamdev.jxbrowser.chromium.Browser$d.onMessageReceived(SourceFile:5616)
+	at com.teamdev.jxbrowser.chromium.internal.ipc.q.a(SourceFile:1084)
+	at com.teamdev.jxbrowser.chromium.internal.ipc.r.run(SourceFile:68)
+	at com.teamdev.jxbrowser.chromium.internal.r.run(SourceFile:79)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.ti.chromium.browser 4 0 2021-05-03 18:55:03.451
+!MESSAGE Render channel is already closed.
+!STACK 0
+java.lang.IllegalStateException: Render channel is already closed.
+	at com.teamdev.jxbrowser.chromium.internal.RenderChannelAccessor.a(SourceFile:82)
+	at com.teamdev.jxbrowser.chromium.internal.RenderChannelAccessor.post(SourceFile:61)
+	at com.teamdev.jxbrowser.chromium.Browser.executeJavaScriptAndReturnValue(SourceFile:2139)
+	at com.teamdev.jxbrowser.chromium.Browser.executeJavaScriptAndReturnValue(SourceFile:2082)
+	at com.ti.chromium.browser.JxBrowser.lambda$13(JxBrowser.java:531)
+	at com.ti.chromium.browser.internal.jxbrowser.BrowserTaskExecutor$2.call(BrowserTaskExecutor.java:68)
+	at com.ti.chromium.browser.internal.jxbrowser.BrowserTaskExecutor$2.call(BrowserTaskExecutor.java:1)
+	at com.ti.chromium.browser.internal.jxbrowser.BrowserTaskExecutor.execute(BrowserTaskExecutor.java:56)
+	at com.ti.chromium.browser.internal.jxbrowser.BrowserTaskExecutor.execute(BrowserTaskExecutor.java:65)
+	at com.ti.chromium.browser.JxBrowser.setProperty(JxBrowser.java:530)
+	at com.ti.browser.internal.TIBrowser.setProperty(TIBrowser.java:480)
+	at com.ti.ccstudio.webcontent.internal.DebugUIBrowserExtension$DebugEventHandler.updateDebugContext(DebugUIBrowserExtension.java:188)
+	at com.ti.ccstudio.webcontent.internal.DebugUIBrowserExtension$DebugEventHandler.<init>(DebugUIBrowserExtension.java:127)
+	at com.ti.ccstudio.webcontent.internal.DebugUIBrowserExtension.init(DebugUIBrowserExtension.java:205)
+	at com.ti.ccstudio.webcontent.internal.CommonBrowserExtensionContributor.init(CommonBrowserExtensionContributor.java:30)
+	at com.ti.browser.internal.TIBrowser$1.run(TIBrowser.java:103)
+	at com.ti.chromium.browser.JxBrowser$4.onScriptContextCreated(JxBrowser.java:351)
+	at com.teamdev.jxbrowser.chromium.Browser$d.b(SourceFile:3647)
+	at com.teamdev.jxbrowser.chromium.Browser$d.onMessageReceived(SourceFile:5616)
+	at com.teamdev.jxbrowser.chromium.internal.ipc.q.a(SourceFile:1084)
+	at com.teamdev.jxbrowser.chromium.internal.ipc.r.run(SourceFile:68)
+	at com.teamdev.jxbrowser.chromium.internal.r.run(SourceFile:79)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.ti.ccstudio.debug 1 0 2021-05-03 21:16:41.951
+!MESSAGE DS_ERROR: CORTEX_M4_0: Error: Debug Port error occurred.
+
+
+!ENTRY com.ti.ccstudio.debug 1 0 2021-05-03 21:16:41.955
+!MESSAGE DS_ERROR: CORTEX_M4_0: Trouble Halting Target CPU 
+
+
+!ENTRY org.eclipse.ui.console 4 2 2021-05-04 22:11:23.728
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.console".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.propertyChange(BuildConsolePage.java:259)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.run(AbstractConsole.java:97)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.notify(AbstractConsole.java:112)
+	at org.eclipse.ui.console.AbstractConsole.firePropertyChange(AbstractConsole.java:230)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsole.setBackground(BuildConsole.java:133)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager.propertyChange(BuildConsoleManager.java:338)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore$2.run(ScopedPreferenceStore.java:325)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.firePropertyChangeEvent(ScopedPreferenceStore.java:322)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.lambda$0(ScopedPreferenceStore.java:171)
+	at org.eclipse.core.internal.preferences.EclipsePreferences$2.run(EclipsePreferences.java:851)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:854)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.remove(EclipsePreferences.java:961)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1458)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1452)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.lambda$0(PartRenderingEngine.java:1441)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4175)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4167)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3634)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:277)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:166)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY org.eclipse.ui.console 4 120 2021-05-04 22:11:23.729
+!MESSAGE Exception occurred during console property change notification.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.propertyChange(BuildConsolePage.java:259)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.run(AbstractConsole.java:97)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.notify(AbstractConsole.java:112)
+	at org.eclipse.ui.console.AbstractConsole.firePropertyChange(AbstractConsole.java:230)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsole.setBackground(BuildConsole.java:133)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager.propertyChange(BuildConsoleManager.java:338)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore$2.run(ScopedPreferenceStore.java:325)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.firePropertyChangeEvent(ScopedPreferenceStore.java:322)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.lambda$0(ScopedPreferenceStore.java:171)
+	at org.eclipse.core.internal.preferences.EclipsePreferences$2.run(EclipsePreferences.java:851)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:854)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.remove(EclipsePreferences.java:961)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1458)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1452)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.lambda$0(PartRenderingEngine.java:1441)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4175)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4167)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3634)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:277)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:166)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY org.eclipse.ui.console 4 2 2021-05-04 22:11:23.730
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.console".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.propertyChange(BuildConsolePage.java:259)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.run(AbstractConsole.java:97)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.notify(AbstractConsole.java:112)
+	at org.eclipse.ui.console.AbstractConsole.firePropertyChange(AbstractConsole.java:230)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsole.setBackground(BuildConsole.java:133)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager.propertyChange(BuildConsoleManager.java:338)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore$2.run(ScopedPreferenceStore.java:325)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.firePropertyChangeEvent(ScopedPreferenceStore.java:322)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.lambda$0(ScopedPreferenceStore.java:171)
+	at org.eclipse.core.internal.preferences.EclipsePreferences$2.run(EclipsePreferences.java:851)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:854)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.remove(EclipsePreferences.java:961)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1458)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1452)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.lambda$0(PartRenderingEngine.java:1441)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4175)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4167)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3634)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:277)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:166)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY org.eclipse.ui.console 4 120 2021-05-04 22:11:23.730
+!MESSAGE Exception occurred during console property change notification.
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.propertyChange(BuildConsolePage.java:259)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.run(AbstractConsole.java:97)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.notify(AbstractConsole.java:112)
+	at org.eclipse.ui.console.AbstractConsole.firePropertyChange(AbstractConsole.java:230)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsole.setBackground(BuildConsole.java:133)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager.propertyChange(BuildConsoleManager.java:338)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore$2.run(ScopedPreferenceStore.java:325)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.firePropertyChangeEvent(ScopedPreferenceStore.java:322)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.lambda$0(ScopedPreferenceStore.java:171)
+	at org.eclipse.core.internal.preferences.EclipsePreferences$2.run(EclipsePreferences.java:851)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:854)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.remove(EclipsePreferences.java:961)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1458)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1452)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.lambda$0(PartRenderingEngine.java:1441)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4175)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4167)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3634)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:277)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:166)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY org.eclipse.ui.console 4 2 2021-05-04 22:11:23.731
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.console".
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4720)
+	at org.eclipse.swt.SWT.error(SWT.java:4635)
+	at org.eclipse.swt.SWT.error(SWT.java:4606)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:452)
+	at org.eclipse.swt.widgets.Widget.getDisplay(Widget.java:574)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.propertyChange(BuildConsolePage.java:250)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.run(AbstractConsole.java:97)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.notify(AbstractConsole.java:112)
+	at org.eclipse.ui.console.AbstractConsole.firePropertyChange(AbstractConsole.java:230)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleStreamDecorator.setColor(BuildConsoleStreamDecorator.java:46)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager.propertyChange(BuildConsoleManager.java:326)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore$2.run(ScopedPreferenceStore.java:325)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.firePropertyChangeEvent(ScopedPreferenceStore.java:322)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.lambda$0(ScopedPreferenceStore.java:171)
+	at org.eclipse.core.internal.preferences.EclipsePreferences$2.run(EclipsePreferences.java:851)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:854)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.remove(EclipsePreferences.java:961)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1458)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1452)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.lambda$0(PartRenderingEngine.java:1441)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4175)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4167)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3634)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:277)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:166)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY org.eclipse.ui.console 4 120 2021-05-04 22:11:23.732
+!MESSAGE Exception occurred during console property change notification.
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4720)
+	at org.eclipse.swt.SWT.error(SWT.java:4635)
+	at org.eclipse.swt.SWT.error(SWT.java:4606)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:452)
+	at org.eclipse.swt.widgets.Widget.getDisplay(Widget.java:574)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.propertyChange(BuildConsolePage.java:250)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.run(AbstractConsole.java:97)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.notify(AbstractConsole.java:112)
+	at org.eclipse.ui.console.AbstractConsole.firePropertyChange(AbstractConsole.java:230)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleStreamDecorator.setColor(BuildConsoleStreamDecorator.java:46)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager.propertyChange(BuildConsoleManager.java:326)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore$2.run(ScopedPreferenceStore.java:325)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.firePropertyChangeEvent(ScopedPreferenceStore.java:322)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.lambda$0(ScopedPreferenceStore.java:171)
+	at org.eclipse.core.internal.preferences.EclipsePreferences$2.run(EclipsePreferences.java:851)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:854)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.remove(EclipsePreferences.java:961)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1458)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1452)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.lambda$0(PartRenderingEngine.java:1441)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4175)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4167)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3634)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:277)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:166)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY org.eclipse.ui.console 4 2 2021-05-04 22:11:23.733
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.console".
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4720)
+	at org.eclipse.swt.SWT.error(SWT.java:4635)
+	at org.eclipse.swt.SWT.error(SWT.java:4606)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:452)
+	at org.eclipse.swt.widgets.Widget.getDisplay(Widget.java:574)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.propertyChange(BuildConsolePage.java:250)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.run(AbstractConsole.java:97)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.notify(AbstractConsole.java:112)
+	at org.eclipse.ui.console.AbstractConsole.firePropertyChange(AbstractConsole.java:230)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleStreamDecorator.setColor(BuildConsoleStreamDecorator.java:46)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager.propertyChange(BuildConsoleManager.java:326)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore$2.run(ScopedPreferenceStore.java:325)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.firePropertyChangeEvent(ScopedPreferenceStore.java:322)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.lambda$0(ScopedPreferenceStore.java:171)
+	at org.eclipse.core.internal.preferences.EclipsePreferences$2.run(EclipsePreferences.java:851)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:854)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.remove(EclipsePreferences.java:961)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1458)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1452)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.lambda$0(PartRenderingEngine.java:1441)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4175)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4167)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3634)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:277)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:166)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+
+!ENTRY org.eclipse.ui.console 4 120 2021-05-04 22:11:23.733
+!MESSAGE Exception occurred during console property change notification.
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4720)
+	at org.eclipse.swt.SWT.error(SWT.java:4635)
+	at org.eclipse.swt.SWT.error(SWT.java:4606)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:452)
+	at org.eclipse.swt.widgets.Widget.getDisplay(Widget.java:574)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.propertyChange(BuildConsolePage.java:250)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.run(AbstractConsole.java:97)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.notify(AbstractConsole.java:112)
+	at org.eclipse.ui.console.AbstractConsole.firePropertyChange(AbstractConsole.java:230)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleStreamDecorator.setColor(BuildConsoleStreamDecorator.java:46)
+	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager.propertyChange(BuildConsoleManager.java:326)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore$2.run(ScopedPreferenceStore.java:325)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.firePropertyChangeEvent(ScopedPreferenceStore.java:322)
+	at org.eclipse.ui.preferences.ScopedPreferenceStore.lambda$0(ScopedPreferenceStore.java:171)
+	at org.eclipse.core.internal.preferences.EclipsePreferences$2.run(EclipsePreferences.java:851)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:854)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.remove(EclipsePreferences.java:961)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1458)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1452)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.lambda$0(PartRenderingEngine.java:1441)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4175)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4167)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3634)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:277)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:166)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+!SESSION 2021-05-06 02:46:48.306 -----------------------------------------------
+eclipse.buildId=4.14.0.I20191210-0610
+java.version=1.8.0_144
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product com.ti.ccstudio.branding.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product com.ti.ccstudio.branding.product
+
+!ENTRY com.ti.common.core 1 0 2021-05-06 02:46:51.517
+!MESSAGE path=ccs_base/DebugServer
+
+!ENTRY com.ti.common.core 1 0 2021-05-06 02:46:51.519
+!MESSAGE debugServerDir=C:/ti/ccs1030/ccs/ccs_base/DebugServer
+
+!ENTRY com.ti.ccstudio.ui 1 0 2021-05-06 02:47:12.468
+!MESSAGE CCS IDE session started!
+	CCS build: 10.3.0.00007
+	CCS location: C:/ti/ccs1030/ccs
+	Workspace location: C:/Users/Ricardo/workspace_v10
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 02:47:12.785
+!MESSAGE constructor
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 02:47:12.786
+!MESSAGE done with directories
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 02:47:12.786
+!MESSAGE loading ti_logger
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 02:47:12.788
+!MESSAGE Platform os: win32
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 02:47:12.788
+!MESSAGE loading cToolsIF
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 02:47:12.824
+!MESSAGE loading cTools
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 02:47:12.855
+!MESSAGE loading TraceFactory
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 02:47:12.888
+!MESSAGE loading sqlite3
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 02:47:12.915
+!MESSAGE loading CloudTrace
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 02:47:13.024
+!MESSAGE CloudTrace interface loaded
+
+!ENTRY com.ti.ccstudio.project.ui.webcontent 1 0 2021-05-06 02:47:13.105
+!MESSAGE CCS HTTP adapter started! [ccs.port:62537] - Open 'http://localhost:62537/ide' in web browser to see listing of available APIs...
+!SESSION 2021-05-06 16:47:23.914 -----------------------------------------------
+eclipse.buildId=4.14.0.I20191210-0610
+java.version=1.8.0_144
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product com.ti.ccstudio.branding.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product com.ti.ccstudio.branding.product
+
+!ENTRY com.ti.common.core 1 0 2021-05-06 16:47:26.790
+!MESSAGE path=ccs_base/DebugServer
+
+!ENTRY com.ti.common.core 1 0 2021-05-06 16:47:26.792
+!MESSAGE debugServerDir=C:/ti/ccs1030/ccs/ccs_base/DebugServer
+
+!ENTRY com.ti.ccstudio.ui 1 0 2021-05-06 16:47:47.404
+!MESSAGE CCS IDE session started!
+	CCS build: 10.3.0.00007
+	CCS location: C:/ti/ccs1030/ccs
+	Workspace location: C:/Users/Ricardo/workspace_v10
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 16:47:47.699
+!MESSAGE constructor
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 16:47:47.700
+!MESSAGE done with directories
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 16:47:47.701
+!MESSAGE loading ti_logger
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 16:47:47.703
+!MESSAGE Platform os: win32
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 16:47:47.704
+!MESSAGE loading cToolsIF
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 16:47:47.740
+!MESSAGE loading cTools
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 16:47:47.776
+!MESSAGE loading TraceFactory
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 16:47:47.823
+!MESSAGE loading sqlite3
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 16:47:47.855
+!MESSAGE loading CloudTrace
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 16:47:47.959
+!MESSAGE CloudTrace interface loaded
+
+!ENTRY com.ti.ccstudio.project.ui.webcontent 1 0 2021-05-06 16:47:48.027
+!MESSAGE CCS HTTP adapter started! [ccs.port:49414] - Open 'http://localhost:49414/ide' in web browser to see listing of available APIs...
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-05-06 16:52:33.099
+!MESSAGE Indexed 'Lab7' (2 sources, 4 headers) in 0.071 sec: 52 declarations; 236 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+!SESSION 2021-05-06 17:04:36.551 -----------------------------------------------
+eclipse.buildId=4.14.0.I20191210-0610
+java.version=1.8.0_144
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product com.ti.ccstudio.branding.product -product com.ti.ccstudio.branding.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product com.ti.ccstudio.branding.product -data E:\UVG\Semestre 5\Digital2\Code_Composer\workspace_v10 -product com.ti.ccstudio.branding.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-05-06 17:04:40.038
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.ti.common.core 1 0 2021-05-06 17:04:40.129
+!MESSAGE path=ccs_base/DebugServer
+
+!ENTRY com.ti.common.core 1 0 2021-05-06 17:04:40.147
+!MESSAGE debugServerDir=C:/ti/ccs1030/ccs/ccs_base/DebugServer
+
+!ENTRY com.ti.ccstudio.ui 1 0 2021-05-06 17:04:47.596
+!MESSAGE CCS IDE session started!
+	CCS build: 10.3.0.00007
+	CCS location: C:/ti/ccs1030/ccs
+	Workspace location: E:/UVG/Semestre 5/Digital2/Code_Composer/workspace_v10 (previously: C:/Users/Ricardo/workspace_v10)
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 17:04:47.796
+!MESSAGE constructor
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 17:04:47.816
+!MESSAGE done with directories
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 17:04:47.837
+!MESSAGE loading ti_logger
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 17:04:47.859
+!MESSAGE Platform os: win32
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 17:04:47.879
+!MESSAGE loading cToolsIF
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 17:04:47.933
+!MESSAGE loading cTools
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 17:04:47.964
+!MESSAGE loading TraceFactory
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 17:04:47.987
+!MESSAGE loading sqlite3
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 17:04:48.777
+!MESSAGE loading CloudTrace
+
+!ENTRY com.ti.dbgtrc.webapp.CloudTraceInterface 0 0 2021-05-06 17:04:48.841
+!MESSAGE CloudTrace interface loaded
+
+!ENTRY com.ti.ccstudio.project.ui.webcontent 1 0 2021-05-06 17:04:48.909
+!MESSAGE CCS HTTP adapter started! [ccs.port:49585] - Open 'http://localhost:49585/ide' in web browser to see listing of available APIs...
