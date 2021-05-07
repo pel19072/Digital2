@@ -1,0 +1,81 @@
+#include <stdint.h>
+#include <stdbool.h>
+#include "inc/tm4c123gh6pm.h"
+#include "inc/hw_memmap.h"
+#include "inc/hw_types.h"
+#include "inc/hw_ints.h"
+#include "driverlib/sysctl.h"
+#include "driverlib/interrupt.h"
+#include "driverlib/gpio.h"
+#include "driverlib/timer.h"
+
+//*****************************************************************************
+//
+// The error routine that is called if the driver library encounters an error.
+//
+//*****************************************************************************
+#ifdef DEBUG
+void
+__error__(char *pcFilename, uint32_t ui32Line)
+{
+    while(1);
+}
+#endif
+
+//Variables Globales
+uint32_t ui32Period;
+int i, FLAG;
+
+int main(void){
+    // Utiliza el oscilador principal, con el cristal de 16MHz y el PLL y divido dentro de 5 para llegar a 40
+    SysCtlClockSet(SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ | SYSCTL_USE_PLL | SYSCTL_SYSDIV_5);
+
+    // Activa el puerto F
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
+    while(!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOF));
+
+    // Activa Timer0
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER0);
+    while(!SysCtlPeripheralReady(SYSCTL_PERIPH_TIMER0));
+    TimerConfigure(TIMER0_BASE, TIMER_CFG_PERIODIC);
+    ui32Period = (SysCtlClockGet()) / 2;
+    TimerLoadSet(TIMER0_BASE, TIMER_A, ui32Period - 1);
+    IntEnable(INT_TIMER0A);
+    TimerIntEnable(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
+    IntMasterEnable();
+    TimerEnable(TIMER0_BASE, TIMER_A);
+
+
+
+    // Coloca como salida los pines 1, 2 y 3 del puerto F (los pines de los LEDs)
+    GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3);
+    //Coloca como entrada digital con weak pull up
+    GPIOPadConfigSet(GPIO_PORTF_BASE, GPIO_PIN_4, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD_WPU);
+
+    while(1){
+
+        if(GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_4) == 0){
+            FLAG = 1;
+        }
+        else if (GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_4) == 16) {
+            if(FLAG == 1){
+                FLAG = 0;
+                GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3, GPIO_PIN_3);
+                SysCtlDelay(2000000);
+
+                for (i = 0; i<5; i++){
+                    GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3, GPIO_PIN_3);
+                    SysCtlDelay(200000);
+                    GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3, 0);
+                    SysCtlDelay(200000);
+                }
+
+                GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3, GPIO_PIN_1 | GPIO_PIN_3);
+                SysCtlDelay(2000000);
+
+                GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3, GPIO_PIN_1);
+                SysCtlDelay(2000000);
+            }
+        }
+    }
+}
