@@ -9,6 +9,7 @@
 #include "driverlib/gpio.h"
 #include "driverlib/timer.h"
 #include "driverlib/uart.h"
+#include "driverlib/pin_map.h"
 
 //*****************************************************************************
 //
@@ -24,6 +25,10 @@ __error__(char *pcFilename, uint32_t ui32Line) {
 
 //Variables Globales
 uint32_t LED = GPIO_PIN_1;
+unsigned char temporal = 'a';
+unsigned char temporal2 = 'f';
+char time = 0;
+char FLAG = 0;
 
 //Prototipado
 extern void Timer0IntHandler(void);
@@ -55,13 +60,20 @@ int main(void) {
     while(!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOA));
     SysCtlPeripheralEnable(SYSCTL_PERIPH_UART0);
     while(!SysCtlPeripheralReady(SYSCTL_PERIPH_UART0));
+    GPIOPinConfigure(0x00000001); // RX
+    GPIOPinConfigure(0x00000401); // TX --> ver pin_map.h
     GPIOPinTypeUART(GPIO_PORTA_BASE, GPIO_PIN_0 | GPIO_PIN_1);
     UARTConfigSetExpClk(UART0_BASE, SysCtlClockGet(), 115200, UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE);
+    UARTFIFOEnable(UART0_BASE);
+    IntEnable(INT_UART0);
     UARTIntEnable(UART0_BASE, UART_INT_RX | UART_INT_RT);
+    UARTIntClear(UART0_BASE, UART_INT_RX | UART_INT_RT);
     UARTIntRegister(UART0_BASE,UARTIntHandler);
+    UARTEnable(UART0_BASE);
 
     // Coloca como salida los pines 1, 2 y 3 del puerto F (los pines de los LEDs)
     GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3);
+    GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3, 0);
 
     while(1);
 }
@@ -69,26 +81,54 @@ int main(void) {
 void Timer0IntHandler(void) {
     // Clear the timer interrupt
     TimerIntClear(TIMER0_BASE, TIMER_TIMA_TIMEOUT);
-    // Read the current state of the GPIO pin and
-    // write back the opposite state
-    GPIOPinWrite(GPIO_PORTF_BASE, LED, ~GPIOPinRead(GPIO_PORTF_BASE, LED));
+    switch(time){
+    case 0:
+        GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3, LED);
+        time++;
+        break;
+    case 1:
+        GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3, 0);
+        time = 0;
+        break;
+    }
 }
 
 void UARTIntHandler(void) {
     // Clear the timer interrupt
     UARTIntClear(UART0_BASE, UART_INT_RX | UART_INT_RT);
     if (UARTCharsAvail(UART0_BASE)){
-        if(UARTCharGetNonBlocking(UART0_BASE) == 'r') {
+        temporal = UARTCharGet(UART0_BASE);
+    }
+    if(temporal2 != temporal) {
+        IntEnable(INT_TIMER0A);
+        if(temporal == 'r') {
             LED = GPIO_PIN_1;
+            temporal2 = temporal;
+            temporal = 'a';
         }
-        else if(UARTCharGetNonBlocking(UART0_BASE) == 'g') {
+        else if(temporal == 'b') {
             LED = GPIO_PIN_2;
+            temporal2 = temporal;
+            temporal = 'a';
         }
-        else {
+        else if(temporal == 'g') {
             LED = GPIO_PIN_3;
+            temporal2 = temporal;
+            temporal = 'a';
+        }
+        else{
         }
     }
     else{
-        LED = GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3;
+        switch(FLAG){
+            case 0:
+                IntDisable(INT_TIMER0A);
+                FLAG++;
+                break;
+            case 1:
+                IntEnable(INT_TIMER0A);
+                FLAG = 0;
+                break;
+        }
     }
 }

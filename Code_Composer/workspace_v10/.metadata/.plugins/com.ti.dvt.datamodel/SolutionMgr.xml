@@ -5,7 +5,7 @@
    <string>defaultSolution</string>
    <void method="set">
     <object idref="SolutionManager$PersistState0"/>
-    <string>C:\ti\ccs1030\ccs\ccs_base\dvt_4.1.0.202009111017\CodeGen\solutions\CodeGenCoverage</string>
+    <string>E:\UVG\Semestre 5\Digital2\Code_Composer\workspace_v10\dvt\AnalysisSolutionsTemp\AnalysisSolution1620453898179\null</string>
    </void>
   </void>
  </object>
@@ -14,10 +14,10 @@
  <void id="ArrayList0" method="get">
   <object idref="SolutionManager$PersistState0"/>
   <void method="add">
-   <string>E:\UVG\Semestre 5\Digital2\Code_Composer\workspace_v10\dvt\AnalysisSolutionsTemp\AnalysisSolution1620370826231\null</string>
+   <string>C:\ti\ccs1030\ccs\ccs_base\dvt_4.1.0.202009111017\CodeGen\solutions\CodeGenCoverage</string>
   </void>
   <void method="add">
-   <string>C:\ti\ccs1030\ccs\ccs_base\dvt_4.1.0.202009111017\CodeGen\solutions\CodeGenCoverage</string>
+   <string>E:\UVG\Semestre 5\Digital2\Code_Composer\workspace_v10\dvt\AnalysisSolutionsTemp\AnalysisSolution1620453898179\null</string>
   </void>
  </void>
 </void>
