@@ -1,0 +1,64 @@
+<!--Comentario-->
+<!doctype>
+
+<html lang="es" <!--Para que reconozca el español-->
+	<head>
+		<title>Proyecto 4</title>  <!--Este título se guarda en la pestaña, no en la página como tal-->
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="DiseñoProyecto.css">
+	</head>
+
+
+
+	<body>
+
+	<div class="uno">
+	<header>
+		<h1>Parqueo-Matic</h1>
+    <h2>Control de Parqueos</h2>
+	</header> <!--1-->
+	</div>
+
+	<div class="dos">
+	<section> <!--3-->
+    <table>
+      <tr>
+        <th>Número de parqueo</th>
+        <th>Disponibilidad</th>
+      </tr>
+      <tr>
+        <td>Parqueo 1</td>
+        <td>Disponible</td>
+      </tr>
+      <tr>
+        <td>Parqueo 2</td>
+        <td>Disponible</td>
+      </tr>
+      <tr>
+        <td>Parqueo 3</td>
+        <td>Disponible</td>
+      </tr>
+      <tr>
+        <td>Parqueo 4</td>
+        <td>Disponible</td>
+      </tr>
+    </table>
+	</section>
+	</div>
+
+	<div class="tres">
+	<footer>
+		Proyecto por Ricardo Pellecer <br>
+		Electrónica Digital 2
+	</footer> <!--5-->
+	</div>
+
+  <script>
+  function timedRefresh(timeoutPeriod) {
+  	setTimeout("location.reload(true);",timeoutPeriod);
+  }
+  window.onload = timedRefresh(5000);
+  </script>
+
+	</body>
+</html>
