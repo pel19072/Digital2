@@ -12,12 +12,18 @@ div.uno{
 }
 
 div.dos {
-	float: center;
+	float: left;
+	width: 80%;
 	padding: 28px;
 	background-color:#FFFFFF;
 }
 
 div.tres {
+	width:20%;
+	float: right;
+}
+
+div.cuatro {
 	padding: 28px;
 	font-family: courier;
 	float: center;
@@ -26,22 +32,13 @@ div.tres {
 	border-width: 0.05xp;
 }
 
-img{
-	display:block;
-	margin:auto;
-}
-
-img.extra{
-	width: 100px;
-}
-
 p.texto{
 	text-indent:2cm;
 	text-align:justify;
 }
 
 table {
-  width: 75%;
+  width: 80%%;
 	float: center;
 }
 

@@ -5,10 +5,54 @@
 	<head>
 		<title>Proyecto 4</title>  <!--Este título se guarda en la pestaña, no en la página como tal-->
 		<meta charset="utf-8"/>
-		<link rel="stylesheet" href="DiseñoProyecto.css">
+		<style>
+			h1, h2{color:#ffffff;}
+			div.uno{
+				text-align: center;
+				color:black;
+				align: center;
+				padding: 14px;
+				background-color: #f7523b;
+				font-family: "Montserrat", sans-serif;
+				height:20%;
+				width: 100%;
+			}
+			div.dos {
+				float: left;
+				width: 100%;
+				height: auto;
+				padding: 8px;
+				background-color:#ffffff;
+			}
+			div.tres {
+				text-align: center;
+				background-color: #f77b6a;
+				font-family:courier;
+				float: center;
+				width: 100%;
+				height: auto;
+			}
+			table {
+				width: 100%;
+				float: center;
+			}
+			th, td {
+			  padding: 15px;
+			  text-align: center;
+				border-bottom: 1px solid #ddd;
+			}
+			tr:nth-child(even) {background-color: #f2f2f2;}
+			tr:hover {background-color: #f8f8f8;}
+			th {
+			  background-color: #f7523b;
+			  color: white;
+			}
+			td {
+			  height: 50px;
+			  vertical-align: center;
+			}
+		</style>
 	</head>
-
-
 
 	<body>
 
@@ -19,38 +63,42 @@
 	</header> <!--1-->
 	</div>
 
+
+	<br>
+	<br>
+
 	<div class="dos">
-	<section> <!--3-->
+	<section> <!--2-->
     <table>
       <tr>
         <th>Número de parqueo</th>
         <th>Disponibilidad</th>
       </tr>
       <tr>
-        <td>Parqueo 1</td>
-        <td>Disponible</td>
+        <td>Parqueo 1 &#x1F693;</td>
+        <td>Disponible &#x2705;</td> <!-- Ocupado &#9940; -->
       </tr>
       <tr>
-        <td>Parqueo 2</td>
-        <td>Disponible</td>
+        <td>Parqueo 2 &#x1F695;</td>
+        <td>Disponible &#x2705;</td>
       </tr>
       <tr>
-        <td>Parqueo 3</td>
-        <td>Disponible</td>
+        <td>Parqueo 3 &#x1F697;</td>
+        <td>Disponible &#x2705;</td>
       </tr>
       <tr>
-        <td>Parqueo 4</td>
-        <td>Disponible</td>
+        <td>Parqueo 4 &#x1F699;</td>
+        <td>Disponible &#x2705;</td>
       </tr>
     </table>
 	</section>
 	</div>
-
 	<div class="tres">
-	<footer>
-		Proyecto por Ricardo Pellecer <br>
-		Electrónica Digital 2
-	</footer> <!--5-->
+	<p>
+			Parqueos Disponibles: 4 <br>
+			Proyecto por Ricardo Pellecer <br>
+			Electrónica Digital 2
+		</p> <!--3-->
 	</div>
 
   <script>
